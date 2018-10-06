@@ -370,19 +370,19 @@ body{
 CONTAINER
 *******************************************/
 .container{
-  margin-top: 15px;
-  /* set back to 80px with photo */
+  margin-top: 80px;
+  /* 80px with photo, 15px without photo */
   margin-bottom: 15px;
   background: #fff;
 }
 /*******************************************
 PHOTO (AVATAR)
 *******************************************/
-/* #photo-header{
+#photo-header{
   margin-top: -75px;
-  !!!!change container margin!!!!
-} */
-/* #photo{
+  /* !!!!change container margin!!!! */
+}
+#photo{
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -395,7 +395,7 @@ PHOTO (AVATAR)
   width: 150px;
   height: 150px;
   border-radius: 50%;
-} */
+}
 #text-header h1{
   margin: 0;
   padding: 4px;
