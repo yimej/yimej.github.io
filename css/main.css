@@ -220,6 +220,10 @@ h4 {
   margin: 0.25em;
 }
 
+.word-break {
+  word-break: break-all;
+}
+
 a.resumeButton {
   border: none;
   outline: none;
