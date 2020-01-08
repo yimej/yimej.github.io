@@ -1,7 +1,7 @@
 makePlot();
 
 function makePlot() {
-  d3.csv('line_dataset.csv', function(data){makeLine(data)});
+  d3.csv('data/WN_line.csv', function(data){makeLine(data)});
 };
 
 function makeLine(dataset) {
@@ -26,9 +26,9 @@ function makeLine(dataset) {
   var layout = {
     title: "Total Number of Cases In U.S. by Year",
     xaxis: {title: "Year"},
-    yaxis: {title: "Number of Cases"}
-    // font: {size: 10}
+    yaxis: {title: "Number of Cases"},
+    font: {family: "'Roboto Mono Light', monospace"}
   };
 
-  Plotly.newPlot('line', data, layout);
+  Plotly.newPlot('WN_line', data, layout, {displayModeBar: false});
 };

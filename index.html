@@ -1,435 +1,294 @@
-<!-- you thief 😂 -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ELIZABETH YIM</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="icon" href="img/favicon.png">
+
+    <title>Elizabeth Yim</title>
+    <link rel="icon" href="/img/avatar.png">
+
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-125423932-1');
-    </script>
-
+    </script> -->
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="photo-header" class="text-center">
-            <!-- <div id="photo">
-              <img src="img/avatar.png" alt="avatar">
-            </div> -->
-            <div id="text-header">
-              <h1>Elizabeth<span>Yim</span></h1>
-              <h4>
-                <div id="position">
-                  <div>
-                    Data Analyst
-                  </div>
-                  <div>
-                    Visual Designer
-                  </div>
-                  <div>
-                    Master of Science Applicant
-                  </div>
-                </div>
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-3">
-          <!-- ABOUT ME -->
-          <div class="box">
-            <h2>Hello</h2>
-            <p style="text-align:justify">
-              I'm a Data Visualization/Research Associate who strives for efficiency and thoroughness&mdash;all with an aptitude for streamlined workflow and an eye for clean, beautiful designs. 
-            </p>
-            <p style="text-align:justify">
-              When I'm not crunching numbers, you'll find me rollerskating and stealing socks back from my dog.
-            </p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-3">
-          <!-- CONTACT -->
-          <div class="box">
-            <h2>Contact Me</h2>
-            <h5>
-              <p>
-                <a class='fa fa-phone resumeButton' href='tel:1-703-489-9353' target="_blank"></a> 703.489.9353<br>
-                <a class='fa fa-envelope resumeButton word-break' href='mailto:elizabethjyim@gmail.com' target="_blank"></a> elizabethjyim@gmail.com<br>
-                <span class='fa fa-map-marker resumeButton'></span> northern virginia & dc<br>
-                <a class='fa fa-linkedin resumeButton' href='https://linkedin.com/in/yimej' target="_blank"></a> linkedin.com/in/yimej<br> 
-                <a class='fa fa-github resumeButton' href='https://github.com/yimej' target="_blank"></a> github.com/yimej<br>
-                <a class='fa fa-download resumeButton' href='/resume.pdf' target="_blank"></a> resume pdf
-              </p>
-            </h5>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <!-- SKILLS -->
-          <div class="box">
-            <h2>Technical Skills</h2>
-            <div class='skills-container box'>
-              <div id='skills-col1'>
-                <div class="btn active" onclick="filterSelection('all')"><span>Show All</span></div><br>
-                <div class="btn" onclick="filterSelection('python')"><span>Python 3</span></div><br>
-                <div class="btn" onclick="filterSelection('visual')"><span>Visualization</span></div><br>
-                <div class="btn" onclick="filterSelection('js')"><span>JavaScript</span></div><br>
-                <!-- <div class="btn" onclick="filterSelection('db')"><span>Databases</span></div><br> -->
-                <!-- <div class="btn" onclick="filterSelection('excel')"><span>Advanced Excel</span></div><br> -->
-                <div class="btn" onclick="filterSelection('other')"><span>Other</span></div>
-              </div>
-              <div class='skills-col2'>
-                <span class='skill python'>API Calls</span>
-                <div class='skill python'>Beautiful Soup</div>
-                <div class='skill visual'>Bootstrap</div>
-                <div class='skill visual'>Carto</div>
-                <div class='skill visual'>CSS</div>
-                <div class='skill visual js'>D3.js</div>
-                <div class='skill visual js'>Dashboarding</div>
-                <!-- <div class='skill other'>Hadoop</div> -->
-                <div class='skill visual'>HTML 5</div>
-                <div class='skill visual js'>jQuery</div>
-                <div class='skill python'>JSON</div>
-                <!-- <div class='skill visual js'>Leaflet.js</div> -->
-                <div class='skill other'>Machine Learning</div>
-                <div class='skill python'>Math</div>
-                <div class='skill js'>Math.js</div>
-                <div class='skill python visual'>MatPlotLib</div>
-                <!-- <div class='skill db other'>MongoDB</div>
-                <div class='skill db other'>MySQL</div> -->
-                <div class='skill python'>NumPy</div>
-                <div class='skill python'>Pandas</div>
-                <div class='skill excel other'>Pivot Tables</div>
-                <div class='skill visual js'>Plotly.js</div>
-                <!-- <div class='skill visual'>R</div> -->
-                <div class='skill python'>Requests</div>
-                <div class='skill python'>SciPy</div>
-                <!-- <div class='skill python'>Social Media Mining</div> -->
-                <!-- <div class='skill visual'>Tableau</div> -->
-                <div class='skill python'>Tweepy</div>
-                <div class='skill excel other'>VBA Scripting</div>
-                <div class='skill visual'>W3.CSS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2>Education</h2>
-            <ul id="education" class="clearfix">
-              <br>
-              <li>
-                <div class="year pull-left">2018</div>
-                <div class="description pull-right">
-                  <h3>edX by Georgia Institute of Technology<br>
-                    Introduction to Computing Professional Certificate
-                  </h3>
-                  <div class='eduDescription'>Certificate program equivalent to units 1 and 2 of Georgia Institute of Technology's Introduction to Computing Course (CS1301).</div>
-                  <div class='eduDescription'>Completion expected in mid 2019.</div>
-                </div>
-              </li>
-              <!-- <li>
-                <div class="year pull-left">2018</div>
-                <div class="description pull-right">
-                  <h3>Udemy by 365 Careers<br>
-                    The Data Science Course 2018
-                  </h3>
-                  <div class='eduDescription'>A multidisciplinary program that covers mathematics, statistics, Python, applying advanced statistical techniques in Python, data visualization, machine learning, and deep learning.</div>
-                  <div class='eduDescription'>Completion expected in mid 2019.</div>
-                </div>
-              </li> -->
-              <li>
-                <div class="year pull-left">2019</div>
-                <div class="description pull-right">
-                  <h3>Northern Virginia Community College<br>
-                  </h3>
-                  <div class='eduDescription'>Relevant Course(s): Linear Algebra</div>
-                  <!-- <div class='eduDescription'>Completion expected in May 2019.</div> -->
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2018</div>
-                <div class="description pull-right">
-                  <h3>George Washington University<br>
-                    Data Analytics Boot Camp Certificate
-                  </h3>
-                  <div class='eduDescription'>Part-time six-month program that covered major data analytics topics, including: Python 3 programming, front-end visualization, JavaScript, R, Tableau, advanced Excel, big data analytics, machine learning, predictive statistics, data modeling, and database manipulation.</div>
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2017</div>
-                <div class="description pull-right">
-                  <h3>Virginia Commonwealth University<br>
-                    Bachelors of Science: Interdisciplinary Science<br>
-                    Minors: Biology, Chemistry<br>
-                  </h3>
-                  <div class='eduDescription'>Studied the core sciences and their relation to interdisciplinary issues.</div>
-                  <div class='eduDescription'>Relevant Course(s): Applications of Statistics, Research Methods in the Social Sciences</div>
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2014</div>
-                <div class="description pull-right">
-                  <h3>Northern Virginia Community College<br>
-                    <!-- General Studies -->
-                  </h3>
-                  <div class='eduDescription'>Relevant Course(s): Calculus I with Analytic Geometry</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
+    <div class='main'>
 
-        <!-- EXPERIENCE -->
-        <div class="box">
-            <h2>Experience</h2>
-            <div class="job clearfix">
-              <div class="col-xs-7">
-                <div class="profession">Data Visualization/Research Associate</div>
-                <div class="description">
-                  Produces data reports and analytic/public use files.
-                </div>
-                <div class='description'>
-                  Works with clients on solving data issues.
-                </div>
-                <div class='description'>
-                  Plans and directs research studies on substance abuse and mental health datasets.
-                </div>
-                <div class='description'>
-                  Uses statistical software to produce Excel tables and respond to data requests.
-                </div>
-              </div>
-              <div class="col-xs-5">
-                <div class="where">Eagle Technologies</div>
-                <div class='year'>Arlington, VA</div>
-                <div class="year">01.2019 - Present</div>
-              </div>
-            </div>
-            <!-- <div class="job clearfix">
-              <div class="col-xs-7">
-                <div class="profession">Certified Pharmacy Technician</div>
-                <div class="description">
-                  Allowed to accurately compound topical creams and oral suspensions for patients.
-                </div>
-                <div class='description'>
-                  Given responsibility of assisting monthly inventory of Schedule II drugs as needed.
-                </div>
-                <div class='description'>
-                  Fine-tuned patient centric interpersonal skills.
-                </div>
-              </div>
-              <div class="col-xs-5">
-                <div class="where">Shoppers Pharmacy</div>
-                <div class='year'>Lorton & Franconia, VA</div>
-                <div class="year">03.2017 - Present</div>
-              </div>
-            </div>
-            <div class="job clearfix">
-              <div class="col-xs-7">
-                <div class="profession">Pharmacy Technician Trainee<br>Certified Pharmacy Technician</div>
-                <div class="description">
-                  Certified by Virginia Board of Pharmacy since November 2016.
-                </div>
-                <div class="description">
-                  Learned importance of and adhered to HIPAA, patient privacy, and federal and state regulations.
-                </div>
-                <div class="description">
-                  Given responsibility of accurately receiving federally regulated pseudoephedrine products.
-                </div>
-                <div class="description">
-                  Strengthened technical accuracy.
-                </div>
-              </div>
-              <div class="col-xs-5">
-                <div class="where">CVS Pharmacy</div>
-                <div class='year'>Richmond & Fairfax Station, VA</div>
-                <div class="year">12.2015 - 03.2017</div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- PORTFOLIO -->
-          <div class='box'>
-            <h2>Portfolio</h2>
-            <div class="portfolio">
-              <div class='project'>
-                <h3>Wine Quality Analysis</h3>
-                <div class='projectDetail col-xs-12 col-sm-6'>
-                  <p>An analysis of wine reviews from <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a> that explores the various relationships among rating, country of origin, and price.</p>
-                  <p>Languages/Tools Used: Python (Pandas, MatPlotLib, Numpy)</p>
-                </div>
-                <img src='img/portfolio/project1.png' id='openModal1'>
-<!-- START 1 -->
-                <div id="proj1" class="modal">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <span class="closeModal closeModal1">&times;</span>
-                      <span class="openCode">
-                        <a class="fa fa-github fa-fw" href="https://github.com/yimej/Wine_Quality_Analysis" target="_blank"></a>
-                      </span>
-                      <h6>Wine Quality Analysis</h6>
-                    </div>
-                    <div class="modal-body">
-                      <div class='row'>
-                        <br>
-                        <h3>Red Wines: Comparison of Quality and Price by Country of Origin</h3>
-                        <div class="col-xs-12 col-sm-6">
-                          <img src="img/project1/red_quality_country.png" id='modal-img'>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                          <img src="img/project1/red_price_country.png" id='modal-img'>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class='row'>
-                        <h3>White Wines: Comparison of Quality and Price by Country of Origin</h3>
-                        <div class="col-xs-12 col-sm-6">
-                          <img src="img/project1/white_quality_country.png" id='modal-img'>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                          <center><img src="img/project1/white_price_country.png" id='modal-img'>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class='row'>
-                        <h3>Comparison of Quality and Price</h3>
-                        <div class="col-xs-12 col-sm-6">
-                          <img src="img/project1/red_quality_price.png" id='modal-img'>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                          <img src="img/project1/white_quality_price.png" id='modal-img'>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class='row'>
-                      <h3>Total Top Rated Wines by Country of Origin</h3>
-                        <div class="col-xs-12 col-sm-4"></div>
-                        <div class="col-xs-12 col-sm-4">
-                          <img src="img/project1/top_wines.png" id='last-modal-img'>
-                        </div>
-                        <div class="col-xs-12 col-sm-4"></div> 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<!-- STOP 1 -->
-              </div>
-              <div class='project'>
-                <h3>West Nile Visualizations</h3>
-                <div class='projectDetail col-xs-12 col-sm-6'>
-                  <p>A series of visualizations of data from  <a href='https://www.tycho.pitt.edu/'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
-                  <p>Languages/Tools Used: Python (Pandas, MatPlotLib, Numpy, JSON), JavaScript (D3.js, Plotly.js, jQuery, Leaflet.js), SQLite</p>
-                </div>
-                <img src='img/portfolio/project2.png' id='openModal2'>
-<!-- START 2 -->
-                <div id="proj2" class="modal">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <span class="closeModal closeModal2">&times;</span>
-                      <span class='openCode'>
-                        <a class='fa fa-github fa-fw' href='https://github.com/yimej/West_Nile_Visualizations' target='_blank'></a>
-                      </span>
-                      <h6>West Nile Visualizations</h6>
-                    </div>
-                    <div class="modal-body">
-                      <div class='row'>
-                        <br>
-                        <div class='col-xs-12 col-sm-6'>
-                          <h3>An interactive map of reported West Nile cases from 2010 to 2017 in the United States.</h3>
-                          <a href='/choropleth.html' target='_blank'><img src='img/project2/map.png' id='proj2-img'></a>
-                        </div>
-                        <div class='col-xs-12 col-sm-6'>
-                          <h3>A cleaned dataset of reported West Nile cases from 2010 to 2017 in the United States.</h3>
-                          <a href='/data.html' target='_blank'><img src='img/project2/data.png' id='proj2-img'></a>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class='row'>
-                        <h3>An interactive bar chart of reported West Nile cases  from 2010 to 2017 by state.</h3>
-                        <center><div id="bar"></div></center>
-                        <!-- <script type="text/javascript" src="js/bar.js"></script> -->
-                      </div>
-                      <hr>
-                      <div class='row'>
-                        <h3>An interactive line graph of reported West Nile cases  from 2010 to 2017 by year.</h3>
-                        <center><div id="line"></div></center>
-                        <!-- <script type="text/javascript" src="js/line2.js"></script> -->
-                      </div>
-                      <br>
-                    </div>
-                  </div>
-                </div>
-<!-- STOP 2 -->
-              </div>
-              <div class='project'>
-                <h3>Til Death Do Us Chart</h3>
-                <div class='projectDetail col-xs-12 col-sm-6'>
-                  <p>A deep-dive study using machine learning to predict marital status using data from the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97'>National Longitudinal Survey of Youth 1997</a>.</p>
-                  <p>Languages/Tools Used: Python (Pandas, JSON, NumPy), JavaScript (D3.js, Plotly.js), Machine Learning, HTML/CSS, Bootstrap</p>
-                </div>
-                <a href='https://tildeathdouschart.github.io/' target='_blank'><img src='img/portfolio/project3.png' id='openModal3'></a>
-<!-- START 3 -->
-                <!-- <div id="proj3" class="modal">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <span class="closeModal closeModal3">&times;</span>
-                      <h2>Modal Header</h2>
-                    </div>
-                    <div class="modal-body">
-                      <p>Some text in the Modal Body</p>
-                      <p>Some other text...</p>
-                    </div>
-                  </div>
-                </div> -->
-<!-- STOP 3 -->
-              </div>
-              <br><br>
-              <h6><center><b>Click image to view project.</b></center></h6>
-              <a class="prev" onclick="nextProj(-1)">&#10094;</a>
-              <a class="next" onclick="nextProj(1)">&#10095;</a>
-            </div>
-            <div style="text-align:center">
-              <span class="dot" onclick="currentProj(1)"></span> 
-              <span class="dot" onclick="currentProj(2)"></span> 
-              <span class="dot" onclick="currentProj(3)"></span> 
-            </div>
-          </div>
+      <div class='w3-row' style='display: flex; align-items: center;'>
+        <div class='w3-col s12 l1 m1 w3-center '>
+          <img src='img/avatar.png'>
         </div>
-        <div class="col-xs-12 col-sm-6">
-          
+        <div class='w3-col s12 l7 m7 nameAndTitle'>
+          <div class='name'>ELIZABETH<span>YIM</span></div>
+          <div class='title'>data analyst & visual designer</div>
+        </div>
+        <div class='w3-col s12 l4 m4 contactCard'>
+          <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 <img src='/img/icons/phone.png' class='icon'></a><br>
+          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'>elizabethjyim@gmail.com <img src='/img/icons/email.png' class='icon'></a><br>
+          northern va & d.c. <img src='/img/icons/location.png' class='icon'><br>
+          <a href='https://yimej.github.io' target='_blank' class='contact'>https://yimej.github.io <img src='/img/icons/portfolio.png' class='icon'></a><br>
+          <a href=https://linkedin.com/in/yimej' target='_blank' class='contact'>linkedin.com/in/yimej <img src='/img/icons/linkedin.png' class='icon'></a><br>
         </div>
       </div>
+
+      <hr>
+
+      <div class='w3-row'>
+        <div class='w3-col l4 m4 s12' style='padding-right: 10px;'>
+          <h1>HELLO</h1>
+          I'm a data analyst and visual designer who strives for efficiency and thoroughness — all with an aptitude for streamlined workflow and an eye for clean, beautiful designs. When I'm not crunching numbers, you’ll find me roller skating and stealing socks back from my dog.
+        </div>
+        <div class='w3-col l4 m4 s12' style='padding-left: 10px; padding-right: 10px;'>
+          <h1>BACKGROUND</h1>
+          My undergradate academic background is in the physical sciences and I worked as a pharmacy technician from 2015 to 2019. While working in retail pharmacy, I enrolled in George Washington University's Data Analytics Boot Camp and fell in love with the storytelling of data.
+        </div>
+        <div class='w3-col l4 m4 s12' style='padding-left: 10px;'>
+          <h1>ONWARD</h1>
+          While working full-time, I have been juggling pre-requisite courses required for graduate school, coaching the local recreational roller derby league, and chasing after my (naughty) dog. I expect to begin my graduate studies within the next few years.
+        </div>
+
+      </div>
+
+      <br>
+
+      <div style='text-align: center'>Click <a href='/resume.pdf' target='_blank'>HERE</a> to open my resume & <a href='#portfolio'>CONTINUE BELOW</a> to view my portfolio.</div>
       
+      <hr id='portfolio'>
+
+      <!-- <div class='frame'>
+        <h3>INCUBATOR PROJECT: An analytical study on the opioid crisis</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <p class='left'>This is placeholder text about the above project.</p>
+            <p class='left'>Blah blah blah more info</p>
+            <div class='footnoteL'>
+              <p>Made with: Python, pandas, NumPy, twitterscraper, SAS, Flourish, Plotly, HTML5/CSS</p>
+            </div>
+          </div>
+          <div class='w3-col s6'>
+            <a href='http://www.pharmakeia.org' target='_blank'><img src='/img/incubator.png' class='right'></a>
+            <p class='viewImageR'>Click image to view project.</p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- TIL DEATH DO US CHART -->
+      <div class='frame'>
+        <h3>TIL DEATH DO US CHART: A predictive analysis on marital status</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <a href='https://tildeathdouschart.github.io/' target='_blank'><img src='/img/tddoc.png' class='left'></a>
+            <p class='viewImageL'>Click image to view project.</p>
+          </div>
+          <div class='w3-col s6'>
+            <p class='right'>The final project of the GWU Data Analytics Boot Camp, this deep-dive study used machine learning to predict marital status from live events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
+            <p class='right'>The objective of this project was to utilize any to all skills that were covered in the program to create a comprehensive analysis and series of visualizations. </p>
+            <p class='right'>The most fascinating aspect of this project was the breadth and depth of the data set. The survey followed over 8,000 participants from their teens through their thirties, asking hundreds of questions and recording how responses changed over time. The specific interview question used in this study was "Respondent's marital status in this month in [1994-2016]," which was recorded every month after the subject’s fourteenth birthday.</p>
+            <p class='right'>The study confirmed that people are hard to predict. Single variables did not strongly correlate with marital status. However, combining variables increased the accuracy of predictions and the utility of the model.</p>
+            <div class='footnoteR'>
+              <p>Made with: Python, pandas, NumPy, JSON, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS, Bootstrap</p>
+              <p>Source: <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a></p>
+            </div>
+          </div>
+        </div>
       </div>
-      <center><big><p class='footer'>&copy; 2019 Elizabeth Yim</p></big></center><br>
+
+      <!-- QUICK STATISTICS -->
+      <div class='frame'>
+        <h3>SAMHSA QUICK STATISTICS WEB TABLES</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <p class='left'>The updated Quick Statistics website was developed while at Eagle Technologies under a contract for the Substance Abuse and Mental Health Services Administration's Behavioral Health Services Information System.</p>
+            <p class='left'>The previous Quick Statistics page was visually outdated and confusing to navigate. This enhanced version is more visually modern and utilizes JavaScript and CSS to replace confusing navigation with user-friendly interactivity to display the chosen table or document.</p>
+            <div class='footnoteL'>
+              <p>Made with: SAS, Python, pandas, NumPy, JavaScript, AJAX, HTML5/CSS</p>
+              <p>Source: <a href='https://wwwdasis.samhsa.gov/dasis2/teds.htm' target='_blank'>SAMHSA</a></p>
+            </div>
+          </div>
+          <div class='w3-col s6'>
+            <a href='https://wwwdasis.samhsa.gov/webt/newmapv1.htm' target='_blank'><img src='/img/wt.png' class='right'></a>
+            <p class='viewImageR'>Click image to view project.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class='frame'>
+        <h3>DATA QUALITY VISUALIZATION</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <img src='/img/placeholder.png' class='left'>
+          </div>
+          <div class='w3-col s6'>
+            <p class='right'>placeholder</p>
+          </div>
+        </div>
+      </div> -->
+    
+      <!-- <div class='frame'>
+        <h3>SAMHSA TREATMENT EPISODE DATA SET VIZ</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <p class='left'>This is placeholder text about the above project.</p>
+            <p class='left'>Blah blah blah more info</p>
+            <p class='left'>Languages/Tools Used: something</p>
+            <p class='left'>Source?</p>
+          </div>
+          <div class='w3-col s6'>
+            <img src='/img/placeholder.png' class='right'>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- WEST NILE -->
+      <div class='frame'>
+        <h3>PROJECT TYCHO WEST NILE VISUALIZATIONS</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6'>
+            <img src='/img/westnile.png' onclick="openWNModal();currentWNSlide(1)" class='left'>
+            <p class='viewImageL'>Click image to view project.</p>
+          </div>
+          <div class='w3-col s6'>
+            <p class='right'>The second of three GWU Data Analytics Boot Camp projects, this is a series of visualizations of data from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
+            <p class='right'>The objective of this project was to visualize a large data set.</p>
+            <p class='right'>After cleaning the data set with Python, the project group members utilized the Plotly and Leaflet JavaScript libraries to create interactive graphs and choropleth.</p>
+            <div class='footnoteR'>
+              <p>Made with: Python, pandas, MatPlotLib, NumPy, JSON, JavaScript, D3, Plotly, jQuery, Leaflet, SQLite</p>
+              <p>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="myWNModal" class="modal">
+        <span class="close cursor" onclick="closeWNModal()">&times;</span>
+        <div class="modal-content">
+          <div class="myWNSlides">
+            <div class="numbertext">1 / 4</div>
+            <a href='/choropleth.html' target='_blank'><img src="/img/westnile/map.png" class='modalImage'></a>
+            <p class='viewImage'>Click image to open interactive choropleth.</p>
+          </div>
+      
+          <div class="myWNSlides">
+            <div class="numbertext">2 / 4</div>
+            <a href='/data.html' target='_blank'><img src="/img/westnile/data.png" class='modalImage'></a>
+            <p class='viewImage'>Click image to open cleaned data set.</p>
+          </div>
+      
+          <div class="myWNSlides">
+            <div class="numbertext">3 / 4</div>
+            <div id='WN_bar' class='modalImage'></div>
+          </div>
+      
+          <div class="myWNSlides">
+            <div class="numbertext">4 / 4</div>
+            <div id='WN_line' class='modalImage'></div>
+          </div>
+
+          <a class="prev" onclick="plusWNSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusWNSlides(1)">&#10095;</a>
+        </div>
+      </div>
+
+      <!-- WINE -->
+      <div class='frame'>
+        <h3>WINE REVIEW ANALYSIS</h3>
+        <div class='w3-row'>
+          <div class='w3-col s6 '>
+            <p class='left'>The first of three GWU Data Analytic Boot Camp projects, this is a simple analysis of wine reviews from <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
+            <p class='left'>The objective of this analysis was to assess whether wine quality correlates with (1) price (2) the country of origin.</p>
+            <p class='left'>After selecting eight wines (Pinot Noir, Red Blend, Merlot, Sangiovese, White Blend, Riesling, Chardonnay, Sauvignon Blanc) from a database of over 150,000 wines, the project group members utilized Python to explore the selected wines' various relationships among rating, price, and country of origin.</p>
+            <div class='footnoteL'>
+              <p>Made with: Python, pandas, MatPlotLib, NumPy</p>
+              <p>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
+            </div>
+          </div>
+          <div class='w3-col s6'>
+            <img src='/img/wine/red_quality_country.png' onclick="openWineModal();currentWineSlide(1)" class='right'>
+            <p class='viewImageR'>Click image to view project.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="myWineModal" class="modal">
+        <span class="close cursor" onclick="closeWineModal()">&times;</span>
+        <div class="modal-content">
+          <div class="myWineSlides">
+            <div class="numbertext">1 / 7</div>
+            <img src="/img/wine/red_price_country.png" class='modalImage'>
+          </div>
+      
+          <div class="myWineSlides">
+            <div class="numbertext">2 / 7</div>
+            <img src="/img/wine/red_quality_country.png" class='modalImage'>
+          </div>
+      
+          <div class="myWineSlides">
+            <div class="numbertext">3 / 7</div>
+            <img src="/img/wine/red_quality_price.png" class='modalImage'>
+          </div>
+      
+          <div class="myWineSlides">
+            <div class="numbertext">4 / 7</div>
+            <img src="/img/wine/white_price_country.png" class='modalImage'>
+          </div>
+
+          <div class="myWineSlides">
+            <div class="numbertext">5 / 7</div>
+            <img src="/img/wine/white_quality_country.png" class='modalImage'>
+          </div>
+
+          <div class="myWineSlides">
+            <div class="numbertext">6 / 7</div>
+            <img src="/img/wine/white_quality_price.png" class='modalImage'>
+          </div>
+      
+          <div class="myWineSlides">
+            <div class="numbertext">7 / 7</div>
+            <img src="/img/wine/top_wines.png" class='modalImage'>
+          </div>
+
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusWineSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusWineSlides(1)">&#10095;</a>
+      
+          <!-- Thumbnail image controls -->
+          <!-- <div class="column">
+            <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
+          </div>
+      
+          <div class="column">
+            <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Snow">
+          </div>
+      
+          <div class="column">
+            <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
+          </div>
+      
+          <div class="column">
+            <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
+          </div> -->
+        </div>
+      </div>
+
+      <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
+
     </div>
-    <!-- JQUERY -->
-    <script src="js/jquery.min.js"></script>
-    <!-- BOOTSTRAP -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- SCRIPTS -->
-    <script src="js/scripts.js"></script>
-    <script src="js/bar.js"></script>
-    <script src="js/line2.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/WN_bar.js"></script>
+    <script src="js/WN_line.js"></script>
   </body>
 </html>

@@ -1,0 +1,300 @@
+html {
+    font-family: 'Roboto Mono Light', monospace;
+}
+
+body {
+    font-family: 'Roboto Mono Light', monospace;
+    padding: 20px;
+    background-color: rgb(242, 242, 242);
+    /* overflow: hidden; */
+    font-size: 12.5px;
+    line-height: 14px;
+    text-align: justify;
+}
+
+.main {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    background-color: white;
+    /* height: calc(100vh - 40px); */
+}
+
+.bold {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.center {
+    text-align: center;
+}
+
+.avatar {
+    /* border-radius: 50%; */
+    max-width: 100%;
+    max-height: 240px;
+    min-height: 100%;
+}
+
+p {
+    font-size: 12px;
+    padding-bottom: 10px;
+    margin: 0px;
+    /* margin-top: 4px; */
+    /* margin-top: 10px; */
+    text-align: justify;
+}
+
+u {
+    color: rgb(49, 189, 172);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    /* min-height: 80vh; */
+}
+
+img.left {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+img.right {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+img.icon {
+    height: 10px;
+    width: auto;
+    filter: opacity(50%);
+}
+
+a > img.icon:hover {
+    filter: opacity(75%);
+}
+
+p.left {
+    padding-right: 10px;
+}
+
+p.right {
+    padding-left: 10px;
+}
+
+hr {
+    border-top: 0.8px solid rgb(49, 189, 172);
+    margin: 20px 0px 20px 0px;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    line-height: 22px;
+    color: rgb(49,189,172);
+    margin: 0px;
+}
+
+h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    line-height: 16px;
+    /* color: rgb(49,189,172); */
+    margin: 0px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+a {
+    color: rgb(49,189,172);
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(32, 122, 111);
+}
+
+a.contact {
+    color: black;
+    font-family: 'Roboto Mono Light', monospace;
+    text-decoration: none;
+}
+
+a.contact:hover {
+    color: rgb(49, 189, 172);
+}
+
+.nameAndTitle {
+    /* background-color: lightcoral; */
+    margin: 0px;
+    padding-left: 10px;
+    font-size: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.contactCard {
+    /* background-color: lightpink; */
+    font-size: 10px;
+    line-height: 13px;
+    text-align: right;
+}
+
+.nameAndTitle span{
+    color: rgb(49,189,172);  
+}
+
+.title {
+    font-size: 20px;
+    line-height: 28px;
+    vertical-align: middle;
+}
+
+.footnoteL {
+    border-top: 0.8px solid rgb(49, 189, 172);
+    padding-top: 10px;
+    margin-right: 10px;
+}
+
+.footnoteR {
+    border-top: 0.8px solid rgb(49, 189, 172);
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.viewImageR {
+    margin: 0px;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 0px 0px 10px;
+}
+
+.viewImageL {
+    margin: 0px;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 10px 0px 0px;
+}
+
+.viewImage {
+    margin: 0px;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}
+
+.copyright {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.copyright span {
+    font-size: 16px;
+    line-height: 14px;
+}
+
+.frame {
+    width: 100%;
+    background-color: rgb(242, 242, 242);
+    padding: 20px;
+    margin: 10px 0px 20px 0px;
+}
+
+/* wine modal */
+.modalImage {
+    max-height: calc(100vh - 150px);
+    width: auto;
+    /* max-width: calc(100% - 40px); */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgb(242, 242, 242);
+    margin: auto;
+    padding: 10px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myWineSlides {
+    display: none;
+}
+
+.myWNSlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: black; 
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    /* border-radius: 10px 10px 10px 10px; */
+}
+
+.next {
+    right: 5px;
+}
+
+.prev {
+    left: 5px;
+}
+
+.prev:hover,
+.next:hover {
+    /* background-color: white; */
+    color: white;
+}
+
+.numbertext {
+    /* color: rgb(49, 189, 172); */
+    font-size: 15px;
+    line-height: 10px;
+    position: absolute;
+    font-family: 'Roboto Mono', monospace;
+    left: 50%;
+    transform: translate(0%, -50%);
+    bottom: 10px;
+}
