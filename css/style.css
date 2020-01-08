@@ -27,33 +27,107 @@ body {
 .avatar {
     width: 75px;
     height: 75px;
-    text-align: center;
 }
 
 .w3-cell {
     padding: 0px;
-    overflow: auto;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
 }
 
-@media screen and (max-width: 800px) {
-    .intro {
-      padding-left: 0px;
-      padding-right: 0px;
-      margin-bottom: 10px;
+@media (max-width: 600px){
+    .w3-mobile {
+        width: 100%!important;
+        /* padding: 0px;
+        overflow: hidden;
+        text-overflow: ellipsis; */
     }
-}
-  
-@media screen and (max-width: 600px) {
-    .intro {
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-bottom: 10px;
+    .name {
+        font-size: 30px!important;
+        line-height: 30px!important;
+        text-align: center!important;
+    }
+    .title {
+        font-size: 12px!important;
+        line-height: 12px!important;
+        text-align: center!important;
     }
     .nameAndTitle {
-        text-align: center;
+        padding-left: 0px!important;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
+    .introL, .introM {
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        padding-bottom: 20px;
+    }
+    .introR {
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+    .viewImageL {
+        padding-bottom: 10px!important;
+        margin-bottom: 10px!important;
+        font-size: 8px!important;
+        border-bottom: 0.8px solid rgb(49, 189, 172);
+    }
+    .viewImageR {
+        font-size: 8px!important;
+    }
+    h3 {
+        font-size: 12px!important;
+        padding-bottom: 10px!important;
+    }
+    p.right, p.left, p.madeWith, p.sourceL, p.sourceR {
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        font-size: 10px!important;
+        margin-left: 0px!important;
+    }
+
+    p.sourceR {
+        padding-bottom: 0px!important;
+    }
+
+    .footnoteL, .footnoteR {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+    .footnoteL {
+        border-bottom: 0.8px solid rgb(49, 189, 172);
+        margin-bottom: 10px!important;
+    }
+    img.left, img.right, .viewImageL, .viewImageR {
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+    .modalImage {
+        max-width: calc(100%)!important;
+    }
+    .modal-content {
+        width: 100%!important;
+    }
+    .close {
+        top: 5px!important;
+        right: 5px!important;
+    }
+    .main {
+        margin: 0px!important;
+    }
+}
+
+.introL {
+    padding-right: 10px;
+}
+
+.introM {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.introR {
+    padding-left: 10px;
 }
 
 p {
@@ -172,7 +246,6 @@ a.contact:hover {
 .title {
     font-size: 20px;
     line-height: 28px;
-    vertical-align: middle;
 }
 
 .footnoteL {
@@ -250,7 +323,7 @@ a.contact:hover {
     background-color: rgb(242, 242, 242);
     margin: auto;
     padding: 10px;
-    width: 60%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -261,7 +334,7 @@ a.contact:hover {
     color: white;
     position: absolute;
     top: 10px;
-    right: 25px;
+    right: 10px;
     font-size: 35px;
     font-weight: bold;
 }
@@ -285,9 +358,9 @@ a.contact:hover {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    bottom: 10px;
     width: auto;
-    padding: 16px;
+    padding: 0px;
     margin-top: -50px;
     color: black; 
     font-weight: bold;
@@ -299,11 +372,11 @@ a.contact:hover {
 }
 
 .next {
-    right: 5px;
+    right: 10px;
 }
 
 .prev {
-    left: 5px;
+    left: 10px;
 }
 
 .prev:hover,
@@ -318,7 +391,8 @@ a.contact:hover {
     line-height: 10px;
     position: absolute;
     font-family: 'Roboto Mono', monospace;
-    left: 50%;
+    left: calc(50% - 20px);
     transform: translate(0%, -50%);
     bottom: 10px;
+    text-align: center;
 }
