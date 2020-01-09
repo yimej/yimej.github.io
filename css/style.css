@@ -115,6 +115,12 @@ body {
     .main {
         margin: 0px!important;
     }
+    .modalPlot {
+        /* width: 300px!important;
+        height: 200px!important; */
+        max-height: calc(100vh - 300px);
+        max-width: 300px!important;
+    }
 }
 
 .introL {
@@ -128,6 +134,11 @@ body {
 
 .introR {
     padding-left: 10px;
+}
+
+.modalPlot {
+    max-height: calc(100vh - 150px);
+    width: auto;
 }
 
 p {
@@ -301,7 +312,10 @@ a.contact:hover {
 /* wine modal */
 .modalImage {
     max-height: calc(100vh - 150px);
+    height: auto;
+    max-width: 100%;
     width: auto;
+    /* height: 100%; */
     /* max-width: calc(100% - 40px); */
 }
 

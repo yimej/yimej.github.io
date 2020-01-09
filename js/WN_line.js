@@ -27,7 +27,10 @@ function makeLine(dataset) {
     title: "Total Number of Cases In U.S. by Year",
     xaxis: {title: "Year"},
     yaxis: {title: "Number of Cases"},
-    font: {family: "'Roboto Mono Light', monospace"}
+    font: {size: 8, family: "'Roboto Mono Light', monospace"},
+    margin: {
+      pad: 0
+    }
   };
 
   Plotly.newPlot('WN_line', data, layout, {displayModeBar: false});

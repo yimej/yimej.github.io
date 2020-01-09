@@ -28,9 +28,12 @@ function makeBar(dataset) {
   
   var layout = {
     title: "Total Number of Cases by State: 2010-2016",
-    xaxis: {title: "State", tickangle: -90},
+    xaxis: {title: "State", tickangle: -90, tickfont: {size: 8}},
     yaxis: {title: "Number of Cases"},
     font: {size: 8, family: "'Roboto Mono Light', monospace"},
+    margin: {
+      pad: 0
+    }
   };
 
   Plotly.newPlot('WN_bar', data, layout, {displayModeBar: false});
