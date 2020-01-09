@@ -103,7 +103,7 @@ body {
         padding-right: 0px!important;
     }
     .modalImage {
-        max-width: calc(100%)!important;
+        max-width: 100%!important;
     }
     .modal-content {
         width: 100%!important;
@@ -118,8 +118,10 @@ body {
     .modalPlot {
         /* width: 300px!important;
         height: 200px!important; */
-        max-height: calc(100vh - 300px);
-        max-width: 300px!important;
+        display: none!important;
+    }
+    .modalPlotImage, .modalPlotImageCaption {
+        display: block!important;
     }
 }
 
@@ -139,6 +141,18 @@ body {
 .modalPlot {
     max-height: calc(100vh - 150px);
     width: auto;
+}
+
+.modalPlotImage {
+    max-height: calc(100vh - 150px);
+    height: auto;
+    max-width: 100%;
+    width: auto;
+    display: none;
+}
+
+.modalPlotImageCaption {
+    display: none;
 }
 
 p {
