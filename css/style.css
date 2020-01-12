@@ -1,41 +1,52 @@
 html {
-    font-family: 'Roboto Mono Light', monospace;
+    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
+    font-size: 62.5%;
 }
 
 body {
-    font-family: 'Roboto Mono Light', monospace;
-    padding: 20px;
+    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
+    padding: 2rem;
     background-color: rgb(242, 242, 242);
-    /* overflow: hidden; */
-    font-size: 12.5px;
-    line-height: 14px;
+    font-size: 1.25rem;
+    line-height: 1.4rem;
     text-align: justify;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
 }
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
 
 .main {
     margin-left: 10%;
     margin-right: 10%;
-    padding: 20px;
+    padding: 2rem;
     background-color: white;
-    /* height: calc(100vh - 40px); */
 }
 
 .bold {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
 }
 
 .avatar {
-    width: 75px;
-    height: 75px;
+    width: 7.5rem;
+    height: 7.5rem;
 }
 
 .w3-cell {
-    padding: 0px;
+    padding: 0rem;
     overflow: hidden;
     /* text-overflow: ellipsis; */
 }
 
-@media (max-width: 600px){
+@media (max-width: 60rem){
     .w3-mobile {
         width: 100%!important;
         /* padding: 0px;
@@ -43,64 +54,64 @@ body {
         text-overflow: ellipsis; */
     }
     .name {
-        font-size: 30px!important;
-        line-height: 30px!important;
+        font-size: 3rem!important;
+        line-height: 3rem!important;
         text-align: center!important;
     }
     .title {
-        font-size: 12px!important;
-        line-height: 12px!important;
+        font-size: 1.2rem!important;
+        line-height: 1.2rem!important;
         text-align: center!important;
     }
     .nameAndTitle {
-        padding-left: 0px!important;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-left: 0rem!important;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     .introL, .introM {
-        padding-left: 0px!important;
-        padding-right: 0px!important;
-        padding-bottom: 20px;
+        padding-left: 0rem!important;
+        padding-right: 0rem!important;
+        padding-bottom: 2rem;
     }
     .introR {
-        padding-left: 0px!important;
-        padding-right: 0px!important;
+        padding-left: 0rem!important;
+        padding-right: 0rem!important;
     }
     .viewImageL {
-        padding-bottom: 10px!important;
-        margin-bottom: 10px!important;
-        font-size: 8px!important;
-        border-bottom: 0.8px solid rgb(49, 189, 172);
+        padding-bottom: 1rem!important;
+        margin-bottom: 1rem!important;
+        font-size: 0.8rem!important;
+        border-bottom: 0.08rem solid rgb(49, 189, 172);
     }
     .viewImageR {
-        font-size: 8px!important;
+        font-size: 0.8rem!important;
     }
     h3 {
-        font-size: 12px!important;
-        padding-bottom: 10px!important;
+        font-size: 1.2rem!important;
+        padding-bottom: 1rem!important;
     }
     p.right, p.left, p.madeWith, p.sourceL, p.sourceR {
-        padding-left: 0px!important;
-        padding-right: 0px!important;
-        font-size: 10px!important;
-        margin-left: 0px!important;
+        padding-left: 0rem!important;
+        padding-right: 0rem!important;
+        font-size: 1rem!important;
+        margin-left: 0rem!important;
     }
 
     p.sourceR {
-        padding-bottom: 0px!important;
+        padding-bottom: 0rem!important;
     }
 
     .footnoteL, .footnoteR {
-        margin-left: 0px!important;
-        margin-right: 0px!important;
+        margin-left: 0rem!important;
+        margin-right: 0rem!important;
     }
     .footnoteL {
-        border-bottom: 0.8px solid rgb(49, 189, 172);
-        margin-bottom: 10px!important;
+        border-bottom: 0.08rem solid rgb(49, 189, 172);
+        margin-bottom: 1rem!important;
     }
     img.left, img.right, .viewImageL, .viewImageR {
-        padding-left: 0px!important;
-        padding-right: 0px!important;
+        padding-left: 0rem!important;
+        padding-right: 0rem!important;
     }
     .modalImage {
         max-width: 100%!important;
@@ -109,15 +120,13 @@ body {
         width: 100%!important;
     }
     .close {
-        top: 5px!important;
-        right: 5px!important;
+        top: 0.5rem!important;
+        right: 0.5rem!important;
     }
     .main {
-        margin: 0px!important;
+        margin: 0rem!important;
     }
     .modalPlot {
-        /* width: 300px!important;
-        height: 200px!important; */
         display: none!important;
     }
     .modalPlotImage, .modalPlotImageCaption {
@@ -126,25 +135,25 @@ body {
 }
 
 .introL {
-    padding-right: 10px;
+    padding-right: 1rem;
 }
 
 .introM {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .introR {
-    padding-left: 10px;
+    padding-left: 1rem;
 }
 
 .modalPlot {
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 15rem);
     width: auto;
 }
 
 .modalPlotImage {
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 15rem);
     height: auto;
     max-width: 100%;
     width: auto;
@@ -155,12 +164,14 @@ body {
     display: none;
 }
 
+select {
+    width: 100%;
+}
+
 p {
-    font-size: 12px;
-    padding-bottom: 10px;
-    margin: 0px;
-    /* margin-top: 4px; */
-    /* margin-top: 10px; */
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    margin: 0rem;
     text-align: justify;
 }
 
@@ -171,21 +182,20 @@ u {
 
 img {
     width: 100%;
-    /* min-height: 80vh; */
 }
 
 img.left {
-    padding-right: 10px;
+    padding-right: 1rem;
     cursor: pointer;
 }
 
 img.right {
-    padding-left: 10px;
+    padding-left: 1rem;
     cursor: pointer;
 }
 
 img.icon {
-    height: 10px;
+    height: 1rem;
     width: auto;
     filter: opacity(50%);
 }
@@ -195,39 +205,47 @@ a > img.icon:hover {
 }
 
 p.left {
-    padding-right: 10px;
+    padding-right: 1rem;
 }
 
 p.right {
-    padding-left: 10px;
+    padding-left: 1rem;
 }
 
 hr {
-    border-top: 0.8px solid rgb(49, 189, 172);
-    margin: 20px 0px 20px 0px;
+    border-top: 0.08rem solid rgb(49, 189, 172);
+    margin: 2rem 0rem 2rem 0rem;
 }
 
 h1 {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 20px;
-    line-height: 22px;
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-size: 2rem;
+    line-height: 2.2rem;
     color: rgb(49,189,172);
-    margin: 0px;
+    margin: 0rem;
 }
 
 h3 {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 16px;
-    line-height: 16px;
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     /* color: rgb(49,189,172); */
-    margin: 0px;
+    margin: 0rem;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
+}
+
+h4 {
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-size: 1.4rem;
+    color: rgb(49,189,172);
+    margin: 0rem;
+    text-align: left;
 }
 
 a {
     color: rgb(49,189,172);
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
     text-decoration: none;
 }
 
@@ -237,7 +255,7 @@ a:hover {
 
 a.contact {
     color: black;
-    font-family: 'Roboto Mono Light', monospace;
+    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
     text-decoration: none;
 }
 
@@ -247,20 +265,44 @@ a.contact:hover {
 
 .nameAndTitle {
     /* background-color: lightcoral; */
-    margin: 0px;
-    padding-left: 10px;
-    font-size: 50px;
-    line-height: 50px;
+    margin: 0rem;
+    padding-left: 1rem;
+    font-size: 5rem;
+    line-height: 5rem;
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
     text-align: left;
 }
 
+.back {
+    background-color: rgb(242, 242, 242);
+    height: 5.2rem;
+    width: 5.2rem;
+    font-size: 5rem;
+    vertical-align: middle;
+    line-height: 4rem;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: calc(50% - 0.75rem);
+    padding: 0rem;
+    margin-top: 1rem;
+}
+
+.projectTitle {
+    margin: 0rem;
+    padding-left: 1rem;
+    font-size: 5rem;
+    line-height: 5rem;
+    vertical-align: middle;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .contactCard {
     /* background-color: lightpink; */
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 1rem;
+    line-height: 1.3rem;
     text-align: right;
 }
 
@@ -268,42 +310,46 @@ a.contact:hover {
     color: rgb(49,189,172);  
 }
 
+.name span {
+    color: rgb(49,189,172);
+}
+
 .title {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 2rem;
+    line-height: 2.8rem;
 }
 
 .footnoteL {
-    border-top: 0.8px solid rgb(49, 189, 172);
-    padding-top: 10px;
-    margin-right: 10px;
+    border-top: 0.08rem solid rgb(49, 189, 172);
+    padding-top: 1rem;
+    margin-right: 1rem;
 }
 
 .footnoteR {
-    border-top: 0.8px solid rgb(49, 189, 172);
-    padding-top: 10px;
-    margin-left: 10px;
+    border-top: 0.08rem solid rgb(49, 189, 172);
+    padding-top: 1rem;
+    margin-left: 1rem;
 }
 
 .viewImageR {
-    margin: 0px;
-    font-size: 10px;
+    margin: 0rem;
+    font-size: 1rem;
     text-align: center;
-    padding: 10px 0px 0px 10px;
+    padding: 1rem 0rem 0rem 1rem;
 }
 
 .viewImageL {
-    margin: 0px;
-    font-size: 10px;
+    margin: 0rem;
+    font-size: 1rem;
     text-align: center;
-    padding: 10px 10px 0px 0px;
+    padding: 1rem 1rem 0rem 0rem;
 }
 
 .viewImage {
-    margin: 0px;
-    font-size: 10px;
+    margin: 0rem;
+    font-size: 1rem;
     text-align: center;
-    padding: 10px 0px 10px 0px;
+    padding: 1rem 0rem 1rem 0rem;
 }
 
 .copyright {
@@ -312,25 +358,23 @@ a.contact:hover {
 }
 
 .copyright span {
-    font-size: 16px;
-    line-height: 14px;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
 }
 
 .frame {
     width: 100%;
     background-color: rgb(242, 242, 242);
-    padding: 20px;
-    margin: 10px 0px 20px 0px;
+    padding: 2rem;
+    margin: 1rem 0rem 2rem 0rem;
 }
 
 /* wine modal */
 .modalImage {
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 15rem);
     height: auto;
     max-width: 100%;
     width: auto;
-    /* height: 100%; */
-    /* max-width: calc(100% - 40px); */
 }
 
 .modal {
@@ -341,7 +385,7 @@ a.contact:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 3rem;
     overflow: auto;
     background-color: rgba(0,0,0,0.3);
 }
@@ -350,61 +394,69 @@ a.contact:hover {
     position: relative;
     background-color: rgb(242, 242, 242);
     margin: auto;
-    padding: 10px;
+    padding: 1rem;
     width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
 }
 
 .close {
-    color: white;
+    color: gray;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 35px;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3.5rem;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: gray;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
 .myWineSlides {
     display: none;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
 }
 
 .myWNSlides {
     display: none;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
 }
 
 .prev,
 .next {
     cursor: pointer;
     position: absolute;
-    bottom: 10px;
+    bottom: 1rem;
     width: auto;
-    padding: 0px;
-    margin-top: -50px;
+    padding: 0rem;
+    margin-top: -5rem;
     color: black; 
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2rem;
     transition: 0.6s ease;
     user-select: none;
     -webkit-user-select: none;
-    /* border-radius: 10px 10px 10px 10px; */
 }
 
 .next {
-    right: 10px;
+    right: 1rem;
 }
 
 .prev {
-    left: 10px;
+    left: 1rem;
 }
 
 .prev:hover,
@@ -415,12 +467,12 @@ a.contact:hover {
 
 .numbertext {
     /* color: rgb(49, 189, 172); */
-    font-size: 15px;
-    line-height: 10px;
+    font-size: 1.5rem;
+    line-height: 1rem;
     position: absolute;
-    font-family: 'Roboto Mono', monospace;
-    left: calc(50% - 20px);
+    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    left: calc(50% - 2rem);
     transform: translate(0%, -50%);
-    bottom: 10px;
+    bottom: 1rem;
     text-align: center;
 }

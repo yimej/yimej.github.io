@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>E &bull; Y</title>
+    <link rel="icon" href="/img/avatar.png">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125423932-1');
+    </script> -->
+  </head>
+  <body>
+    <div class='main'>
+
+        <div class="w3-center">
+            <div class="w3-mobile projectTitle">
+                <div class='name'>TIL DEATH DO US <span>CHART</span></div>
+                <div class='title'>A predictive analysis on marital status</div>
+            </div>
+            <div class='back'><a href='../'>&#8678;</a></div>
+        </div>
+
+        <hr>
+
+        <h1>ABOUT THE DATA</h1>
+        <p>The 1997 National Longitudinal Survey of Youth follows over 8000 participants from their teens through their thirties, asking hundreds of questions and recording how the responses change throughout the study. This study explores the changes in relationships, cohabitation, and marital status during this window of their lives.</p>
+        <p style='padding-bottom: 0rem;'>The Longitudinal Chaos Index (LCI) is a measure of the objective chaos of a subject’s love life. The more changes in your cohabitation/marital status, the higher your LCI. The LCI is based on the survey question: "Respondent's marital status in this month in [1994-2016]," which was recorded every month after subjects' fourteenth birthday. There were six possible responses:</p>
+        <ul>
+            <li>Never Married, Not Cohabitating</li>
+            <li>Never Married, Cohabitating</li>
+            <li>Married</li>
+            <li>Legally Separated</li>
+            <li>Divorced</li>
+            <li>Widowed</li>
+        </ul>
+
+        <hr>
+
+        <h1>ABOUT THE MODEL</h1>
+        <p style='padding-bottom: 0rem;'>The LCI begins at zero for each subject and increases by one point with any change to the survey question's response. There are two exceptions:</p>
+        <ul>
+            <li>No change: "Never Married, Cohabitating" to "Married</li>
+            <li>+2 points: "Married" to "Divorced</li>
+        </ul>
+        <p style='padding-bottom: 0rem;'>After calculating the survey subjects' LCIs, I categorized them into four qualitative measurements:</p>
+        <ul>
+            <li>Sad and Alone (SA)</li>
+            <li>Happy Together (HT)</li>
+            <li>It’s About the Journey (AJ)</li>
+            <li>Train Wreck (TW)</li>
+        </ul>
+        <p>A simple model evaluated each survey question and determined which most affected LCI. A multiple linear regression model predicted LCI based on the top eleven most predictive survey questions.</p>
+        <p>The study confirmed that people are hard to predict. Single variables did not strongly correlate with marital status. However, combining variables increased the accuracy of predictions and the utility of the model.</p>
+        <p style='padding-bottom: 0rem;'>Continue below to calculate your own LCI!</p>
+
+        <hr>
+
+        <h1>PREDICT YOUR FUTURE</h1>
+        <table class="w3-table w3-striped">
+            <tr>
+                <td width='60%'>
+                <label for="name">What was your marital status when you were in your early 30s? If younger, select your current marital status.</label>
+                </td>
+                <td>
+                <select id='q9' name='q9'>
+                    <option value=""></option>
+                    <option value="0">Never Married, Not Cohabitating</option>
+                    <option value="1">Never Married, Cohabiting</option>
+                    <option value="2">Married</option>
+                    <option value="3">Legally Separated</option>
+                    <option value="4">Divorced</option>
+                    <option value="5">Widowed</option>
+                </select>
+                </td width='40%'>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">Did you first have sexual intercourse before age 18?</label>
+                </td>
+                <td>
+                <select id='q1' name='q1'>
+                    <option value=""></option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">What was the relationship of the parent figure(s)/guardian(s) to the youth in your household when you were in your early 20s?</label>
+                </td>
+                <td>
+                <select id='q4' name='q4'>
+                    <option value=""></option>
+                    <option value="1">Both biological parents</option>
+                    <option value="2">Two parents, biological mother</option>
+                    <option value="3">Two parents, biological father</option>
+                    <option value="4">Biological mother only</option>
+                    <option value="5">Biological father only</option>
+                    <option value="6">Adoptive parent(s)</option>
+                    <option value="7">Foster parent(s)</option>
+                    <option value="8">No parents, grandparents</option>
+                    <option value="9">No parents, other relatives</option>
+                    <option value="10">Anything else</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">How many miles away did your father live when you were in your early 20s?</label>
+                </td>
+                <td>
+                <select id='q8' name='q8'>
+                    <option value=""></option>
+                    <option value="0">Lived in the same household</option>
+                    <option value="1">1 to 5 Miles</option>
+                    <option value="2">6 to 10 Miles</option>
+                    <option value="3">11 to 30 Miles</option>
+                    <option value="4">31 to 60 Miles</option>
+                    <option value="5">61 to 100 Miles</option>
+                    <option value="6">101 to 200 Miles</option>
+                    <option value="7">201 to 400 Miles</option>
+                    <option value="8">401 to 700 Miles</option>
+                    <option value="9">>700 Miles</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">How much of the time have you felt so down in the dumps that nothing could cheer you up when you were in your early 20s?</label>
+                </td>
+                <td>
+                <select id='q2' name='q2'>
+                    <option value=""></option>
+                    <option value="4">None of the time</option>
+                    <option value="3">Some of the time</option>
+                    <option value="2">Most of the time</option>
+                    <option value="1">All of the time</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">How would you rank the frequency of substance use when you were in your late teens?</label>
+                </td>
+                <td>
+                <select id='q3' name='q3'>
+                    <option value=""></option>
+                    <option value="0">None of the time</option>
+                    <option value="1">Some of the time</option>
+                    <option value="2">Most of the time</option>
+                    <option value="3">All of the time</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">How much do you agree or disagree that the following statement describes who you are and how you act? "When I was in school, I used to break rules quite regularly."</label>
+                </td>
+                <td>
+                <select id='q5' name='q5'>
+                    <option value=""></option>
+                    <option value="1">Disagree strongly</option>
+                    <option value="2">Disagree moderately</option>
+                    <option value="3">Disagree a little</option>
+                    <option value="4">Neither agree nor disagree</option>
+                    <option value="5">Agree a little</option>
+                    <option value="6">Agree moderately</option>
+                    <option value="7">Agree strongly</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">On a scale of 0 to 10, with higher scores indicating more incidents of deliquency, how would you rank your grade school delinquency?</label>
+                </td>
+                <td>
+                <select id='q10' name='q10'>
+                    <option value=""></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="2">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="4">7</option>
+                    <option value="4">8</option>
+                    <option value="5">9</option>
+                    <option value="5">10</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">Have you ever been arrested since the month you turned age 12?</label>
+                </td>
+                <td>
+                <select id='q6' name='q6'>
+                    <option value=""></option>
+                    <option value="99">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="name">What percentage of your peers belonged to a gang that did illegal activities when you were in your late teens?</label>
+                </td>
+                <td>
+                <select id='q7' name='q7'>
+                    <option value=""></option>
+                    <option value="1">Almost none (less than 10%)</option>
+                    <option value="2">About 25%</option>
+                    <option value="3">About half (50%)</option>
+                    <option value="4">About 75%</option>
+                    <option value="5">Almost all (more than 90%)</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                <br>
+                <form>
+                    <p><input type=button value="Calculate my LCI!" onClick="calculate(this.form);"></p>
+                    <input type=text name=FinalLCI size=5> <input type=text name=FinalWords size=20>
+                </form>
+                </td>
+            </tr>
+        </table>
+
+        <div class="w3-row-padding">
+            <div class="w3-col l3 m3 s12 w3-padding">
+                <h4>SAD AND ALONE: < 0.8</h4>
+                <p style='padding-bottom: 0rem;'>Sorry, you'll probably be single. Don't adopt too many cats and don't be that guy who always brings out his reptiles at parties.</p>
+            </div>
+            <div class="w3-col l3 m3 s12 w3-padding">
+                <h4>HAPPY TOGETHER: 0.8 - 2</h4>
+                <p style='padding-bottom: 0rem;'>Congratulations! You'll be married or cohabitating. However, happiness is not guaranteed.</p>
+            </div>
+            <div class="w3-col l3 m3 s12 w3-padding">
+                <h4>IT'S ABOUT THE JOURNEY: 2 - 6</h4>
+                <p style='padding-bottom: 0rem;'>Despite some hiccups, you'll likely eventually be married or cohabitating. There's light at the end of the tunnel.</p>
+            </div>
+            <div class="w3-col l3 m3 s12 w3-padding">
+                <h4>TRAIN WRECK: &ge; 6</h4>
+                <p style='padding-bottom: 0rem;'>Whatever you're doing, you're doing it wrong. A chaotic future is ahead. You might be better off sad and alone.</p>
+            </div>
+        </div>
+
+        <div class='back'><a href='../'>&#8678;</a></div>
+
+        <hr>
+
+        <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
+
+    </div>
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
