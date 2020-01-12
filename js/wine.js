@@ -49,7 +49,10 @@ Plotly.d3.csv("data/wine_main.csv", function(err, rows){
         violingap: 0,
         violingroupgap: 0,
         violinmode: "overlay",
-        showlegend: false
+        showlegend: false,
+        margin: {
+            pad: 2
+        }
     }
 
     Plotly.plot('distributionByCountry', data, layout, {showlink: false, displayModeBar: false, responsive: true});
@@ -85,7 +88,8 @@ Plotly.d3.csv("data/wine_polarityXpointscat.csv", function(err, rows){
         },
         yaxis: {
             title: 'Polarity of Review Text',
-            range: [-1.25, 1.25]
+            range: [-1.25, 1.25],
+            zeroline: false
         },
         xaxis: {
             title: 'Rating Points',
@@ -93,7 +97,10 @@ Plotly.d3.csv("data/wine_polarityXpointscat.csv", function(err, rows){
         },
         violingap: 0,
         violingroupgap: 0,
-        violinmode: "overlay"
+        violinmode: "overlay",
+        margin: {
+            pad: 2
+        }
     }
 
     Plotly.plot('polarityByPoints', data, layout, {showlink: false, displayModeBar: false, responsive: true});

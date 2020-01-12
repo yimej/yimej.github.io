@@ -87,14 +87,14 @@
 
       <!-- TIL DEATH DO US CHART -->
       <div id='tildeathdouschart' class='frame'>
-        <h3>TIL DEATH DO US CHART: A predictive analysis on marital status</h3>
+        <h3>TIL DEATH DO US CHART</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
             <a href='/tildeathdouschart.html'><img src='/img/tddoc.png' class='left'></a>
             <p class='viewImageL'>Click image to view project.</p>
           </div>
           <div class='w3-col s12 m6 l6'>
-            <p class='right'>The final project of the GWU Data Analytics Boot Camp, this deep-dive study used machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
+            <p class='right'>This is a predictive model developed using machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
             <p class='right'>The objective of this project was to utilize any to all skills that were covered in the program to create a comprehensive analysis and series of visualizations. </p>
             <div class='footnoteR'>
               <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
@@ -150,22 +150,50 @@
         </div>
       </div> -->
 
-      <!-- WEST NILE -->
-      <div class='frame'>
-        <h3>PROJECT TYCHO WEST NILE VISUALIZATIONS</h3>
+      <!-- WINE -->
+      <div id='wine' class='frame'>
+        <h3>WINE REVIEW STUDY</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
-            <img src='/img/westnile.png' onclick="openWNModal();currentWNSlide(1)" class='left'>
-            <p class='viewImageL'>Click image to view project.</p>
+            <a href='/wine.html'><img src='/img/wine/wine.png' class='left'></a>
+            <p class='viewImageR'>Click image to view project.</p>
+          </div>
+
+          <div class='w3-col s12 m6 l6 '>
+            <p class='right'>This is a simple visual study of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
+            <p class='right'>The objective of this analysis was to explore the relationships among:
+              <ol style='margin-top: 0rem; margin-bottom: 0rem;'>
+                <li>rating points,</li>
+                <li>calculated polarity of review text,</li>
+                <li>country of origin,</li>
+                <li>and U.S. state of origin.</li>
+              </ol>
+            </p>
+            <div class='footnoteR'>
+              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
+              <p class='sourceR'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- PROJECT TYCHO -->
+      <div class='frame' id='tycho'>
+        <h3>PROJECT TYCHO CHOROPLETHS</h3>
+        <div class='w3-row'>
+          <div class='w3-col s12 m6 l6'>
+            <p class='left'>This is a series of U.S. choropleths visualizing four infections over time from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
+            <p class='left'>The objective of this project was to visualize geographical data over time.</p>
+            <div class='footnoteL'>
+              <p class='madeWith'>Made with: Python, pandas, JavaScript, D3, Plotly</p>
+              <p class='sourceL'>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
+            </div>
           </div>
           <div class='w3-col s12 m6 l6'>
-            <p class='right'>The second of three GWU Data Analytics Boot Camp projects, this is a series of visualizations of data from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
-            <p class='right'>The objective of this project was to visualize a large data set.</p>
-            <p class='right'>After cleaning the data set with Python, the project group members utilized the Plotly and Leaflet JavaScript libraries to create interactive graphs and choropleth.</p>
-            <div class='footnoteR'>
-              <p class='madeWith'>Made with: Python, pandas, MatPlotLib, NumPy, JSON, JavaScript, D3, Plotly, jQuery, Leaflet, SQLite</p>
-              <p class='sourceR'>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
-            </div>
+            <a href='/tycho.html'><img src='/img/tycho/chlamydia.png' class='right'></a>
+            <!-- <img src='/img/westnile.png' onclick="openWNModal();currentWNSlide(1)" class='right'> -->
+            <p class='viewImageR'>Click image to view project.</p>
           </div>
         </div>
       </div>
@@ -205,31 +233,7 @@
         </div>
       </div>
 
-      <!-- WINE -->
-      <div id='wine' class='frame'>
-        <h3>WINE REVIEW STUDY</h3>
-        <div class='w3-row'>
-          <div class='w3-col s12 m6 l6 '>
-            <p class='left'>This is a simple visual study of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
-            <p class='left'>The objective of this analysis was to explore the relationships among:
-              <ol style='margin-top: 0rem; margin-bottom: 0rem;'>
-                <li>rating points,</li>
-                <li>calculated polarity of review text,</li>
-                <li>country of origin,</li>
-                <li>and U.S. state of origin.</li>
-              </ol>
-            </p>
-            <div class='footnoteL'>
-              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
-              <p class='sourceL'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
-            </div>
-          </div>
-          <div class='w3-col s12 m6 l6'>
-            <a href='/wine.html'><img src='/img/wine/wine.png' class='right'></a>
-            <p class='viewImageR'>Click image to view project.</p>
-          </div>
-        </div>
-      </div>
+     
 
       <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
 

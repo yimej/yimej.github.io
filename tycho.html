@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>E &bull; Y</title>
+    <link rel="icon" href="/img/avatar.png">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125423932-1');
+    </script> -->
+  </head>
+  <body>
+    <div class='main'>
+
+        <div class="w3-center">
+            <div class="w3-mobile projectTitle">
+                <div class='name'>PROJECT TYCHO <span>CHOROPLETHS</span></div>
+                <div class='title'>A series of four infections over time in the U.S.</div>
+            </div>
+            <div class='back'><a href='../#wine'>&#8678;</a></div>
+        </div>
+
+        <hr>
+
+        <div class='w3-center' style='vertical-align: middle;'>
+            Select infection: 
+            <button class='btn active' onclick='showInfection(this.innerHTML);'>Influenza</button>
+            <button class='btn' onclick='showInfection(this.innerHTML);'>Gonorrhea</button>
+            <button class='btn' onclick='showInfection(this.innerHTML);'>Chlamydia</button>
+            <button class='btn' onclick='showInfection(this.innerHTML);'>Measles</button>
+        </div>
+
+        <div id='showInfluenza' style='display:block;'>
+            <div id='influenza' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+            <p class='modalPlot' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
+            <img src='/img/tycho/influenza.png' class='modalImage modalPlotImage'>
+            <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        </div>
+
+        <div id='showMeasles' style='display:none;'>
+            <div id='measles' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+            <p class='modalPlot' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
+            <img src='/img/tycho/measles.png' class='modalImage modalPlotImage'>
+            <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        </div>
+
+        <div id='showChlamydia' style='display:none;'>
+            <div id='chlamydia' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+            <p class='modalPlot' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
+            <img src='/img/tycho/chlamydia.png' class='modalImage modalPlotImage'>
+            <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        </div>
+
+        <div id='showGonorrhea' style='display:none;'>
+            <div id='gonorrhea' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+            <p class='modalPlot' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
+            <img src='/img/tycho/gonorrhea.png' class='modalImage modalPlotImage'>
+            <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        </div>
+        
+        <hr>
+
+        <div class='back'><a href='../#tycho'>&#8678;</a></div>
+        <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
+
+    </div>
+    <script src="js/tycho.js"></script>
+  </body>
+</html>

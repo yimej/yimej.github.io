@@ -317,6 +317,21 @@ a.contact:hover {
     margin-bottom: 1rem;
 }
 
+.btn {
+    background-color: rgb(242, 242, 242);
+    border: none;
+    padding: 0.5rem;
+    line-height: 1.4rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-right: 0.1rem;
+}
+
+.active, .btn:hover {
+    background-color: rgb(49, 189, 172);
+    color: white;
+}
+
 .projectTitle {
     margin: 0rem;
     padding-left: 1rem;

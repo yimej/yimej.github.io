@@ -1,0 +1,1441 @@
+code,state,year,count
+AL,Alabama,1920,4015
+AL,Alabama,1921,77
+AL,Alabama,1922,150
+AL,Alabama,1923,977
+AL,Alabama,1924,338
+AL,Alabama,1925,750
+AL,Alabama,1926,1625
+AL,Alabama,1927,1026
+AL,Alabama,1928,42066
+AL,Alabama,1929,54953
+AL,Alabama,1930,3544
+AL,Alabama,1931,6745
+AL,Alabama,1932,34886
+AL,Alabama,1933,7537
+AL,Alabama,1934,4115
+AL,Alabama,1935,14888
+AL,Alabama,1936,21472
+AL,Alabama,1937,19335
+AL,Alabama,1938,5066
+AL,Alabama,1939,19999
+AL,Alabama,1940,12827
+AL,Alabama,1941,34997
+AL,Alabama,1942,7840
+AL,Alabama,1943,15797
+AL,Alabama,1944,17226
+AL,Alabama,1945,9922
+AL,Alabama,1946,9214
+AL,Alabama,1947,10914
+AL,Alabama,1948,7203
+AL,Alabama,1949,3033
+AL,Alabama,1950,7389
+AK,Alaska,1950,20
+AZ,Arizona,1920,14
+AZ,Arizona,1921,4
+AZ,Arizona,1922,2
+AZ,Arizona,1923,1
+AZ,Arizona,1924,0
+AZ,Arizona,1925,26
+AZ,Arizona,1926,17
+AZ,Arizona,1927,4
+AZ,Arizona,1928,4755
+AZ,Arizona,1929,231
+AZ,Arizona,1930,342
+AZ,Arizona,1931,467
+AZ,Arizona,1932,2741
+AZ,Arizona,1933,432
+AZ,Arizona,1934,622
+AZ,Arizona,1935,1892
+AZ,Arizona,1936,3825
+AZ,Arizona,1937,6900
+AZ,Arizona,1938,3273
+AZ,Arizona,1939,4564
+AZ,Arizona,1940,11105
+AZ,Arizona,1941,7299
+AZ,Arizona,1942,4082
+AZ,Arizona,1943,7431
+AZ,Arizona,1944,5678
+AZ,Arizona,1945,7730
+AZ,Arizona,1946,4691
+AZ,Arizona,1947,4136
+AZ,Arizona,1948,11276
+AZ,Arizona,1949,3938
+AZ,Arizona,1950,6234
+AR,Arkansas,1920,3564
+AR,Arkansas,1921,23
+AR,Arkansas,1922,230
+AR,Arkansas,1923,1269
+AR,Arkansas,1924,25
+AR,Arkansas,1925,145
+AR,Arkansas,1926,90
+AR,Arkansas,1927,431
+AR,Arkansas,1928,17580
+AR,Arkansas,1929,16027
+AR,Arkansas,1930,2425
+AR,Arkansas,1931,3529
+AR,Arkansas,1932,28988
+AR,Arkansas,1933,14785
+AR,Arkansas,1934,1263
+AR,Arkansas,1935,2046
+AR,Arkansas,1936,7072
+AR,Arkansas,1937,8481
+AR,Arkansas,1938,3824
+AR,Arkansas,1939,9227
+AR,Arkansas,1940,28085
+AR,Arkansas,1941,20288
+AR,Arkansas,1942,4906
+AR,Arkansas,1943,15286
+AR,Arkansas,1944,13930
+AR,Arkansas,1945,9129
+AR,Arkansas,1946,4985
+AR,Arkansas,1947,25753
+AR,Arkansas,1948,7568
+AR,Arkansas,1949,4510
+AR,Arkansas,1950,17651
+CA,California,1920,23894
+CA,California,1921,662
+CA,California,1922,18269
+CA,California,1923,2637
+CA,California,1924,494
+CA,California,1925,1018
+CA,California,1926,1505
+CA,California,1927,1111
+CA,California,1928,65854
+CA,California,1929,6461
+CA,California,1930,2781
+CA,California,1931,9994
+CA,California,1932,22779
+CA,California,1933,7752
+CA,California,1934,2478
+CA,California,1935,6614
+CA,California,1936,25536
+CA,California,1937,52250
+CA,California,1938,2919
+CA,California,1939,3831
+CA,California,1940,72816
+CA,California,1941,21387
+CA,California,1942,4864
+CA,California,1943,15313
+CA,California,1944,12460
+CA,California,1945,2595
+CA,California,1946,4820
+CA,California,1947,1598
+CA,California,1948,13937
+CA,California,1949,697
+CA,California,1950,461
+CO,Colorado,1920,1022
+CO,Colorado,1921,20
+CO,Colorado,1922,58
+CO,Colorado,1923,81
+CO,Colorado,1924,44
+CO,Colorado,1925,137
+CO,Colorado,1926,157
+CO,Colorado,1927,122
+CO,Colorado,1928,9020
+CO,Colorado,1929,767
+CO,Colorado,1930,56
+CO,Colorado,1931,93
+CO,Colorado,1932,2879
+CO,Colorado,1933,2933
+CO,Colorado,1934,1688
+CO,Colorado,1935,766
+CO,Colorado,1936,72
+CO,Colorado,1937,337
+CO,Colorado,1938,304
+CO,Colorado,1939,2159
+CO,Colorado,1940,3548
+CO,Colorado,1941,6126
+CO,Colorado,1942,2836
+CO,Colorado,1943,5446
+CO,Colorado,1944,4273
+CO,Colorado,1945,3823
+CO,Colorado,1946,1775
+CO,Colorado,1947,9288
+CO,Colorado,1948,1637
+CO,Colorado,1949,1090
+CO,Colorado,1950,2499
+CT,Connecticut,1920,13610
+CT,Connecticut,1921,128
+CT,Connecticut,1922,1206
+CT,Connecticut,1923,561
+CT,Connecticut,1924,78
+CT,Connecticut,1925,148
+CT,Connecticut,1926,373
+CT,Connecticut,1927,151
+CT,Connecticut,1928,2442
+CT,Connecticut,1929,25945
+CT,Connecticut,1930,354
+CT,Connecticut,1931,1676
+CT,Connecticut,1932,788
+CT,Connecticut,1933,2372
+CT,Connecticut,1934,613
+CT,Connecticut,1935,863
+CT,Connecticut,1936,412
+CT,Connecticut,1937,6185
+CT,Connecticut,1938,326
+CT,Connecticut,1939,654
+CT,Connecticut,1940,248
+CT,Connecticut,1941,5467
+CT,Connecticut,1942,176
+CT,Connecticut,1943,2237
+CT,Connecticut,1944,746
+CT,Connecticut,1945,712
+CT,Connecticut,1946,311
+CT,Connecticut,1947,109
+CT,Connecticut,1948,133
+CT,Connecticut,1949,186
+CT,Connecticut,1950,77
+DE,Delaware,1920,5
+DE,Delaware,1923,1
+DE,Delaware,1924,4
+DE,Delaware,1925,0
+DE,Delaware,1926,7
+DE,Delaware,1927,5
+DE,Delaware,1928,284
+DE,Delaware,1929,266
+DE,Delaware,1930,19
+DE,Delaware,1931,279
+DE,Delaware,1932,52
+DE,Delaware,1933,113
+DE,Delaware,1934,28
+DE,Delaware,1935,51
+DE,Delaware,1936,14
+DE,Delaware,1937,126
+DE,Delaware,1938,2
+DE,Delaware,1939,5
+DE,Delaware,1940,0
+DE,Delaware,1941,495
+DE,Delaware,1942,10
+DE,Delaware,1943,17
+DE,Delaware,1944,3
+DE,Delaware,1945,42
+DE,Delaware,1946,2
+DE,Delaware,1947,16
+DE,Delaware,1948,2
+DE,Delaware,1949,1
+DE,Delaware,1950,1
+FL,Florida,1920,12
+FL,Florida,1921,63
+FL,Florida,1922,125
+FL,Florida,1923,131
+FL,Florida,1924,18
+FL,Florida,1925,64
+FL,Florida,1926,35
+FL,Florida,1927,95
+FL,Florida,1928,3060
+FL,Florida,1929,3193
+FL,Florida,1930,149
+FL,Florida,1931,1619
+FL,Florida,1932,418
+FL,Florida,1933,1575
+FL,Florida,1934,163
+FL,Florida,1935,774
+FL,Florida,1936,810
+FL,Florida,1937,701
+FL,Florida,1938,302
+FL,Florida,1939,641
+FL,Florida,1940,814
+FL,Florida,1941,4094
+FL,Florida,1942,244
+FL,Florida,1943,1006
+FL,Florida,1944,786
+FL,Florida,1945,126
+FL,Florida,1946,225
+FL,Florida,1947,1143
+FL,Florida,1948,370
+FL,Florida,1949,258
+FL,Florida,1950,211
+GA,Georgia,1920,14414
+GA,Georgia,1921,221
+GA,Georgia,1922,2295
+GA,Georgia,1923,3604
+GA,Georgia,1924,239
+GA,Georgia,1925,1451
+GA,Georgia,1926,2547
+GA,Georgia,1927,2702
+GA,Georgia,1928,43936
+GA,Georgia,1929,19992
+GA,Georgia,1930,4145
+GA,Georgia,1931,16838
+GA,Georgia,1932,18699
+GA,Georgia,1933,11158
+GA,Georgia,1934,4190
+GA,Georgia,1935,9029
+GA,Georgia,1936,14036
+GA,Georgia,1937,13947
+GA,Georgia,1938,1810
+GA,Georgia,1939,14077
+GA,Georgia,1940,14344
+GA,Georgia,1941,39089
+GA,Georgia,1942,3327
+GA,Georgia,1943,17655
+GA,Georgia,1944,9836
+GA,Georgia,1945,4267
+GA,Georgia,1946,2119
+GA,Georgia,1947,6672
+GA,Georgia,1948,1252
+GA,Georgia,1949,989
+GA,Georgia,1950,6001
+HI,Hawaii,1950,1456
+ID,Idaho,1920,1010
+ID,Idaho,1921,2
+ID,Idaho,1922,219
+ID,Idaho,1923,0
+ID,Idaho,1924,0
+ID,Idaho,1925,0
+ID,Idaho,1926,0
+ID,Idaho,1927,0
+ID,Idaho,1928,182
+ID,Idaho,1929,84
+ID,Idaho,1930,3
+ID,Idaho,1931,74
+ID,Idaho,1932,114
+ID,Idaho,1933,79
+ID,Idaho,1934,39
+ID,Idaho,1935,94
+ID,Idaho,1936,176
+ID,Idaho,1937,2015
+ID,Idaho,1938,244
+ID,Idaho,1939,198
+ID,Idaho,1940,1298
+ID,Idaho,1941,1161
+ID,Idaho,1942,34
+ID,Idaho,1943,355
+ID,Idaho,1944,488
+ID,Idaho,1945,3005
+ID,Idaho,1946,1808
+ID,Idaho,1947,1423
+ID,Idaho,1948,932
+ID,Idaho,1949,516
+ID,Idaho,1950,2559
+IL,Illinois,1920,45652
+IL,Illinois,1921,841
+IL,Illinois,1922,3027
+IL,Illinois,1923,3716
+IL,Illinois,1924,836
+IL,Illinois,1925,1443
+IL,Illinois,1926,2486
+IL,Illinois,1927,1165
+IL,Illinois,1928,18371
+IL,Illinois,1929,6648
+IL,Illinois,1930,1760
+IL,Illinois,1931,5455
+IL,Illinois,1932,5262
+IL,Illinois,1933,2677
+IL,Illinois,1934,1744
+IL,Illinois,1935,2459
+IL,Illinois,1936,3395
+IL,Illinois,1937,4822
+IL,Illinois,1938,1140
+IL,Illinois,1939,8570
+IL,Illinois,1940,1626
+IL,Illinois,1941,1789
+IL,Illinois,1942,852
+IL,Illinois,1943,2717
+IL,Illinois,1944,1609
+IL,Illinois,1945,1134
+IL,Illinois,1946,383
+IL,Illinois,1947,1263
+IL,Illinois,1948,207
+IL,Illinois,1949,306
+IL,Illinois,1950,423
+IN,Indiana,1920,2755
+IN,Indiana,1921,19
+IN,Indiana,1922,126
+IN,Indiana,1923,212
+IN,Indiana,1924,30
+IN,Indiana,1925,70
+IN,Indiana,1926,54
+IN,Indiana,1927,189
+IN,Indiana,1928,10082
+IN,Indiana,1929,2332
+IN,Indiana,1930,177
+IN,Indiana,1931,1290
+IN,Indiana,1932,7767
+IN,Indiana,1933,4479
+IN,Indiana,1934,1756
+IN,Indiana,1935,2184
+IN,Indiana,1936,1952
+IN,Indiana,1937,3745
+IN,Indiana,1938,556
+IN,Indiana,1939,3557
+IN,Indiana,1940,3451
+IN,Indiana,1941,2822
+IN,Indiana,1942,832
+IN,Indiana,1943,3268
+IN,Indiana,1944,1001
+IN,Indiana,1945,5248
+IN,Indiana,1946,797
+IN,Indiana,1947,1748
+IN,Indiana,1948,430
+IN,Indiana,1949,354
+IN,Indiana,1950,424
+IA,Iowa,1920,2073
+IA,Iowa,1922,6
+IA,Iowa,1923,8
+IA,Iowa,1924,1
+IA,Iowa,1925,0
+IA,Iowa,1926,617
+IA,Iowa,1927,0
+IA,Iowa,1928,114804
+IA,Iowa,1929,222
+IA,Iowa,1930,37
+IA,Iowa,1931,4
+IA,Iowa,1932,3479
+IA,Iowa,1933,3005
+IA,Iowa,1934,272
+IA,Iowa,1935,995
+IA,Iowa,1936,250
+IA,Iowa,1937,11688
+IA,Iowa,1938,237
+IA,Iowa,1939,3546
+IA,Iowa,1940,651
+IA,Iowa,1941,3769
+IA,Iowa,1942,89
+IA,Iowa,1943,22223
+IA,Iowa,1944,11333
+IA,Iowa,1945,969
+IA,Iowa,1946,3
+IA,Iowa,1947,15883
+IA,Iowa,1948,51
+IA,Iowa,1949,83
+IA,Iowa,1950,1049
+KS,Kansas,1920,7056
+KS,Kansas,1921,31
+KS,Kansas,1922,449
+KS,Kansas,1923,244
+KS,Kansas,1924,2
+KS,Kansas,1925,25
+KS,Kansas,1926,23
+KS,Kansas,1927,49
+KS,Kansas,1928,117671
+KS,Kansas,1929,2905
+KS,Kansas,1930,194
+KS,Kansas,1931,863
+KS,Kansas,1932,28419
+KS,Kansas,1933,11466
+KS,Kansas,1934,125
+KS,Kansas,1935,553
+KS,Kansas,1936,1338
+KS,Kansas,1937,16562
+KS,Kansas,1938,400
+KS,Kansas,1939,1853
+KS,Kansas,1940,5799
+KS,Kansas,1941,7685
+KS,Kansas,1942,302
+KS,Kansas,1943,4419
+KS,Kansas,1944,2502
+KS,Kansas,1945,32954
+KS,Kansas,1946,1469
+KS,Kansas,1947,15065
+KS,Kansas,1948,788
+KS,Kansas,1949,198
+KS,Kansas,1950,953
+KY,Kentucky,1920,3618
+KY,Kentucky,1921,26
+KY,Kentucky,1922,793
+KY,Kentucky,1923,772
+KY,Kentucky,1924,93
+KY,Kentucky,1925,169
+KY,Kentucky,1926,298
+KY,Kentucky,1927,101
+KY,Kentucky,1928,35954
+KY,Kentucky,1929,12124
+KY,Kentucky,1930,4
+KY,Kentucky,1931,117
+KY,Kentucky,1932,14763
+KY,Kentucky,1933,11366
+KY,Kentucky,1934,1531
+KY,Kentucky,1935,2927
+KY,Kentucky,1936,2998
+KY,Kentucky,1937,3412
+KY,Kentucky,1938,1243
+KY,Kentucky,1939,7957
+KY,Kentucky,1940,12614
+KY,Kentucky,1941,13139
+KY,Kentucky,1942,332
+KY,Kentucky,1943,62536
+KY,Kentucky,1944,28923
+KY,Kentucky,1945,121715
+KY,Kentucky,1946,1260
+KY,Kentucky,1947,128
+KY,Kentucky,1948,72
+KY,Kentucky,1949,273
+KY,Kentucky,1950,2075
+LA,Louisiana,1920,4048
+LA,Louisiana,1921,97
+LA,Louisiana,1922,504
+LA,Louisiana,1923,742
+LA,Louisiana,1924,322
+LA,Louisiana,1925,644
+LA,Louisiana,1926,1061
+LA,Louisiana,1927,590
+LA,Louisiana,1928,11475
+LA,Louisiana,1929,20688
+LA,Louisiana,1930,1195
+LA,Louisiana,1931,2221
+LA,Louisiana,1932,26254
+LA,Louisiana,1933,2635
+LA,Louisiana,1934,657
+LA,Louisiana,1935,1162
+LA,Louisiana,1936,4620
+LA,Louisiana,1937,4702
+LA,Louisiana,1938,887
+LA,Louisiana,1939,1056
+LA,Louisiana,1940,21252
+LA,Louisiana,1941,9387
+LA,Louisiana,1942,453
+LA,Louisiana,1943,5152
+LA,Louisiana,1944,21289
+LA,Louisiana,1945,14598
+LA,Louisiana,1946,13949
+LA,Louisiana,1947,1608
+LA,Louisiana,1948,1253
+LA,Louisiana,1949,198
+LA,Louisiana,1950,126
+ME,Maine,1920,2885
+ME,Maine,1921,35
+ME,Maine,1922,770
+ME,Maine,1923,416
+ME,Maine,1924,21
+ME,Maine,1925,25
+ME,Maine,1926,52
+ME,Maine,1927,135
+ME,Maine,1928,1207
+ME,Maine,1929,6731
+ME,Maine,1930,230
+ME,Maine,1931,736
+ME,Maine,1932,1392
+ME,Maine,1933,5391
+ME,Maine,1934,72
+ME,Maine,1935,374
+ME,Maine,1936,273
+ME,Maine,1937,3981
+ME,Maine,1938,206
+ME,Maine,1939,953
+ME,Maine,1940,262
+ME,Maine,1941,4354
+ME,Maine,1942,40
+ME,Maine,1943,329
+ME,Maine,1944,249
+ME,Maine,1945,23
+ME,Maine,1946,118
+ME,Maine,1947,43
+ME,Maine,1948,118
+ME,Maine,1949,971
+ME,Maine,1950,1397
+MD,Maryland,1920,1512
+MD,Maryland,1921,26
+MD,Maryland,1922,153
+MD,Maryland,1923,595
+MD,Maryland,1924,29
+MD,Maryland,1925,52
+MD,Maryland,1926,52
+MD,Maryland,1927,147
+MD,Maryland,1928,6508
+MD,Maryland,1929,21755
+MD,Maryland,1930,964
+MD,Maryland,1931,9320
+MD,Maryland,1932,4344
+MD,Maryland,1933,5885
+MD,Maryland,1934,1933
+MD,Maryland,1935,2525
+MD,Maryland,1936,733
+MD,Maryland,1937,3308
+MD,Maryland,1938,467
+MD,Maryland,1939,1190
+MD,Maryland,1940,1253
+MD,Maryland,1941,2920
+MD,Maryland,1942,338
+MD,Maryland,1943,1864
+MD,Maryland,1944,3999
+MD,Maryland,1945,546
+MD,Maryland,1946,293
+MD,Maryland,1947,255
+MD,Maryland,1948,167
+MD,Maryland,1949,82
+MD,Maryland,1950,633
+MA,Massachusetts,1920,28120
+MA,Massachusetts,1921,510
+MA,Massachusetts,1922,5794
+MA,Massachusetts,1923,2052
+MA,Massachusetts,1924,263
+MA,Massachusetts,1925,652
+MA,Massachusetts,1926,782
+MA,Massachusetts,1927,327
+MA,Massachusetts,1928,2780
+MA,Massachusetts,1929,12088
+MA,Massachusetts,1930,394
+MA,Massachusetts,1931,1999
+MA,Massachusetts,1932,606
+MA,Massachusetts,1933,1376
+MA,Massachusetts,1934,53
+MA,Massachusetts,1935,56
+MA,Massachusetts,1936,40
+MA,Massachusetts,1937,79
+MA,Massachusetts,1938,32
+MA,Massachusetts,1939,59
+MA,Massachusetts,1940,26
+MA,Massachusetts,1941,53
+MA,Massachusetts,1942,26
+MA,Massachusetts,1943,31
+MA,Massachusetts,1944,40
+MA,Massachusetts,1945,15
+MA,Massachusetts,1946,22
+MA,Massachusetts,1947,13
+MA,Massachusetts,1948,210
+MI,Michigan,1920,19796
+MI,Michigan,1921,134
+MI,Michigan,1922,879
+MI,Michigan,1923,778
+MI,Michigan,1924,153
+MI,Michigan,1925,404
+MI,Michigan,1926,604
+MI,Michigan,1927,331
+MI,Michigan,1928,31625
+MI,Michigan,1929,7511
+MI,Michigan,1930,455
+MI,Michigan,1931,2737
+MI,Michigan,1932,3009
+MI,Michigan,1933,1580
+MI,Michigan,1934,453
+MI,Michigan,1935,856
+MI,Michigan,1936,518
+MI,Michigan,1937,1050
+MI,Michigan,1938,121
+MI,Michigan,1939,3250
+MI,Michigan,1940,486
+MI,Michigan,1941,2082
+MI,Michigan,1942,314
+MI,Michigan,1943,1673
+MI,Michigan,1944,470
+MI,Michigan,1945,220
+MI,Michigan,1946,188
+MI,Michigan,1947,646
+MI,Michigan,1948,204
+MI,Michigan,1949,124
+MI,Michigan,1950,143
+MN,Minnesota,1920,4359
+MN,Minnesota,1921,52
+MN,Minnesota,1922,197
+MN,Minnesota,1923,82
+MN,Minnesota,1924,25
+MN,Minnesota,1925,62
+MN,Minnesota,1926,35
+MN,Minnesota,1927,59
+MN,Minnesota,1928,6182
+MN,Minnesota,1929,1816
+MN,Minnesota,1930,106
+MN,Minnesota,1931,141
+MN,Minnesota,1932,303
+MN,Minnesota,1933,349
+MN,Minnesota,1934,80
+MN,Minnesota,1935,199
+MN,Minnesota,1936,96
+MN,Minnesota,1937,289
+MN,Minnesota,1938,136
+MN,Minnesota,1939,272
+MN,Minnesota,1940,129
+MN,Minnesota,1941,6396
+MN,Minnesota,1942,67
+MN,Minnesota,1943,1226
+MN,Minnesota,1944,70
+MN,Minnesota,1945,62
+MN,Minnesota,1946,35
+MN,Minnesota,1947,51
+MN,Minnesota,1948,51
+MN,Minnesota,1950,203
+MS,Mississippi,1920,13
+MS,Mississippi,1928,45713
+MS,Mississippi,1929,11572
+MS,Mississippi,1944,0
+MS,Mississippi,1947,1611
+MS,Mississippi,1948,779
+MS,Mississippi,1949,674
+MS,Mississippi,1950,1236
+MO,Missouri,1920,6200
+MO,Missouri,1921,119
+MO,Missouri,1922,393
+MO,Missouri,1923,637
+MO,Missouri,1924,135
+MO,Missouri,1925,421
+MO,Missouri,1926,264
+MO,Missouri,1927,102
+MO,Missouri,1928,39932
+MO,Missouri,1929,6635
+MO,Missouri,1930,421
+MO,Missouri,1931,1595
+MO,Missouri,1932,1499
+MO,Missouri,1933,827
+MO,Missouri,1934,2994
+MO,Missouri,1935,6421
+MO,Missouri,1936,11181
+MO,Missouri,1937,13565
+MO,Missouri,1938,2412
+MO,Missouri,1939,2425
+MO,Missouri,1940,592
+MO,Missouri,1941,1261
+MO,Missouri,1942,147
+MO,Missouri,1943,878
+MO,Missouri,1944,360
+MO,Missouri,1945,432
+MO,Missouri,1946,250
+MO,Missouri,1947,1491
+MO,Missouri,1948,337
+MO,Missouri,1949,140
+MO,Missouri,1950,516
+MT,Montana,1920,1512
+MT,Montana,1921,17
+MT,Montana,1922,1016
+MT,Montana,1923,74
+MT,Montana,1924,4
+MT,Montana,1925,7
+MT,Montana,1926,436
+MT,Montana,1927,14
+MT,Montana,1928,33303
+MT,Montana,1929,813
+MT,Montana,1930,11
+MT,Montana,1931,82
+MT,Montana,1932,25419
+MT,Montana,1933,12228
+MT,Montana,1934,1291
+MT,Montana,1935,5073
+MT,Montana,1936,1183
+MT,Montana,1937,13516
+MT,Montana,1938,143
+MT,Montana,1939,4005
+MT,Montana,1940,2373
+MT,Montana,1941,4237
+MT,Montana,1942,305
+MT,Montana,1943,10546
+MT,Montana,1944,5260
+MT,Montana,1945,2936
+MT,Montana,1946,805
+MT,Montana,1947,3829
+MT,Montana,1948,478
+MT,Montana,1949,214
+MT,Montana,1950,5314
+NE,Nebraska,1920,1010
+NE,Nebraska,1921,7
+NE,Nebraska,1922,6
+NE,Nebraska,1923,11
+NE,Nebraska,1924,3
+NE,Nebraska,1925,6
+NE,Nebraska,1926,13
+NE,Nebraska,1927,29
+NE,Nebraska,1928,7535
+NE,Nebraska,1929,923
+NE,Nebraska,1930,210
+NE,Nebraska,1931,185
+NE,Nebraska,1932,1978
+NE,Nebraska,1933,1044
+NE,Nebraska,1934,159
+NE,Nebraska,1935,125
+NE,Nebraska,1936,50
+NE,Nebraska,1937,491
+NE,Nebraska,1938,159
+NE,Nebraska,1939,173
+NE,Nebraska,1940,35
+NE,Nebraska,1941,177
+NE,Nebraska,1942,498
+NE,Nebraska,1943,1375
+NE,Nebraska,1944,643
+NE,Nebraska,1945,2481
+NE,Nebraska,1946,334
+NE,Nebraska,1947,774
+NE,Nebraska,1948,460
+NE,Nebraska,1949,302
+NE,Nebraska,1950,632
+NV,Nevada,1920,198
+NV,Nevada,1921,3
+NV,Nevada,1922,206
+NV,Nevada,1923,155
+NV,Nevada,1924,3
+NV,Nevada,1925,0
+NV,Nevada,1926,1
+NV,Nevada,1927,0
+NV,Nevada,1928,87
+NV,Nevada,1929,3
+NV,Nevada,1930,0
+NV,Nevada,1931,16
+NV,Nevada,1932,0
+NV,Nevada,1933,2
+NV,Nevada,1934,1
+NV,Nevada,1935,4
+NV,Nevada,1940,2648
+NV,Nevada,1941,464
+NV,Nevada,1942,15
+NV,Nevada,1943,1772
+NV,Nevada,1944,1828
+NV,Nevada,1945,314
+NV,Nevada,1946,1
+NV,Nevada,1947,3
+NV,Nevada,1948,61
+NV,Nevada,1950,9
+NH,New Hampshire,1920,1271
+NH,New Hampshire,1922,34
+NH,New Hampshire,1923,4
+NH,New Hampshire,1924,1
+NH,New Hampshire,1925,22
+NH,New Hampshire,1926,9
+NH,New Hampshire,1927,63
+NH,New Hampshire,1928,295
+NH,New Hampshire,1929,1083
+NH,New Hampshire,1930,107
+NH,New Hampshire,1931,376
+NH,New Hampshire,1932,17
+NH,New Hampshire,1933,56
+NH,New Hampshire,1934,15
+NH,New Hampshire,1935,38
+NH,New Hampshire,1936,35
+NH,New Hampshire,1937,189
+NH,New Hampshire,1938,40
+NH,New Hampshire,1939,61
+NH,New Hampshire,1940,11
+NH,New Hampshire,1941,2122
+NH,New Hampshire,1942,52
+NH,New Hampshire,1943,44
+NH,New Hampshire,1944,47
+NH,New Hampshire,1945,155
+NH,New Hampshire,1946,26
+NH,New Hampshire,1947,88
+NH,New Hampshire,1948,9
+NH,New Hampshire,1949,42
+NH,New Hampshire,1950,52
+NJ,New Jersey,1920,14371
+NJ,New Jersey,1921,604
+NJ,New Jersey,1922,4266
+NJ,New Jersey,1923,2260
+NJ,New Jersey,1924,398
+NJ,New Jersey,1925,368
+NJ,New Jersey,1926,684
+NJ,New Jersey,1927,474
+NJ,New Jersey,1928,5373
+NJ,New Jersey,1929,7948
+NJ,New Jersey,1930,774
+NJ,New Jersey,1931,4883
+NJ,New Jersey,1932,2565
+NJ,New Jersey,1933,3506
+NJ,New Jersey,1934,2459
+NJ,New Jersey,1935,1337
+NJ,New Jersey,1936,1194
+NJ,New Jersey,1937,2340
+NJ,New Jersey,1938,593
+NJ,New Jersey,1939,810
+NJ,New Jersey,1940,603
+NJ,New Jersey,1941,5119
+NJ,New Jersey,1942,628
+NJ,New Jersey,1943,1675
+NJ,New Jersey,1944,763
+NJ,New Jersey,1945,865
+NJ,New Jersey,1946,481
+NJ,New Jersey,1947,355
+NJ,New Jersey,1948,415
+NJ,New Jersey,1949,154
+NJ,New Jersey,1950,207
+NM,New Mexico,1920,13
+NM,New Mexico,1922,480
+NM,New Mexico,1923,11
+NM,New Mexico,1924,4
+NM,New Mexico,1925,9
+NM,New Mexico,1926,181
+NM,New Mexico,1927,14
+NM,New Mexico,1928,7714
+NM,New Mexico,1929,686
+NM,New Mexico,1930,52
+NM,New Mexico,1931,279
+NM,New Mexico,1932,6594
+NM,New Mexico,1933,198
+NM,New Mexico,1934,246
+NM,New Mexico,1935,1127
+NM,New Mexico,1936,365
+NM,New Mexico,1937,2868
+NM,New Mexico,1938,114
+NM,New Mexico,1939,1942
+NM,New Mexico,1940,500
+NM,New Mexico,1941,640
+NM,New Mexico,1942,103
+NM,New Mexico,1943,369
+NM,New Mexico,1944,198
+NM,New Mexico,1945,121
+NM,New Mexico,1946,191
+NM,New Mexico,1947,131
+NM,New Mexico,1948,121
+NM,New Mexico,1949,49
+NM,New Mexico,1950,114
+NY,New York,1920,18149
+NY,New York,1921,357
+NY,New York,1922,3159
+NY,New York,1923,3118
+NY,New York,1924,71
+NY,New York,1925,151
+NY,New York,1926,845
+NY,New York,1927,138
+NY,New York,1928,5277
+NY,New York,1929,11286
+NY,New York,1930,1073
+NY,New York,1931,4657
+NY,New York,1932,3991
+NY,New York,1933,3468
+NY,New York,1934,963
+NY,New York,1935,624
+NY,New York,1936,1552
+NY,New York,1937,4526
+NY,New York,1938,497
+NY,New York,1939,1579
+NY,New York,1940,845
+NY,New York,1941,2588
+NY,New York,1942,467
+NY,New York,1943,1553
+NY,New York,1944,317
+NY,New York,1945,448
+NY,New York,1946,348
+NY,New York,1947,287
+NY,New York,1948,525
+NY,New York,1949,73
+NY,New York,1950,304
+NC,North Carolina,1920,9706
+NC,North Carolina,1921,13
+NC,North Carolina,1922,108
+NC,North Carolina,1923,38
+NC,North Carolina,1924,11
+NC,North Carolina,1925,18
+NC,North Carolina,1926,55
+NC,North Carolina,1927,198
+NC,North Carolina,1928,85
+NC,North Carolina,1929,223
+NC,North Carolina,1930,887
+NC,North Carolina,1931,5055
+NC,North Carolina,1932,3885
+NC,North Carolina,1933,7509
+NC,North Carolina,1934,1931
+NC,North Carolina,1935,2931
+NC,North Carolina,1936,2913
+NC,North Carolina,1937,2016
+NC,North Carolina,1938,493
+NC,North Carolina,1939,2061
+NC,North Carolina,1940,1698
+NC,North Carolina,1941,6874
+NC,North Carolina,1942,745
+NC,North Carolina,1943,1690
+NC,North Carolina,1944,1309
+NC,North Carolina,1945,5
+NC,North Carolina,1946,1
+NC,North Carolina,1947,0
+NC,North Carolina,1948,18
+ND,North Dakota,1920,1207
+ND,North Dakota,1921,1
+ND,North Dakota,1922,38
+ND,North Dakota,1923,0
+ND,North Dakota,1924,5
+ND,North Dakota,1925,2
+ND,North Dakota,1926,2
+ND,North Dakota,1927,3
+ND,North Dakota,1928,33993
+ND,North Dakota,1929,1074
+ND,North Dakota,1930,9
+ND,North Dakota,1931,5
+ND,North Dakota,1932,4624
+ND,North Dakota,1933,8605
+ND,North Dakota,1934,571
+ND,North Dakota,1935,491
+ND,North Dakota,1936,280
+ND,North Dakota,1937,2047
+ND,North Dakota,1938,387
+ND,North Dakota,1939,3031
+ND,North Dakota,1940,983
+ND,North Dakota,1941,1227
+ND,North Dakota,1942,424
+ND,North Dakota,1943,7968
+ND,North Dakota,1944,1368
+ND,North Dakota,1945,4312
+ND,North Dakota,1946,312
+ND,North Dakota,1947,621
+ND,North Dakota,1948,59
+ND,North Dakota,1949,294
+ND,North Dakota,1950,826
+OH,Ohio,1920,20609
+OH,Ohio,1921,201
+OH,Ohio,1922,1951
+OH,Ohio,1923,2379
+OH,Ohio,1924,391
+OH,Ohio,1925,663
+OH,Ohio,1926,2130
+OH,Ohio,1927,496
+OH,Ohio,1928,25193
+OH,Ohio,1929,11652
+OH,Ohio,1930,1456
+OH,Ohio,1931,6234
+OH,Ohio,1932,10117
+OH,Ohio,1933,7934
+OH,Ohio,1934,4422
+OH,Ohio,1935,5827
+OH,Ohio,1936,3398
+OH,Ohio,1937,7458
+OH,Ohio,1938,702
+OH,Ohio,1939,2742
+OH,Ohio,1940,3490
+OH,Ohio,1941,12883
+OH,Ohio,1942,1073
+OH,Ohio,1943,20361
+OH,Ohio,1944,11507
+OH,Ohio,1945,1452
+OH,Ohio,1946,611
+OH,Ohio,1947,936
+OH,Ohio,1948,214
+OH,Ohio,1949,95
+OH,Ohio,1950,215
+OK,Oklahoma,1920,1433
+OK,Oklahoma,1921,11
+OK,Oklahoma,1922,12
+OK,Oklahoma,1923,34
+OK,Oklahoma,1924,6
+OK,Oklahoma,1925,188
+OK,Oklahoma,1926,598
+OK,Oklahoma,1927,602
+OK,Oklahoma,1928,31847
+OK,Oklahoma,1929,26375
+OK,Oklahoma,1930,2466
+OK,Oklahoma,1931,3606
+OK,Oklahoma,1932,17538
+OK,Oklahoma,1933,7812
+OK,Oklahoma,1934,2906
+OK,Oklahoma,1935,4755
+OK,Oklahoma,1936,6391
+OK,Oklahoma,1937,9386
+OK,Oklahoma,1938,4054
+OK,Oklahoma,1939,6240
+OK,Oklahoma,1940,13412
+OK,Oklahoma,1941,12383
+OK,Oklahoma,1942,3409
+OK,Oklahoma,1943,8148
+OK,Oklahoma,1944,11759
+OK,Oklahoma,1945,8916
+OK,Oklahoma,1946,4281
+OK,Oklahoma,1947,27131
+OK,Oklahoma,1948,3782
+OK,Oklahoma,1949,2034
+OK,Oklahoma,1950,11852
+OR,Oregon,1920,2956
+OR,Oregon,1921,4
+OR,Oregon,1922,211
+OR,Oregon,1923,61
+OR,Oregon,1924,0
+OR,Oregon,1925,213
+OR,Oregon,1926,94
+OR,Oregon,1927,440
+OR,Oregon,1928,11213
+OR,Oregon,1929,3026
+OR,Oregon,1930,1430
+OR,Oregon,1931,2553
+OR,Oregon,1932,9800
+OR,Oregon,1933,4029
+OR,Oregon,1934,1696
+OR,Oregon,1935,2546
+OR,Oregon,1936,2472
+OR,Oregon,1937,10732
+OR,Oregon,1938,1546
+OR,Oregon,1939,2537
+OR,Oregon,1940,10250
+OR,Oregon,1941,1907
+OR,Oregon,1942,734
+OR,Oregon,1943,6611
+OR,Oregon,1944,3253
+OR,Oregon,1945,1454
+OR,Oregon,1946,789
+OR,Oregon,1947,1412
+OR,Oregon,1948,3205
+OR,Oregon,1949,556
+OR,Oregon,1950,672
+PA,Pennsylvania,1920,15409
+PA,Pennsylvania,1921,316
+PA,Pennsylvania,1922,859
+PA,Pennsylvania,1923,881
+PA,Pennsylvania,1924,481
+PA,Pennsylvania,1925,357
+PA,Pennsylvania,1926,858
+PA,Pennsylvania,1927,496
+PA,Pennsylvania,1928,2781
+PA,Pennsylvania,1929,1722
+PA,Pennsylvania,1930,691
+PA,Pennsylvania,1931,1867
+PA,Pennsylvania,1932,1276
+PA,Pennsylvania,1933,1195
+PA,Pennsylvania,1934,732
+PA,Pennsylvania,1935,852
+PA,Pennsylvania,1936,668
+PA,Pennsylvania,1937,1692
+PA,Pennsylvania,1938,433
+PA,Pennsylvania,1939,710
+PA,Pennsylvania,1940,718
+PA,Pennsylvania,1941,691
+PA,Pennsylvania,1942,328
+PA,Pennsylvania,1943,927
+PA,Pennsylvania,1944,996
+PA,Pennsylvania,1945,712
+PA,Pennsylvania,1946,437
+PA,Pennsylvania,1947,278
+PA,Pennsylvania,1948,209
+RI,Rhode Island,1920,1894
+RI,Rhode Island,1923,1
+RI,Rhode Island,1927,17
+RI,Rhode Island,1928,240
+RI,Rhode Island,1929,2022
+RI,Rhode Island,1930,16
+RI,Rhode Island,1931,100
+RI,Rhode Island,1932,65
+RI,Rhode Island,1933,333
+RI,Rhode Island,1934,5
+RI,Rhode Island,1935,18
+RI,Rhode Island,1936,7
+RI,Rhode Island,1937,49
+RI,Rhode Island,1938,6
+RI,Rhode Island,1939,1
+RI,Rhode Island,1940,1
+RI,Rhode Island,1941,118
+RI,Rhode Island,1942,9
+RI,Rhode Island,1943,186
+RI,Rhode Island,1944,771
+RI,Rhode Island,1945,854
+RI,Rhode Island,1946,32
+RI,Rhode Island,1947,16
+RI,Rhode Island,1948,8
+RI,Rhode Island,1949,2
+RI,Rhode Island,1950,25
+SC,South Carolina,1920,6014
+SC,South Carolina,1921,13
+SC,South Carolina,1922,681
+SC,South Carolina,1923,359
+SC,South Carolina,1924,7
+SC,South Carolina,1925,32
+SC,South Carolina,1926,640
+SC,South Carolina,1927,4243
+SC,South Carolina,1928,80585
+SC,South Carolina,1929,37577
+SC,South Carolina,1930,26258
+SC,South Carolina,1931,44276
+SC,South Carolina,1932,35192
+SC,South Carolina,1933,36775
+SC,South Carolina,1934,20483
+SC,South Carolina,1935,15177
+SC,South Carolina,1936,19245
+SC,South Carolina,1937,22631
+SC,South Carolina,1938,14106
+SC,South Carolina,1939,34825
+SC,South Carolina,1940,30078
+SC,South Carolina,1941,58749
+SC,South Carolina,1942,18593
+SC,South Carolina,1943,30375
+SC,South Carolina,1944,34300
+SC,South Carolina,1945,31547
+SC,South Carolina,1946,20335
+SC,South Carolina,1947,29982
+SC,South Carolina,1948,20033
+SC,South Carolina,1949,11789
+SC,South Carolina,1950,2904
+SD,South Dakota,1920,679
+SD,South Dakota,1921,25
+SD,South Dakota,1922,16
+SD,South Dakota,1923,17
+SD,South Dakota,1924,2
+SD,South Dakota,1925,24
+SD,South Dakota,1926,0
+SD,South Dakota,1927,9
+SD,South Dakota,1928,754
+SD,South Dakota,1929,289
+SD,South Dakota,1930,11
+SD,South Dakota,1931,23
+SD,South Dakota,1932,2193
+SD,South Dakota,1933,467
+SD,South Dakota,1934,36
+SD,South Dakota,1935,28
+SD,South Dakota,1936,15
+SD,South Dakota,1937,1089
+SD,South Dakota,1938,38
+SD,South Dakota,1939,393
+SD,South Dakota,1940,56
+SD,South Dakota,1941,68
+SD,South Dakota,1942,8
+SD,South Dakota,1943,71
+SD,South Dakota,1944,49
+SD,South Dakota,1945,28
+SD,South Dakota,1946,164
+SD,South Dakota,1947,36
+SD,South Dakota,1948,9
+SD,South Dakota,1949,4
+SD,South Dakota,1950,11
+TN,Tennessee,1920,7668
+TN,Tennessee,1921,27
+TN,Tennessee,1922,70
+TN,Tennessee,1923,152
+TN,Tennessee,1924,116
+TN,Tennessee,1925,170
+TN,Tennessee,1926,268
+TN,Tennessee,1927,470
+TN,Tennessee,1928,45865
+TN,Tennessee,1929,31637
+TN,Tennessee,1930,2571
+TN,Tennessee,1931,4697
+TN,Tennessee,1932,26000
+TN,Tennessee,1933,8094
+TN,Tennessee,1934,2989
+TN,Tennessee,1935,5106
+TN,Tennessee,1936,7552
+TN,Tennessee,1937,10226
+TN,Tennessee,1938,2844
+TN,Tennessee,1939,4943
+TN,Tennessee,1940,6174
+TN,Tennessee,1941,24932
+TN,Tennessee,1942,2079
+TN,Tennessee,1943,5702
+TN,Tennessee,1944,6815
+TN,Tennessee,1945,3639
+TN,Tennessee,1946,2436
+TN,Tennessee,1947,5797
+TN,Tennessee,1948,2326
+TN,Tennessee,1949,1892
+TN,Tennessee,1950,5313
+TX,Texas,1920,7094
+TX,Texas,1921,82
+TX,Texas,1922,527
+TX,Texas,1923,761
+TX,Texas,1924,94
+TX,Texas,1925,551
+TX,Texas,1926,534
+TX,Texas,1927,417
+TX,Texas,1928,13931
+TX,Texas,1929,19999
+TX,Texas,1930,2761
+TX,Texas,1931,2289
+TX,Texas,1932,12232
+TX,Texas,1933,16207
+TX,Texas,1934,12901
+TX,Texas,1935,14696
+TX,Texas,1936,15867
+TX,Texas,1937,41590
+TX,Texas,1938,16012
+TX,Texas,1939,25528
+TX,Texas,1940,98169
+TX,Texas,1941,129729
+TX,Texas,1942,35143
+TX,Texas,1943,69451
+TX,Texas,1944,98077
+TX,Texas,1945,103951
+TX,Texas,1946,67895
+TX,Texas,1947,115362
+TX,Texas,1948,74042
+TX,Texas,1949,56804
+TX,Texas,1950,128928
+UT,Utah,1920,5905
+UT,Utah,1921,5
+UT,Utah,1922,137
+UT,Utah,1923,16
+UT,Utah,1924,8
+UT,Utah,1925,4
+UT,Utah,1926,11
+UT,Utah,1927,41
+UT,Utah,1928,1104
+UT,Utah,1929,219
+UT,Utah,1930,212
+UT,Utah,1931,298
+UT,Utah,1932,885
+UT,Utah,1933,90
+UT,Utah,1934,60
+UT,Utah,1935,29
+UT,Utah,1936,38
+UT,Utah,1937,224
+UT,Utah,1938,172
+UT,Utah,1939,3869
+UT,Utah,1940,22009
+UT,Utah,1941,3136
+UT,Utah,1942,414
+UT,Utah,1943,9540
+UT,Utah,1944,9642
+UT,Utah,1945,33155
+UT,Utah,1946,6703
+UT,Utah,1947,1156
+UT,Utah,1948,926
+UT,Utah,1949,77
+UT,Utah,1950,270
+VT,Vermont,1920,347
+VT,Vermont,1921,4
+VT,Vermont,1922,6
+VT,Vermont,1923,2
+VT,Vermont,1924,3
+VT,Vermont,1925,6
+VT,Vermont,1926,2
+VT,Vermont,1927,0
+VT,Vermont,1928,596
+VT,Vermont,1929,1253
+VT,Vermont,1930,2
+VT,Vermont,1931,16
+VT,Vermont,1932,2
+VT,Vermont,1933,1
+VT,Vermont,1934,1
+VT,Vermont,1935,3
+VT,Vermont,1936,3
+VT,Vermont,1937,8
+VT,Vermont,1938,0
+VT,Vermont,1939,2
+VT,Vermont,1940,106
+VT,Vermont,1941,339
+VT,Vermont,1942,4
+VT,Vermont,1943,214
+VT,Vermont,1944,521
+VT,Vermont,1945,296
+VT,Vermont,1946,290
+VT,Vermont,1947,315
+VT,Vermont,1948,34
+VT,Vermont,1949,3
+VT,Vermont,1950,15
+VA,Virginia,1920,13222
+VA,Virginia,1921,151
+VA,Virginia,1922,679
+VA,Virginia,1923,286
+VA,Virginia,1924,49
+VA,Virginia,1925,51
+VA,Virginia,1926,124
+VA,Virginia,1927,109
+VA,Virginia,1928,47425
+VA,Virginia,1929,2476
+VA,Virginia,1930,65
+VA,Virginia,1931,1768
+VA,Virginia,1932,179
+VA,Virginia,1933,167
+VA,Virginia,1934,835
+VA,Virginia,1935,93
+VA,Virginia,1936,9733
+VA,Virginia,1937,252
+VA,Virginia,1938,1789
+VA,Virginia,1939,20622
+VA,Virginia,1940,25012
+VA,Virginia,1941,64163
+VA,Virginia,1942,12030
+VA,Virginia,1943,41461
+VA,Virginia,1944,33815
+VA,Virginia,1945,38144
+VA,Virginia,1946,19375
+VA,Virginia,1947,34640
+VA,Virginia,1948,17297
+VA,Virginia,1949,10101
+VA,Virginia,1950,53788
+WA,Washington,1920,4007
+WA,Washington,1921,15
+WA,Washington,1922,1187
+WA,Washington,1923,0
+WA,Washington,1924,0
+WA,Washington,1925,6
+WA,Washington,1926,3
+WA,Washington,1927,7
+WA,Washington,1928,3411
+WA,Washington,1929,652
+WA,Washington,1930,122
+WA,Washington,1931,231
+WA,Washington,1932,512
+WA,Washington,1933,209
+WA,Washington,1934,135
+WA,Washington,1935,225
+WA,Washington,1936,302
+WA,Washington,1937,1943
+WA,Washington,1938,110
+WA,Washington,1939,103
+WA,Washington,1940,8891
+WA,Washington,1941,1306
+WA,Washington,1942,237
+WA,Washington,1943,5100
+WA,Washington,1944,888
+WA,Washington,1945,93
+WA,Washington,1946,30
+WA,Washington,1947,1648
+WA,Washington,1948,1655
+WA,Washington,1949,726
+WA,Washington,1950,584
+WV,West Virginia,1920,7098
+WV,West Virginia,1921,29
+WV,West Virginia,1922,366
+WV,West Virginia,1923,596
+WV,West Virginia,1924,16
+WV,West Virginia,1925,23
+WV,West Virginia,1926,141
+WV,West Virginia,1927,166
+WV,West Virginia,1928,19496
+WV,West Virginia,1929,31308
+WV,West Virginia,1930,1069
+WV,West Virginia,1931,2501
+WV,West Virginia,1932,6361
+WV,West Virginia,1933,9208
+WV,West Virginia,1934,1952
+WV,West Virginia,1935,3899
+WV,West Virginia,1936,3334
+WV,West Virginia,1937,8435
+WV,West Virginia,1938,1278
+WV,West Virginia,1939,2878
+WV,West Virginia,1940,7586
+WV,West Virginia,1941,45234
+WV,West Virginia,1942,1073
+WV,West Virginia,1943,19133
+WV,West Virginia,1944,16864
+WV,West Virginia,1945,21163
+WV,West Virginia,1946,2312
+WV,West Virginia,1947,13931
+WV,West Virginia,1948,2024
+WV,West Virginia,1949,1458
+WV,West Virginia,1950,14984
+WI,Wisconsin,1920,8445
+WI,Wisconsin,1921,54
+WI,Wisconsin,1922,169
+WI,Wisconsin,1923,804
+WI,Wisconsin,1924,31
+WI,Wisconsin,1925,85
+WI,Wisconsin,1926,268
+WI,Wisconsin,1927,285
+WI,Wisconsin,1928,38253
+WI,Wisconsin,1929,11416
+WI,Wisconsin,1930,1373
+WI,Wisconsin,1931,2589
+WI,Wisconsin,1932,8861
+WI,Wisconsin,1933,18977
+WI,Wisconsin,1934,1585
+WI,Wisconsin,1935,3053
+WI,Wisconsin,1936,1998
+WI,Wisconsin,1937,9679
+WI,Wisconsin,1938,1568
+WI,Wisconsin,1939,7903
+WI,Wisconsin,1940,3217
+WI,Wisconsin,1941,4514
+WI,Wisconsin,1942,1509
+WI,Wisconsin,1943,6826
+WI,Wisconsin,1944,7926
+WI,Wisconsin,1945,5526
+WI,Wisconsin,1946,2773
+WI,Wisconsin,1947,3988
+WI,Wisconsin,1948,1436
+WI,Wisconsin,1949,1095
+WI,Wisconsin,1950,3169
+WY,Wyoming,1920,39
+WY,Wyoming,1922,169
+WY,Wyoming,1923,5
+WY,Wyoming,1927,1
+WY,Wyoming,1928,1063
+WY,Wyoming,1929,787
+WY,Wyoming,1930,34
+WY,Wyoming,1931,16
+WY,Wyoming,1932,779
+WY,Wyoming,1933,33
+WY,Wyoming,1935,5
+WY,Wyoming,1936,359
+WY,Wyoming,1937,161
+WY,Wyoming,1938,3
+WY,Wyoming,1939,747
+WY,Wyoming,1940,3373
+WY,Wyoming,1941,3377
+WY,Wyoming,1942,3643
+WY,Wyoming,1943,2790
+WY,Wyoming,1944,1752
+WY,Wyoming,1945,334
+WY,Wyoming,1946,72
+WY,Wyoming,1947,248
+WY,Wyoming,1948,40
+WY,Wyoming,1949,2
+WY,Wyoming,1950,382

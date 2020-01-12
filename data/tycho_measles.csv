@@ -1,0 +1,487 @@
+code,state,year,count
+AL,Alabama,1960,2075
+AL,Alabama,1961,2724
+AL,Alabama,1962,2254
+AL,Alabama,1963,1167
+AL,Alabama,1964,18105
+AL,Alabama,1965,95738
+AL,Alabama,1966,65198
+AL,Alabama,1967,56599
+AL,Alabama,1968,324
+AL,Alabama,1969,12
+AK,Alaska,1960,1456
+AK,Alaska,1961,1002
+AK,Alaska,1962,1406
+AK,Alaska,1963,1968
+AK,Alaska,1964,1038
+AK,Alaska,1965,7095
+AK,Alaska,1966,14630
+AK,Alaska,1967,5984
+AK,Alaska,1968,460
+AK,Alaska,1969,18
+AZ,Arizona,1960,4305
+AZ,Arizona,1961,7952
+AZ,Arizona,1962,6360
+AZ,Arizona,1963,8829
+AZ,Arizona,1964,6265
+AZ,Arizona,1965,48120
+AZ,Arizona,1966,206589
+AZ,Arizona,1967,48218
+AZ,Arizona,1968,12483
+AZ,Arizona,1969,538
+AR,Arkansas,1960,1596
+AR,Arkansas,1961,1842
+AR,Arkansas,1962,1321
+AR,Arkansas,1963,1437
+AR,Arkansas,1964,1081
+AR,Arkansas,1965,47430
+AR,Arkansas,1966,36434
+AR,Arkansas,1967,64475
+AR,Arkansas,1968,601
+AR,Arkansas,1969,3
+CA,California,1960,22222
+CA,California,1961,37112
+CA,California,1962,27974
+CA,California,1963,20102
+CA,California,1964,32483
+CA,California,1965,509473
+CA,California,1966,546218
+CA,California,1967,248578
+CA,California,1968,29156
+CA,California,1969,894
+CO,Colorado,1960,6806
+CO,Colorado,1961,3926
+CO,Colorado,1962,9216
+CO,Colorado,1963,6052
+CO,Colorado,1964,3224
+CO,Colorado,1965,214478
+CO,Colorado,1966,48462
+CO,Colorado,1967,76457
+CO,Colorado,1968,5073
+CO,Colorado,1969,139
+CT,Connecticut,1960,11057
+CT,Connecticut,1961,6906
+CT,Connecticut,1962,17729
+CT,Connecticut,1963,5837
+CT,Connecticut,1964,5234
+CT,Connecticut,1965,380611
+CT,Connecticut,1966,32943
+CT,Connecticut,1967,24575
+CT,Connecticut,1968,21756
+CT,Connecticut,1969,634
+DE,Delaware,1960,956
+DE,Delaware,1961,1701
+DE,Delaware,1962,616
+DE,Delaware,1963,1189
+DE,Delaware,1964,394
+DE,Delaware,1965,20876
+DE,Delaware,1966,9691
+DE,Delaware,1967,2453
+DE,Delaware,1968,13486
+DE,Delaware,1969,506
+FL,Florida,1960,3723
+FL,Florida,1961,6759
+FL,Florida,1962,4116
+FL,Florida,1963,3737
+FL,Florida,1964,7019
+FL,Florida,1965,132018
+FL,Florida,1966,140141
+FL,Florida,1967,86152
+FL,Florida,1968,22635
+FL,Florida,1969,610
+GA,Georgia,1960,217
+GA,Georgia,1961,415
+GA,Georgia,1962,416
+GA,Georgia,1963,200
+GA,Georgia,1964,211
+GA,Georgia,1965,26314
+GA,Georgia,1966,9736
+GA,Georgia,1967,1568
+GA,Georgia,1968,62
+GA,Georgia,1969,2
+HI,Hawaii,1960,5322
+HI,Hawaii,1961,210
+HI,Hawaii,1962,2769
+HI,Hawaii,1963,3426
+HI,Hawaii,1964,860
+HI,Hawaii,1965,144011
+HI,Hawaii,1966,5085
+HI,Hawaii,1967,7777
+HI,Hawaii,1968,1194
+HI,Hawaii,1969,53
+ID,Idaho,1960,2831
+ID,Idaho,1961,1966
+ID,Idaho,1962,1616
+ID,Idaho,1963,3927
+ID,Idaho,1964,2234
+ID,Idaho,1965,112637
+ID,Idaho,1966,57736
+ID,Idaho,1967,16665
+ID,Idaho,1968,3015
+ID,Idaho,1969,90
+IL,Illinois,1960,22656
+IL,Illinois,1961,16356
+IL,Illinois,1962,16602
+IL,Illinois,1963,10215
+IL,Illinois,1964,15778
+IL,Illinois,1965,107197
+IL,Illinois,1966,474583
+IL,Illinois,1967,94281
+IL,Illinois,1968,20758
+IL,Illinois,1969,1116
+IN,Indiana,1960,10427
+IN,Indiana,1961,5898
+IN,Indiana,1962,7696
+IN,Indiana,1963,5956
+IN,Indiana,1964,22161
+IN,Indiana,1965,76151
+IN,Indiana,1966,213384
+IN,Indiana,1967,50329
+IN,Indiana,1968,18716
+IN,Indiana,1969,537
+IA,Iowa,1960,1764
+IA,Iowa,1961,5415
+IA,Iowa,1962,11107
+IA,Iowa,1963,7319
+IA,Iowa,1964,22495
+IA,Iowa,1965,374884
+IA,Iowa,1966,200953
+IA,Iowa,1967,33410
+IA,Iowa,1968,12374
+IA,Iowa,1969,268
+KS,Kansas,1967,3430
+KS,Kansas,1968,240
+KS,Kansas,1969,9
+KY,Kentucky,1960,10734
+KY,Kentucky,1961,11442
+KY,Kentucky,1962,6169
+KY,Kentucky,1963,9057
+KY,Kentucky,1964,14715
+KY,Kentucky,1965,104883
+KY,Kentucky,1966,201116
+KY,Kentucky,1967,63353
+KY,Kentucky,1968,2398
+KY,Kentucky,1969,71
+LA,Louisiana,1960,244
+LA,Louisiana,1961,41
+LA,Louisiana,1962,232
+LA,Louisiana,1963,141
+LA,Louisiana,1964,117
+LA,Louisiana,1965,4040
+LA,Louisiana,1966,3953
+LA,Louisiana,1967,6441
+LA,Louisiana,1968,4385
+LA,Louisiana,1969,124
+ME,Maine,1960,4027
+ME,Maine,1961,3076
+ME,Maine,1962,6867
+ME,Maine,1963,459
+ME,Maine,1964,3707
+ME,Maine,1965,123300
+ME,Maine,1966,9102
+ME,Maine,1967,10128
+ME,Maine,1968,273
+ME,Maine,1969,1
+MD,Maryland,1960,3251
+MD,Maryland,1961,4175
+MD,Maryland,1962,3121
+MD,Maryland,1963,2100
+MD,Maryland,1964,3054
+MD,Maryland,1965,45043
+MD,Maryland,1966,84491
+MD,Maryland,1967,9632
+MD,Maryland,1968,2510
+MD,Maryland,1969,96
+MA,Massachusetts,1960,21703
+MA,Massachusetts,1961,22131
+MA,Massachusetts,1962,26562
+MA,Massachusetts,1963,4504
+MA,Massachusetts,1964,7350
+MA,Massachusetts,1965,842059
+MA,Massachusetts,1966,31224
+MA,Massachusetts,1967,27223
+MA,Massachusetts,1968,8218
+MA,Massachusetts,1969,368
+MI,Michigan,1960,35379
+MI,Michigan,1961,27653
+MI,Michigan,1962,25666
+MI,Michigan,1963,41217
+MI,Michigan,1964,29002
+MI,Michigan,1965,1042133
+MI,Michigan,1966,534243
+MI,Michigan,1967,49513
+MI,Michigan,1968,10100
+MI,Michigan,1969,388
+MN,Minnesota,1960,4325
+MN,Minnesota,1961,723
+MN,Minnesota,1962,1699
+MN,Minnesota,1963,2669
+MN,Minnesota,1964,345
+MN,Minnesota,1965,26938
+MN,Minnesota,1966,70066
+MN,Minnesota,1967,5525
+MN,Minnesota,1968,290
+MN,Minnesota,1969,18
+MS,Mississippi,1960,1665
+MS,Mississippi,1961,1527
+MS,Mississippi,1962,2668
+MS,Mississippi,1963,673
+MS,Mississippi,1964,5852
+MS,Mississippi,1965,44841
+MS,Mississippi,1966,40246
+MS,Mississippi,1967,38200
+MS,Mississippi,1968,1191
+MS,Mississippi,1969,23
+MO,Missouri,1960,751
+MO,Missouri,1961,4442
+MO,Missouri,1962,1400
+MO,Missouri,1963,2793
+MO,Missouri,1964,1074
+MO,Missouri,1965,105070
+MO,Missouri,1966,20876
+MO,Missouri,1967,14720
+MO,Missouri,1968,1031
+MO,Missouri,1969,74
+MT,Montana,1960,2132
+MT,Montana,1961,2270
+MT,Montana,1962,8490
+MT,Montana,1963,3202
+MT,Montana,1964,4037
+MT,Montana,1965,159843
+MT,Montana,1966,69805
+MT,Montana,1967,15698
+MT,Montana,1968,1419
+MT,Montana,1969,118
+NE,Nebraska,1960,210
+NE,Nebraska,1961,639
+NE,Nebraska,1962,119
+NE,Nebraska,1963,234
+NE,Nebraska,1964,810
+NE,Nebraska,1965,18452
+NE,Nebraska,1966,3806
+NE,Nebraska,1967,27277
+NE,Nebraska,1968,9403
+NE,Nebraska,1969,616
+NV,Nevada,1960,765
+NV,Nevada,1961,648
+NV,Nevada,1962,650
+NV,Nevada,1963,279
+NV,Nevada,1964,985
+NV,Nevada,1965,8082
+NV,Nevada,1966,1753
+NV,Nevada,1967,12195
+NV,Nevada,1968,55
+NV,Nevada,1969,1
+NH,New Hampshire,1960,1135
+NH,New Hampshire,1961,1525
+NH,New Hampshire,1962,960
+NH,New Hampshire,1963,44
+NH,New Hampshire,1964,890
+NH,New Hampshire,1965,17383
+NH,New Hampshire,1966,2611
+NH,New Hampshire,1967,8075
+NH,New Hampshire,1968,8872
+NH,New Hampshire,1969,196
+NJ,New Jersey,1960,10697
+NJ,New Jersey,1961,18642
+NJ,New Jersey,1962,32323
+NJ,New Jersey,1963,10625
+NJ,New Jersey,1964,11563
+NJ,New Jersey,1965,102021
+NJ,New Jersey,1966,79015
+NJ,New Jersey,1967,43165
+NJ,New Jersey,1968,32412
+NJ,New Jersey,1969,942
+NM,New Mexico,1960,65
+NM,New Mexico,1961,20
+NM,New Mexico,1963,5
+NM,New Mexico,1964,1113
+NM,New Mexico,1965,26609
+NM,New Mexico,1966,40846
+NM,New Mexico,1967,28236
+NM,New Mexico,1968,9004
+NM,New Mexico,1969,285
+NY,New York,1960,46685
+NY,New York,1961,35806
+NY,New York,1962,46913
+NY,New York,1963,18671
+NC,North Carolina,1960,1239
+NC,North Carolina,1961,5175
+NC,North Carolina,1962,907
+NC,North Carolina,1963,1448
+NC,North Carolina,1964,1253
+NC,North Carolina,1965,15242
+NC,North Carolina,1966,17574
+NC,North Carolina,1967,49319
+NC,North Carolina,1968,11336
+NC,North Carolina,1969,371
+ND,North Dakota,1960,2476
+ND,North Dakota,1961,2871
+ND,North Dakota,1962,3745
+ND,North Dakota,1963,4320
+ND,North Dakota,1964,5237
+ND,North Dakota,1965,157642
+ND,North Dakota,1966,46087
+ND,North Dakota,1967,40675
+ND,North Dakota,1968,924
+ND,North Dakota,1969,81
+OH,Ohio,1960,18605
+OH,Ohio,1961,20611
+OH,Ohio,1962,11890
+OH,Ohio,1963,14571
+OH,Ohio,1964,19172
+OH,Ohio,1965,360235
+OH,Ohio,1966,244097
+OH,Ohio,1967,55042
+OH,Ohio,1968,14055
+OH,Ohio,1969,565
+OK,Oklahoma,1960,1208
+OK,Oklahoma,1961,622
+OK,Oklahoma,1962,2075
+OK,Oklahoma,1963,347
+OK,Oklahoma,1964,1037
+OK,Oklahoma,1965,8316
+OK,Oklahoma,1966,19218
+OK,Oklahoma,1967,141141
+OK,Oklahoma,1968,5721
+OK,Oklahoma,1969,142
+OR,Oregon,1960,11074
+OR,Oregon,1961,5914
+OR,Oregon,1962,13804
+OR,Oregon,1963,4786
+OR,Oregon,1964,8520
+OR,Oregon,1965,134403
+OR,Oregon,1966,67237
+OR,Oregon,1967,84581
+OR,Oregon,1968,8079
+OR,Oregon,1969,198
+PA,Pennsylvania,1960,6767
+PA,Pennsylvania,1961,25846
+PA,Pennsylvania,1962,9436
+PA,Pennsylvania,1963,12184
+PA,Pennsylvania,1964,11587
+PA,Pennsylvania,1965,218623
+PA,Pennsylvania,1966,222796
+PA,Pennsylvania,1967,35420
+PA,Pennsylvania,1968,36714
+PA,Pennsylvania,1969,1242
+RI,Rhode Island,1960,1948
+RI,Rhode Island,1961,6681
+RI,Rhode Island,1962,3224
+RI,Rhode Island,1963,1198
+RI,Rhode Island,1964,2466
+RI,Rhode Island,1965,170330
+RI,Rhode Island,1966,3206
+RI,Rhode Island,1967,2841
+RI,Rhode Island,1968,879
+RI,Rhode Island,1969,18
+SC,South Carolina,1960,1284
+SC,South Carolina,1961,3298
+SC,South Carolina,1962,925
+SC,South Carolina,1963,2408
+SC,South Carolina,1964,3948
+SC,South Carolina,1965,41746
+SC,South Carolina,1966,25897
+SC,South Carolina,1967,19818
+SC,South Carolina,1968,4679
+SC,South Carolina,1969,133
+SD,South Dakota,1960,120
+SD,South Dakota,1961,217
+SD,South Dakota,1962,398
+SD,South Dakota,1963,79
+SD,South Dakota,1964,68
+SD,South Dakota,1965,4549
+SD,South Dakota,1966,1253
+SD,South Dakota,1967,2510
+SD,South Dakota,1968,137
+SD,South Dakota,1969,3
+TN,Tennessee,1960,19158
+TN,Tennessee,1961,14891
+TN,Tennessee,1962,24282
+TN,Tennessee,1963,6872
+TN,Tennessee,1964,23588
+TN,Tennessee,1965,325905
+TN,Tennessee,1966,482921
+TN,Tennessee,1967,80239
+TN,Tennessee,1968,772
+TN,Tennessee,1969,19
+TX,Texas,1960,49678
+TX,Texas,1961,17044
+TX,Texas,1962,66173
+TX,Texas,1963,16506
+TX,Texas,1964,39353
+TX,Texas,1965,1195189
+TX,Texas,1966,869728
+TX,Texas,1967,690167
+TX,Texas,1968,162037
+TX,Texas,1969,4921
+UT,Utah,1960,4966
+UT,Utah,1961,1734
+UT,Utah,1962,4176
+UT,Utah,1963,2983
+UT,Utah,1964,2543
+UT,Utah,1965,186870
+UT,Utah,1966,21388
+UT,Utah,1967,15151
+UT,Utah,1968,298
+UT,Utah,1969,11
+VT,Vermont,1960,3475
+VT,Vermont,1961,1157
+VT,Vermont,1962,2053
+VT,Vermont,1963,1614
+VT,Vermont,1964,2359
+VT,Vermont,1965,47201
+VT,Vermont,1966,11263
+VT,Vermont,1967,1908
+VT,Vermont,1968,111
+VT,Vermont,1969,3
+VA,Virginia,1960,7396
+VA,Virginia,1961,12083
+VA,Virginia,1962,9303
+VA,Virginia,1963,7460
+VA,Virginia,1964,11873
+VA,Virginia,1965,160251
+VA,Virginia,1966,76769
+VA,Virginia,1967,97398
+VA,Virginia,1968,34820
+VA,Virginia,1969,923
+WA,Washington,1960,13023
+WA,Washington,1961,8900
+WA,Washington,1962,20555
+WA,Washington,1963,4976
+WA,Washington,1964,19879
+WA,Washington,1965,296114
+WA,Washington,1966,147706
+WA,Washington,1967,247457
+WA,Washington,1968,2917
+WA,Washington,1969,56
+WV,West Virginia,1960,3528
+WV,West Virginia,1961,8050
+WV,West Virginia,1962,10173
+WV,West Virginia,1963,12268
+WV,West Virginia,1964,9147
+WV,West Virginia,1965,592404
+WV,West Virginia,1966,211103
+WV,West Virginia,1967,66075
+WV,West Virginia,1968,7985
+WV,West Virginia,1969,236
+WI,Wisconsin,1960,43191
+WI,Wisconsin,1961,37495
+WI,Wisconsin,1962,15797
+WI,Wisconsin,1963,57073
+WI,Wisconsin,1964,15361
+WI,Wisconsin,1965,583308
+WI,Wisconsin,1966,1249563
+WI,Wisconsin,1967,118401
+WI,Wisconsin,1968,22825
+WI,Wisconsin,1969,668
+WY,Wyoming,1960,694
+WY,Wyoming,1961,519
+WY,Wyoming,1962,441
+WY,Wyoming,1963,329
+WY,Wyoming,1964,286
+WY,Wyoming,1965,34000
+WY,Wyoming,1966,6442
+WY,Wyoming,1967,7651
+WY,Wyoming,1968,64
+WY,Wyoming,1969,8
