@@ -146,6 +146,7 @@ body {
     }
     .modalPlot {
         display: none!important;
+        font-size: 0.8rem;
     }
     .modalPlotImage, .modalPlotImageCaption {
         display: block!important;
@@ -168,6 +169,9 @@ body {
 .modalPlot {
     max-height: calc(100vh - 15rem);
     width: auto;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 1.2rem;   
 }
 
 .modalPlotImage {

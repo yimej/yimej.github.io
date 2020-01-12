@@ -52,7 +52,7 @@ Plotly.d3.csv("data/wine_main.csv", function(err, rows){
         showlegend: false
     }
 
-    Plotly.plot('distributionByCountry', data, layout, {responsive: true});
+    Plotly.plot('distributionByCountry', data, layout, {showlink: false, displayModeBar: false, responsive: true});
 });
 
 // description polarity by points
@@ -96,7 +96,7 @@ Plotly.d3.csv("data/wine_polarityXpointscat.csv", function(err, rows){
         violinmode: "overlay"
     }
 
-    Plotly.plot('polarityByPoints', data, layout, {responsive: true});
+    Plotly.plot('polarityByPoints', data, layout, {showlink: false, displayModeBar: false, responsive: true});
 });
 
 // choropleth
@@ -143,11 +143,12 @@ Plotly.d3.csv('data/wine_topWinesUSA.csv', function(err, rows){
             lakecolor: 'rgb(255,255,255)'
         },
         margin: {
-            pad: 0
+            pad: 0,
+            b: 0
         }
     };
 
-    Plotly.plot('topWinesByState', data, layout, {showLink: false, responsive: true});
+    Plotly.plot('topWinesByState', data, layout, {showLink: false, displayModeBar: false, responsive: true});
 
 });
 
@@ -185,7 +186,7 @@ Plotly.d3.csv('data/wine_topWines90.csv', function(err, rows){
         }
     };
 
-    Plotly.plot('topWines90', data, layout, {showLink: false, responsive: true});
+    Plotly.plot('topWines90', data, layout, {showLink: false, displayModeBar: false, responsive: true});
 
 });
 
@@ -222,7 +223,7 @@ Plotly.d3.csv('data/wine_topWines93.csv', function(err, rows){
         }
     };
 
-    Plotly.plot('topWines93', data, layout, {showLink: false, responsive: true});
+    Plotly.plot('topWines93', data, layout, {showLink: false, displayModeBar: false, responsive: true});
 
 });
 
@@ -260,6 +261,6 @@ Plotly.d3.csv('data/wine_topWines95.csv', function(err, rows){
         }
     };
 
-    Plotly.plot('topWines95', data, layout, {showLink: false, responsive: true});
+    Plotly.plot('topWines95', data, layout, {showLink: false, displayModeBar: false, responsive: true});
 
 });
