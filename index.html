@@ -86,7 +86,7 @@
       </div> -->
 
       <!-- TIL DEATH DO US CHART -->
-      <div class='frame'>
+      <div id='tildeathdouschart' class='frame'>
         <h3>TIL DEATH DO US CHART: A predictive analysis on marital status</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
@@ -97,7 +97,7 @@
             <p class='right'>The final project of the GWU Data Analytics Boot Camp, this deep-dive study used machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
             <p class='right'>The objective of this project was to utilize any to all skills that were covered in the program to create a comprehensive analysis and series of visualizations. </p>
             <div class='footnoteR'>
-              <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS, Bootstrap</p>
+              <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
               <p class='sourceR'>Source: <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a></p>
             </div>
           </div>
@@ -206,83 +206,28 @@
       </div>
 
       <!-- WINE -->
-      <div class='frame'>
-        <h3>WINE REVIEW ANALYSIS</h3>
+      <div id='wine' class='frame'>
+        <h3>WINE REVIEW STUDY</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6 '>
-            <p class='left'>The first of three GWU Data Analytic Boot Camp projects, this is a simple analysis of wine reviews from <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
-            <p class='left'>The objective of this analysis was to assess whether wine quality correlates with (1) price (2) the country of origin.</p>
-            <p class='left'>After selecting eight wines (Pinot Noir, Red Blend, Merlot, Sangiovese, White Blend, Riesling, Chardonnay, Sauvignon Blanc) from a database of over 150,000 wines, the project group members utilized Python to explore the selected wines' various relationships among rating, price, and country of origin.</p>
+            <p class='left'>This is a simple visual study of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
+            <p class='left'>The objective of this analysis was to explore the relationships among:
+              <ol style='margin-top: 0rem; margin-bottom: 0rem;'>
+                <li>rating points,</li>
+                <li>calculated polarity of review text,</li>
+                <li>country of origin,</li>
+                <li>and U.S. state of origin.</li>
+              </ol>
+            </p>
             <div class='footnoteL'>
-              <p class='madeWith'>Made with: Python, pandas, MatPlotLib, NumPy</p>
+              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
               <p class='sourceL'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
             </div>
           </div>
           <div class='w3-col s12 m6 l6'>
-            <img src='/img/wine/red_quality_country.png' onclick="openWineModal();currentWineSlide(1)" class='right'>
+            <a href='/wine.html'><img src='/img/wine/wine.png' class='right'></a>
             <p class='viewImageR'>Click image to view project.</p>
           </div>
-        </div>
-      </div>
-
-      <div id="myWineModal" class="modal">
-        <div class="modal-content">
-          <span class="close cursor" onclick="closeWineModal()">&times;</span>
-          <div class="myWineSlides">
-            <div class="numbertext">1 / 7</div>
-            <img src="/img/wine/red_price_country.png" class='modalImage'>
-          </div>
-      
-          <div class="myWineSlides">
-            <div class="numbertext">2 / 7</div>
-            <img src="/img/wine/red_quality_country.png" class='modalImage'>
-          </div>
-      
-          <div class="myWineSlides">
-            <div class="numbertext">3 / 7</div>
-            <img src="/img/wine/red_quality_price.png" class='modalImage'>
-          </div>
-      
-          <div class="myWineSlides">
-            <div class="numbertext">4 / 7</div>
-            <img src="/img/wine/white_price_country.png" class='modalImage'>
-          </div>
-
-          <div class="myWineSlides">
-            <div class="numbertext">5 / 7</div>
-            <img src="/img/wine/white_quality_country.png" class='modalImage'>
-          </div>
-
-          <div class="myWineSlides">
-            <div class="numbertext">6 / 7</div>
-            <img src="/img/wine/white_quality_price.png" class='modalImage'>
-          </div>
-      
-          <div class="myWineSlides">
-            <div class="numbertext">7 / 7</div>
-            <img src="/img/wine/top_wines.png" class='modalImage'>
-          </div>
-
-          <!-- Next/previous controls -->
-          <a class="prev" onclick="plusWineSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusWineSlides(1)">&#10095;</a>
-      
-          <!-- Thumbnail image controls -->
-          <!-- <div class="column">
-            <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
-          </div>
-      
-          <div class="column">
-            <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Snow">
-          </div>
-      
-          <div class="column">
-            <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
-          </div>
-      
-          <div class="column">
-            <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
-          </div> -->
         </div>
       </div>
 

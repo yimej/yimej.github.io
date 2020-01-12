@@ -1,16 +1,22 @@
 html {
-    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono Light', sans-serif;
     font-size: 62.5%;
 }
 
 body {
-    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono Light', sans-serif;
     padding: 2rem;
     background-color: rgb(242, 242, 242);
     font-size: 1.25rem;
     line-height: 1.4rem;
     text-align: justify;
     animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+.js-plotly-plot {
+    animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
 }
@@ -32,7 +38,7 @@ body {
 }
 
 .bold {
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 .avatar {
@@ -95,6 +101,10 @@ body {
         padding-right: 0rem!important;
         font-size: 1rem!important;
         margin-left: 0rem!important;
+    }
+
+    ol {
+        font-size: 1rem!important;
     }
 
     p.sourceR {
@@ -217,8 +227,13 @@ hr {
     margin: 2rem 0rem 2rem 0rem;
 }
 
+hr.plotly {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
 h1 {
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     font-size: 2rem;
     line-height: 2.2rem;
     color: rgb(49,189,172);
@@ -226,7 +241,7 @@ h1 {
 }
 
 h3 {
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     font-size: 1.6rem;
     line-height: 1.6rem;
     /* color: rgb(49,189,172); */
@@ -236,7 +251,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     font-size: 1.4rem;
     color: rgb(49,189,172);
     margin: 0rem;
@@ -245,7 +260,7 @@ h4 {
 
 a {
     color: rgb(49,189,172);
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     text-decoration: none;
 }
 
@@ -255,7 +270,7 @@ a:hover {
 
 a.contact {
     color: black;
-    font-family: 'Roboto Mono Light', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono Light', sans-serif;
     text-decoration: none;
 }
 
@@ -284,9 +299,10 @@ a.contact:hover {
     line-height: 4rem;
     text-align: center;
     border-radius: 50%;
-    margin-left: calc(50% - 0.75rem);
+    margin-left: calc(50% - 2.6rem);
     padding: 0rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .projectTitle {
@@ -470,7 +486,7 @@ a.contact:hover {
     font-size: 1.5rem;
     line-height: 1rem;
     position: absolute;
-    font-family: 'Roboto Mono', monospace, 'Arial Narrow', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
     left: calc(50% - 2rem);
     transform: translate(0%, -50%);
     bottom: 1rem;

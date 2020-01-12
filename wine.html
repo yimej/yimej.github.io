@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>E &bull; Y</title>
+    <link rel="icon" href="/img/avatar.png">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125423932-1');
+    </script> -->
+  </head>
+  <body>
+    <div class='main'>
+
+        <div class="w3-center">
+            <div class="w3-mobile projectTitle">
+                <div class='name'><span>WINE</span> REVIEW STUDY</div>
+                <div class='title'>A visual study on the bougie-ness of wine & sommeliers</div>
+            </div>
+            <div class='back'><a href='../#wine'>&#8678;</a></div>
+        </div>
+
+        <hr class='plotly' style='margin-top: 2rem;'>
+
+        <!-- <h1>ABOUT THE DATA</h1> -->
+        <div id='distributionByCountry' class='modalPlot' style='width: 100%; height: 80vh;'></div>
+        <img src='/img/wine/wine.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+
+        <hr class='plotly'>
+
+        <div class='w3-row'>
+          <div class='modalPlot'>
+            <div class='w3-col l6 m12 s12'>
+                <div id='topWines90' style='width: 100%; height: 80vh;'></div>
+            </div>
+            <div class='w3-col l6 m12 s12'>
+                <div class='w3-row'><div id='topWines93' style='width: 100%; height: 43vh;'></div></div>
+                <div class='w3-row'><div id='topWines95' style='width: 100%; height: 37vh;'></div></div>
+            </div>
+          </div>
+          <img src='/img/wine/topwines.png' class='modalImage modalPlotImage'>
+          <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        </div>
+
+        <hr class='plotly'>
+
+        <div id='polarityByPoints' class='modalPlot' style='width: 100%; height: 80vh;'></div>
+        <img src='/img/wine/polxrating.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+
+        <hr class='plotly'>
+        
+        <div id='topWinesByState' class='modalPlot' style='width: 100%; height: 80vh;'></div>
+        <img src='/img/wine/choropleth.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption'>Open in desktop to render plot interactive.</p>
+        
+        <hr class='plotly' style='margin-bottom: 2rem;'>
+
+        <div class='back'><a href='../#wine'>&#8678;</a></div>
+        <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
+
+    </div>
+    <script src="js/wine.js"></script>
+  </body>
+</html>

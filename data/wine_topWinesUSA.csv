@@ -1,0 +1,58 @@
+code,points,text
+AZ,85,Arizona<br><br>Mean Rating: 85<br>Number of Ratings: 40<extra>AZ</extra>
+CA,89,"California<br><br>Mean Rating: 89<br>Number of Ratings: 36,104<extra>CA</extra>"
+CO,86,Colorado<br><br>Mean Rating: 86<br>Number of Ratings: 68<extra>CO</extra>
+CT,84,Connecticut<br><br>Mean Rating: 84<br>Number of Ratings: 3<extra>CT</extra>
+HI,87,Hawaii<br><br>Mean Rating: 87<br>Number of Ratings: 1<extra>HI</extra>
+ID,87,Idaho<br><br>Mean Rating: 87<br>Number of Ratings: 190<extra>ID</extra>
+IL,84,Illinois<br><br>Mean Rating: 84<br>Number of Ratings: 6<extra>IL</extra>
+IA,83,Iowa<br><br>Mean Rating: 83<br>Number of Ratings: 4<extra>IA</extra>
+KY,83,Kentucky<br><br>Mean Rating: 83<br>Number of Ratings: 1<extra>KY</extra>
+MA,85,Massachusetts<br><br>Mean Rating: 85<br>Number of Ratings: 7<extra>MA</extra>
+MI,86,Michigan<br><br>Mean Rating: 86<br>Number of Ratings: 111<extra>MI</extra>
+MO,83,Missouri<br><br>Mean Rating: 83<br>Number of Ratings: 33<extra>MO</extra>
+NV,84,Nevada<br><br>Mean Rating: 84<br>Number of Ratings: 4<extra>NV</extra>
+NJ,84,New Jersey<br><br>Mean Rating: 84<br>Number of Ratings: 8<extra>NJ</extra>
+NM,84,New Mexico<br><br>Mean Rating: 84<br>Number of Ratings: 45<extra>NM</extra>
+NY,87,"New York<br><br>Mean Rating: 87<br>Number of Ratings: 2,676<extra>NY</extra>"
+NC,85,North Carolina<br><br>Mean Rating: 85<br>Number of Ratings: 23<extra>NC</extra>
+OH,84,Ohio<br><br>Mean Rating: 84<br>Number of Ratings: 12<extra>OH</extra>
+OR,89,"Oregon<br><br>Mean Rating: 89<br>Number of Ratings: 5,359<extra>OR</extra>"
+PA,85,Pennsylvania<br><br>Mean Rating: 85<br>Number of Ratings: 18<extra>PA</extra>
+RI,90,Rhode Island<br><br>Mean Rating: 90<br>Number of Ratings: 1<extra>RI</extra>
+TX,85,Texas<br><br>Mean Rating: 85<br>Number of Ratings: 93<extra>TX</extra>
+VT,84,Vermont<br><br>Mean Rating: 84<br>Number of Ratings: 3<extra>VT</extra>
+VA,86,Virginia<br><br>Mean Rating: 86<br>Number of Ratings: 770<extra>VA</extra>
+WA,89,"Washington<br><br>Mean Rating: 89<br>Number of Ratings: 8,583<extra>WA</extra>"
+AK,0,Alaska<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>AK</extra>
+AL,0,Alabama<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>AL</extra>
+AR,0,Arkansas<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>AR</extra>
+AS,0,American Samoa<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>AS</extra>
+DC,0,District of Columbia<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>DC</extra>
+DE,0,Delaware<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>DE</extra>
+FL,0,Florida<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>FL</extra>
+GA,0,Georgia<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>GA</extra>
+GU,0,Guam<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>GU</extra>
+IN,0,Indiana<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>IN</extra>
+KS,0,Kansas<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>KS</extra>
+LA,0,Louisiana<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>LA</extra>
+MD,0,Maryland<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>MD</extra>
+ME,0,Maine<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>ME</extra>
+MN,0,Minnesota<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>MN</extra>
+MP,0,Northern Mariana Islands<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>MP</extra>
+MS,0,Mississippi<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>MS</extra>
+MT,0,Montana<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>MT</extra>
+NA,0,National<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>NA</extra>
+ND,0,North Dakota<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>ND</extra>
+NE,0,Nebraska<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>NE</extra>
+NH,0,New Hampshire<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>NH</extra>
+OK,0,Oklahoma<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>OK</extra>
+PR,0,Puerto Rico<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>PR</extra>
+SC,0,South Carolina<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>SC</extra>
+SD,0,South Dakota<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>SD</extra>
+TN,0,Tennessee<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>TN</extra>
+UT,0,Utah<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>UT</extra>
+VI,0,Virgin Islands<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>VI</extra>
+WI,0,Wisconsin<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>WI</extra>
+WV,0,West Virginia<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>WV</extra>
+WY,0,Wyoming<br><br>Mean Rating: 0<br>Number of Ratings: 0<extra>WY</extra>
