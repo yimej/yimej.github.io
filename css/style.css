@@ -1,10 +1,11 @@
 html {
-    font-family: 'Roboto Mono Light', 'Roboto Mono', sans-serif;
-    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
 }
 
 body {
-    font-family: 'Roboto Mono Light', 'Roboto Mono', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 300;
     padding: 2rem;
     background-color: rgb(242, 242, 242);
     font-size: 1.25rem;
@@ -13,6 +14,10 @@ body {
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
+}
+
+.text, label, option {
+    font-family: 'Roboto', sans-serif;
 }
 
 .js-plotly-plot {
@@ -39,6 +44,7 @@ body {
 
 .bold {
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
 }
 
 .avatar {
@@ -49,15 +55,11 @@ body {
 .w3-cell {
     padding: 0rem;
     overflow: hidden;
-    /* text-overflow: ellipsis; */
 }
 
 @media (max-width: 60rem){
     .w3-mobile {
         width: 100%!important;
-        /* padding: 0px;
-        overflow: hidden;
-        text-overflow: ellipsis; */
     }
     .name {
         font-size: 3rem!important;
@@ -197,6 +199,11 @@ p {
     text-align: justify;
 }
 
+ol, ul {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
 u {
     color: rgb(49, 189, 172);
     text-decoration: none;
@@ -246,6 +253,7 @@ hr.plotly {
 
 h1 {
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
     font-size: 2rem;
     line-height: 2.2rem;
     color: rgb(49,189,172);
@@ -254,6 +262,7 @@ h1 {
 
 h3 {
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.6rem;
     /* color: rgb(49,189,172); */
@@ -264,6 +273,7 @@ h3 {
 
 h4 {
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
     font-size: 1.4rem;
     color: rgb(49,189,172);
     margin: 0rem;
@@ -272,7 +282,8 @@ h4 {
 
 a {
     color: rgb(49,189,172);
-    font-family: 'Roboto Mono', sans-serif;
+    /* font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400; */
     text-decoration: none;
 }
 
@@ -280,9 +291,9 @@ a:hover {
     color: rgb(32, 122, 111);
 }
 
-a.contact {
+a.contact, .contactCard {
     color: black;
-    font-family: 'Roboto Mono Light', 'Roboto Mono', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
@@ -358,6 +369,7 @@ a.contact:hover {
 }
 
 .title {
+    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     line-height: 2.8rem;
 }
@@ -514,6 +526,7 @@ a.contact:hover {
     line-height: 1rem;
     position: absolute;
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
     left: calc(50% - 2rem);
     transform: translate(0%, -50%);
     bottom: 1rem;

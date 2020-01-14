@@ -11,7 +11,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Roboto:300&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="css/style.css" rel="stylesheet">
 
@@ -39,8 +39,8 @@
         <hr>
 
         <h1>ABOUT THE DATA</h1>
-        <p>The 1997 National Longitudinal Survey of Youth follows over 8000 participants from their teens through their thirties, asking hundreds of questions and recording how the responses change throughout the study. This predictive analysis explores the changes in relationships, cohabitation, and marital status during this window of their lives.</p>
-        <p style='padding-bottom: 0rem;'>The Longitudinal Chaos Index (LCI) is a measure of the objective chaos of a subject’s love life. The more changes in your cohabitation/marital status, the higher your LCI. The LCI is based on the survey question: "Respondent's marital status in this month in [1994-2016]," which was recorded every month after subjects' fourteenth birthday. There were six possible responses:</p>
+        <p class='text'>The 1997 National Longitudinal Survey of Youth follows over 8000 participants from their teens through their thirties, asking hundreds of questions and recording how the responses change throughout the study. This predictive analysis explores the changes in relationships, cohabitation, and marital status during this window of their lives.</p>
+        <p class='text' style='padding-bottom: 0rem;'>The Longitudinal Chaos Index (LCI) is a measure of the objective chaos of a subject’s love life. The more changes in your cohabitation/marital status, the higher your LCI. The LCI is based on the survey question: "Respondent's marital status in this month in [1994-2016]," which was recorded every month after subjects' fourteenth birthday. There were six possible responses:</p class='text'>
         <ul>
             <li>Never Married, Not Cohabitating</li>
             <li>Never Married, Cohabitating</li>
@@ -53,21 +53,21 @@
         <hr>
 
         <h1>ABOUT THE MODEL</h1>
-        <p style='padding-bottom: 0rem;'>The LCI begins at zero for each subject and increases by one point with any change to the survey question's response. There are two exceptions:</p>
+        <p class='text' style='padding-bottom: 0rem;'>The LCI begins at zero for each subject and increases by one point with any change to the survey question's response. There are two exceptions:</p class='text'>
         <ul>
             <li>No change: "Never Married, Cohabitating" to "Married</li>
             <li>+2 points: "Married" to "Divorced</li>
         </ul>
-        <p style='padding-bottom: 0rem;'>After calculating the survey subjects' LCIs, I categorized them into four qualitative measurements:</p>
+        <p class='text' style='padding-bottom: 0rem;'>After calculating the survey subjects' LCIs, I categorized them into four qualitative measurements:</p class='text'>
         <ul>
             <li>Sad and Alone (SA)</li>
             <li>Happy Together (HT)</li>
             <li>It’s About the Journey (AJ)</li>
             <li>Train Wreck (TW)</li>
         </ul>
-        <p>A simple model evaluated each survey question and determined which most affected LCI. A multiple linear regression model predicted LCI based on the top ten most predictive survey questions.</p>
-        <p>The study confirmed that people are hard to predict. Single variables did not strongly correlate with marital status. However, combining variables increased the accuracy of predictions and the utility of the model.</p>
-        <p style='padding-bottom: 0rem;'>Continue below to calculate your own LCI!</p>
+        <p class='text'>A simple model evaluated each survey question and determined which most affected LCI. A multiple linear regression model predicted LCI based on the top ten most predictive survey questions.</p class='text'>
+        <p class='text'>The study confirmed that people are hard to predict. Single variables did not strongly correlate with marital status. However, combining variables increased the accuracy of predictions and the utility of the model.</p class='text'>
+        <p class='text' style='padding-bottom: 0rem;'>Continue below to calculate your own LCI!</p class='text'>
 
         <hr>
 
@@ -249,19 +249,19 @@
         <div class="w3-row-padding">
             <div class="w3-col l3 m3 s12 w3-padding">
                 <h4>SAD AND ALONE: < 0.8</h4>
-                <p style='padding-bottom: 0rem;'>Sorry, you'll probably be single. Don't adopt too many cats and don't be that guy who always brings out his reptiles at parties.</p>
+                <p class='text' style='padding-bottom: 0rem; text-align: left;'>Sorry, you'll probably be single. Don't adopt too many cats and don't be that guy who always brings out his reptiles at parties.</p>
             </div>
             <div class="w3-col l3 m3 s12 w3-padding">
                 <h4>HAPPY TOGETHER: 0.8 - 2</h4>
-                <p style='padding-bottom: 0rem;'>Congratulations! You'll be married or cohabitating. However, happiness is not guaranteed.</p>
+                <p class='text' style='padding-bottom: 0rem; text-align: left;'>Congratulations! You'll be married or cohabitating. However, happiness is not guaranteed.</p class='text'>
             </div>
             <div class="w3-col l3 m3 s12 w3-padding">
                 <h4>IT'S ABOUT THE JOURNEY: 2 - 6</h4>
-                <p style='padding-bottom: 0rem;'>Despite some hiccups, you'll likely eventually be married or cohabitating. There's light at the end of the tunnel.</p>
+                <p class='text' style='padding-bottom: 0rem; text-align: left;'>Despite some hiccups, you'll likely eventually be married or cohabitating. There's light at the end of the tunnel.</p class='text'>
             </div>
             <div class="w3-col l3 m3 s12 w3-padding">
                 <h4>TRAIN WRECK: &ge; 6</h4>
-                <p style='padding-bottom: 0rem;'>Whatever you're doing, you're doing it wrong. A chaotic future is ahead. You might be better off sad and alone.</p>
+                <p class='text' style='padding-bottom: 0rem; text-align: left;'>Whatever you're doing, you're doing it wrong. A chaotic future is ahead. You might be better off sad and alone.</p class='text'>
             </div>
         </div>
 
