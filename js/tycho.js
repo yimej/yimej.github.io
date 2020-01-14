@@ -80,7 +80,7 @@ function showInfection(infection) {
                   l: 0
               },
               font: {
-                  family: "'Roboto Mono Light', sans-serif",
+                  family: "'Roboto', sans-serif"
               },
               geo: {
                   scope: 'usa',
@@ -223,7 +223,7 @@ function showInfection(infection) {
                 b: 0
             },
             font: {
-                family: "'Roboto Mono Light', sans-serif",
+                family: "'Roboto', sans-serif"
             },
             geo: {
                 scope: 'usa',
@@ -366,7 +366,7 @@ function showInfection(infection) {
                 b: 0
             },
             font: {
-                family: "'Roboto Mono Light', sans-serif",
+                family: "'Roboto', sans-serif"
             },
             geo: {
                 scope: 'usa',
@@ -509,7 +509,7 @@ function showInfection(infection) {
                 b: 0
             },
             font: {
-                family: "'Roboto Mono Light', sans-serif",
+                family: "'Roboto', sans-serif"
             },
             geo: {
                 scope: 'usa',
@@ -654,7 +654,7 @@ Plotly.d3.csv('data/tycho_chlamydia.csv', function(err, rows){
             l: 0
         },
         font: {
-            family: "'Roboto Mono Light', sans-serif",
+            family: "'Roboto', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -797,7 +797,7 @@ Plotly.d3.csv('data/tycho_gonorrhea.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto Mono Light', sans-serif",
+            family: "'Roboto', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -940,7 +940,7 @@ Plotly.d3.csv('data/tycho_influenza.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto Mono Light', sans-serif",
+            family: "'Roboto', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -1083,7 +1083,7 @@ Plotly.d3.csv('data/tycho_measles.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto Mono Light', sans-serif",
+            family: "'Roboto', sans-serif"
         },
         geo: {
             scope: 'usa',
