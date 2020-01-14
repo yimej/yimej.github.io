@@ -141,7 +141,7 @@ function showInfection(infection) {
                   pad: {t: 50, b: 10},
                   currentvalue: {
                       visible: true,
-                      prefix: "Year:",
+                      prefix: "Year :",
                       xanchor: "right",
                       font: {
                       size: 20,
@@ -284,7 +284,7 @@ function showInfection(infection) {
                 pad: {t: 50, b: 10},
                 currentvalue: {
                     visible: true,
-                    prefix: "Year:",
+                    prefix: "Year: ",
                     xanchor: "right",
                     font: {
                     size: 20,
@@ -427,7 +427,7 @@ function showInfection(infection) {
                 pad: {t: 50, b: 10},
                 currentvalue: {
                     visible: true,
-                    prefix: "Year:",
+                    prefix: "Year: ",
                     xanchor: "right",
                     font: {
                     size: 20,
@@ -570,7 +570,7 @@ function showInfection(infection) {
                 pad: {t: 50, b: 10},
                 currentvalue: {
                     visible: true,
-                    prefix: "Year:",
+                    prefix: "Year: ",
                     xanchor: "right",
                     font: {
                     size: 20,
@@ -715,7 +715,7 @@ Plotly.d3.csv('data/tycho_chlamydia.csv', function(err, rows){
             pad: {t: 50, b: 10},
             currentvalue: {
                 visible: true,
-                prefix: "Year:",
+                prefix: "Year: ",
                 xanchor: "right",
                 font: {
                 size: 20,
@@ -858,7 +858,7 @@ Plotly.d3.csv('data/tycho_gonorrhea.csv', function(err, rows){
             pad: {t: 50, b: 10},
             currentvalue: {
                 visible: true,
-                prefix: "Year:",
+                prefix: "Year: ",
                 xanchor: "right",
                 font: {
                 size: 20,
@@ -1001,7 +1001,7 @@ Plotly.d3.csv('data/tycho_influenza.csv', function(err, rows){
             pad: {t: 50, b: 10},
             currentvalue: {
                 visible: true,
-                prefix: "Year:",
+                prefix: "Year: ",
                 xanchor: "right",
                 font: {
                 size: 20,
@@ -1144,7 +1144,7 @@ Plotly.d3.csv('data/tycho_measles.csv', function(err, rows){
             pad: {t: 50, b: 10},
             currentvalue: {
                 visible: true,
-                prefix: "Year:",
+                prefix: "Year: ",
                 xanchor: "right",
                 font: {
                 size: 20,

@@ -62,8 +62,8 @@ body {
         width: 100%!important;
     }
     .name {
-        font-size: 3rem!important;
-        line-height: 3rem!important;
+        font-size: 2.4rem!important;
+        line-height: 2.4rem!important;
         text-align: center!important;
     }
     .title {
@@ -73,13 +73,13 @@ body {
     }
     .nameAndTitle {
         padding-left: 0rem!important;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 2rem!important;
+        padding-bottom: 2rem!important;
     }
     .introL, .introM {
         padding-left: 0rem!important;
         padding-right: 0rem!important;
-        padding-bottom: 2rem;
+        padding-bottom: 2rem!important;
     }
     .introR {
         padding-left: 0rem!important;
@@ -89,7 +89,7 @@ body {
         padding-bottom: 1rem!important;
         margin-bottom: 1rem!important;
         font-size: 0.8rem!important;
-        border-bottom: 0.08rem solid rgb(49, 189, 172);
+        border-bottom: 0.08rem solid rgb(49, 189, 172)!important;
     }
     .viewImageR {
         font-size: 0.8rem!important;
@@ -118,7 +118,7 @@ body {
     }
 
     input {
-        width: 100%!important;
+        width: 90%!important;
     }
 
     .footnoteL, .footnoteR {
@@ -148,11 +148,37 @@ body {
     }
     .modalPlot {
         display: none!important;
-        font-size: 0.8rem;
+        font-size: 0.8rem!important;
     }
     .modalPlotImage, .modalPlotImageCaption {
         display: block!important;
     }
+    .copyright {
+        font-size: 1rem!important;
+    }
+    .copyright span {
+        font-size: 1.4rem!important;
+        line-height: 1rem!important;
+    }
+    .btn {
+        line-height: 1rem!important;
+        margin-bottom: 0.2rem!important;
+        padding: 0.2rem!important;
+    }
+    .buttons {
+        font-size: 1rem!important;
+    }
+    .back {
+        height: 2.1rem!important;
+        width: 2.1rem!important;
+        font-size: 2rem!important;
+        line-height: 1.8rem!important;
+        margin-left: calc(50% - 1.05rem)!important;
+    }
+}
+
+.buttons {
+    font-size: inherit;
 }
 
 .introL {
