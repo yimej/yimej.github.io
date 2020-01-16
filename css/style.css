@@ -9,8 +9,8 @@ body {
     padding: 2rem;
     background-color: rgb(242, 242, 242);
     font-size: 1.25rem;
-    line-height: 1.4rem;
-    text-align: justify;
+    line-height: 1.75rem;
+    text-align: left;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
@@ -222,7 +222,7 @@ p {
     font-size: 1.2rem;
     padding-bottom: 1rem;
     margin: 0rem;
-    text-align: justify;
+    text-align: left;
 }
 
 ol, ul {
@@ -279,7 +279,7 @@ hr.plotly {
 
 h1 {
     font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 2rem;
     line-height: 2.2rem;
     color: rgb(49,189,172);
@@ -288,9 +288,9 @@ h1 {
 
 h3 {
     font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.6rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
     /* color: rgb(49,189,172); */
     margin: 0rem;
     text-align: center;
