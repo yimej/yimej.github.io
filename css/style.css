@@ -177,6 +177,10 @@ body {
     }
 }
 
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
 .buttons {
     font-size: inherit;
 }
