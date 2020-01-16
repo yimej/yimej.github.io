@@ -314,7 +314,7 @@ h3 span {
 
 h4 {
     font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.4rem;
     color: rgb(49,189,172);
     margin: 0rem;
@@ -567,7 +567,7 @@ a.contact:hover {
     line-height: 1rem;
     position: absolute;
     font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     left: calc(50% - 2rem);
     transform: translate(0%, -50%);
     bottom: 1rem;
