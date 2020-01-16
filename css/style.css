@@ -237,6 +237,13 @@ u {
 
 img {
     width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+img:hover {
+    opacity: 0.5;
 }
 
 img.left {
@@ -295,6 +302,10 @@ h3 {
     margin: 0rem;
     text-align: center;
     padding-bottom: 2rem;
+}
+
+h3 span {
+    color: rgb(49, 189, 172);
 }
 
 h4 {
