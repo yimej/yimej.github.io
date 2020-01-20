@@ -1,10 +1,11 @@
 html {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 80%;
 }
 
 body {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 2rem;
     background-color: rgb(242, 242, 242);
@@ -17,7 +18,7 @@ body {
 }
 
 .text, label, option {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .js-plotly-plot {
@@ -42,11 +43,6 @@ body {
     background-color: white;
 }
 
-.bold {
-    font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400;
-}
-
 .avatar {
     width: 7.5rem;
     height: 7.5rem;
@@ -57,10 +53,7 @@ body {
     overflow: hidden;
 }
 
-@media (max-width: 60rem){
-    .w3-mobile {
-        width: 100%!important;
-    }
+@media screen and (max-width: 900px){
     .name {
         font-size: 2.4rem!important;
         line-height: 2.4rem!important;
@@ -89,7 +82,7 @@ body {
         padding-bottom: 1rem!important;
         margin-bottom: 1rem!important;
         font-size: 0.8rem!important;
-        border-bottom: 0.08rem solid rgb(49, 189, 172)!important;
+        border-bottom: 0.05rem solid rgb(49, 189, 172)!important;
     }
     .viewImageR {
         font-size: 0.8rem!important;
@@ -126,7 +119,7 @@ body {
         margin-right: 0rem!important;
     }
     .footnoteL {
-        border-bottom: 0.08rem solid rgb(49, 189, 172);
+        border-bottom: 0.05rem solid rgb(49, 189, 172);
         margin-bottom: 1rem!important;
     }
     img.left, img.right, .viewImageL, .viewImageR {
@@ -172,17 +165,19 @@ body {
         height: 2.1rem!important;
         width: 2.1rem!important;
         font-size: 2rem!important;
-        line-height: 1.8rem!important;
+        line-height: 1.7rem!important;
         margin-left: calc(50% - 1.05rem)!important;
+    }
+    .contactIcons {
+        display: block!important;
+    }
+    .contactCard {
+        display: none!important;
     }
 }
 
 input {
-    font-family: 'Roboto', sans-serif;
-}
-
-.buttons {
-    font-size: inherit;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .introL {
@@ -220,7 +215,7 @@ input {
 
 select {
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
 }
 
@@ -233,12 +228,7 @@ p {
 
 ol, ul {
     font-size: 1.2rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-u {
-    color: rgb(49, 189, 172);
-    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -263,13 +253,8 @@ img.right {
 }
 
 img.icon {
-    height: 1rem;
+    height: 1.5rem;
     width: auto;
-    filter: opacity(50%);
-}
-
-a > img.icon:hover {
-    filter: opacity(75%);
 }
 
 p.left {
@@ -281,7 +266,7 @@ p.right {
 }
 
 hr {
-    border-top: 0.08rem solid rgb(49, 189, 172);
+    border-top: 0.05rem solid rgb(49, 189, 172);
     margin: 2rem 0rem 2rem 0rem;
 }
 
@@ -291,65 +276,66 @@ hr.plotly {
 }
 
 h1 {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 2rem;
     line-height: 2.2rem;
-    color: rgb(49,189,172);
-    margin: 0rem;
+    margin: 0rem 0rem 0.5rem 0rem;
 }
 
 h3 {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    /* color: rgb(49,189,172); */
+    font-size: 2rem;
+    line-height: 2.2rem;
     margin: 0rem;
     text-align: center;
     padding-bottom: 2rem;
 }
 
-h3 span {
-    color: rgb(49, 189, 172);
-}
-
 h4 {
-    font-family: 'Roboto Mono', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.4rem;
-    color: rgb(49,189,172);
     margin: 0rem;
     text-align: left;
 }
 
 a {
-    color: rgb(49,189,172);
-    /* font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400; */
-    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+b {
+    font-weight: 700;
 }
 
 a:hover {
-    color: rgb(32, 122, 111);
+    color: rgb(49, 189, 172);
 }
 
 a.contact, .contactCard {
     color: black;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    font-weight: 300;
 }
 
 a.contact:hover {
     color: rgb(49, 189, 172);
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .nameAndTitle {
-    /* background-color: lightcoral; */
     margin: 0rem;
     padding-left: 1rem;
-    font-size: 5rem;
-    line-height: 5rem;
+    font-size: 4.5rem;
+    line-height: 4.2rem;
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
@@ -362,7 +348,7 @@ a.contact:hover {
     width: 5.2rem;
     font-size: 5rem;
     vertical-align: middle;
-    line-height: 4rem;
+    line-height: 4.3rem;
     text-align: center;
     border-radius: 50%;
     margin-left: calc(50% - 2.6rem);
@@ -371,44 +357,51 @@ a.contact:hover {
     margin-bottom: 1rem;
 }
 
-.btn {
-    background-color: rgb(242, 242, 242);
-    border: none;
-    padding: 0.5rem;
-    line-height: 1.4rem;
-    text-align: center;
-    border-radius: 1rem;
-    margin-right: 0.1rem;
+.back > a {
+    text-decoration: none;
 }
 
-.active, .btn:hover {
-    background-color: rgb(49, 189, 172);
-    color: white;
+.download {
+    background-color: rgb(242, 242, 242);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    color: rgb(49, 189, 172);
+    text-decoration: underline;
+}
+
+.viewProject {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
 }
 
 .projectTitle {
     margin: 0rem;
     padding-left: 1rem;
-    font-size: 5rem;
-    line-height: 5rem;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.projectSubtitle {
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 .contactCard {
-    /* background-color: lightpink; */
-    font-size: 1rem;
-    line-height: 1.3rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
     text-align: right;
-}
-
-.nameAndTitle span{
-    color: rgb(49,189,172);  
-}
-
-.name span {
-    color: rgb(49,189,172);
 }
 
 .title {
@@ -418,13 +411,13 @@ a.contact:hover {
 }
 
 .footnoteL {
-    border-top: 0.08rem solid rgb(49, 189, 172);
+    border-top: 0.05rem solid rgb(49, 189, 172);
     padding-top: 1rem;
     margin-right: 1rem;
 }
 
 .footnoteR {
-    border-top: 0.08rem solid rgb(49, 189, 172);
+    border-top: 0.05rem solid rgb(49, 189, 172);
     padding-top: 1rem;
     margin-left: 1rem;
 }
@@ -455,123 +448,9 @@ a.contact:hover {
     text-align: center;
 }
 
-.copyright span {
-    font-size: 1.6rem;
-    line-height: 1.4rem;
-}
-
 .frame {
     width: 100%;
     background-color: rgb(242, 242, 242);
     padding: 2rem;
     margin: 1rem 0rem 2rem 0rem;
-}
-
-/* wine modal */
-.modalImage {
-    max-height: calc(100vh - 15rem);
-    height: auto;
-    max-width: 100%;
-    width: auto;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 3rem;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.3);
-}
-
-.modal-content {
-    position: relative;
-    background-color: rgb(242, 242, 242);
-    margin: auto;
-    padding: 1rem;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards;
-}
-
-.close {
-    color: gray;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 3.5rem;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.myWineSlides {
-    display: none;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-}
-
-.myWNSlides {
-    display: none;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-}
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    bottom: 1rem;
-    width: auto;
-    padding: 0rem;
-    margin-top: -5rem;
-    color: black; 
-    font-weight: bold;
-    font-size: 2rem;
-    transition: 0.6s ease;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-.next {
-    right: 1rem;
-}
-
-.prev {
-    left: 1rem;
-}
-
-.prev:hover,
-.next:hover {
-    /* background-color: white; */
-    color: white;
-}
-
-.numbertext {
-    /* color: rgb(49, 189, 172); */
-    font-size: 1.5rem;
-    line-height: 1rem;
-    position: absolute;
-    font-family: 'Roboto Mono', sans-serif;
-    font-weight: 300;
-    left: calc(50% - 2rem);
-    transform: translate(0%, -50%);
-    bottom: 1rem;
-    text-align: center;
 }

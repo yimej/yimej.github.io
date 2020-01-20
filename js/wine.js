@@ -40,7 +40,7 @@ Plotly.d3.csv("data/wine_main.csv", function(err, rows){
     var layout = {
         title: "Distribution of Reviews from Top Ten Most Rated Countries<br>from WineEnthusiast as of 11.22.17",
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         yaxis: {
             title: 'Rating',
@@ -84,7 +84,7 @@ Plotly.d3.csv("data/wine_polarityXpointscat.csv", function(err, rows){
     var layout = {
         title: "Calculated Polarity of Review Text by Rating Points<br>from WineEnthusiast as of 11.22.17",
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         yaxis: {
             title: 'Polarity of Review Text',
@@ -142,7 +142,7 @@ Plotly.d3.csv('data/wine_topWinesUSA.csv', function(err, rows){
     var layout = {
         title: 'Mean Wine Rating by State<br>from WineEnthusiast as of 11.22.17',
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -178,7 +178,7 @@ Plotly.d3.csv('data/wine_topWines90.csv', function(err, rows){
     var layout = {
         title: 'Number of Wines with Mean Rating ≥ 90<br>from WineEnthusiast as of 11.22.17',
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         xaxis: {
             zeroline: false,
@@ -217,7 +217,7 @@ Plotly.d3.csv('data/wine_topWines93.csv', function(err, rows){
     var layout = {
         title: 'Number of Wines with Mean Rating ≥ 93<br>from WineEnthusiast as of 11.22.17',
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         xaxis: {
             zeroline: false,
@@ -254,7 +254,7 @@ Plotly.d3.csv('data/wine_topWines95.csv', function(err, rows){
     var layout = {
         title: 'Number of Wines with Mean Rating ≥ 95<br>from WineEnthusiast as of 11.22.17',
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         xaxis: {
             zeroline: false,

@@ -11,19 +11,19 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Roboto:300&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-125423932-1');
-    </script>
+    </script> -->
   </head>
   <body>
     <div class='main'>
@@ -33,25 +33,29 @@
           <a href='/'><img src='img/avatar.png' class='avatar'></a>
         </div>
         <div class="w3-container w3-cell w3-cell-middle w3-mobile nameAndTitle">
-          <div class='name'>ELIZABETH<span>YIM</span></div>
+          <div class='name'>ELIZABETH<b>YIM</b></div>
           <div class='title'>data analyst & visual designer</div>
         </div>
         <div class="w3-container w3-cell w3-cell-middle w3-mobile contactCard">
-          <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 <img src='/img/icons/phone.png' class='icon'></a><br>
-          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'>elizabethjyim@gmail.com <img src='/img/icons/email.png' class='icon'></a><br>
-          northern va & d.c. <img src='/img/icons/location.png' class='icon'><br>
-          <a href='https://yimej.github.io' target='_blank' class='contact'>https://yimej.github.io <img src='/img/icons/portfolio.png' class='icon'></a><br>
-          <a href=https://linkedin.com/in/yimej' target='_blank' class='contact'>linkedin.com/in/yimej <img src='/img/icons/linkedin.png' class='icon'></a><br>
+          <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 </a><br>
+          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'>elizabethjyim@gmail.com</a><br>
+          <a href='https://linkedin.com/in/yimej' target='_blank' class='contact'>linkedin.com/in/yimej</a><br>
+          <a href='resume.pdf' target='_blank'><button class='download'>Download Resume</button></a>
+        </div>
+        <div class="contactIcons w3-center" style='display:none;'>
+          <a href='tel:1-703-489-9353' target='_blank' class='contact'><img src='/img/icons/phone.png' class='icon'></a>&nbsp;&nbsp;
+          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'><img src='/img/icons/email.png' class='icon'></a>&nbsp;&nbsp;
+          <a href='https://linkedin.com/in/yimej' target='_blank' class='contact'><img src='/img/icons/linkedin.png' class='icon'></a>
         </div>
       </div>
 
-      <hr>
+      <hr> 
 
-      <div class='w3-row'>
+      <!-- <div class='w3-row'>
         <div class='w3-col l4 m12 s12 introL'>
           <h1>HELLO</h1>
           <div class='text'>
-            I'm a data analyst and visual designer who strives for efficiency and thoroughness — all with an aptitude for streamlined workflow and an eye for clean, beautiful designs. When I'm not crunching numbers, you’ll find me roller skating and stealing socks back from my dog.
+            I'm a data analyst and visual designer who strives for efficiency and thoroughness—all with an aptitude for agile workflow and an eye for clean, beautiful designs. When I'm not crunching numbers, you’ll find me roller skating and stealing socks back from my dog.
           </div>
         </div>
         <div class='w3-col l4 m12 s12 introM'>
@@ -66,44 +70,31 @@
             While working full-time, I have been juggling pre-requisite courses required for graduate school, coaching the local recreational roller derby league, and chasing after my (naughty) dog. I expect to begin my graduate studies within the next few years.
           </div>
         </div>
-      </div>
+      </div> 
 
       <br>
 
-      <div class='text' style='text-align: center'>Click <a href='/resume.pdf' target='_blank'>HERE</a> to open my resume & <a href='#portfolio'>CONTINUE BELOW</a> to view my portfolio.</div>
+      <div class='text' style='text-align:center;'>
+        <a href='resume.pdf' target='_blank'><button class='download'>Download Resume</button></a>
+      </div>
       
-      <hr id='portfolio'>
-
-      <!-- <div class='frame'>
-        <h3>INCUBATOR PROJECT: An analytical study on the opioid crisis</h3>
-        <div class='w3-row'>
-          <div class='w3-col s6'>
-            <p class='left'>This is placeholder text about the above project.</p>
-            <p class='left'>Blah blah blah more info</p>
-            <div class='footnoteL'>
-              <p>Made with: Python, pandas, NumPy, twitterscraper, SAS, Flourish, Plotly, HTML5/CSS</p>
-            </div>
-          </div>
-          <div class='w3-col s6'>
-            <a href='http://www.pharmakeia.org' target='_blank'><img src='/img/incubator.png' class='right'></a>
-            <p class='viewImageR'>Click image to view project.</p>
-          </div>
-        </div>
-      </div> -->
+      <hr> -->
 
       <!-- TIL DEATH DO US CHART -->
-      <div id='tildeathdouschart' class='frame'>
-        <h3>TIL DEATH DO US <span>CHART</span></h3>
+      <div id='tildeathdouschart' class='frame' style='margin-top: 0rem;'>
+        <h3>TIL DEATH DO US CHART</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
             <a href='/tildeathdouschart.html'><img src='/img/tddoc.png' class='left'></a>
-            <p class='viewImageL text'>Click image to view project.</p>
+            <div class='viewImageL text'>
+              <a href='tildeathdouschart.html'><button class='viewProject'>View Project</button></a>
+            </div>
           </div>
           <div class='w3-col s12 m6 l6'>
             <p class='right text'>This is a predictive model developed using machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
             <p class='right text'>The objective of this project was to use a large data set to create and train a machine learning model.</p>
             <div class='footnoteR text'>
-              <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
+              <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3.js, Plotly, Machine Learning</p>
               <p class='sourceR'>Source: <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a></p>
             </div>
           </div>
@@ -112,7 +103,7 @@
 
       <!-- QUICK STATISTICS -->
       <div class='frame'>
-        <h3>SAMHSA QUICK STATISTICS <span>WEB TABLES</span></h3>
+        <h3>SAMHSA QUICK STATISTICS WEB TABLES</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
             <p class='left text'>The updated Quick Statistics website was developed while at Eagle Technologies under a contract for the Substance Abuse and Mental Health Services Administration's Behavioral Health Services Information System.</p>
@@ -124,45 +115,22 @@
           </div>
           <div class='w3-col s12 m6 l6'>
             <a href='https://wwwdasis.samhsa.gov/webt/newmapv1.htm' target='_blank'><img src='/img/wt.png' class='right'></a>
-            <p class='viewImageR text'>Click image to view project.</p>
+            <div class='viewImageR text'>
+              <a href='https://wwwdasis.samhsa.gov/webt/newmapv1.htm'><button class='viewProject'>View Project</button></a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- <div class='frame'>
-        <h3>DATA QUALITY VISUALIZATION</h3>
-        <div class='w3-row'>
-          <div class='w3-col s6'>
-            <img src='/img/placeholder.png' class='left'>
-          </div>
-          <div class='w3-col s6'>
-            <p class='right'>placeholder</p>
-          </div>
-        </div>
-      </div> -->
-    
-      <!-- <div class='frame'>
-        <h3>SAMHSA TREATMENT EPISODE DATA SET VIZ</h3>
-        <div class='w3-row'>
-          <div class='w3-col s6'>
-            <p class='left'>This is placeholder text about the above project.</p>
-            <p class='left'>Blah blah blah more info</p>
-            <p class='left'>Languages/Tools Used: something</p>
-            <p class='left'>Source?</p>
-          </div>
-          <div class='w3-col s6'>
-            <img src='/img/placeholder.png' class='right'>
-          </div>
-        </div>
-      </div> -->
-
       <!-- WINE -->
       <div id='wine' class='frame'>
-        <h3><span>WINE</span> REVIEW STUDY</h3>
+        <h3>WINE REVIEW STUDY</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
             <a href='/wine.html'><img src='/img/wine/wine.png' class='left'></a>
-            <p class='viewImageL text'>Click image to view project.</p>
+            <div class='viewImageL text'>
+              <a href='/wine.html'><button class='viewProject'>View Project</button></a>
+            </div>
           </div>
 
           <div class='w3-col s12 m6 l6 '>
@@ -176,7 +144,7 @@
               </ol>
             </p>
             <div class='footnoteR text'>
-              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3, Plotly, Machine Learning, HTML5/CSS</p>
+              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3.js, Plotly.js, Machine Learning</p>
               <p class='sourceR'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
             </div>
           </div>
@@ -186,29 +154,27 @@
 
       <!-- PROJECT TYCHO -->
       <div class='frame' id='tycho'>
-        <h3>PROJECT TYCHO <span>CHOROPLETHS</span></h3>
+        <h3>PROJECT TYCHO CHOROPLETHS</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
             <p class='left text'>This is a series of U.S. choropleths visualizing four infections over time from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
             <p class='left text'>The objective of this project was to visualize geographical data over time.</p>
             <div class='footnoteL text'>
-              <p class='madeWith'>Made with: Python, pandas, JavaScript, D3, Plotly</p>
+              <p class='madeWith'>Made with: Python, pandas, JavaScript, D3.js, Plotly.js</p>
               <p class='sourceL'>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
             </div>
           </div>
           <div class='w3-col s12 m6 l6'>
             <a href='/tycho.html'><img src='/img/tycho/influenza.png' class='right' style='background-color: white; padding: 0rem; border-left: 1rem white solid; border-right: 1rem white solid; border-bottom: 1rem white solid;'></a>
-            <!-- <img src='/img/westnile.png' onclick="openWNModal();currentWNSlide(1)" class='right'> -->
-            <p class='viewImageR text'>Click image to view project.</p>
+            <div class='viewImageR text'>
+              <a href='/tycho.html'><button class='viewProject'>View Project</button></a>
+            </div>
           </div>
         </div>
       </div>     
 
-      <div class='copyright'><span>©</span> 2020 ELIZABETH YIM</div>
+      <div class='copyright'>© 2020 ELIZABETH YIM</div>
 
     </div>
-    <!-- <script src="js/javascript.js"></script> -->
-    <!-- <script src="js/WN_bar.js"></script>
-    <script src="js/WN_line.js"></script> -->
   </body>
 </html>

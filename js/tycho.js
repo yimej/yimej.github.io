@@ -61,7 +61,7 @@ Plotly.d3.csv('data/tycho_influenza.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -204,7 +204,7 @@ Plotly.d3.csv('data/tycho_measles.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -348,7 +348,7 @@ Plotly.d3.csv('data/tycho_chlamydia.csv', function(err, rows){
             l: 0
         },
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         geo: {
             scope: 'usa',
@@ -491,7 +491,7 @@ Plotly.d3.csv('data/tycho_gonorrhea.csv', function(err, rows){
             b: 0
         },
         font: {
-            family: "'Roboto', sans-serif"
+            family: "'Open Sans', sans-serif"
         },
         geo: {
             scope: 'usa',
