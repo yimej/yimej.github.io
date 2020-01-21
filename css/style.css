@@ -21,12 +21,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.js-plotly-plot {
-    animation: fadeInAnimation ease 0.5s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-}
-
 @keyframes fadeInAnimation { 
     0% { 
         opacity: 0; 
@@ -66,8 +60,8 @@ body {
     }
     .nameAndTitle {
         padding-left: 0rem!important;
-        padding-top: 2rem!important;
-        padding-bottom: 2rem!important;
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
     }
     .introL, .introM {
         padding-left: 0rem!important;
@@ -82,7 +76,7 @@ body {
         padding-bottom: 1rem!important;
         margin-bottom: 1rem!important;
         font-size: 0.8rem!important;
-        border-bottom: 0.05rem solid rgb(49, 189, 172)!important;
+        border-bottom: 0.06rem solid rgb(49, 189, 172)!important;
     }
     .viewImageR {
         font-size: 0.8rem!important;
@@ -119,7 +113,7 @@ body {
         margin-right: 0rem!important;
     }
     .footnoteL {
-        border-bottom: 0.05rem solid rgb(49, 189, 172);
+        border-bottom: 0.06rem solid rgb(49, 189, 172);
         margin-bottom: 1rem!important;
     }
     img.left, img.right, .viewImageL, .viewImageR {
@@ -148,10 +142,6 @@ body {
     }
     .copyright {
         font-size: 1rem!important;
-    }
-    .copyright span {
-        font-size: 1.4rem!important;
-        line-height: 1rem!important;
     }
     .btn {
         line-height: 1rem!important;
@@ -266,7 +256,7 @@ p.right {
 }
 
 hr {
-    border-top: 0.05rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(49, 189, 172);
     margin: 2rem 0rem 2rem 0rem;
 }
 
@@ -281,6 +271,14 @@ h1 {
     font-size: 2rem;
     line-height: 2.2rem;
     margin: 0rem 0rem 0.5rem 0rem;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    margin: 0rem 0rem 0rem 0rem;
 }
 
 h3 {
@@ -366,7 +364,6 @@ button {
     border: none;
     border-radius: 1rem;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
-    font-weight: normal;
     margin-top: 0.5rem;
 }
 
@@ -384,9 +381,9 @@ button:hover {
 
 .projectTitle {
     margin: 0rem;
-    padding-left: 1rem;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
+    /* padding-left: 1rem; */
+    /* font-size: 3.5rem; */
+    /* line-height: 3.5rem; */
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
@@ -411,13 +408,13 @@ button:hover {
 }
 
 .footnoteL {
-    border-top: 0.05rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(49, 189, 172);
     padding-top: 1rem;
     margin-right: 1rem;
 }
 
 .footnoteR {
-    border-top: 0.05rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(49, 189, 172);
     padding-top: 1rem;
     margin-left: 1rem;
 }
@@ -446,6 +443,7 @@ button:hover {
 .copyright {
     vertical-align: middle;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .frame {
@@ -453,4 +451,20 @@ button:hover {
     background-color: rgb(242, 242, 242);
     padding: 2rem;
     margin: 1rem 0rem 2rem 0rem;
+}
+
+.blurb {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+i {
+    border: solid black;
+    border-width: 0 0.2rem 0.2rem 0;
+    display: inline-block;
+    padding: 0.3rem;
+
+    /* right */
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }

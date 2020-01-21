@@ -11,7 +11,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Roboto:300&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="css/style.css" rel="stylesheet">
 
@@ -28,41 +28,72 @@
   <body>
     <div class='main'>
 
-      <div class="w3-center">
-        <div class="w3-mobile projectTitle">
-          <div class='name'>PROJECT TYCHO CHOROPLETHS</div>
-          <div class='title'>A series of four infections over time in the U.S.</div>
+      <div class="w3-cell-row w3-center" style='height: 7.5rem;'>
+        <div class="w3-container w3-cell w3-cell-middle w3-mobile" style='width: 7.5rem;'>
+          <a href='/'><img src='img/avatar.png' class='avatar'></a>
         </div>
-        <div class='back'><a href='../#wine'>&#8678;</a></div>
+        <div class="w3-container w3-cell w3-cell-middle w3-mobile nameAndTitle">
+          <div class='name'>ELIZABETH<b>YIM</b></div>
+          <div class='title'>data analyst & visual designer</div>
+        </div>
+        <div class="w3-container w3-cell w3-cell-middle w3-mobile contactCard">
+          <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 </a><br>
+          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'>elizabethjyim@gmail.com</a><br>
+          <a href='https://linkedin.com/in/yimej' target='_blank' class='contact'>linkedin.com/in/yimej</a><br>
+          <a href='resume.pdf' target='_blank'><button class='download'>Download Resume</button></a>
+        </div>
+
+        <div class="contactIcons w3-center" style='display:none;'>
+          <a href='tel:1-703-489-9353' target='_blank' class='contact'><img src='/img/icons/phone.png' class='icon'></a>&nbsp;&nbsp;
+          <a href='mailto:elizabethjyim@gmail.com' target='_unblank' class='contact'><img src='/img/icons/email.png' class='icon'></a>&nbsp;&nbsp;
+          <a href='https://linkedin.com/in/yimej' target='_blank' class='contact'><img src='/img/icons/linkedin.png' class='icon'></a>&nbsp;&nbsp;
+          <a href='resume.pdf' target='_blank' class='contact'><img src='img/icons/download.png' class='icon'></a>
+        </div>
       </div>
 
-      <hr class='plotly' style='margin-top: 2rem;'>
+      <hr>
 
-      <div id='influenza' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-      <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-      <img src='/img/tycho/influenza.png' class='modalImage modalPlotImage'>
-      <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-    
-      <hr class='plotly'>
+      <div class="w3-center">
+        <div class="w3-mobile projectTitle">
+          <h2>PROJECT TYCHO CHOROPLETHS</h2>
+          <div class='text blurb'>A series of four infections over time in the U.S.</div>
+        </div>
+        <div class='back'><a href='../#tycho'>&#8678;</a></div>
+      </div>
 
-      <div id='measles' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-      <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-      <img src='/img/tycho/measles.png' class='modalImage modalPlotImage'>
-      <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+      <hr>
 
-      <hr class='plotly'>
+      <div class='frame'>
+        <div id='influenza' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+        <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
+        <img src='/img/tycho/influenza.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+      </div>
 
-      <div id='chlamydia' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-      <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-      <img src='/img/tycho/chlamydia.png' class='modalImage modalPlotImage'>
-      <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+      <div class='frame'>
+        <div id='measles' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+        <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
+        <img src='/img/tycho/measles.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
+      </div>
 
-      <hr class='plotly'>
+      <!-- <hr class='plotly'> -->
 
-      <div id='gonorrhea' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-      <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-      <img src='/img/tycho/gonorrhea.png' class='modalImage modalPlotImage'>
-      <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+      <div class='frame'>
+        <div id='chlamydia' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+        <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
+        <img src='/img/tycho/chlamydia.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
+      </div>
+
+      <!-- <hr class='plotly'> -->
+
+      <div class='frame'>
+        <div id='gonorrhea' class='modalPlot' style='width: 100%; height: 100vh;'></div>
+        <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
+        <img src='/img/tycho/gonorrhea.png' class='modalImage modalPlotImage'>
+        <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
+      </div>
 
       <!-- <div class='w3-center text buttons' style='vertical-align: middle;'>
         Select infection: 
