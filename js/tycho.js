@@ -57,8 +57,7 @@ Plotly.d3.csv('data/tycho_influenza.csv', function(err, rows){
       var layout = {
         title: 'Influenza Cases, 1920-1950',
         margin: {
-            pad: 0,
-            b: 0
+            pad: 0
         },
         font: {
             family: "'Open Sans', sans-serif"
@@ -200,8 +199,7 @@ Plotly.d3.csv('data/tycho_measles.csv', function(err, rows){
       var layout = {
         title: 'Measles Cases, 1960-1969',
         margin: {
-            pad: 0,
-            b: 0
+            pad: 0
         },
         font: {
             family: "'Open Sans', sans-serif"
@@ -343,9 +341,7 @@ Plotly.d3.csv('data/tycho_chlamydia.csv', function(err, rows){
     var layout = {
         title: 'Chlamydia Cases, 2006-2016',
         margin: {
-            pad: 0,
-            b: 0,
-            l: 0
+            pad: 0
         },
         font: {
             family: "'Open Sans', sans-serif"
@@ -487,8 +483,7 @@ Plotly.d3.csv('data/tycho_gonorrhea.csv', function(err, rows){
       var layout = {
         title: 'Gonorrhea Cases, 2006-2016',
         margin: {
-            pad: 0,
-            b: 0
+            pad: 0
         },
         font: {
             family: "'Open Sans', sans-serif"

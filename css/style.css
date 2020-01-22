@@ -210,15 +210,16 @@ select {
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-bottom: 1rem;
     margin: 0rem;
     text-align: left;
 }
 
 ol, ul {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
 }
 
 img {
@@ -381,9 +382,6 @@ button:hover {
 
 .projectTitle {
     margin: 0rem;
-    /* padding-left: 1rem; */
-    /* font-size: 3.5rem; */
-    /* line-height: 3.5rem; */
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
@@ -455,7 +453,6 @@ button:hover {
 
 .blurb {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
 }
 
 i {
@@ -463,8 +460,6 @@ i {
     border-width: 0 0.2rem 0.2rem 0;
     display: inline-block;
     padding: 0.3rem;
-
-    /* right */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }

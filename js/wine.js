@@ -151,7 +151,7 @@ Plotly.d3.csv('data/wine_topWinesUSA.csv', function(err, rows){
         },
         margin: {
             pad: 0,
-            b: 0
+            b: 25
         }
     };
 

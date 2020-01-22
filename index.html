@@ -16,14 +16,14 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125423932-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-125423932-1');
-    </script> -->
+    </script>
   </head>
   <body>
     <div class='main'>
@@ -72,12 +72,6 @@
           </div>
         </div>
       </div> 
-
-      <!-- <br>
-
-      <div class='text' style='text-align:center;'>
-        <a href='resume.pdf' target='_blank'><button class='download'>Download Resume</button></a>
-      </div> -->
       
       <hr>
 
@@ -92,10 +86,10 @@
             </div>
           </div>
           <div class='w3-col s12 m6 l6'>
-            <p class='right text'>This is a predictive model developed using machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
-            <p class='right text'>The objective of this project was to use a large data set to create and train a machine learning model.</p>
+            <p class='right text'>Til Death Do Us Chart is a predictive model developed using machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
+            <p class='right text'>Exploring the depth of this data set's survey questions influenced the decision to create a predictive model. I ran a single linear model on each survey question and used the ten most predictive variables as the basis for the multiple linear regression model used to predict marital status.</p>
             <div class='footnoteR text'>
-              <p class='madeWith'>Made with: Python, pandas, NumPy, JSON, JavaScript, D3.js, Plotly, Machine Learning</p>
+              <p class='madeWith'>Made with: Python, pandas, NumPy, scikit-learn, JavaScript</p>
               <p class='sourceR'>Source: <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a></p>
             </div>
           </div>
@@ -107,10 +101,10 @@
         <h3>SAMHSA QUICK STATISTICS WEB TABLES</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
-            <p class='left text'>The updated Quick Statistics website was developed while at Eagle Technologies under a contract for the Substance Abuse and Mental Health Services Administration's Behavioral Health Services Information System.</p>
-            <p class='left text'>The previous Quick Statistics page was visually outdated and confusing to navigate. This enhanced version is more visually modern and utilizes JavaScript and CSS to replace confusing navigation with user-friendly interactivity to display the chosen table or document.</p>
+            <p class='left text'>This is a redesign of the Quick Statistics website developed at Eagle Technologies under a contract for the Substance Abuse and Mental Health Services Administration's Behavioral Health Services Information System.</p>
+            <p class='left text'>The design weaknesses of the previous Quick Statistics page guided the workflow of this project. The original was visually outdated and confusing to navigate. This enhanced version utilizes JavaScript and CSS to replace multiple layers of navigation with a single menu bar. After finalizing the layout of the final product, I cleaned, formatted, and separated the concatenated data sets into CSV tables and converted them into HTML tables using AJAX.</p>
             <div class='footnoteL text'>
-              <p class='madeWith'>Made with: SAS, Python, pandas, NumPy, JavaScript, AJAX, HTML5/CSS</p>
+              <p class='madeWith'>Made with: Python, pandas, NumPy, JavaScript, AJAX, jQuery, HTML5/CSS, BootStrap</p>
               <p class='sourceL'>Source: <a href='https://wwwdasis.samhsa.gov/dasis2/teds.htm' target='_blank'>SAMHSA</a></p>
             </div>
           </div>
@@ -135,17 +129,12 @@
           </div>
 
           <div class='w3-col s12 m6 l6 '>
-            <p class='right text'>This is a simple visual study of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
-            <p class='right text'>The objective of this analysis was to explore the relationships among:
-              <ol class='text' style='margin-top: 0rem; margin-bottom: 0rem;'>
-                <li>rating points,</li>
-                <li>calculated polarity of review text,</li>
-                <li>country of origin,</li>
-                <li>and U.S. state of origin.</li>
-              </ol>
+            <p class='right text'>This is a descriptive and sentiment analysis of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
+            <p class='right text'>The objective of this analysis was to explore the relationships among: (1) rating points, (2) normalized, weighted composite polarity score of review text, and (3) location of origin.</p>
+            <p class='right text'>After brainstorming interesting relationships to visualize and forming hypotheses, I cleaned and prepared the data using Python. Then, I created mock-up visualizations in Plotly.js and evaluated their usefulness. Finally, I applied consistent formatting and color to the series of visualizations before deployment.
             </p>
             <div class='footnoteR text'>
-              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, D3.js, Plotly.js, Machine Learning</p>
+              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, Plotly.js</p>
               <p class='sourceR'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
             </div>
           </div>
@@ -158,10 +147,10 @@
         <h3>PROJECT TYCHO CHOROPLETHS</h3>
         <div class='w3-row'>
           <div class='w3-col s12 m6 l6'>
-            <p class='left text'>This is a series of U.S. choropleths visualizing four infections over time from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
-            <p class='left text'>The objective of this project was to visualize geographical data over time.</p>
+            <p class='left text'>This is an exploratory analysis of four infectious diseases in the U.S. over time using data from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
+            <p class='left text'>The objective of this project was to visualize geographical data over time. I chose four infectious diseases that had a wide range of data among U.S. states over at least ten consecutive years. Then, I cleaned and prepared the data using Python and created mock-up visualizations in Plotly.js. Finally, I applied consistent formatting and color to the choropleths before deployment.</p>
             <div class='footnoteL text'>
-              <p class='madeWith'>Made with: Python, pandas, JavaScript, D3.js, Plotly.js</p>
+              <p class='madeWith'>Made with: Python, pandas, JavaScript, Plotly.js</p>
               <p class='sourceL'>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
             </div>
           </div>
