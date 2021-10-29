@@ -34,7 +34,7 @@
         </div>
         <div class="w3-container w3-cell w3-cell-middle w3-mobile nameAndTitle">
           <div class='name'>ELIZABETH<b>YIM</b></div>
-          <div class='title'>data analyst & visual designer</div>
+          <div class='title'>&nbsp;DATA ANALYST <a class='color'>&bull;</a> VISUAL DESIGNER <a class='color'>&bull;</a> STUDENT</div>
         </div>
         <div class="w3-container w3-cell w3-cell-middle w3-mobile contactCard">
           <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 </a><br>
@@ -53,15 +53,20 @@
 
       <hr>
 
-      <div class="w3-center">
+      <div class="frame w3-center">
         <div class="w3-mobile projectTitle">
           <h2>PROJECT TYCHO CHOROPLETHS</h2>
-          <div class='text blurb'>An exploratory analysis of four infectious diseases in the U.S. over time</div>
+          <div class='text blurb'><p class='w3-center'>An exploratory analysis of four infectious diseases in the U.S. over time</p></div>
+          <div class='text'>
+            <p>This is an exploratory analysis of four infectious diseases in the U.S. over time using data from <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a>, a compilation of standardized global datasets of infectious diseases.</p>
+            <p>The objective of this project was to visualize geographical data over time. I chose four infectious diseases that had a wide range of data among U.S. states over at least ten consecutive years. Then, I cleaned and prepared the data using Python and created mock-up visualizations in Plotly.js. Finally, I applied consistent formatting and color to the choropleths before deployment.</p>
+            <div class='footnoteM'>
+              <p class='madeWith'>Made with: Python, pandas, JavaScript, Plotly.js</p>
+              <p class='sourceM'>Source: <a href='https://www.tycho.pitt.edu/' target='_blank'>Project Tycho</a></p>
+            </div>
+          </div>
         </div>
-        <div class='back'><a href='../#tycho'>&#8678;</a></div>
       </div>
-
-      <hr>
 
       <div class='frame'>
         <div id='influenza' class='modalPlot' style='width: 100%; height: 100vh;'></div>
@@ -77,8 +82,6 @@
         <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
       </div>
 
-      <!-- <hr class='plotly'> -->
-
       <div class='frame'>
         <div id='chlamydia' class='modalPlot' style='width: 100%; height: 100vh;'></div>
         <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
@@ -86,52 +89,12 @@
         <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
       </div>
 
-      <!-- <hr class='plotly'> -->
-
       <div class='frame'>
         <div id='gonorrhea' class='modalPlot' style='width: 100%; height: 100vh;'></div>
         <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
         <img src='/img/tycho/gonorrhea.png' class='modalImage modalPlotImage'>
         <p class='viewImage modalPlotImageCaption text' style='padding-bottom: 0rem;'>Open in desktop to render plot interactive.</p>
       </div>
-
-      <!-- <div class='w3-center text buttons' style='vertical-align: middle;'>
-        Select infection: 
-        <button class='btn active' onclick='showInfection(this.innerHTML);'>Influenza</button>
-        <button class='btn' onclick='showInfection(this.innerHTML);'>Gonorrhea</button>
-        <button class='btn' onclick='showInfection(this.innerHTML);'>Chlamydia</button>
-        <button class='btn' onclick='showInfection(this.innerHTML);'>Measles</button>
-      </div>
-
-      <div id='showInfluenza' style='display:block;'>
-        <div id='influenza' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-        <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-        <img src='/img/tycho/influenza.png' class='modalImage modalPlotImage'>
-        <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-      </div>
-
-      <div id='showMeasles' style='display:none;'>
-          <div id='measles' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-          <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-          <img src='/img/tycho/measles.png' class='modalImage modalPlotImage'>
-          <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-      </div>
-
-      <div id='showChlamydia' style='display:none;'>
-          <div id='chlamydia' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-          <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-          <img src='/img/tycho/chlamydia.png' class='modalImage modalPlotImage'>
-          <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-      </div>
-
-      <div id='showGonorrhea' style='display:none;'>
-          <div id='gonorrhea' class='modalPlot' style='width: 100%; height: 100vh;'></div>
-          <p class='modalPlot text' style='padding-top: 1.2rem;'>Double-click on map to reset view.</p>
-          <img src='/img/tycho/gonorrhea.png' class='modalImage modalPlotImage'>
-          <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-      </div> -->
-      
-      <hr class='plotly' style='margin-bottom: 2rem;'>
 
       <div class='back'><a href='../#tycho'>&#8678;</a></div>
       <div class='copyright'>© 2020 ELIZABETH YIM</div>

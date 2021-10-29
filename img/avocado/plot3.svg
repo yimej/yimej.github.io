@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='720.00pt' height='432.00pt' viewBox='0 0 720.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNjAuMTl8NzE0LjUyfDIzLjM0fDQwMC4yNw=='>
+    <rect x='60.19' y='23.34' width='654.33' height='376.93' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjAuMTl8NzE0LjUyfDIzLjM0fDQwMC4yNw==)'>
+<polyline points='60.19,388.49 714.52,388.49 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,329.59 714.52,329.59 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,270.70 714.52,270.70 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,211.80 714.52,211.80 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,152.91 714.52,152.91 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,94.01 714.52,94.01 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='60.19,35.11 714.52,35.11 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='70.92,400.27 70.92,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='156.73,400.27 156.73,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='242.54,400.27 242.54,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='328.36,400.27 328.36,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='414.17,400.27 414.17,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='499.99,400.27 499.99,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='585.80,400.27 585.80,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='671.61,400.27 671.61,23.34 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='159.58,400.15 167.86,395.69 176.15,391.22 184.43,386.76 192.71,382.30 200.99,377.84 209.28,373.37 217.56,368.91 225.84,364.45 234.12,359.99 242.41,355.52 250.69,351.06 258.97,346.60 267.26,342.13 275.54,337.67 283.82,333.21 292.10,328.75 300.39,324.28 308.67,319.82 316.95,315.36 325.23,310.90 333.52,306.43 341.80,301.97 350.08,297.51 358.37,293.05 366.65,288.58 374.93,284.12 383.21,279.66 391.50,275.20 399.78,270.73 408.06,266.27 416.34,261.81 424.63,257.35 432.91,252.88 441.19,248.42 449.47,243.96 457.76,239.50 466.04,235.03 474.32,230.57 482.61,226.11 490.89,221.65 499.17,217.18 507.45,212.72 515.74,208.26 524.02,203.80 532.30,199.33 540.58,194.87 548.87,190.41 557.15,185.95 565.43,181.48 573.71,177.02 582.00,172.56 590.28,168.09 598.56,163.63 606.85,159.17 615.13,154.71 623.41,150.24 631.69,145.78 639.98,141.32 648.26,136.86 656.54,132.39 664.82,127.93 673.11,123.47 681.39,119.01 689.67,114.54 697.96,110.08 706.24,105.62 714.52,101.16 ' style='stroke-width: 2.13; stroke: #FFFF00; stroke-linecap: butt;' />
+<polygon points='306.90,374.05 312.70,368.25 306.90,362.46 301.11,368.25 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #ACDFFA;' />
+<polygon points='221.09,377.94 226.88,372.15 221.09,366.35 215.30,372.15 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #C698F5;' />
+<polygon points='457.08,320.41 462.87,314.61 457.08,308.82 451.29,314.61 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #FFB1B0;' />
+<polygon points='521.44,251.57 527.23,245.78 521.44,239.99 515.65,245.78 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #2FADA8;' />
+<polygon points='499.99,255.12 505.78,249.32 499.99,243.53 494.19,249.32 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #FFC5A6;' />
+<polygon points='499.99,251.35 505.78,245.55 499.99,239.76 494.19,245.55 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #359FE6;' />
+<polygon points='457.08,224.93 462.87,219.13 457.08,213.34 451.29,219.13 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #E5C9F2;' />
+<polygon points='285.45,291.68 291.24,285.89 285.45,280.09 279.66,285.89 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #FF7D7A;' />
+<polygon points='671.61,67.50 677.41,61.70 671.61,55.91 665.82,61.70 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #81CCC9;' />
+<polygon points='371.26,192.28 377.06,186.48 371.26,180.69 365.47,186.48 ' style='stroke-width: 0.71; stroke: #D3D3D3; fill: #FF9166;' />
+<text x='287.63' y='382.43' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #ACDFFA; font-family: Arial;' textLength='47.41px' lengthAdjust='spacingAndGlyphs'>Mexico City</text>
+<text x='201.87' y='386.31' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #C698F5; font-family: Arial;' textLength='58.79px' lengthAdjust='spacingAndGlyphs'>Johannesburg</text>
+<text x='476.31' y='306.62' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #FFB1B0; font-family: Arial;' textLength='24.18px' lengthAdjust='spacingAndGlyphs'>Berlin</text>
+<text x='540.67' y='237.76' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #2FADA8; font-family: Arial;' textLength='25.13px' lengthAdjust='spacingAndGlyphs'>Tokyo</text>
+<text x='480.80' y='263.45' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #FFC5A6; font-family: Arial;' textLength='30.35px' lengthAdjust='spacingAndGlyphs'>Sydney</text>
+<text x='480.87' y='237.59' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #359FE6; font-family: Arial;' textLength='38.88px' lengthAdjust='spacingAndGlyphs'>New York</text>
+<text x='437.77' y='211.07' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #E5C9F2; font-family: Arial;' textLength='58.32px' lengthAdjust='spacingAndGlyphs'>San Francisco</text>
+<text x='266.14' y='300.04' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #FF7D7A; font-family: Arial;' textLength='43.62px' lengthAdjust='spacingAndGlyphs'>Vancouver</text>
+<text x='684.28' y='53.71' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #81CCC9; font-family: Arial;' textLength='45.97px' lengthAdjust='spacingAndGlyphs'>Hong Kong</text>
+<text x='352.05' y='200.62' text-anchor='middle' style='font-size: 8.54px; font-weight: bold; fill: #FF9166; font-family: Arial;' textLength='31.28px' lengthAdjust='spacingAndGlyphs'>London</text>
+</g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='55.26' y='391.64' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$0</text>
+<text x='55.26' y='332.75' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='31.82px' lengthAdjust='spacingAndGlyphs'>$50,000</text>
+<text x='55.26' y='273.85' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>$100,000</text>
+<text x='55.26' y='214.95' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>$150,000</text>
+<text x='55.26' y='156.06' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>$200,000</text>
+<text x='55.26' y='97.16' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>$250,000</text>
+<text x='55.26' y='38.27' text-anchor='end' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>$300,000</text>
+<text x='70.92' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$0</text>
+<text x='156.73' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$2</text>
+<text x='242.54' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$4</text>
+<text x='328.36' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$6</text>
+<text x='414.17' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='9.79px' lengthAdjust='spacingAndGlyphs'>$8</text>
+<text x='499.99' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='14.69px' lengthAdjust='spacingAndGlyphs'>$10</text>
+<text x='585.80' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='14.69px' lengthAdjust='spacingAndGlyphs'>$12</text>
+<text x='671.61' y='411.50' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='14.69px' lengthAdjust='spacingAndGlyphs'>$14</text>
+<text x='387.35' y='424.09' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='143.09px' lengthAdjust='spacingAndGlyphs'>Average Avocado Toast Cost</text>
+<text transform='translate(13.37,211.80) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='116.19px' lengthAdjust='spacingAndGlyphs'>Average House Deposit</text>
+<text x='60.19' y='14.94' style='font-size: 13.20px; font-family: Arial;' textLength='397.39px' lengthAdjust='spacingAndGlyphs'>Average Avocado Toast Cost vs. Average House Deposit, in Dollars</text>
+</g>
+</svg>

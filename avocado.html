@@ -54,55 +54,39 @@
 
       <div class="frame w3-center">
         <div class="w3-mobile projectTitle">
-          <h2>WINE REVIEW STUDY</h2>
-          <div class='text blurb'><p class='w3-center'>A descriptive and sentiment analysis on the bougie-ness of wine & sommeliers</p></div>
+          <h2>AVOCADO TOAST INDEX</h2>
+          <div class='text blurb'><p class='w3-center'>A visualization redesign of the avocado toast index</p></div>
           <div class='text'>
-            <p>This is a descriptive and sentiment analysis of wine reviews scraped from WineEnthusiast found on <a href='https://www.kaggle.com/zynicide/wine-reviews' target='_blank'>Kaggle</a>.</p>
-            <p>The objective of this analysis was to explore the relationships among: (1) rating points, (2) normalized, weighted composite polarity score of review text, and (3) location of origin.</p>
-            <p>After brainstorming interesting relationships to visualize and forming hypotheses, I cleaned and prepared the data using Python. Then, I created mock-up visualizations in Plotly.js and evaluated their usefulness. Finally, I applied consistent formatting and color to the series of visualizations before deployment.</p>
+            <p>This is a redesign of the data visualizations in a <a href='https://www.bbc.com/worklife/article/20170530-the-avocado-toast-index-how-many-breakfasts-to-buy-a-house' target='_blank'>BBC</a> article that measured housing costs around the world in avocado toast.</p>
+            <p>The objective of this project was to critically evaluate and revisualize an existing data visualization. While artistically designed, the original visualizations do not allow for easy data comparison or observation of trends. Though simple, a pair of bar charts would most easily allow readers to interpret the data.</p>
             <div class='footnoteM'>
-              <p class='madeWith'>Made with: Python, pandas, vaderSentiment, JavaScript, Plotly.js</p>
-              <p class='sourceM'>Source: <a href='https://www.kaggle.com/zynicide/wine-reviews'>Kaggle</a></p>
+              <p class='madeWith'>Made with: R, ggplot2</p>
+              <p class='sourceM'>Source: <a href='https://www.bbc.com/worklife/article/20170530-the-avocado-toast-index-how-many-breakfasts-to-buy-a-house' target='_blank'>BBC</a></p>
             </div>
           </div>
         </div>
       </div>
 
       <div class='frame'>
-        <div id='distributionByCountry' class='modalPlot' style='width: 100%; height: 80vh;'></div>
-        <img src='/img/wine/wine.png' class='modalImage modalPlotImage'>
-          <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+        <img class='avocado' src='/img/avocado/plot1.svg'>
       </div>
 
       <div class='frame'>
-        <div class='w3-row'>
-          <div class='modalPlot'>
-            <div class='w3-col l6 m12 s12'>
-              <div id='topWines90' style='width: 100%; height: 80vh;'></div>
-            </div>
-            <div class='w3-col l6 m12 s12'>
-              <div class='w3-row'><div id='topWines93' style='width: 100%; height: 43vh;'></div></div>
-              <div class='w3-row'><div id='topWines95' style='width: 100%; height: 37vh;'></div></div>
-            </div>
-          </div>
-          <img src='/img/wine/topwines.png' class='modalImage modalPlotImage'>
-          <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
-        </div>
+        <img class='avocado' src='/img/avocado/plot2.svg'>
       </div>
 
       <div class='frame'>
-        <div id='polarityByPoints' class='modalPlot' style='width: 100%; height: 80vh;'></div>
-        <img src='/img/wine/polxrating.png' class='modalImage modalPlotImage'>
-        <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+        <img class='avocado' src='/img/avocado/plot3.svg'>
       </div>
 
       <div class='frame'>
-        <div id='topWinesByState' class='modalPlot' style='width: 100%; height: 80vh;'></div>
-        <p class='modalPlot text' style='padding-top: 1.2rem; padding-bottom: 0rem;'>Double-click on map to reset view.</p>
-        <img src='/img/wine/choropleth.png' class='modalImage modalPlotImage'>
-        <p class='viewImage modalPlotImageCaption text'>Open in desktop to render plot interactive.</p>
+        <h1>CONCLUSION</h1>
+        <p class='text'>Less is more! Pretty design doesn't guarantee effective data visualization.</p>
+        <p class='text'>In New York City and San Francisco, it would respectively take 33 and 44 years of skipping a daily slice of avocado toast to afford a 20% deposit on a home. Prior generations did not face an explosive increase in housing cost paired with the stagnant, sluggish growth of wages. It's completely unfounded to label an entire generation of Millenials as "lazy" for their inability to afford housing in this economy of extraordinary wealth inequality.</p>
+        <p class='text'>The original <a href='https://www.bbc.com/worklife/article/20170530-the-avocado-toast-index-how-many-breakfasts-to-buy-a-house' target='_blank'>BBC</a> article was a tongue-in-cheek response to Australian businessman Tim Gurner's comment, "When I was trying to buy my first home, I wasn't buying smashed avocado for $19 and four coffees at $4 each." As reported by <a href='https://www.9news.com.au/national/melbourne-property-tycoon-hammers-millennials-over-spending-habits/f1e61616-94c2-4fa4-aa07-49a33f7bf842' target='_blank'>9NEWS</a>, Mr. Gurner borrowed $34,000 from his grandfather to jumpstart his career. Most people aren't privy to such loans, much less able to comfortably meet their basic societal needs.</p>
+        <p class='text'>The moral of the story? <b><color>Enjoy your avocado toast.</color></b></p>
       </div>
-  
+
       <div class='back'><a href='../#wine'>&#8678;</a></div>
       <div class='copyright'>© 2020 ELIZABETH YIM</div>
 

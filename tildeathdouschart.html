@@ -33,7 +33,7 @@
             </div>
             <div class="w3-container w3-cell w3-cell-middle w3-mobile nameAndTitle">
               <div class='name'>ELIZABETH<b>YIM</b></div>
-              <div class='title'>data analyst & visual designer</div>
+              <div class='title'>&nbsp;DATA ANALYST <a class='color'>&bull;</a> VISUAL DESIGNER <a class='color'>&bull;</a> STUDENT</div>
             </div>
             <div class="w3-container w3-cell w3-cell-middle w3-mobile contactCard">
               <a href='tel:1-703-489-9353' target='_blank' class='contact'>703.489.9353 </a><br>
@@ -51,15 +51,20 @@
 
         <hr>
 
-        <div class="w3-center">
+        <div class="frame w3-center">
             <div class="w3-mobile projectTitle">
-                <h2>TIL DEATH DO US CHART</h2>
-                <div class='text blurb'>A predictive model on marital status based on life events</div>
+              <h2>TIL DEATH DO US CHART</h2>
+              <div class='text blurb'><p class='w3-center'>A predictive model on marital status based on life events</p></div>
+              <div class='text'>
+                <p>Til Death Do Us Chart is a predictive model developed using machine learning to predict marital status from life events recorded by the <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a>.</p>
+                <p>Exploring the depth of this data set's survey questions influenced the decision to create a predictive model. I ran a single linear model on each survey question and used the ten most predictive variables as the basis for the multiple linear regression model used to predict marital status.</p>
+                <div class='footnoteM'>
+                  <p class='madeWith'>Made with: Python, pandas, NumPy, scikit-learn, JavaScript</p>
+                  <p class='sourceM'>Source: <a href='https://www.nlsinfo.org/content/cohorts/nlsy97' target='_blank'>National Longitudinal Survey of Youth 1997</a></p>
+                </div>
+              </div>
             </div>
-            <div class='back'><a href='../#tildeathdouschart'>&#8678;</a></div>
         </div>
-
-        <hr>
 
         <div class='frame'>
             <h1>ABOUT THE DATA</h1>
@@ -74,8 +79,6 @@
                 <li>Widowed</li>
             </ul>
         </div>
-
-        <!-- <hr> -->
 
         <div class='frame'>
             <h1>ABOUT THE MODEL</h1>
@@ -96,11 +99,9 @@
             <p class='text' style='padding-bottom: 0rem;'>Continue below to calculate your own LCI!</p class='text'>
         </div>
 
-        <!-- <hr> -->
-
         <div class='frame'>
             <h1>PREDICT YOUR FUTURE</h1>
-            <table class="w3-table w3-striped" style='background-color: white;'>
+            <table class="w3-table" style='background-color: white;'>
                 <tr>
                     <td width='60%'>
                     <label for="name">What was your marital status when you were in your early 30s? If younger, select your current marital status.</label>
@@ -117,7 +118,7 @@
                     </select>
                     </td width='40%'>
                 </tr>
-                <tr>
+                <tr class='bg-color'>
                     <td>
                     <label for="name">Did you first have sexual intercourse before age 18?</label>
                     </td>
@@ -149,7 +150,7 @@
                     </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class='bg-color'>
                     <td>
                     <label for="name">How many miles away did your father live when you were in your early 20s?</label>
                     </td>
@@ -183,7 +184,7 @@
                     </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class='bg-color'>
                     <td>
                     <label for="name">How would you rank the frequency of substance use when you were in your late teens?</label>
                     </td>
@@ -214,7 +215,7 @@
                     </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class='bg-color'>
                     <td>
                     <label for="name">On a scale of 0 to 10, with higher scores indicating more incidents of deliquency, how would you rank your grade school delinquency?</label>
                     </td>
@@ -247,7 +248,7 @@
                     </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class='bg-color'>
                     <td>
                     <label for="name">What percentage of your peers belonged to a gang that did illegal activities when you were in your late teens?</label>
                     </td>
@@ -262,7 +263,7 @@
                     </select>
                     </td>
                 </tr>
-                <tr style='background-color:rgb(242,242,242);'>
+                <tr >
                     <td></td>
                     <td>
                         <form>
@@ -270,9 +271,9 @@
                             <input type=text name=FinalLCI size=5> <input type=text name=FinalWords size=20>
                         </form>
                     </td>
-                </tr style='background-color:rgb(242,242,242);'>
+                </tr >
             </table>
-            <div class="w3-row-padding" style='background-color: rgb(242,242,242);'>
+            <div class="w3-row-padding bg-color">
                 <div class="w3-col l6 m6 s12 w3-padding">
                     <h4>SAD AND ALONE: < 0.8</h4>
                     <p class='text' style='padding-bottom: 0rem; text-align: left;'>Sorry, you'll probably be single. Don't adopt too many cats or be that guy who brings out his reptiles at parties.</p>
@@ -291,8 +292,6 @@
                 </div>
             </div>
         </div>
-
-        <hr>
 
         <div class='back'><a href='../#tildeathdouschart'>&#8678;</a></div>
         <div class='copyright'>© 2020 ELIZABETH YIM</div>

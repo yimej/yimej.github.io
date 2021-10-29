@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 2rem;
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(236, 246, 247);
     font-size: 1.25rem;
     line-height: 1.75rem;
     text-align: left;
@@ -38,8 +38,8 @@ body {
 }
 
 .avatar {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 6.2rem;
+    height: 6.2rem;
 }
 
 .w3-cell {
@@ -54,8 +54,8 @@ body {
         text-align: center!important;
     }
     .title {
-        font-size: 1.2rem!important;
-        line-height: 1.2rem!important;
+        font-size: 1rem!important;
+        line-height: 1rem!important;
         text-align: center!important;
     }
     .nameAndTitle {
@@ -76,7 +76,7 @@ body {
         padding-bottom: 1rem!important;
         margin-bottom: 1rem!important;
         font-size: 0.8rem!important;
-        border-bottom: 0.06rem solid rgb(49, 189, 172)!important;
+        border-bottom: 0.06rem solid rgb(0, 136, 145)!important;
     }
     .viewImageR {
         font-size: 0.8rem!important;
@@ -85,7 +85,7 @@ body {
         font-size: 1.2rem!important;
         padding-bottom: 1rem!important;
     }
-    p.right, p.left, p.madeWith, p.sourceL, p.sourceR {
+    p.right, p.left, p.madeWith, p.sourceL, p.sourceR, p.sourceM, p {
         padding-left: 0rem!important;
         padding-right: 0rem!important;
         font-size: 1rem!important;
@@ -113,7 +113,7 @@ body {
         margin-right: 0rem!important;
     }
     .footnoteL {
-        border-bottom: 0.06rem solid rgb(49, 189, 172);
+        border-bottom: 0.06rem solid rgb(0, 136, 145);
         margin-bottom: 1rem!important;
     }
     img.left, img.right, .viewImageL, .viewImageR {
@@ -216,6 +216,10 @@ p {
     text-align: left;
 }
 
+p.sourceM {
+    padding-bottom: 0rem;
+}
+
 ol, ul {
     font-size: 1.1rem;
     font-family: 'Open Sans', sans-serif;
@@ -231,6 +235,11 @@ img {
 
 img:hover {
     opacity: 0.5;
+}
+
+.avocado {
+    padding: 2rem;
+    background-color: rgb(255,255,255);
 }
 
 img.left {
@@ -257,7 +266,7 @@ p.right {
 }
 
 hr {
-    border-top: 0.06rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(0, 136, 145);
     margin: 2rem 0rem 2rem 0rem;
 }
 
@@ -301,16 +310,29 @@ h4 {
 }
 
 a {
-    color: black;
+    color: rgb(0, 136, 145);
     font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 b {
     font-weight: 700;
 }
 
+color {
+    color: rgb(0, 136, 145);
+}
+
+.bg-color {
+    background-color: rgb(236, 246, 247)
+}
+
 a:hover {
-    color: rgb(49, 189, 172);
+    color: rgb(0, 136, 145);
 }
 
 a.contact, .contactCard {
@@ -321,7 +343,7 @@ a.contact, .contactCard {
 }
 
 a.contact:hover {
-    color: rgb(49, 189, 172);
+    color: rgb(0, 136, 145);
     text-decoration: underline;
 }
 
@@ -333,8 +355,8 @@ button {
 .nameAndTitle {
     margin: 0rem;
     padding-left: 1rem;
-    font-size: 4.5rem;
-    line-height: 4.2rem;
+    font-size: 4rem;
+    line-height: 3.8rem;
     vertical-align: middle;
     max-width: 100%;
     overflow: hidden;
@@ -342,7 +364,7 @@ button {
 }
 
 .back {
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(236, 246, 247);
     height: 5.2rem;
     width: 5.2rem;
     font-size: 5rem;
@@ -361,7 +383,8 @@ button {
 }
 
 .download {
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(236, 246, 247);
+    color: rgb(0, 136, 145);
     border: none;
     border-radius: 1rem;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
@@ -369,7 +392,7 @@ button {
 }
 
 button:hover {
-    color: rgb(49, 189, 172);
+    color: rgb(0, 136, 145);
     text-decoration: underline;
 }
 
@@ -378,6 +401,7 @@ button:hover {
     border: none;
     border-radius: 1rem;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    color: rgb(0, 136, 145);
 }
 
 .projectTitle {
@@ -401,20 +425,25 @@ button:hover {
 
 .title {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    line-height: 2.8rem;
+    font-size: 1.23rem;
+    line-height: 2.2rem;
 }
 
 .footnoteL {
-    border-top: 0.06rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(0, 136, 145);
     padding-top: 1rem;
     margin-right: 1rem;
 }
 
 .footnoteR {
-    border-top: 0.06rem solid rgb(49, 189, 172);
+    border-top: 0.06rem solid rgb(0, 136, 145);
     padding-top: 1rem;
     margin-left: 1rem;
+}
+
+.footnoteM {
+    border-top: 0.06rem solid rgb(0, 136, 145);
+    padding-top: 1rem;
 }
 
 .viewImageR {
@@ -446,13 +475,14 @@ button:hover {
 
 .frame {
     width: 100%;
-    background-color: rgb(242, 242, 242);
+    background-color: rgb(236, 246, 247);
     padding: 2rem;
     margin: 1rem 0rem 2rem 0rem;
 }
 
 .blurb {
     font-size: 1.1rem;
+    font-style: italic;
 }
 
 i {
