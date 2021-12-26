@@ -39,16 +39,16 @@ $('#good-morning').on('click', function() {
   readTextFile("js/good-morning.json", function(text) {
     goodMorning = JSON.parse(text);
   });
-
   allTasks = goodMorning.concat(allTasks);
+  populate();
 })
 
 $('#good-night').on('click', function() {
   readTextFile("js/good-night.json", function(text) {
     goodNight = JSON.parse(text);
   });
-
   allTasks = goodNight.concat(allTasks);
+  populate();
 })
 
 function remove(el) {
