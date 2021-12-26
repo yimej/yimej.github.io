@@ -36,37 +36,39 @@ $('#upload').on('click', function() {
 })
 
 $('#good-morning').on('click', function() {
-  goodMorning();
+  readTextFile("js/good-morning.json", function(text) {
+    goodMorning = JSON.parse(text);
+  });
+
+  allTasks = goodMorning.concat(allTasks);
 })
 
 $('#good-night').on('click', function() {
-  goodNight();
+  readTextFile("js/good-night.json", function(text) {
+    goodNight = JSON.parse(text);
+  });
+
+  allTasks = goodNight.concat(allTasks);
 })
 
 function remove(el) {
   var element = el;
   element.remove();
+  console.log(element.innerHTML);
+  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37)];
+
   for (i=0; i<allTasks.length; i++) {
-    if ((element.innerHTML).toString().slice(5, -37) == allTasks[i]['input']) {
-      allTasks.splice(i, 1);
-    }
-    else if (element.innerHTML == allTasks[i]['input']) {
+    if (checkTheseDivs.includes(allTasks[i]['input'])) {
       allTasks.splice(i, 1);
     }
   }
   for (i=0; i<todoNow.length; i++) {
-    if ((element.innerHTML).toString().slice(5, -37) == todoNow[i]['input']) {
-      todoNow.splice(i, 1);
-    }
-    else if (element.innerHTML == todoNow[i]['input']) {
+    if (checkTheseDivs.includes(todoNow[i]['input'])) {
       todoNow.splice(i, 1);
     }
   }
   for (i=0; i<todoLater.length; i++) {
-    if ((element.innerHTML).toString().slice(5, -37) == todoLater[i]['input']) {
-      todoLater.splice(i, 1);
-    }
-    else if (element.innerHTML == todoLater[i]['input']) {
+    if (checkTheseDivs.includes(todoLater[i]['input'])) {
       todoLater.splice(i, 1);
     }
   }
@@ -81,7 +83,6 @@ function readTextFile(file, callback) {
   rawFile.onreadystatechange = function() {
     if (rawFile.readyState === 4 && rawFile.status == "200") {
       callback(rawFile.responseText);
-      console.log('oops');
     }
   }
   rawFile.send(null);
@@ -189,20 +190,6 @@ function upload() {
   });
 }
 
-function goodMorning() {
-  readTextFile("js/good-morning.json", function(text) {
-    var goodMorning = JSON.parse(text);
-    console.log(goodMorning);
-  });
-}
-
-function goodNight() {
-  readTextFile("js/good-night.json", function(text) {
-    var goodNight = JSON.parse(text);
-    console.log(goodNight);
-  });
-}
-
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
   date.setDate(date.getDate() + days);
@@ -240,6 +227,8 @@ var todoLeft = [];
 var todoTemp = [];
 var todoWeighted = [];
 var randomItem = '';
+var goodMorning = [];
+var goodNight = [];
 
 function addTask() {
   todaysDate = new Date();
