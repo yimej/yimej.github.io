@@ -39,7 +39,7 @@ function remove(el) {
   var element = el;
   element.remove();
   for (i=0; i<allTasks.length; i++) {
-    if ((element.innerHTML).toString().slice(0,-31) == allTasks[i]['input']) {
+    if ((element.innerHTML).toString().slice(5, -37) == allTasks[i]['input']) {
       allTasks.splice(i, 1);
     }
     else if (element.innerHTML == allTasks[i]['input']) {
@@ -47,7 +47,7 @@ function remove(el) {
     }
   }
   for (i=0; i<todoNow.length; i++) {
-    if ((element.innerHTML).toString().slice(0,-31) == todoNow[i]['input']) {
+    if ((element.innerHTML).toString().slice(5, -37) == todoNow[i]['input']) {
       todoNow.splice(i, 1);
     }
     else if (element.innerHTML == todoNow[i]['input']) {
@@ -55,7 +55,7 @@ function remove(el) {
     }
   }
   for (i=0; i<todoLater.length; i++) {
-    if ((element.innerHTML).toString().slice(0,-31) == todoLater[i]['input']) {
+    if ((element.innerHTML).toString().slice(5, -37) == todoLater[i]['input']) {
       todoLater.splice(i, 1);
     }
     else if (element.innerHTML == todoLater[i]['input']) {
@@ -279,8 +279,6 @@ function shuffle() {
   todoWeighted = [];
   todoLeft = [];
   todoTemp = [];
-
-  console.log(allTasks);
 
   // create todoNow
   for (p=-1; p<4; p++) {
