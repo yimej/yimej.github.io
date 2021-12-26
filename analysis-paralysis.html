@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Analysis Paralysis</title>
+    <!-- <link rel="icon" href="img/avatar.png"> -->
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/analysis-paralysis.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class='main'> 
+      <div class='left column'>
+        <div class='title rotated'>analysis<br>paralysis</div>
+        <div class='copyright'>© 2022 <a class='nostyle' href='https://yimej.github.io'>ELIZABETH YIM</a></div>
+      </div>
+
+      <div class='middle column'>
+        <div id='step-01' class='center' style='margin-top: 0rem;'>
+          <div id='row' class='padded-row' style='margin-top: 0;'>
+            <input class='full-input' type='text' id='row-input' placeholder='enter task here' value=''>
+            <button class='btn' id='addTask'><img src='img/analysis-paralysis/add.svg' class='icon' title='add task'></button><br>
+            <input type='checkbox' id='row-urgent'><label for='row-urgent'> urgent</label>
+            <input style='margin-left: 1.5rem;' type='checkbox' id='row-important'><label for='row-important'> important</label>
+            <input style='margin-left: 1.5rem;' type='checkbox'id='showDeadline'><label for='row-deadline'> deadline</label>
+            <input class='calendar' style='display: none;' type='date' id='row-deadline' value=''><br>
+          </div>
+        </div>
+
+        <div id='step-02' class='center'>
+          <div id='matrix'>
+            <div class='matrix-head'> </div>
+            <div class='matrix-head'>URGENT</div>
+            <div class='matrix-head'>NOT URGENT</div>
+            <div class='rotated'>IMPORTANT</div>
+
+            <div class='matrix-cell' id='matrix-4'>
+            </div>
+
+            <div class='matrix-cell' id='matrix-3'>
+            </div>
+
+            <div class='rotated'>NOT IMPORTANT</div>
+
+            <div class='matrix-cell' id='matrix-2'>
+            </div>
+
+            <div class='matrix-cell' id='matrix-1'>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='right column'>
+        <center>
+          <button class='btn' id='random'style='margin-bottom:2rem'><img src='img/analysis-paralysis/random.svg' class='icon' title='shuffle current tasks'></button>&nbsp;&nbsp;
+          <!-- <button class='btn' id='save' style='margin-bottom:2rem'><img src='img/analysis-paralysis/save.svg' class='icon' title='save current tasks'></button>&nbsp;&nbsp; -->
+          <!-- <button class='btn' id='upload' style='margin-bottom:2rem'><img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks'></button>&nbsp;&nbsp; -->
+          <!-- <button class='btn' id='data' style='margin-bottom:2rem'><img src='img/analysis-paralysis/data.svg' class='icon' title='view trends'></button>&nbsp;&nbsp; -->
+          <button class='btn' id='reset' style='margin-bottom:2rem'><img src='img/analysis-paralysis/refresh.svg' class='icon' title='reset current tasks'></button>
+        </center>
+        <div id='now' class='bg' style='margin-bottom: 2rem;'>
+          <div class='bold'>NOW</div>
+          <ol id='todo-now'></ol>
+        </div>
+        <div id='later' class='bg'>
+          <div class='bold'>LATER</div>
+          <ol id='todo-later'></ol>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/analysis-paralysis.js"></script>
+  
+  </body>
+</html>

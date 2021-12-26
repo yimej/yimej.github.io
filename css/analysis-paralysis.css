@@ -1,0 +1,238 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    /*font-weight: 300;*/
+    font-size: 80%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 2rem;
+    background-color: rgb(236, 246, 247);
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: left;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+.bg {
+    background-color: rgb(236, 246, 247);
+    padding: 1rem;
+    /*color: rgb(0, 136, 145);*/
+    /*font-weight: 900;*/
+    text-align: left;
+    height: calc((100% - 7rem)/2);
+    overflow: auto;
+}
+
+.bold {
+    background-color: rgb(0, 136, 145);
+    color: white;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.text, label, option {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.left {
+    width: calc(15% - 1rem);
+    margin-right: 1rem;
+}
+
+.middle {
+    width: calc(60% - 2rem);
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+.right {
+    width: calc(25% - 1rem);
+    margin-left: 1rem;
+    padding: 2rem 2rem 2rem 2rem;
+    background-color: white;
+}
+
+.column {
+    float: left;
+    height: calc(100vh - 4rem);
+}
+
+.center {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: white;
+}
+
+.avatar {
+    width: 6.2rem;
+    height: 6.2rem;
+}
+
+#matrix {
+    width: 100%;
+    display: grid;
+    grid: auto / 3.5rem calc((100% - 3rem) / 2) calc((100% - 3rem) / 2);
+    grid-gap: 0.5rem;
+    padding: 0rem;
+    background-color: rgb(236, 246, 247);
+    text-align: center;
+    height: calc(100vh - 18rem);
+}
+
+#matrix > div {
+    padding: 0.25rem;
+    background-color: white;
+    /*height: fit-content;*/
+}
+
+.matrix-head {
+    height: 3.5rem;
+    padding-top: 0.5rem;
+    font-weight: 500;
+    color: rgb(0, 136, 145);
+}
+
+.matrix-cell {
+    height: calc((100vh - 22rem)/2);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-content: start;
+}
+
+.task {
+    background-color: rgb(236, 246, 247);
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    border-radius: 100000000rem;
+    height: fit-content;
+    margin: 0.25rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+ol li div {
+    background-color: white;
+    padding: 0.25rem 1.25rem 0.25rem 2rem;
+    border-radius: 100000000rem;
+    height: fit-content;
+    margin: 0.25rem 0.25rem 0.25rem -2rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    height: 2rem;
+    vertical-align: middle;
+    overflow: auto;
+}
+
+li {
+    width: 100%;
+}
+
+.rotated {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    font-weight: 500;
+    color: rgb(0, 136, 145);
+}
+
+.title {
+    text-align: right;
+    color: rgb(0, 136, 145);
+    font-size: 6vmax;
+    line-height: 5.5vmax;
+    font-weight: 300;
+}
+
+.full-input {
+    width: calc(100% - 4.5rem);
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+}
+
+.calendar {
+    margin-left: 0.5rem;
+    width: 12rem;
+    height: 1.75rem;
+}
+
+.btn {
+    background-color: rgb(0, 136, 145);
+    color: white;
+    border: 0;
+    border-radius: 150px;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.icon {
+    filter: invert(1);
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-bottom: 0.125rem;
+}
+
+.btn:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(0, 136, 145);
+}
+
+ol, ul {
+    padding-left: 2rem;
+    /*padding: 0rem 0rem 0rem 2rem;*/
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+.copyright {
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    position: absolute;
+    left: calc((15% + 1rem)/2);
+    bottom: 2rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+/*
+.deadline:after {
+    content: '';
+    display: inline-block;  
+    width: 1rem;
+    height: 1rem;
+    background: url('img/star.svg') no-repeat;
+}*/
+
+span {
+    color: rgb(0, 136, 145);
+}
