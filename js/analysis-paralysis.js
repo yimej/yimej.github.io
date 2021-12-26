@@ -35,6 +35,14 @@ $('#upload').on('click', function() {
   upload();
 })
 
+$('#openUploader').on('mouseenter', function() {
+  document.getElementById('uploadContainer').style = 'display: block;';
+})
+
+$('#uploadContainer').on('mouseleave', function() {
+  document.getElementById('uploadContainer').style = 'display: none;';
+})
+
 $('#good-morning').on('click', function() {
   readTextFile("js/good-morning.json", function(text) {
     goodMorning = JSON.parse(text);
@@ -167,27 +175,23 @@ function save() {
 }
 
 function upload() {
-  // var files = document.getElementById('upload').files;
-  // console.log(files);
-  // if (files.length <= 0) {
-  //   return false;
-  // }
+  var files = document.getElementById('selectJSON').files;
+  if (files.length <= 0) {
+    return false;
+  }
 
-  // var fr = new FileReader();
+  var fr = new FileReader();
 
-  // fr.onload = function(e) { 
-  // console.log(e);
-  //   var result = JSON.parse(e.target.result);
-  //   var formatted = JSON.stringify(result, null, 2);
-  //     document.getElementById('result').value = formatted;
-  // }
+  fr.onload = function(e) { 
+    var previousTasks = JSON.parse(e.target.result);
+    console.log(previousTasks);
+    allTasks = previousTasks.concat(allTasks);
+    populate();
+    // var formatted = JSON.stringify(result, null, 2);
+  }
 
-  // fr.readAsText(files.item(0));
-
-  readTextFile("js/good-morning.json", function(text){
-    var data = JSON.parse(text);
-    console.log(data);
-  });
+  fr.readAsText(files.item(0));
+  // console.log(result);
 }
 
 Date.prototype.addDays = function(days) {

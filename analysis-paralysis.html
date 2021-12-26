@@ -23,8 +23,12 @@
         <div class='title rotated'>analysis<br>paralysis</div>
         <div class='copyright'>
           <center>
+            <div id='uploadContainer' style='display:none;'>
+              <input type="file" id="selectJSON" value="" accept='application/json'><br><br>
+              <button id='upload'>Upload Saved Tasks</button><br><br>
+            </div>
             <button class='btn' id='save' style='margin-bottom:2rem'><img src='img/analysis-paralysis/save.svg' class='icon' title='save current tasks'></button>&nbsp;&nbsp;
-            <button class='btn' id='upload' style='margin-bottom:2rem'><img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks'></button>&nbsp;&nbsp;
+            <button class='btn' id='openUploader' style='margin-bottom:2rem'><img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks'></button>&nbsp;&nbsp;
             <button class='btn' id='data' style='margin-bottom:2rem'><img src='img/analysis-paralysis/data.svg' class='icon' title='view trends'></button>
           </center>
           © 2022 <a class='nostyle' href='https://yimej.github.io'>ELIZABETH YIM</a>

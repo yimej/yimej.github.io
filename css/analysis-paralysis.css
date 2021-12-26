@@ -162,6 +162,11 @@ li {
     margin-bottom: 2rem;
 }
 
+#selectJSON {
+    text-align: center;
+    margin-left: 6rem;
+}
+
 .full-input {
     width: calc(100% - 4.5rem);
     margin-bottom: 0.5rem;
