@@ -49,6 +49,7 @@ $('#good-morning').on('click', function() {
   });
   allTasks = goodMorning.concat(allTasks);
   populate();
+  populate();
 })
 
 $('#good-night').on('click', function() {
@@ -62,8 +63,7 @@ $('#good-night').on('click', function() {
 function remove(el) {
   var element = el;
   element.remove();
-  console.log(element.innerHTML);
-  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37)];
+  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -7), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37)];
 
   for (i=0; i<allTasks.length; i++) {
     if (checkTheseDivs.includes(allTasks[i]['input'])) {
@@ -184,7 +184,6 @@ function upload() {
 
   fr.onload = function(e) { 
     var previousTasks = JSON.parse(e.target.result);
-    console.log(previousTasks);
     allTasks = previousTasks.concat(allTasks);
     populate();
     // var formatted = JSON.stringify(result, null, 2);
