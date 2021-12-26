@@ -251,7 +251,7 @@ function addTask() {
     }
 
     if (currentPriority < 7) {
-      currentMatrixHTML = "<div class='task priority-0" + currentPriority.toString() + "' onclick='remove(this);'>" + currentInput + "<span>" + alarmClock + currentDateString.slice(5,) + "</span></div>";
+      currentMatrixHTML = "<div class='task priority-0" + currentPriority.toString() + "' onclick='remove(this);'>" + currentInput + "<span>" + alarmClock + currentDateString.slice(5,7) + "." + currentDateString.slice(8,10) + "</span></div>";
       currentTodoHTML = "<li onclick='remove(this);'><div>" + currentInput + "<span>" + alarmClock + currentDateString.slice(5,7) + "." + currentDateString.slice(8,10) + "</span></div></li>";
     }
     else {
