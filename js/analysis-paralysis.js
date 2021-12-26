@@ -35,6 +35,14 @@ $('#upload').on('click', function() {
   upload();
 })
 
+$('#good-morning').on('click', function() {
+  goodMorning();
+})
+
+$('#good-night').on('click', function() {
+  goodNight();
+})
+
 function remove(el) {
   var element = el;
   element.remove();
@@ -69,11 +77,11 @@ function remove(el) {
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json"); // application/json
-  rawFile.responseType = 'json';
   rawFile.open("GET", file, true);
   rawFile.onreadystatechange = function() {
-    if (rawFile.readyState === 4 && rawFile.status === "200") {
-      callback(rawFile.responseType);
+    if (rawFile.readyState === 4 && rawFile.status == "200") {
+      callback(rawFile.responseText);
+      console.log('oops');
     }
   }
   rawFile.send(null);
@@ -175,11 +183,24 @@ function upload() {
 
   // fr.readAsText(files.item(0));
 
-  readTextFile("/js/good-morning.json", function(text){
+  readTextFile("js/good-morning.json", function(text){
     var data = JSON.parse(text);
     console.log(data);
-});
+  });
+}
 
+function goodMorning() {
+  readTextFile("js/good-morning.json", function(text) {
+    var goodMorning = JSON.parse(text);
+    console.log(goodMorning);
+  });
+}
+
+function goodNight() {
+  readTextFile("js/good-night.json", function(text) {
+    var goodNight = JSON.parse(text);
+    console.log(goodNight);
+  });
 }
 
 Date.prototype.addDays = function(days) {
