@@ -31,24 +31,24 @@ $('#save').on('click', function(){
   save();
 })
 
-$('#upload').on('click', function() {
+$('#selectJSON').on('change', function() {
   upload();
+  // document.getElementById("selectJSON").submit();
 })
 
-$('#openUploader').on('mouseenter', function() {
-  document.getElementById('uploadContainer').style = 'display: block;';
-})
+// $('#openUploader').on('mouseenter', function() {
+//   document.getElementById('uploadContainer').style = 'display: block;';
+// })
 
-$('#uploadContainer').on('mouseleave', function() {
-  document.getElementById('uploadContainer').style = 'display: none;';
-})
+// $('#uploadContainer').on('mouseleave', function() {
+//   document.getElementById('uploadContainer').style = 'display: none;';
+// })
 
 $('#good-morning').on('click', function() {
   readTextFile("js/good-morning.json", function(text) {
     goodMorning = JSON.parse(text);
   });
-  allTasks = goodMorning.concat(allTasks);
-  populate();
+  shuffle();
   populate();
 })
 
@@ -56,14 +56,14 @@ $('#good-night').on('click', function() {
   readTextFile("js/good-night.json", function(text) {
     goodNight = JSON.parse(text);
   });
-  allTasks = goodNight.concat(allTasks);
+  shuffle();
   populate();
 })
 
 function remove(el) {
   var element = el;
   element.remove();
-  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -7), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37)];
+  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -7), (element.innerHTML).toString().slice(0, -8), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37), (element.innerHTML).toString().slice(5, -14)];
 
   for (i=0; i<allTasks.length; i++) {
     if (checkTheseDivs.includes(allTasks[i]['input'])) {
@@ -185,12 +185,11 @@ function upload() {
   fr.onload = function(e) { 
     var previousTasks = JSON.parse(e.target.result);
     allTasks = previousTasks.concat(allTasks);
+    shuffle();
     populate();
-    // var formatted = JSON.stringify(result, null, 2);
   }
 
   fr.readAsText(files.item(0));
-  // console.log(result);
 }
 
 Date.prototype.addDays = function(days) {
@@ -336,6 +335,7 @@ function shuffle() {
   }
   shuffleArray(todoTemp);
   todoNow = todoNow.concat(todoTemp);
+  todoNow = goodMorning.concat(goodNight.concat(todoNow));
 
   // create todoLater
   for (p=4; p<7; p++) {
@@ -392,6 +392,8 @@ function populate() {
   document.getElementById('matrix-1').innerHTML = '';
   document.getElementById('todo-now').innerHTML = '';
   document.getElementById('todo-later').innerHTML = '';
+
+  allTasks = goodMorning.concat(goodNight.concat(allTasks));
 
   for (i=0; i<allTasks.length; i++) {
     document.getElementById('matrix-' + allTasks[i]['category'].toString()).innerHTML += allTasks[i]['matrixHTML'];
