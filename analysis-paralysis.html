@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Analysis Paralysis</title>
-    <!-- <link rel="icon" href="img/avatar.png"> -->
+    <link rel="icon" href="img/avatar.png">
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,7 +21,14 @@
     <div class='main'> 
       <div class='left column'>
         <div class='title rotated'>analysis<br>paralysis</div>
-        <div class='copyright'>© 2022 <a class='nostyle' href='https://yimej.github.io'>ELIZABETH YIM</a></div>
+        <div class='copyright'>
+          <center>
+            <button class='btn' id='save' style='margin-bottom:2rem'><img src='img/analysis-paralysis/save.svg' class='icon' title='save current tasks'></button>&nbsp;&nbsp;
+            <button class='btn' id='upload' style='margin-bottom:2rem'><img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks'></button>&nbsp;&nbsp;
+            <button class='btn' id='data' style='margin-bottom:2rem'><img src='img/analysis-paralysis/data.svg' class='icon' title='view trends'></button>
+          </center>
+          © 2022 <a class='nostyle' href='https://yimej.github.io'>ELIZABETH YIM</a>
+        </div>
       </div>
 
       <div class='middle column'>
@@ -63,9 +70,8 @@
       <div class='right column'>
         <center>
           <button class='btn' id='random'style='margin-bottom:2rem'><img src='img/analysis-paralysis/random.svg' class='icon' title='shuffle current tasks'></button>&nbsp;&nbsp;
-          <!-- <button class='btn' id='save' style='margin-bottom:2rem'><img src='img/analysis-paralysis/save.svg' class='icon' title='save current tasks'></button>&nbsp;&nbsp; -->
-          <!-- <button class='btn' id='upload' style='margin-bottom:2rem'><img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks'></button>&nbsp;&nbsp; -->
-          <!-- <button class='btn' id='data' style='margin-bottom:2rem'><img src='img/analysis-paralysis/data.svg' class='icon' title='view trends'></button>&nbsp;&nbsp; -->
+          <button class='btn' id='good-morning'style='margin-bottom:2rem'><img src='img/analysis-paralysis/sun.svg' class='icon' title='good morning'></button>&nbsp;&nbsp;
+          <button class='btn' id='good-night'style='margin-bottom:2rem'><img src='img/analysis-paralysis/moon.svg' class='icon' title='good night'></button>&nbsp;&nbsp;
           <button class='btn' id='reset' style='margin-bottom:2rem'><img src='img/analysis-paralysis/refresh.svg' class='icon' title='reset current tasks'></button>
         </center>
         <div id='now' class='bg' style='margin-bottom: 2rem;'>
@@ -79,6 +85,8 @@
       </div>
     </div>
     
+    <!-- <script type='text/json' src="js/good-morning.json"></script>
+    <script type='text/json' src="js/good-night.json"></script> -->
     <script src="js/analysis-paralysis.js"></script>
   
   </body>

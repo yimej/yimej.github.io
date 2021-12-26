@@ -69,10 +69,11 @@ function remove(el) {
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json"); // application/json
+  rawFile.responseType = 'json';
   rawFile.open("GET", file, true);
   rawFile.onreadystatechange = function() {
-    if (rawFile.readyState === 4 && rawFile.status == "200") {
-      callback(rawFile.responseText);
+    if (rawFile.readyState === 4 && rawFile.status === "200") {
+      callback(rawFile.responseType);
     }
   }
   rawFile.send(null);
@@ -157,10 +158,28 @@ function save() {
 }
 
 function upload() {
-  readTextFile("saved/test.json", function(text){
+  // var files = document.getElementById('upload').files;
+  // console.log(files);
+  // if (files.length <= 0) {
+  //   return false;
+  // }
+
+  // var fr = new FileReader();
+
+  // fr.onload = function(e) { 
+  // console.log(e);
+  //   var result = JSON.parse(e.target.result);
+  //   var formatted = JSON.stringify(result, null, 2);
+  //     document.getElementById('result').value = formatted;
+  // }
+
+  // fr.readAsText(files.item(0));
+
+  readTextFile("/js/good-morning.json", function(text){
     var data = JSON.parse(text);
     console.log(data);
-  });
+});
+
 }
 
 Date.prototype.addDays = function(days) {

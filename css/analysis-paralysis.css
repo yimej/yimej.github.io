@@ -159,6 +159,7 @@ li {
     font-size: 6vmax;
     line-height: 5.5vmax;
     font-weight: 300;
+    margin-bottom: 2rem;
 }
 
 .full-input {
