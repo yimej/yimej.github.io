@@ -21,8 +21,17 @@
     <div id='menu'>
       <button class='btn-menu' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
       <button class='btn-menu' id='undo'><img src='img/analysis-paralysis/undo.svg' class='icon-menu'></button>
-      <button class='btn-menu' id='am'><img src='img/analysis-paralysis/sun.svg' class='icon-menu'></button>
-      <button class='btn-menu' id='pm'><img src='img/analysis-paralysis/moon.svg' class='icon-menu'></button>
+
+      <div id='bookmarked'>
+        <button class='btn-menu' id='bookmark'><img src='img/analysis-paralysis/bookmark.svg' class='icon-menu'></button>
+        <div id='bookmarked-content'>
+          <button class='btn-bookmark' id='favorites'><img src='img/analysis-paralysis/heart.svg' class='icon-menu'></button>
+          <button class='btn-bookmark' id='am'><img src='img/analysis-paralysis/sun.svg' class='icon-menu'></button>
+          <button class='btn-bookmark' id='pm'><img src='img/analysis-paralysis/moon.svg' class='icon-menu'></button>
+          <button class='btn-bookmark' id='save'><img src='img/analysis-paralysis/save.svg' class='icon-menu'></button>
+        </div>
+      </div>
+      
       <button class='btn-menu' id='refresh'><img src='img/analysis-paralysis/refresh.svg' class='icon-menu'></button>
       <button class='btn-menu' id='reset'><img src='img/analysis-paralysis/delete.svg' class='icon-menu'></button>
     </div>
@@ -41,11 +50,11 @@
     <div id='lists' class='frame'>
       <div class='bg'>
         <div class='bold'>today</div>
-        <div id='doToday'><br></div>
+        <div id='doToday'></div>
       </div>
       <div class='bg'>
         <div class='bold'>tomorrow</div>
-        <div id='doTomorrow'><br></div>
+        <div id='doTomorrow'></div>
       </div>
       <div class='bg'>
         <div class='bold'>this week</div>
@@ -53,14 +62,20 @@
       </div>
       <div class='bg' style='margin-bottom: 0rem;'>
         <div class='bold'>later</div>
-        <div id='doLater'><br></div>
+        <div id='doLater'></div>
       </div>
     </div>
 
-    
+    <div id='footer'>
+      <button class='btn-menu' id='about'><img src='img/analysis-paralysis/info.svg' class='icon-menu'></button>  
+      <button class='btn-menu'><a href='mailto:lizzicodes@gmail.com' target='blank'><img src='img/analysis-paralysis/email.svg' class='icon-menu'></a></button>
+      
+      <div id='copyright'>
+        © 2022 <a href='https://yimej.github.io' target='blank'>ELIZABETH YIM</a>
+      </div>
+    </div>
+
     <script src="js/analysis-paralysis.js"></script>
-    <script src="js/analysis-paralysis-functions.js"></script>
-    <script src="js/analysis-paralysis-other.js"></script>
   
   </body>
 </html>

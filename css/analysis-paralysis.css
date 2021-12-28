@@ -28,14 +28,60 @@ body {
     align-content: center;
     vertical-align: middle;
     padding: 1rem 0.5rem 1rem 0.5rem;
-    width: calc(100% + 3rem);
-    /*display: inline-block;*/
-    overflow: hidden;
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+#bookmarked {
+    display: inline-block;
+}
+
+#bookmarked-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    z-index: 3;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 5px;
+    height: 3.75rem;
+    margin-top: 0.5rem;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 0) !important;
+    width: 15rem;
+}
+
+#bookmarked-content:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+#bookmarked:hover #bookmarked-content {
+    display: block;
+}
+
+#footer {
+    background-color: var(--dark);
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    width: calc(100% + 3rem);
+    overflow: hidden;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
 }
 
 .frame {
@@ -194,17 +240,12 @@ input[type="file"] {
     font-size: 2.5rem;
     line-height: 2.5rem;
     font-weight: 300;
-    margin-top: 1.5rem;
+    margin-top: 0.25rem;
 }
 
 #today {
     text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-#selectJSON {
-    text-align: center;
-    margin-left: 6rem;
+    margin-bottom: 1rem;
 }
 
 .full-input {
@@ -235,11 +276,25 @@ input[type="file"] {
     color: white;
     border: 0;
     border-radius: 150px;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 2.75rem;
+    width: 2.75rem;
     text-align: center;
     vertical-align: middle;
-    padding: 0.5rem;
+    padding: 0.25rem;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+}
+
+.btn-bookmark {
+    background-color: var(--dark);
+    color: white;
+    border: 0;
+    border-radius: 150px;
+    height: 2.75rem;
+    width: 2.75rem;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.25rem;
     margin-right: 0.25rem;
     margin-left: 0.25rem;
 }
@@ -250,12 +305,11 @@ input[type="file"] {
 }
 
 .icon-menu {
-    height: 2.25rem;
-    width: 2.25rem;
+    height: 2rem;
+    width: 2rem;
 }
 
-.btn:hover, .btn-menu:hover {
-    opacity: 0.5;
+.btn:hover, .btn-menu:hover, .btn-bookmark {
     cursor: pointer;
 }
 
@@ -268,24 +322,16 @@ a:hover {
     color: var(--dark);
 }
 
-ol, ul {
-    padding-left: 2rem;
-    /*padding: 0rem 0rem 0rem 2rem;*/
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-}
-
-.copyright {
+#copyright {
     vertical-align: middle;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    line-height: 1rem;
-    position: absolute;
-    left: calc((15% + 1rem)/2);
-    bottom: 2rem;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%)
+    font-size: 0.9rem;
+    line-height: 0.9rem ;
+    color: white;
+    margin-top: 1rem;
+    /*line-height: 0.125rem;*/
+    /*position: absolute;*/
 }
 
 span {
