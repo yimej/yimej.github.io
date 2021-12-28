@@ -1,3 +1,8 @@
+:root {
+  --light: rgb(236, 246, 247);
+  --dark: rgb(0, 136, 145);
+}
+
 html {
     font-family: 'Open Sans', sans-serif;
     /*font-weight: 300;*/
@@ -7,8 +12,8 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    padding: 2rem;
-    background-color: rgb(236, 246, 247);
+    padding: 5.5rem 1.5rem 1.5rem 1.5rem;
+    background-color: var(--light);
     font-size: 1.25rem;
     line-height: 1.75rem;
     text-align: left;
@@ -17,19 +22,45 @@ body {
     animation-fill-mode: forwards; 
 }
 
-.bg {
-    background-color: rgb(236, 246, 247);
-    padding: 1rem;
-    /*color: rgb(0, 136, 145);*/
-    /*font-weight: 900;*/
+#menu {
+    background-color: var(--dark);
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    width: calc(100% + 3rem);
+    /*display: inline-block;*/
+    overflow: hidden;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.frame {
+    background-color: white;
     text-align: left;
-    height: calc((100% - 7rem)/2);
+    align-content: left;
+    vertical-align: middle;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.bg {
+    background-color: var(--light);
+    padding: 1rem;
+    text-align: left;
+    border-radius: 5px;
     overflow: auto;
+    margin-bottom: 1rem;
 }
 
 .bold {
-    background-color: rgb(0, 136, 145);
+    background-color: var(--dark);
     color: white;
+    border-radius: 5px;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -91,7 +122,7 @@ body {
     grid: auto / 3.5rem calc((100% - 3rem) / 2) calc((100% - 3rem) / 2);
     grid-gap: 0.5rem;
     padding: 0rem;
-    background-color: rgb(236, 246, 247);
+    background-color: var(--light);
     text-align: center;
     height: calc(100vh - 18rem);
 }
@@ -106,7 +137,7 @@ body {
     height: 3.5rem;
     padding-top: 0.5rem;
     font-weight: 500;
-    color: rgb(0, 136, 145);
+    color: var(--dark);
 }
 
 .matrix-cell {
@@ -118,7 +149,7 @@ body {
 }
 
 .task {
-    background-color: rgb(236, 246, 247);
+    background-color: var(--light);
     padding: 0.25rem 1rem 0.25rem 1rem;
     border-radius: 100000000rem;
     height: fit-content;
@@ -154,16 +185,21 @@ input[type="file"] {
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     font-weight: 500;
-    color: rgb(0, 136, 145);
+    color: var(--dark);
 }
 
 .title {
-    text-align: right;
-    color: rgb(0, 136, 145);
-    font-size: 6vmax;
-    line-height: 5.5vmax;
+    text-align: center;
+    color: var(--dark);
+    font-size: 2.5rem;
+    line-height: 2.5rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+
+#today {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 #selectJSON {
@@ -172,57 +208,53 @@ input[type="file"] {
 }
 
 .full-input {
-    width: calc(100% - 4.5rem);
+    width: calc(100% - 3rem);
     margin-bottom: 0.5rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .calendar {
-    margin-left: 0.5rem;
-    width: 12rem;
+    margin-left: 1.25rem;
     height: 1.75rem;
 }
 
 .btn {
-    background-color: rgb(0, 136, 145);
+    background-color: var(--dark);
     color: white;
     border: 0;
     border-radius: 150px;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 2rem;
     text-align: center;
     vertical-align: middle;
-    padding: 0.125rem 0.5rem 0.5rem 0.5rem;
+    padding: 0em 0.5rem 0.5rem 0.5rem;
 }
 
-#uploadLabel {
-    /*background-color: red;*/
-    margin-bottom: 2rem;
-    display: inline-block;
-    height: 2.5rem;
-    width: 2.5rem;
-    padding-bottom: 0.5rem;
-}
-
-#uploadButton {
-    background-color: rgb(0, 136, 145);
+.btn-menu {
+    background-color: white;
     color: white;
     border: 0;
     border-radius: 150px;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
     text-align: center;
     vertical-align: middle;
-    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
 }
 
 .icon {
-    filter: invert(1);
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
 }
 
-.btn:hover {
+.icon-menu {
+    height: 2.25rem;
+    width: 2.25rem;
+}
+
+.btn:hover, .btn-menu:hover {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -233,7 +265,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: rgb(0, 136, 145);
+    color: var(--dark);
 }
 
 ol, ul {
@@ -255,15 +287,7 @@ ol, ul {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
 }
-/*
-.deadline:after {
-    content: '';
-    display: inline-block;  
-    width: 1rem;
-    height: 1rem;
-    background: url('img/star.svg') no-repeat;
-}*/
 
 span {
-    color: rgb(0, 136, 145);
+    color: var(--dark);
 }

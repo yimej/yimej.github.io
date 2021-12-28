@@ -18,83 +18,49 @@
 
   </head>
   <body>
-    <div class='main'> 
-      <div class='left column'>
-        <div class='title rotated'>analysis<br>paralysis</div>
-        <div class='copyright'>
-          <div>
-            <button class='btn' id='save' style='margin-bottom: -1.25rem;'><img src='img/analysis-paralysis/save.svg' class='icon' title='save current tasks' style='margin-top: 0.375rem;'></button>&nbsp;&nbsp;
+    <div id='menu'>
+      <button class='btn-menu' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='undo'><img src='img/analysis-paralysis/undo.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='am'><img src='img/analysis-paralysis/sun.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='pm'><img src='img/analysis-paralysis/moon.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='refresh'><img src='img/analysis-paralysis/refresh.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='reset'><img src='img/analysis-paralysis/delete.svg' class='icon-menu'></button>
+    </div>
 
-            <label id='uploadLabel'>
-              <input type="file" id="selectJSON" value="" accept='application/json'>
-              <div id='uploadButton'>
-                <img src='img/analysis-paralysis/upload.svg' class='icon' title='upload previously saved tasks' style='margin-bottom: -1.125rem'>
-              </div>  
-            </label>&nbsp;&nbsp;
-            
-            <button class='btn' id='data' style='margin-bottom: -1.25rem;'><img src='img/analysis-paralysis/data.svg' class='icon' title='view trends' style='margin-top: 0.375rem;'></button>
-          </div>
-          © 2022 <a class='nostyle' href='https://yimej.github.io'>ELIZABETH YIM</a>
-        </div>
+    <div class='title'>analysis paralysis</div>
+    <div id='today'></div>
+
+    <div class='frame'>
+      <input class='full-input' type='text' id='task' placeholder='enter task here' value=''>
+      <button class='btn' id='add' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/add.svg' class='icon' title='add task'></button><br>
+      <input type='checkbox' id='important'><label for='important'> important</label><br>
+      <input type='checkbox' id='deadline'><label for='deadline'> deadline</label>
+      <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>
+    </div>
+
+    <div id='lists' class='frame'>
+      <div class='bg'>
+        <div class='bold'>today</div>
+        <div id='doToday'><br></div>
       </div>
-
-      <div class='middle column'>
-        <div id='step-01' class='center' style='margin-top: 0rem;'>
-          <div id='row' class='padded-row' style='margin-top: 0;'>
-            <input class='full-input' type='text' id='row-input' placeholder='enter task here' value=''>
-            <button class='btn' id='addTask' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/add.svg' class='icon' title='add task'></button><br>
-            <input type='checkbox' id='row-urgent'><label for='row-urgent'> urgent</label>
-            <input style='margin-left: 1.5rem;' type='checkbox' id='row-important'><label for='row-important'> important</label>
-            <input style='margin-left: 1.5rem;' type='checkbox'id='showDeadline'><label for='row-deadline'> deadline</label>
-            <input class='calendar' style='display: none;' type='date' id='row-deadline' value=''><br>
-          </div>
-        </div>
-
-        <div id='step-02' class='center'>
-          <div id='matrix'>
-            <div class='matrix-head'> </div>
-            <div class='matrix-head'>URGENT</div>
-            <div class='matrix-head'>NOT URGENT</div>
-            <div class='rotated'>IMPORTANT</div>
-
-            <div class='matrix-cell' id='matrix-4'>
-            </div>
-
-            <div class='matrix-cell' id='matrix-3'>
-            </div>
-
-            <div class='rotated'>NOT IMPORTANT</div>
-
-            <div class='matrix-cell' id='matrix-2'>
-            </div>
-
-            <div class='matrix-cell' id='matrix-1'>
-            </div>
-          </div>
-        </div>
+      <div class='bg'>
+        <div class='bold'>tomorrow</div>
+        <div id='doTomorrow'><br></div>
       </div>
-
-      <div class='right column'>
-        <center>
-          <button class='btn' id='random'style='margin-bottom:2rem'><img src='img/analysis-paralysis/random.svg' class='icon' title='shuffle current tasks'></button>&nbsp;&nbsp;
-          <button class='btn' id='good-morning'style='margin-bottom:2rem'><img src='img/analysis-paralysis/sun.svg' class='icon' title='good morning'></button>&nbsp;&nbsp;
-          <button class='btn' id='good-night'style='margin-bottom:2rem'><img src='img/analysis-paralysis/moon.svg' class='icon' title='good night'></button>&nbsp;&nbsp;
-          <button class='btn' id='reset' style='margin-bottom:2rem'><img src='img/analysis-paralysis/refresh.svg' class='icon' title='reset current tasks'></button>
-        </center>
-        <div id='now' class='bg' style='margin-bottom: 2rem;'>
-          <div class='bold'>NOW</div>
-          <ol id='todo-now'></ol>
-        </div>
-        <div id='later' class='bg'>
-          <div class='bold'>LATER</div>
-          <ol id='todo-later'></ol>
-        </div>
+      <div class='bg'>
+        <div class='bold'>this week</div>
+        <div id='doThisWeek'><br></div>
+      </div>
+      <div class='bg' style='margin-bottom: 0rem;'>
+        <div class='bold'>later</div>
+        <div id='doLater'><br></div>
       </div>
     </div>
+
     
-    <!-- <script type='text/json' src="js/good-morning.json"></script>
-    <script type='text/json' src="js/good-night.json"></script> -->
     <script src="js/analysis-paralysis.js"></script>
+    <script src="js/analysis-paralysis-functions.js"></script>
+    <script src="js/analysis-paralysis-other.js"></script>
   
   </body>
 </html>

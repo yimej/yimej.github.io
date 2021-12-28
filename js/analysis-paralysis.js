@@ -1,409 +1,221 @@
-$('#showDeadline').on('change', function() {
-  if (document.getElementById('showDeadline').checked == true) {
-    document.getElementById('row-deadline').style = 'display: inline-block';
+var r = document.querySelector(':root');
+var lastAction;
+var currentTask;
+var todayDefault = '';
+var doAll = [];
+var doToday = [];
+var doTodaySafe = [];
+var doTomorrow = [];
+var doTomorrowSafe = [];
+var doThisWeek = [];
+var doThisWeekSafe = [];
+var doLater = [];
+var doLaterSafe = [];
+var doImportant = [];
+var doWhenever = [];
+var today;
+var tomorrow;
+var threemorrow;
+var thisWeek;
+var nextWeek;
+var daysLeftInThisWeek;
+var goodMorning = [{
+    "input": "brush teeth",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>brush teeth&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>brush teeth&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "take meds",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>take meds&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>take meds&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "wash face",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>wash face&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>wash face&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "shower",
+    "priority": 7,
+    "category": 3,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>shower&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>shower&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "skincare",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>skincare&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>skincare&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "fix lashes",
+    "priority": 7,
+    "category": 1,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>fix lashes&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>fix lashes&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "makeup",
+    "priority": 7,
+    "category": 2,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>makeup&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>makeup&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "hair",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>hair&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>hair&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "get dressed",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>get dressed&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>get dressed&nbsp;&#9728;&#65039;</div></li>"
+  },
+  {
+    "input": "breakfast",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>breakfast&nbsp;&#9728;&#65039;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>breakfast&nbsp;&#9728;&#65039;</div></li>"
+  }];
+var goodNight = [{
+    "input": "brush teeth",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>brush teeth&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>brush teeth</div></li>"
+  },
+  {
+    "input": "fix lashes",
+    "priority": 7,
+    "category": 1,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>fix lashes&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>fix lashes&nbsp;&#127769;</div></li>"
+  },
+  {
+    "input": "wash face",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>wash face&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>wash face&nbsp;&#127769;</div></li>"
+  },
+  {
+    "input": "shower",
+    "priority": 7,
+    "category": 3,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>shower&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>shower&nbsp;&#127769;</div></li>"
+  },
+  {
+    "input": "change clothes",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>change clothes&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>change clothes&nbsp;&#127769;</div></li>"
+  },
+  {
+    "input": "skincare",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>skincare&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>skincare&nbsp;&#127769;</div></li>"
+  },
+  {
+    "input": "turn off lights",
+    "priority": 7,
+    "category": 4,
+    "date": "",
+    "matrixHTML": "<div class='task priority-07' onclick='remove(this);'>turn off lights&nbsp;&#127769;</div>",
+    "todoHTML": "<li onclick='remove(this);'><div>turn off lights&nbsp;&#127769;</div></li>"
+  }];
+
+
+window.onscroll = function() {stick()};
+var menu = document.getElementById('menu');
+var sticky = menu.offsetTop;
+function stick() {
+  if (window.pageYOffset >= sticky) {
+    menu.classList.add("sticky")
+  } else {
+    menu.classList.remove("sticky");
   }
-  else if (document.getElementById('showDeadline').checked == false) {
-    document.getElementById('row-deadline').value = '';
-    document.getElementById('row-deadline').style = 'display: none';
-  }
+}
+
+
+window.onload = function() {
+  refresh();
+  upload();
+  populate();
+};
+
+window.onbeforeunload = function(){
+  save();
+};
+
+$('#deadline').on('change', function() {
+  setDefaultTime();
+  showCalendarClock();
 });
 
-$('#addTask').on('click', function(){
-  addTask();
+$('#add').on('click', function() {
+  add();
+  setDefaultTime();
+});
+
+$('#am').on('click', function() {
+  am();
+  populate();
+});
+
+$('#shuffle').on('click', function() {
   shuffle();
   populate();
 });
 
-$('#random').on('click', function(){
-  reset();
-  shuffle();
+$('#pm').on('click', function() {
+  pm();
   populate();
+});
+
+$(function() {
+  $(".button").on("click", function() {
+  	lastAction = $(this).attr("id");
+  });
 });
 
 $('#reset').on('click', function(){
-  allTasks = [];
-  todoNow = [];
-  todoLater = [];
   reset();
+  populate();
 });
 
-$('#save').on('click', function(){
-  save();
-})
-
-$('#selectJSON').on('change', function() {
-  upload();
-  // document.getElementById("selectJSON").submit();
-})
-
-// $('#openUploader').on('mouseenter', function() {
-//   document.getElementById('uploadContainer').style = 'display: block;';
-// })
-
-// $('#uploadContainer').on('mouseleave', function() {
-//   document.getElementById('uploadContainer').style = 'display: none;';
-// })
-
-$('#good-morning').on('click', function() {
-  readTextFile("js/good-morning.json", function(text) {
-    goodMorning = JSON.parse(text);
-  });
-  shuffle();
-  populate();
-})
-
-$('#good-night').on('click', function() {
-  readTextFile("js/good-night.json", function(text) {
-    goodNight = JSON.parse(text);
-  });
-  shuffle();
-  populate();
-})
-
-function remove(el) {
-  var element = el;
-  element.remove();
-  var checkTheseDivs = [element.innerHTML, (element.innerHTML).toString().slice(5, -6), (element.innerHTML).toString().slice(0, -7), (element.innerHTML).toString().slice(0, -8), (element.innerHTML).toString().slice(0, -31), (element.innerHTML).toString().slice(5, -37), (element.innerHTML).toString().slice(5, -14)];
-
-  for (i=0; i<allTasks.length; i++) {
-    if (checkTheseDivs.includes(allTasks[i]['input'])) {
-      allTasks.splice(i, 1);
-    }
-  }
-  for (i=0; i<todoNow.length; i++) {
-    if (checkTheseDivs.includes(todoNow[i]['input'])) {
-      todoNow.splice(i, 1);
-    }
-  }
-  for (i=0; i<todoLater.length; i++) {
-    if (checkTheseDivs.includes(todoLater[i]['input'])) {
-      todoLater.splice(i, 1);
-    }
-  }
-  reset();
-  populate();
-}
-
-function readTextFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.overrideMimeType("application/json"); // application/json
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function() {
-    if (rawFile.readyState === 4 && rawFile.status == "200") {
-      callback(rawFile.responseText);
-    }
-  }
-  rawFile.send(null);
-}
-
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}
-
-function sortArrayByKey(array, key) {
-  return array.sort(function(a, b)
-    {
-      var x = a[key]; var y = b[key];
-      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    }
-  );
-}
-
-function deleteItemsFromArray(arr, value) {
-  var i = 0;
-  while (i < arr.length) {
-    if (arr[i] === value) {
-      arr.splice(i, 1);
-    } else {
-      ++i;
-    }
-  }
-  return arr;
-}
-
-function numDays(current) {
-  todaysDate = new Date();
-  var numDays = Math.ceil((current - todaysDate)/8.64e7);
-  return numDays;
-}
-
-function reset() {
-  document.getElementById('row-input').value = '';
-  document.getElementById('row-urgent').checked = false;
-  document.getElementById('row-important').checked = false;
-  document.getElementById('showDeadline').checked = false;
-  document.getElementById('row-deadline').value = '';
-  document.getElementById('row-deadline').style = 'display:none;';
-  document.getElementById('matrix-4').innerHTML = '';
-  document.getElementById('matrix-3').innerHTML = '';
-  document.getElementById('matrix-2').innerHTML = '';
-  document.getElementById('matrix-1').innerHTML = '';
-  document.getElementById('todo-now').innerHTML = '';
-  document.getElementById('todo-later').innerHTML = '';
-
-  todaysDate = new Date();
-  currentInput = '';
-  currentUrgent = false;
-  currentImportant = false;
-  currentDate = new Date();
-  currentDateString = currentDate.toISOString();
-  currentPriority = 0;
-  currentCategory = 0;
-  currentMatrixHTML = '';
-  currentTodoHTML = '';
-  currentTask = {};
-}
-
-function save() {
-  todaysDate = new Date();
-  todaysDateString = todaysDate.toISOString();
-  todaysDate = todaysDateString.slice(0,10);
-
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(allTasks, null, 2)], {
-    type: "json/plain"
-  }));
-  a.setAttribute("download", todaysDate + ".json");
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-function upload() {
-  var files = document.getElementById('selectJSON').files;
-  if (files.length <= 0) {
-    return false;
-  }
-
-  var fr = new FileReader();
-
-  fr.onload = function(e) { 
-    var previousTasks = JSON.parse(e.target.result);
-    allTasks = previousTasks.concat(allTasks);
-    shuffle();
-    populate();
-  }
-
-  fr.readAsText(files.item(0));
-}
-
-Date.prototype.addDays = function(days) {
-  var date = new Date(this.valueOf());
-  date.setDate(date.getDate() + days);
-  return date;
-}
-
-function dateToString(date) {
-  var dateString = date.getFullYear() + '-' + ('0' + (date.getMonth()+1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
-  return dateString;
-}
-
-function selectDateToString(date) {
-  utcDate = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(), date.getUTCMilliseconds());
-  var dateString = utcDate.getFullYear() + '-' + ('0' + (utcDate.getMonth()+1)).slice(-2) + '-' + ('0' + utcDate.getDate()).slice(-2);
-  return dateString;
-}
-
-var alarmClock = '&nbsp;&#9200;&nbsp;';
-var todaysDate = new Date();
-var todaysDateString = dateToString(todaysDate);
-var currentInput = '';
-var currentUrgent = false;
-var currentImportant = false;
-var currentDate = new Date();
-var currentDateString = currentDate.toISOString();
-var currentPriority = 0;
-var currentCategory = 0;
-var currentMatrixHTML = '';
-var currentTodoHTML = '';
-var currentTask = {};
-var allTasks = [];
-var todoNow = [];
-var todoLater = [];
-var todoLeft = [];
-var todoTemp = [];
-var todoWeighted = [];
-var randomItem = '';
-var goodMorning = [];
-var goodNight = [];
-
-function addTask() {
-  todaysDate = new Date();
-
-  currentInput = document.getElementById('row-input').value;
-
-  if (currentInput != '') {
-    currentUrgent = document.getElementById('row-urgent').checked;
-    currentImportant = document.getElementById('row-important').checked;
-    currentDate = new Date(document.getElementById('row-deadline').value);
-    if (isNaN(currentDate) == false) {
-      currentDateString = selectDateToString(currentDate);
-    }
-    else {
-      currentDateString = '';
-    }
-    
-    if (numDays(currentDate) < 4) {
-      currentPriority = numDays(currentDate);
-    }
-    else if (numDays(currentDate) < 8) {
-      currentPriority = 4;
-    }
-    else if (numDays(currentDate) < 32) {
-      currentPriority = 5;
-    }
-    else if (numDays(currentDate) > 31) {
-      currentPriority = 6;
-    }
-    else {
-      currentPriority = 7;
-    }
-
-    if (currentImportant == true) {
-      if (currentUrgent == true) {
-        currentCategory = 4; // both
-      }
-      else {
-        currentCategory = 3; // important
-      }
-    }
-    else {
-      if (currentUrgent == true) {
-        currentCategory = 2; // urgent
-      }
-      else {
-        currentCategory = 1; // neither
-      }
-    }
-
-    if (currentPriority < 7) {
-      currentMatrixHTML = "<div class='task priority-0" + currentPriority.toString() + "' onclick='remove(this);'>" + currentInput + "<span>" + alarmClock + currentDateString.slice(5,7) + "." + currentDateString.slice(8,10) + "</span></div>";
-      currentTodoHTML = "<li onclick='remove(this);'><div>" + currentInput + "<span>" + alarmClock + currentDateString.slice(5,7) + "." + currentDateString.slice(8,10) + "</span></div></li>";
-    }
-    else {
-      currentMatrixHTML = "<div class='task priority-0" + currentPriority.toString() + "' onclick='remove(this);'>" + currentInput + "</div>";
-      currentTodoHTML = "<li onclick='remove(this);'><div>" + currentInput + "</div></li>";
-    }
-
-    currentTask = {'input': currentInput, 'priority': currentPriority, 'category': currentCategory,'date': currentDateString, 'matrixHTML': currentMatrixHTML, 'todoHTML': currentTodoHTML};
-
-    allTasks = allTasks.concat(currentTask);
-
-    // clear input
-    document.getElementById('row-input').value = '';
-    document.getElementById('row-urgent').checked = false;
-    document.getElementById('row-important').checked = false;
-    document.getElementById('showDeadline').checked = false;
-    document.getElementById('row-deadline').value = '';
-    document.getElementById('row-deadline').style = 'display: none;';
-  }
-}; 
-
-function shuffle() {
-  todoNow = [];
-  todoLater = [];
-  todoWeighted = [];
-  todoLeft = [];
-  todoTemp = [];
-
-  // create todoNow
-  for (p=-1; p<4; p++) {
-    for (c=4; c>0; c--) {
-      todoTemp = [];
-      for (i=0; i<allTasks.length; i++) {
-        currentTask = allTasks[i];
-        if ((currentTask['priority'] == p) && (currentTask['category'] == c)) {
-          todoTemp.push(currentTask);
-        }
-      }
-      shuffleArray(todoTemp);
-      todoNow = todoNow.concat(todoTemp);
-    }
-  }
-
-  todoTemp = [];
-  for (i=0; i<allTasks.length; i++) {
-    currentTask = allTasks[i];
-    if ((currentTask['priority'] == 7) && (currentTask['category'] == 4)) {
-      todoTemp.push(currentTask);
-    }
-  }
-  shuffleArray(todoTemp);
-  todoNow = todoNow.concat(todoTemp);
-  todoNow = goodMorning.concat(goodNight.concat(todoNow));
-
-  // create todoLater
-  for (p=4; p<7; p++) {
-    for (c=4; c>0; c--) {
-      todoTemp = [];
-      for (i=0; i<allTasks.length; i++) {
-        currentTask = allTasks[i];
-        if ((currentTask['priority'] == p) && (currentTask['category'] == c)) {
-          todoTemp.push(currentTask);
-        }
-      }
-      shuffleArray(todoTemp);
-      todoLater = todoLater.concat(todoTemp);
-    }
-  }
-
-  // create todoLeft
-  for (c=3; c>0; c--) {
-    todoTemp = [];
-    for (i=0; i<allTasks.length; i++) {
-      currentTask = allTasks[i];
-      if ((currentTask['priority'] == 7) && (currentTask['category'] == c)) {
-        todoTemp.push(currentTask);
-      }
-    }
-    shuffleArray(todoTemp);
-    todoWeighted = todoWeighted.concat(todoTemp);
-  }
-
-  while (todoWeighted.length > 0) {
-    randomItem = todoWeighted[Math.floor(Math.random() * todoWeighted.length)];
-    todoLeft.push(randomItem);
-    deleteItemsFromArray(todoWeighted, randomItem);
-  }
-
-  todoNow = todoNow.filter(function( element ) {
-    return element !== undefined;
-  });
-
-  for (i=0; i<todoLeft.length; i++){
-    if (todoNow.length < 10) {
-      todoNow.push(todoLeft[i]);
-    }
-    else {
-      todoLater.push(todoLeft[i]);
-    }
-  }
-}
-
-function populate() {
-  document.getElementById('matrix-4').innerHTML = '';
-  document.getElementById('matrix-3').innerHTML = '';
-  document.getElementById('matrix-2').innerHTML = '';
-  document.getElementById('matrix-1').innerHTML = '';
-  document.getElementById('todo-now').innerHTML = '';
-  document.getElementById('todo-later').innerHTML = '';
-
-  allTasks = goodMorning.concat(goodNight.concat(allTasks));
-
-  for (i=0; i<allTasks.length; i++) {
-    document.getElementById('matrix-' + allTasks[i]['category'].toString()).innerHTML += allTasks[i]['matrixHTML'];
-  }
-
-  for (i=0; i<todoNow.length; i++) {
-    document.getElementById('todo-now').innerHTML += todoNow[i]['todoHTML'];
-  }
-
-  for (i=0; i<todoLater.length; i++) {
-    document.getElementById('todo-later').innerHTML += todoLater[i]['todoHTML'];
-  }
-};
+$(document).ready(function() { // default today 00:00
+  refresh();
+  setDefaultTime();
+});
