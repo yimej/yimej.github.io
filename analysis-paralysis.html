@@ -47,6 +47,17 @@
       <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>
     </div>
 
+    <div id='editTaskContainer'>
+      <div id='editTask' class='frame'>
+        <input class='full-input' type='text' id='task-edit' placeholder='enter task here' value=''>
+        <button class='btn' id='accept-edit' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon' title='add task'></button>
+        <button class='btn' id='cancel-edit' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon' title='add task'></button><br>
+        <input type='checkbox' id='important-edit'><label for='important-edit'> important</label><br>
+        <input type='checkbox' id='deadline-edit'><label for='deadline-edit'> deadline</label>
+        <input class='calendar' style='display: none;' type='datetime-local' id='datetime-edit'><br>
+      </div>
+    </div>
+
     <div id='lists' class='frame'>
       <div class='bg'>
         <div class='bold'>today</div>

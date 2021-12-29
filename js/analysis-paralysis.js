@@ -8,8 +8,14 @@ var sticky = menu.offsetTop;
 var lastAction;
 var currentTask;
 var todayDefault = '';
+var doWhen;
 var iAll;
 var iDo;
+var doWhenEdit;
+var iAllEdit;
+var iDoEdit;
+var elementLastEdited;
+var newElementEdited;
 var elementRemoved;
 var doAll = [];
 var doToday = [];
@@ -31,6 +37,7 @@ var nextWeek;
 var daysLeftInThisWeek;
 var goodMorning = [];
 var goodNight = [];
+var countCompleted = 0;
 
 //////////////////////// action ////////////////////////
 
@@ -49,10 +56,22 @@ $('#deadline').on('change', function() {
   showCalendarClock();
 });
 
+$('#deadline-edit').on('change', function() {
+  // setDefaultTime();
+  showCalendarClock();
+});
+
 $('#add').on('click', function() {
   add();
   setDefaultTime();
 });
+
+$('#accept-edit').on('click', function() {
+  editAccept();
+  populate();
+});
+
+$('#cancel-edit').on('click', function() {editCancel();});
 
 $('#am').on('click', function() {
   am();
@@ -89,7 +108,6 @@ $(document).ready(function() { // default today 00:00
   refresh();
   setDefaultTime();
 });
-
 
 //////////////////////// functions ////////////////////////
 
@@ -155,15 +173,37 @@ function setDefaultTime() {
   todayDefault = year + "-" + month + "-" + day +"T00:00";
 };
 
+function formatDefaultTime(elDate) {
+  var day = elDate.getDate();
+  var month = elDate.getMonth() + 1;
+  var year = elDate.getFullYear();
+  var hours = elDate.getHours();
+  var minutes = elDate.getMinutes();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var defaultTime = year + "-" + month + "-" + day +"T" + hours + ":" + minutes;
+  return(defaultTime);
+};
+
 function showCalendarClock() {
   if (document.getElementById('deadline').checked == true) {
     $("#datetime").attr("value", todayDefault);
     document.getElementById('datetime').style = 'display: inline-block';
   }
   else if (document.getElementById('deadline').checked == false) {
-    // document.getElementById('datetime').value = '';
     $("#datetime").attr("value", '');
     document.getElementById('datetime').style = 'display: none';
+  }
+
+  if (document.getElementById('deadline-edit').checked == true) {
+    $("#datetime-edit").attr("value", todayDefault);
+    document.getElementById('datetime-edit').style = 'display: inline-block';
+  }
+  else if (document.getElementById('deadline-edit').checked == false) {
+    $("#datetime-edit").attr("value", '');
+    document.getElementById('datetime-edit').style = 'display: none';
   }
 };
 
@@ -186,7 +226,7 @@ function add() {
       var priority = 'a';
     }
     else if (isNaN(dateTime) == false) {
-      var taskName = inputText + '&nbsp;⏰<span>' + formattedDateTime + '</span>';
+      var taskName = inputText + '&nbsp;⏰&nbsp;<span>' + formattedDateTime + '</span>';
       var priority = 'b';
     }
     else if (important == true) {
@@ -197,7 +237,7 @@ function add() {
       var taskName = inputText;
       var priority = 'd';
     }
-    var html = "<div class='task' onclick='remove(this); populate();'>" + taskName + "</div>";
+    var html = "<div class='task'>" + taskName + "</div>";
 
     currentTask = {'task': taskName, 'priority': priority, 'date': dateTime, 'html': html};
     doAll = doAll.concat(currentTask);
@@ -213,12 +253,168 @@ function add() {
   }
 };
 
+function edit(el) {
+  var editTaskContainer = document.getElementById('editTaskContainer');
+  editTaskContainer.style.display = "block";
+
+  currentEditButton = el;
+  currentTaskElement = currentEditButton.closest('.task');
+  var currentTaskName = currentTaskElement.innerHTML.slice(0, -475);
+  
+  for(i=0; i<doAll.length; i++) {
+    if (doAll[i]['task'] == currentTaskName) {
+      iAllEdit = i;
+      currentTaskEdit = doAll[i];
+    }
+  }
+
+  if (doToday.length > 0) {
+    for(i=0; i<doToday.length; i++) {
+      if (doToday[i]['task'] == currentTaskName) {
+        iDoEdit = i;
+        doWhenEdit = 'today';
+      }
+    }
+  }
+
+  if (doTomorrow.length > 0) {
+    for(i=0; i<doTomorrow.length; i++) {
+      if (doTomorrow[i]['task'] == currentTaskName) {
+        iDoEdit = i;
+        doWhenEdit = 'tomorrow';
+      }
+    }
+  }
+
+  if (doThisWeek.length > 0) {
+    for(i=0; i<doThisWeek.length; i++) {
+      if (doThisWeek[i]['task'] == currentTaskName) {
+        iDoEdit = i;
+        doWhenEdit = 'thisWeek';
+      }
+    }
+  }
+
+  if (doLater.length > 0) {
+    for(i=0; i<doLater.length; i++) {
+      if (doLater[i]['task'] == currentTaskName) {
+        iDoEdit = i;
+        doWhenEdit = 'later';
+      }
+    }
+  }
+
+  elementLastEdited = currentTaskEdit;
+
+  var sliceHere = - 21 - formatDateTime(new Date(currentTaskEdit['date'])).length;
+  if (currentTaskEdit['priority'] == 'a') {
+    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere);
+    document.getElementById('important-edit').checked = true;
+    document.getElementById('deadline-edit').checked = true;
+    document.getElementById('datetime-edit').value = formatDefaultTime(new Date(currentTaskEdit['date']));
+    document.getElementById('datetime-edit').style = 'display: block';
+  }
+  else if (currentTaskEdit['priority'] == 'b') {
+    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere - 5);
+    document.getElementById('important-edit').checked = false;
+    document.getElementById('deadline-edit').checked = true;
+    document.getElementById('datetime-edit').value = formatDefaultTime(new Date(currentTaskEdit['date']));
+    document.getElementById('datetime-edit').style = 'display: block';    
+  }
+  else if (currentTaskEdit['priority'] == 'c') {
+    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, -7);
+    document.getElementById('important-edit').checked = true;
+    document.getElementById('deadline-edit').checked = false;
+    document.getElementById('datetime-edit').value = todayDefault;
+    document.getElementById('datetime-edit').style = 'display: none';
+  }
+  else if (currentTaskEdit['priority'] == 'd') {
+    document.getElementById('task-edit').value = currentTaskEdit['task'];
+    document.getElementById('important-edit').checked = false;
+    document.getElementById('deadline-edit').checked = false;
+    document.getElementById('datetime-edit').value = todayDefault;
+    document.getElementById('datetime-edit').style = 'display: none';
+  }
+
+  window.onclick = function(event) {
+    if (event.target == editTaskContainer) {
+      editTaskContainer.style.display = "none";
+    }
+  }
+
+  lastAction = 'edit';
+};
+
+function editAccept() {
+  lastAction = 'edit';
+
+  var inputText = document.getElementById('task-edit').value;
+  
+  if (document.getElementById('deadline-edit').checked == true) {
+    var dateTime = new Date(document.getElementById('datetime-edit').value);
+    var formattedDateTime = formatDateTime(dateTime);
+    setDefaultTime();
+  }
+  else {
+    dateTime = NaN;
+    formattedDateTime = NaN;
+  }
+
+  var important = document.getElementById('important-edit').checked;
+  if (isNaN(dateTime) == false && (important == true)) {
+    var taskName = inputText + '&nbsp;❗️<span>' + formattedDateTime + '</span>';
+    var priority = 'a';
+  }
+  else if (isNaN(dateTime) == false) {
+    var taskName = inputText + '&nbsp;⏰&nbsp;<span>' + formattedDateTime + '</span>';
+    var priority = 'b';
+  }
+  else if (important == true) {
+    var taskName = inputText + '&nbsp;⭐';
+    var priority = 'c';
+  }
+  else {
+    var taskName = inputText;
+    var priority = 'd';
+  }
+  var html = "<div class='task'>" + taskName + "</div>";
+
+  currentEditTask = {'task': taskName, 'priority': priority, 'date': dateTime, 'html': html};
+  newElementEdited = currentEditTask;
+
+  doAll[iAllEdit] = currentEditTask;
+
+  if (doWhenEdit == 'today') {
+    doToday[iDoEdit] = currentEditTask;
+  }
+  else if (doWhenEdit == 'tomorrow') {
+    doTomorrow[iDoEdit] = currentEditTask;
+  }
+  else if (doWhenEdit == 'thisWeek') {
+    doThisWeek[iDoEdit] = currentEditTask;
+  }
+  else if (doWhenEdit == 'later') {
+    doLater[iDoEdit] = currentEditTask;
+  }
+
+  var editTaskContainer = document.getElementById('editTaskContainer');
+  editTaskContainer.style.display = "none";
+};
+
+function editCancel() {
+  var editTaskContainer = document.getElementById('editTaskContainer');
+  editTaskContainer.style.display = "none";
+};
+
 function remove(el) {
-  currentTaskElement = el;
+  currentRemoveButton = el;
+  currentTaskElement = currentRemoveButton.closest('.task');
   currentTaskElement.remove();
-  var elementRemovedHTML = currentTaskElement.innerHTML;
+  var elementRemovedHTML = currentTaskElement.innerHTML.slice(0, -475);
+  console.log(elementRemovedHTML);
 
   lastAction = 'remove';
+  doWhen = '';
 
   for (i=0; i<doAll.length; i++) {
     if (doAll[i]['task'] == elementRemovedHTML) {
@@ -232,6 +428,7 @@ function remove(el) {
     for (i=0; i<doToday.length; i++) {
       if (doToday[i]['task'] == elementRemovedHTML) {
         doToday.splice(i, 1);
+        doWhen = 'today';
         iDo = i;
       }
     }
@@ -241,6 +438,7 @@ function remove(el) {
     for (i=0; i<doTomorrow.length; i++) {
       if (doTomorrow[i]['task'] == elementRemovedHTML) {
         doTomorrow.splice(i, 1);
+        doWhen = 'tomorrow';
         iDo = i;
       }
     }
@@ -250,6 +448,7 @@ function remove(el) {
     for (i=0; i<doThisWeek.length; i++) {
       if (doThisWeek[i]['task'] == elementRemovedHTML) {
         doThisWeek.splice(i, 1);
+        doWhen = 'thisWeek';
         iDo = i;
       }
     }
@@ -259,10 +458,18 @@ function remove(el) {
     for (i=0; i<doLater.length; i++) {
       if (doLater[i]['task'] == elementRemovedHTML) {
         doLater.splice(i, 1);
+        doWhen = 'later';
         iDo = i;
       }
     }
   }
+};
+
+function complete(el) {
+  countCompleted += 1;
+  remove(el);
+  lastAction = 'complete';
+  alert('nice');
 };
 
 function shuffle() {
@@ -325,11 +532,12 @@ function shuffle() {
   if (doToday.length < urgentTasksPerDay) { // fill today wth min tasks
     for (i=doToday.length; i<urgentTasksPerDay; i++) {
       try {
-        doToday = doToday.concat(doNext[0]);
-        deleteItemsFromArray(doNext, doNext[0]);
+        doToday = doToday.concat(doTomorrow[0]);
+        deleteItemsFromArray(doTomorrow, doTomorrow[0]);
       }
       catch(err) {
-        // pass
+        doToday = doToday.concat(doNext[0]);
+        deleteItemsFromArray(doNext, doNext[0]);
       }
     }
   }
@@ -345,6 +553,10 @@ function shuffle() {
       }
     }
   }
+
+    // else if (currentTaskToShuffle['date'] < threemorrow) {
+    //   doTomorrow = doTomorrow.concat(currentTaskToShuffle);
+    // }
 
   if (doNext.length > 0) { // fill this week
     for (i=0; i<doNext.length; i++) {
@@ -472,41 +684,62 @@ function populate() {
   if (doToday.length > 0) {
     for (i=0; i<doToday.length; i++) {
       document.getElementById('doToday').innerHTML += doToday[i]['html'];
-    document.getElementById('doToday').style = ''
     }
-  }
-  else {
-    document.getElementById('doToday').style = 'height: 2.25rem;'
   }
 
   if (doTomorrow.length > 0) {
     for (i=0; i<doTomorrow.length; i++) {
       document.getElementById('doTomorrow').innerHTML += doTomorrow[i]['html'];
-    document.getElementById('doTomorrow').style = ''
     }
-  }
-  else {
-    document.getElementById('doTomorrow').style = 'height: 2.25rem;'
   }
 
   if (doThisWeek.length > 0) {
     for (i=0; i<doThisWeek.length; i++) {
       document.getElementById('doThisWeek').innerHTML += doThisWeek[i]['html'];
-    document.getElementById('doThisWeek').style = ''
     }
-  }
-  else {
-    document.getElementById('doThisWeek').style = 'height: 2.25rem;'
   }
 
   if (doLater.length > 0) {
     for (i=0; i<doLater.length; i++) {
       document.getElementById('doLater').innerHTML += doLater[i]['html'];
-    document.getElementById('doLater').style = ''
     }
   }
+
+  try {
+    for(i=0; i<doAll.length; i++) {
+      document.getElementsByClassName('task')[i].innerHTML += "<div class='taskActions'><button id='edit' class='btn-taskActions' onclick='edit(this); populate();'><img src='img/analysis-paralysis/edit.svg'</button><button id='complete' class='btn-taskActions' onclick='complete(this); populate();'><img src='img/analysis-paralysis/check.svg'</button><button id='remove' class='btn-taskActions' onclick='remove(this); populate();'><img src='img/analysis-paralysis/remove.svg'</button>";
+    }
+  }
+  catch(err) {
+    // pass
+  }
+
+  if (doToday.length > 0) {
+    document.getElementById('doToday').style = ''
+  }
   else {
-    document.getElementById('doLater').style = 'height: 2.25rem;'
+    document.getElementById('doToday').style = 'height: 2rem;'
+  }
+
+  if (doTomorrow.length > 0) {
+    document.getElementById('doTomorrow').style = ''
+  }
+  else {
+    document.getElementById('doTomorrow').style = 'height: 2rem;'
+  }
+
+  if (doThisWeek.length > 0) {
+    document.getElementById('doThisWeek').style = ''
+  }
+  else {
+    document.getElementById('doThisWeek').style = 'height: 2rem;'
+  }
+
+  if (doLater.length > 0) {
+    document.getElementById('doLater').style = ''
+  }
+  else {
+    document.getElementById('doLater').style = 'height: 2rem;'
   }
 };
 
@@ -533,7 +766,7 @@ function refresh() {
 
   today = new Date();
   daysLeftInThisWeek = Math.ceil((thisWeek - today) / 86400000) - 1; // minus tomorrow
-  document.getElementById('today').innerHTML = 'today is <span>' + formatDateTime(today) + '</span>';
+  document.getElementById('today').innerHTML = 'today is <span>' + formatDateTime(today).slice(0, 5) + '</span>';
 };
 
 function reset() {
@@ -574,7 +807,7 @@ function upload() {
   }
 };
 
-function undo() { // undo: add(); remove(); shuffle();
+function undo() { // undo: add(); remove(); complete(); shuffle(); edit();
   if (lastAction == 'add') {
     deleteItemsFromArray(doAll, currentTask);
     deleteItemsFromArray(doToday, currentTask);
@@ -584,10 +817,34 @@ function undo() { // undo: add(); remove(); shuffle();
   }
   else if (lastAction == 'remove') {
     doAll.splice(iAll, 0, elementRemoved);
-    doToday.splice(iDo, 0, elementRemoved);
-    doTomorrow.splice(iDo, 0, elementRemoved);
-    doThisWeek.splice(iDo, 0, elementRemoved);
-    doLater.splice(iDo, 0, elementRemoved);
+    if (doWhen == 'today') {
+      doToday.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'tomorrow') {
+      doTomorrow.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'thisWeek') {
+      doThisWeek.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'later') {
+      doLater.splice(iDo, 0, elementRemoved);
+    }
+  }
+  else if (lastAction == 'complete') {
+    doAll.splice(iAll, 0, elementRemoved);
+    if (doWhen == 'today') {
+      doToday.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'tomorrow') {
+      doTomorrow.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'thisWeek') {
+      doThisWeek.splice(iDo, 0, elementRemoved);
+    }
+    else if (doWhen == 'later') {
+      doLater.splice(iDo, 0, elementRemoved);
+    }
+    countCompleted += -1;
   }
   else if (lastAction == 'shuffle') {
     doAll = doAllSafe;
@@ -596,5 +853,30 @@ function undo() { // undo: add(); remove(); shuffle();
     doThisWeek = doThisWeekSafe;
     doLater = doLaterSafe;
   }
-  console.log(lastAction);
+  else if (lastAction = 'edit') {
+    if (elementLastEdited != null) {
+      doAll.splice(iAllEdit, 0, elementLastEdited);
+
+      if (doWhenEdit == 'today') {
+        doToday.splice(iDoEdit, 0, elementLastEdited);
+      }
+      else if (doWhenEdit == 'tomorrow') {
+        doTomorrow.splice(iDoEdit, 0, elementLastEdited);
+      }
+      else if (doWhenEdit == 'thisWeek') {
+        doThisWeek.splice(iDoEdit, 0, elementLastEdited);
+      }
+      else if (doWhenEdit == 'later') {
+        doLater.splice(iDoEdit, 0, elementLastEdited);
+      }
+
+      deleteItemsFromArray(doAll, newElementEdited);
+      deleteItemsFromArray(doToday, newElementEdited);
+      deleteItemsFromArray(doTomorrow, newElementEdited);
+      deleteItemsFromArray(doThisWeek, newElementEdited);
+      deleteItemsFromArray(doLater, newElementEdited);
+      
+      elementLastEdited = null;
+    }
+  }
 };

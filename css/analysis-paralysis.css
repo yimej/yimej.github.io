@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    padding: 5.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 5.5rem 0rem 1.5rem 0rem;
     background-color: var(--light);
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -90,7 +90,7 @@ body {
     align-content: left;
     vertical-align: middle;
     padding: 1rem;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     margin-bottom: 1.5rem;
 }
 
@@ -107,7 +107,6 @@ body {
     background-color: var(--dark);
     color: white;
     border-radius: 5px;
-    margin-bottom: 0.5rem;
     text-align: center;
 }
 
@@ -157,6 +156,26 @@ body {
     background-color: white;
 }
 
+#editTaskContainer {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#editTask {
+    margin: 35vh auto; /* 15% from the top and centered */
+    /*padding: 20px;*/
+    /*border: 1px solid #888;*/
+    width: 85%; /* Could be more or less, depending on screen size */
+}
+
 .avatar {
     width: 6.2rem;
     height: 6.2rem;
@@ -195,43 +214,43 @@ body {
 }
 
 .task {
-    background-color: var(--light);
-    padding: 0.25rem 1rem 0.25rem 1rem;
-    border-radius: 100000000rem;
+    /*background-color: yellow;*/
+    padding: 0.125rem 0rem 0.75rem 0.5rem;
     height: fit-content;
-    margin: 0.25rem;
+    /*margin: 0.25rem;*/
     font-size: 1.1rem;
     line-height: 1.5rem;
     height: 2rem;
     vertical-align: middle;
+    border-bottom:  0.25px solid var(--dark);
+    width: calc(100% - 0.5rem);
+    display: inline-block;
 }
 
-ol li div {
-    background-color: white;
-    padding: 0.25rem 1.25rem 0.25rem 2rem;
-    border-radius: 100000000rem;
-    height: fit-content;
-    margin: 0.25rem 0.25rem 0.25rem -2rem;
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    height: 2rem;
-    vertical-align: middle;
-    overflow: auto;
+.task:hover .taskActions {
+    display: block;
 }
 
-li {
-    width: 100%;
-}
-
-input[type="file"] {
+.taskActions {
     display: none;
+    float: right;
+    height: 1.5rem;
+    line-height: 1.25rem;
+    padding: 0rem;
+    /*margin: -0.25rem;*/
 }
 
-.rotated {
-    writing-mode: tb-rl;
-    transform: rotate(-180deg);
-    font-weight: 500;
-    color: var(--dark);
+.btn-taskActions {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--light);
+    color: white;
+    border: 0;
+    text-align: center;
+    vertical-align: middle;
+    /*margin-bottom: 2.5rem;*/
+    padding: 0rem;
+    margin-left: 0.5rem;
 }
 
 .title {
@@ -254,8 +273,13 @@ input[type="file"] {
     margin-right: 0.5rem;
 }
 
+#task-edit {
+    width: calc(100% - 6rem);
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 .calendar {
-    margin-left: 1.25rem;
     height: 1.75rem;
 }
 
@@ -286,17 +310,15 @@ input[type="file"] {
 }
 
 .btn-bookmark {
-    background-color: var(--dark);
-    color: white;
     border: 0;
-    border-radius: 150px;
     height: 2.75rem;
     width: 2.75rem;
     text-align: center;
     vertical-align: middle;
     padding: 0.25rem;
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    background-color: var(--dark);
+    border-radius: 150px;
+    height: 3.75;
 }
 
 .icon {
