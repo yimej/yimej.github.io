@@ -1,8 +1,8 @@
 //////////////////////// variable declarations ////////////////////////
 
 var r = document.querySelector(':root');
-var urgentTasksPerDay = 2;
-var maxNumTasksPerDay = 10;
+var urgentTasksPerDay = 3;
+var maxNumTasksPerDay = 4;
 var menu = document.getElementById('menu');
 var sticky = menu.offsetTop;
 var lastAction;
@@ -14,8 +14,8 @@ var iDo;
 var doWhenEdit;
 var iAllEdit;
 var iDoEdit;
-var elementLastEdited;
 var newElementEdited;
+var elementLastEdited;
 var elementRemoved;
 var doAll = [];
 var doToday = [];
@@ -38,6 +38,8 @@ var daysLeftInThisWeek;
 var goodMorning = [];
 var goodNight = [];
 var countCompleted = 0;
+var openedTask;
+var openedTaskActions;
 
 //////////////////////// action ////////////////////////
 
@@ -51,39 +53,87 @@ window.onload = function() {
 
 window.onbeforeunload = function(){download();};
 
+window.store = {
+  localStoreSupport: function() {
+    try {
+      return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+      return false;
+    }
+  },
+  set: function(name,value,days) {
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime()+(days*24*60*60*1000));
+      var expires = "; expires="+date.toGMTString();
+    }
+    else {
+      var expires = "";
+    }
+    if( this.localStoreSupport() ) {
+      localStorage.setItem(name, value);
+    }
+    else {
+      document.cookie = name+"="+value+expires+"; path=/";
+    }
+  },
+  get: function(name) {
+    if( this.localStoreSupport() ) {
+      var ret = localStorage.getItem(name);
+      //console.log(typeof ret);
+      switch (ret) {
+        case 'true': 
+          return true;
+        case 'false':
+          return false;
+        default:
+          return ret;
+      }
+    }
+    else {
+      // cookie fallback
+      /*
+       * after adding a cookie like
+       * >> document.cookie = "bar=test; expires=Thu, 14 Jun 2018 13:05:38 GMT; path=/"
+       * the value of document.cookie may look like
+       * >> "foo=value; bar=test"
+       */
+      var nameEQ = name + "=";  // what we are looking for
+      var ca = document.cookie.split(';');  // split into separate cookies
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];  // the current cookie
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);  // remove leading spaces
+        if (c.indexOf(nameEQ) == 0) {  // if it is the searched cookie
+            var ret = c.substring(nameEQ.length,c.length);
+          // making "true" and "false" a boolean again.
+          switch (ret) {
+            case 'true':
+              return true;
+            case 'false':
+              return false;
+            default:
+              return ret;
+          }
+        }
+      }
+      return null; // no cookie found
+    }
+  },
+  del: function(name) {
+    if( this.localStoreSupport() ) {
+      localStorage.removeItem(name);
+    }
+    else {
+      this.set(name,"",-1);
+    }
+  }
+}
+
 $('.task').show();
 $('.taskActions').hide();
 
 $(document.body).on('click', '.task' ,function(){ // toggle class actions
-  var clickedTask = event.target;
-  var clickedTaskClasses = clickedTask.classList[0];
-
-  try {
-    var clickedTaskActions = $(event.target).children()[1];
-    var clickedTaskActionsClasses = clickedTaskActions.classList[0];
-  }
-  catch(err) {
-    var clickedTaskActions = $(event.target).children()[0];
-    var clickedTaskActionsClasses = clickedTaskActions.classList[0];
-  }
-
-  var openedTask = $('.currentTask');
-  var openedTaskActions = $('.currentTaskActions');
-
-  if (openedTask[0] != undefined) {
-    $(openedTask).removeClass('currentTask');
-    $(openedTaskActions).removeClass('currentTaskActions');
-    $(openedTaskActions).toggle('slide', {direction: 'right'});
-  }
-  if (openedTask[0] == clickedTask) {
-    $(clickedTask).removeClass('currentTask');
-    $(clickedTaskActions).removeClass('currentTaskActions');
-  }
-  else if (openedTask[0] != clickedTask) {
-    $(clickedTask).addClass('currentTask');
-    $(clickedTaskActions).addClass('currentTaskActions');
-    $(clickedTaskActions).toggle('slide', {direction: 'right'});
-  }
+  toggleTaskActions();
 });
 
 $('#deadline').on('change', function() {
@@ -94,6 +144,10 @@ $('#deadline').on('change', function() {
 $('#deadline-edit').on('change', function() {
   // setDefaultTime();
   showCalendarClock();
+});
+
+$('#bookmark').on('click', function() {
+  showBookmarks();
 });
 
 $('#add').on('click', function() {
@@ -147,6 +201,15 @@ $(document).ready(function() { // default today 00:00
 $('#showToday').click(function() {
   $('#doToday').slideToggle();
   $(this).toggleClass('listClosedToday');
+
+  openedTask = $('.currentTask');
+  openedTaskActions = $('.currentTaskActions');
+
+  if (openedTask[0] != undefined) {
+    $(openedTask).removeClass('currentTask');
+    $(openedTaskActions).removeClass('currentTaskActions');
+    $(openedTaskActions).toggle('slide', {direction: 'right'});
+  }
 });
 
 $('#showTomorrow').click(function() {
@@ -264,6 +327,49 @@ function showCalendarClock() {
   }
 };
 
+function showBookmarks() {
+  var bookmarkContainer = document.getElementById('bookmark-container');
+  bookmarkContainer.style.display = "block";
+
+  window.onclick = function(event) {
+    if (event.target == bookmarkContainer) {
+      bookmarkContainer.style.display = "none";
+    }
+  }
+}
+
+function toggleTaskActions() {
+  var clickedTask = event.target;
+  var clickedTaskClasses = clickedTask.classList[0];
+
+  try {
+    var clickedTaskActions = $(event.target).children()[1];
+    var clickedTaskActionsClasses = clickedTaskActions.classList[0];
+  }
+  catch(err) {
+    var clickedTaskActions = $(event.target).children()[0];
+    var clickedTaskActionsClasses = clickedTaskActions.classList[0];
+  }
+
+  openedTask = $('.currentTask');
+  openedTaskActions = $('.currentTaskActions');
+
+  if (openedTask[0] != undefined) {
+    $(openedTask).removeClass('currentTask');
+    $(openedTaskActions).removeClass('currentTaskActions');
+    $(openedTaskActions).toggle('slide', {direction: 'right'});
+  }
+  if (openedTask[0] == clickedTask) {
+    $(clickedTask).removeClass('currentTask');
+    $(clickedTaskActions).removeClass('currentTaskActions');
+  }
+  else if (openedTask[0] != clickedTask) {
+    $(clickedTask).addClass('currentTask');
+    $(clickedTaskActions).addClass('currentTaskActions');
+    $(clickedTaskActions).toggle('slide', {direction: 'right'});
+  }
+};
+
 function add() {
   var inputText = document.getElementById('task').value.replace(/\s+$/, '');
   if (inputText != '') {
@@ -273,8 +379,8 @@ function add() {
       setDefaultTime();
     }
     else {
-      dateTime = NaN;
-      formattedDateTime = NaN;
+      dateTime = undefined;
+      formattedDateTime = undefined;
     }
 
     var important = document.getElementById('important').checked;
@@ -472,7 +578,6 @@ function remove(el) {
   currentTaskElement = currentRemoveButton.closest('.task');
   currentTaskElement.remove();
   var elementRemovedHTML = currentTaskElement.innerHTML.slice(0, -586);
-  console.log(elementRemovedHTML);
 
   lastAction = 'remove';
   doWhen = '';
@@ -524,10 +629,12 @@ function remove(el) {
       }
     }
   }
+
+  shuffle();
 };
 
 function complete(el) {
-  countCompleted += 1;
+  countCompleted++;
   remove(el);
   lastAction = 'complete';
   alert('nice');
@@ -538,8 +645,6 @@ function lock() {
 };
 
 function shuffle() {
-  // max 10 tasks/day with min 2 urgent/day
-  // doToday/<tomorrow, doTomorrow/<threemorrow, doThisWeek/<nextWeek, doLater/>thisWeek
   doAllSafe = doAll;
   doTodaySafe = doToday;
   doTomorrowSafe = doTomorrow;
@@ -548,6 +653,7 @@ function shuffle() {
 
   doToday = [];
   doTomorrow = [];
+  doLater = [];
   doNext = [];
   doImportant = [];
   doWhenever = [];
@@ -555,13 +661,13 @@ function shuffle() {
   for (i=0; i<doAll.length; i++) {
     var currentTaskToShuffle = doAll[i];
 
-    if(currentTaskToShuffle['date'] < tomorrow) {
+    if ((new Date(currentTaskToShuffle['date']) < tomorrow) && (new Date(currentTaskToShuffle['date']) > yesterday)) {
       doToday = doToday.concat(currentTaskToShuffle);
     }
-    else if (currentTaskToShuffle['date'] < threemorrow) {
+    else if ((new Date(currentTaskToShuffle['date']) < threemorrow) & (new Date(currentTaskToShuffle['date']) > yesterday)) {
       doTomorrow = doTomorrow.concat(currentTaskToShuffle);
     }
-    else if (currentTaskToShuffle['date'] > tomorrow) {
+    else if (new Date(currentTaskToShuffle['date']) > tomorrow) {
       doNext = doNext.concat(currentTaskToShuffle);
     }
     else if (currentTaskToShuffle['priority'] == 'c') {
@@ -576,19 +682,19 @@ function shuffle() {
     doToday = doToday.sort((taskA, taskB) => taskA.date - taskB.date,);
   }
   catch(err) {
-    // pass
+    console.log(err);
   }
   try {
     doTomorrow = doTomorrow.sort((taskA, taskB) => taskA.date - taskB.date,);
   }
   catch(err) {
-    // pass
+    console.log(err);
   }
   try {
     doNext = doNext.sort((taskA, taskB) => taskA.date - taskB.date,);
   }
   catch(err) {
-    // pass
+    console.log(err);
   }
 
   shuffleArray(doImportant);
@@ -614,14 +720,10 @@ function shuffle() {
         deleteItemsFromArray(doNext, doNext[0]); //
       }
       catch(err) {
-        //pass
+        console.log(err);
       }
     }
   }
-
-    // else if (currentTaskToShuffle['date'] < threemorrow) {
-    //   doTomorrow = doTomorrow.concat(currentTaskToShuffle);
-    // }
 
   if (doNext.length > 0) { // fill this week
     for (i=0; i<doNext.length; i++) {
@@ -641,7 +743,7 @@ function shuffle() {
         deleteItemsFromArray(doNext, doNext[0]); 
       }
       catch(err) {
-        //pass
+        console.log(err);
       }
     }
   }
@@ -654,14 +756,14 @@ function shuffle() {
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
     try {
       doToday = doToday.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
   }
 
@@ -671,14 +773,14 @@ function shuffle() {
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
     try {
       doTomorrow = doTomorrow.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
   }
 
@@ -688,14 +790,14 @@ function shuffle() {
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
     try {
       doThisWeek = doThisWeek.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
   }
 
@@ -705,14 +807,14 @@ function shuffle() {
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
     try {
       doLater = doLater.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      // pass
+      console.log(err);
     }
   }
 
@@ -756,24 +858,45 @@ function populate() {
     for (i=0; i<doTomorrow.length; i++) {
       document.getElementById('doTomorrow').innerHTML += doTomorrow[i]['html'];
     }
-    $('#doTomorrow').slideToggle();
-    $('showTomorrow').toggleClass('listOpened');
+    if ([[$('#showTomorrow')[0].classList][0]][0].contains('listClosed')) {
+      $('#doTomorrow').slideToggle();
+      $('#showTomorrow').toggleClass('listOpened');
+    }
+  }
+  else {
+    if ([[$('#showTomorrow')[0].classList][0]][0].contains('listOpened')) {
+      $('#showTomorrow').toggleClass('listOpened');
+    }
   }
 
   if (doThisWeek.length > 0) {
     for (i=0; i<doThisWeek.length; i++) {
       document.getElementById('doThisWeek').innerHTML += doThisWeek[i]['html'];
     }
-    $('#doThisWeek').slideToggle();
-    $('showThisWeek').toggleClass('listOpened');
+    if ([[$('#showThisWeek')[0].classList][0]][0].contains('listClosed')) {
+      $('#doThisWeek').slideToggle();
+      $('#showThisWeek').toggleClass('listOpened');
+    }
+  }
+  else {
+    if ([[$('#showThisWeek')[0].classList][0]][0].contains('listOpened')) {
+      $('#showThisWeek').toggleClass('listOpened');
+    }
   }
 
   if (doLater.length > 0) {
     for (i=0; i<doLater.length; i++) {
       document.getElementById('doLater').innerHTML += doLater[i]['html'];
     }
-    $('#doLater').slideToggle();
-    $('showLater').toggleClass('listOpened');
+    if ([[$('#showLater')[0].classList][0]][0].contains('listClosed')) {
+      $('#doLater').slideToggle();
+      $('#showLater').toggleClass('listOpened');
+    }
+  }
+  else {
+    if ([[$('#showLater')[0].classList][0]][0].contains('listOpened')) {
+      $('#showLater').toggleClass('listOpened');
+    }
   }
 
   try {
@@ -791,6 +914,10 @@ function populate() {
 
 function refresh() {
   today = new Date();
+
+  yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+  yesterday.setHours(0, 0, 0, 0);
   
   tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
@@ -830,19 +957,29 @@ function reset() {
 };
 
 function download() {
-  localStorage.setItem("doAll", JSON.stringify(doAll));
-  localStorage.setItem("doToday", JSON.stringify(doToday));
-  localStorage.setItem("doTomorrow", JSON.stringify(doTomorrow));
-  localStorage.setItem("doThisWeek", JSON.stringify(doThisWeek));
-  localStorage.setItem("doLater", JSON.stringify(doLater));
+  // localStorage.setItem("doAll", JSON.stringify(doAll));
+  // localStorage.setItem("doToday", JSON.stringify(doToday));
+  // localStorage.setItem("doTomorrow", JSON.stringify(doTomorrow));
+  // localStorage.setItem("doThisWeek", JSON.stringify(doThisWeek));
+  // localStorage.setItem("doLater", JSON.stringify(doLater));
+  store.set("doAll", JSON.stringify(doAll));
+  store.set("doToday", JSON.stringify(doToday));
+  store.set("doTomorrow", JSON.stringify(doTomorrow));
+  store.set("doThisWeek", JSON.stringify(doThisWeek));
+  store.set("doLater", JSON.stringify(doLater));
 };
 
 function upload() {
-  doAll = JSON.parse(localStorage.getItem('doAll'));
-  doToday = JSON.parse(localStorage.getItem('doToday'));
-  doTomorrow = JSON.parse(localStorage.getItem('doTomorrow'));
-  doThisWeek = JSON.parse(localStorage.getItem('doThisWeek'));
-  doLater = JSON.parse(localStorage.getItem('doLater'));
+  // doAll = JSON.parse(localStorage.getItem('doAll'));
+  // doToday = JSON.parse(localStorage.getItem('doToday'));
+  // doTomorrow = JSON.parse(localStorage.getItem('doTomorrow'));
+  // doThisWeek = JSON.parse(localStorage.getItem('doThisWeek'));
+  // doLater = JSON.parse(localStorage.getItem('doLater'));
+  doAll = JSON.parse(store.get('doAll'));
+  doToday = JSON.parse(store.get('doToday'));
+  doTomorrow = JSON.parse(store.get('doTomorrow'));
+  doThisWeek = JSON.parse(store.get('doThisWeek'));
+  doLater = JSON.parse(store.get('doLater'));
 
   if (doAll == null) {
     doAll = [];

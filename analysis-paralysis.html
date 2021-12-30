@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,18 +20,11 @@
   </head>
   <body>
     <div id='menu'>
-      <button class='btn-menu btn-greyed' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
+      <button class='btn-menu' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
       <button class='btn-menu' id='undo'><img src='img/analysis-paralysis/undo.svg' class='icon-menu'></button>
-      <div id='bookmarked'>
-        <button class='btn-menu btn-greyed' id='bookmark'><img src='img/analysis-paralysis/bookmark.svg' class='icon-menu'></button>
-        <div id='bookmarked-content'>
-          <button class='btn-bookmark' id='favorites'><img src='img/analysis-paralysis/heart.svg' class='icon-menu'></button>
-          <button class='btn-bookmark' id='am'><img src='img/analysis-paralysis/sun.svg' class='icon-menu'></button>
-          <button class='btn-bookmark' id='pm'><img src='img/analysis-paralysis/moon.svg' class='icon-menu'></button>
-        </div>
-      </div>
-      <button class='btn-menu btn-greyed' id='save'><img src='img/analysis-paralysis/save.svg' class='icon-menu'></button>
+      <button class='btn-menu btn-greyed' id='bookmark'><img src='img/analysis-paralysis/bookmark.svg' class='icon-menu'></button>
       <button class='btn-menu' id='reset'><img src='img/analysis-paralysis/delete.svg' class='icon-menu'></button>
+      <button class='btn-menu btn-greyed' id='setting'><img src='img/analysis-paralysis/cog.svg' class='icon-menu'></button>
     </div>
 
     <div class='frame'>
@@ -43,8 +35,13 @@
       <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>
     </div>
 
-    <div id='editTaskContainer'>
-      <div id='editTask' class='frame'>
+    <div id='bookmark-container' class='modal-container'>
+      <div id='bookmark-content' class='frame modal-content'>bookmarks here
+      </div>
+    </div>
+
+    <div id='editTaskContainer' class='modal-container'>
+      <div id='editTask' class='frame modal-content'>
         <input class='full-input' type='text' id='task-edit' placeholder='enter task here' value=''>
         <input type='checkbox' id='important-edit'><label for='important-edit'> important</label><br>
         <input type='checkbox' id='deadline-edit'><label for='deadline-edit'> deadline</label>

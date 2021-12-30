@@ -21,6 +21,11 @@ body {
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards;
+    max-width: calc(600px + 0.5rem);
+    margin: auto;/*
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 0) !important;*/
 }
 
 #menu {
@@ -34,6 +39,10 @@ body {
     top: 0.5rem;
     left: 0.5rem  ;
     width: calc(100% - 1rem);
+    max-width: 600px!important;
+    margin: auto!important;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #bookmarked {
@@ -211,24 +220,25 @@ input.defaultCheckBoxSize  {
     background-color: white;
 }
 
-#editTaskContainer {
+.modal-container {
     display: none;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-#editTask {
-    margin: 30vh auto; /* 15% from the top and centered */
+.modal-content {
+    margin: 30vh auto;
     padding: 1rem;
-    /*border: 1px solid #888;*/
-    width: 90%; /* Could be more or less, depending on screen size */
+    width: 90%;
+    position: fixed;
+    left: 5%;
 }
 
 .avatar {
