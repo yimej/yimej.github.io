@@ -1,8 +1,8 @@
 //////////////////////// variable declarations ////////////////////////
 
 var r = document.querySelector(':root');
-var urgentTasksPerDay = 3;
-var maxNumTasksPerDay = 4;
+var urgentTasksPerDay = 2;
+var maxNumTasksPerDay = 5;
 var menu = document.getElementById('menu');
 var sticky = menu.offsetTop;
 var lastAction;
@@ -200,7 +200,7 @@ $(document).ready(function() { // default today 00:00
 
 $('#showToday').click(function() {
   $('#doToday').slideToggle();
-  $(this).toggleClass('listClosedToday');
+  $(this).toggleClass('listOpened');
 
   openedTask = $('.currentTask');
   openedTaskActions = $('.currentTaskActions');
@@ -336,7 +336,7 @@ function showBookmarks() {
       bookmarkContainer.style.display = "none";
     }
   }
-}
+};
 
 function toggleTaskActions() {
   var clickedTask = event.target;
@@ -629,8 +629,6 @@ function remove(el) {
       }
     }
   }
-
-  shuffle();
 };
 
 function complete(el) {
@@ -852,19 +850,30 @@ function populate() {
     for (i=0; i<doToday.length; i++) {
       document.getElementById('doToday').innerHTML += doToday[i]['html'];
     }
+    if (![[$('#showToday')[0].classList][0]][0].contains('listOpened')) {
+      $('#doToday').slideToggle();
+      $('#showToday').toggleClass('listOpened');
+    }
+  }
+  else {
+    if ([[$('#showToday')[0].classList][0]][0].contains('listOpened')) {
+      $('#doToday').slideToggle();
+      $('#showToday').toggleClass('listOpened');
+    }
   }
 
   if (doTomorrow.length > 0) {
     for (i=0; i<doTomorrow.length; i++) {
       document.getElementById('doTomorrow').innerHTML += doTomorrow[i]['html'];
     }
-    if ([[$('#showTomorrow')[0].classList][0]][0].contains('listClosed')) {
+    if (![[$('#showTomorrow')[0].classList][0]][0].contains('listOpened')) {
       $('#doTomorrow').slideToggle();
       $('#showTomorrow').toggleClass('listOpened');
     }
   }
   else {
     if ([[$('#showTomorrow')[0].classList][0]][0].contains('listOpened')) {
+      $('#doTomorrow').slideToggle();
       $('#showTomorrow').toggleClass('listOpened');
     }
   }
@@ -873,13 +882,14 @@ function populate() {
     for (i=0; i<doThisWeek.length; i++) {
       document.getElementById('doThisWeek').innerHTML += doThisWeek[i]['html'];
     }
-    if ([[$('#showThisWeek')[0].classList][0]][0].contains('listClosed')) {
+    if (![[$('#showThisWeek')[0].classList][0]][0].contains('listOpened')) {
       $('#doThisWeek').slideToggle();
       $('#showThisWeek').toggleClass('listOpened');
     }
   }
   else {
     if ([[$('#showThisWeek')[0].classList][0]][0].contains('listOpened')) {
+      $('#doThisWeek').slideToggle();
       $('#showThisWeek').toggleClass('listOpened');
     }
   }
@@ -888,13 +898,14 @@ function populate() {
     for (i=0; i<doLater.length; i++) {
       document.getElementById('doLater').innerHTML += doLater[i]['html'];
     }
-    if ([[$('#showLater')[0].classList][0]][0].contains('listClosed')) {
+    if (![[$('#showLater')[0].classList][0]][0].contains('listOpened')) {
       $('#doLater').slideToggle();
       $('#showLater').toggleClass('listOpened');
     }
   }
   else {
     if ([[$('#showLater')[0].classList][0]][0].contains('listOpened')) {
+      $('#doLater').slideToggle();
       $('#showLater').toggleClass('listOpened');
     }
   }

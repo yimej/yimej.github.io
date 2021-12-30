@@ -43,6 +43,7 @@ body {
     margin: auto!important;
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 5;
 }
 
 #bookmarked {
@@ -116,18 +117,19 @@ input.defaultCheckBoxSize  {
 }
 
 .listName {
+    background-color: var(--medium);
     color: white;
     text-align: center;
     font-size: 2rem;
     line-height: 3.5rem;
 }
 
-.listOpened {
+/*.listOpened {
     background-color: var(--dark)!important;
-}
+}*/
 
-.listOpened:after {
-    content: '\25B2'!important;
+.listOpened:after { /*down*/
+    content: '\25BC'!important;
     font-size: 1.25rem;
     padding-bottom: 1rem;
     position: relative;
@@ -135,12 +137,12 @@ input.defaultCheckBoxSize  {
     bottom: 0.25rem;
 }
 
-.listClosed {
+/*.listClosed {
     background-color: var(--medium);
-}
+}*/
 
-.listClosed:after {
-    content: '\25BC';
+.listClosed:after { /*up*/
+    content: '\25B2';
     font-size: 1.25rem;
     padding-bottom: 1rem;
     position: relative;
@@ -148,8 +150,8 @@ input.defaultCheckBoxSize  {
     bottom: 0.25rem;
 }
 
-.listOpenedToday {
-    background-color: var(--dark);
+/*.listOpenedToday {
+    background-color: var(--medium);
 }
 
 .listOpenedToday:after {
@@ -172,7 +174,7 @@ input.defaultCheckBoxSize  {
     position: relative;
     left: 1rem;
     bottom: 0.25rem;
-}
+}*/
 
 .text, label, option {
     font-family: 'Open Sans', sans-serif;
