@@ -11,6 +11,8 @@
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,71 +21,60 @@
   </head>
   <body>
     <div id='menu'>
-      <button class='btn-menu' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
+      <button class='btn-menu btn-greyed' id='shuffle'><img src='img/analysis-paralysis/random.svg' class='icon-menu'></button>
       <button class='btn-menu' id='undo'><img src='img/analysis-paralysis/undo.svg' class='icon-menu'></button>
-
       <div id='bookmarked'>
-        <button class='btn-menu' id='bookmark'><img src='img/analysis-paralysis/bookmark.svg' class='icon-menu'></button>
+        <button class='btn-menu btn-greyed' id='bookmark'><img src='img/analysis-paralysis/bookmark.svg' class='icon-menu'></button>
         <div id='bookmarked-content'>
           <button class='btn-bookmark' id='favorites'><img src='img/analysis-paralysis/heart.svg' class='icon-menu'></button>
           <button class='btn-bookmark' id='am'><img src='img/analysis-paralysis/sun.svg' class='icon-menu'></button>
           <button class='btn-bookmark' id='pm'><img src='img/analysis-paralysis/moon.svg' class='icon-menu'></button>
-          <button class='btn-bookmark' id='save'><img src='img/analysis-paralysis/save.svg' class='icon-menu'></button>
         </div>
       </div>
-      
-      <button class='btn-menu' id='refresh'><img src='img/analysis-paralysis/refresh.svg' class='icon-menu'></button>
+      <button class='btn-menu btn-greyed' id='save'><img src='img/analysis-paralysis/save.svg' class='icon-menu'></button>
       <button class='btn-menu' id='reset'><img src='img/analysis-paralysis/delete.svg' class='icon-menu'></button>
     </div>
-
-    <div class='title'>analysis paralysis</div>
-    <div id='today'></div>
 
     <div class='frame'>
       <input class='full-input' type='text' id='task' placeholder='enter task here' value=''>
       <button class='btn' id='add' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/add.svg' class='icon' title='add task'></button><br>
-      <input type='checkbox' id='important'><label for='important'> important</label><br>
-      <input type='checkbox' id='deadline'><label for='deadline'> deadline</label>
+      <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
+      <input type='checkbox' class='defaultCheckBoxSize' id='deadline'><label for='deadline'> deadline</label>
       <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>
     </div>
 
     <div id='editTaskContainer'>
       <div id='editTask' class='frame'>
         <input class='full-input' type='text' id='task-edit' placeholder='enter task here' value=''>
-        <button class='btn' id='accept-edit' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon' title='add task'></button>
-        <button class='btn' id='cancel-edit' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon' title='add task'></button><br>
         <input type='checkbox' id='important-edit'><label for='important-edit'> important</label><br>
         <input type='checkbox' id='deadline-edit'><label for='deadline-edit'> deadline</label>
         <input class='calendar' style='display: none;' type='datetime-local' id='datetime-edit'><br>
+        <center>
+          <button class='btn' id='accept-edit' style='padding-right: 0.75rem; margin-top: 1rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon' title='add task'></button>
+          <button class='btn' id='cancel-edit' style='padding-right: 0.75rem; margin-top: 1rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon' title='add task'></button>
+        </center>
       </div>
     </div>
 
-    <div id='lists' class='frame'>
-      <div class='bg'>
-        <div class='bold'>today</div>
-        <div id='doToday'></div>
-      </div>
-      <div class='bg'>
-        <div class='bold'>tomorrow</div>
-        <div id='doTomorrow'></div>
-      </div>
-      <div class='bg'>
-        <div class='bold'>this week</div>
-        <div id='doThisWeek'><br></div>
-      </div>
-      <div class='bg' style='margin-bottom: 0rem;'>
-        <div class='bold'>later</div>
-        <div id='doLater'></div>
-      </div>
+    <div class='doList'>
+      <div id='showToday' class='listName listOpenedToday'>today</div>
+      <div id='doToday'></div>
+    </div>
+    <div class='doList'>
+      <div id='showTomorrow' class='listName listClosed'>tomorrow</div>
+      <div id='doTomorrow' style='display: none;'></div>
+    </div>
+    <div class='doList'>
+      <div id='showThisWeek' class='listName listClosed'>this week</div>
+      <div id='doThisWeek' style='display: none;'></div>
+    </div>
+    <div class='doList' style='margin-bottom: 0rem;'>
+      <div id='showLater' class='listName listClosed'>later</div>
+      <div id='doLater' style='display: none;'></div>
     </div>
 
-    <div id='footer'>
-      <button class='btn-menu' id='about'><img src='img/analysis-paralysis/info.svg' class='icon-menu'></button>  
-      <button class='btn-menu'><a href='mailto:lizzicodes@gmail.com' target='blank'><img src='img/analysis-paralysis/email.svg' class='icon-menu'></a></button>
-      
-      <div id='copyright'>
-        © 2022 <a href='https://yimej.github.io' target='blank'>ELIZABETH YIM</a>
-      </div>
+    <div id='copyright'>
+      © 2022 <a href='https://yimej.github.io' target='blank'>ELIZABETH YIM</a>
     </div>
 
     <script src="js/analysis-paralysis.js"></script>
