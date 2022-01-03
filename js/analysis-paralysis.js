@@ -57,6 +57,8 @@ window.onload = function() {
 
 window.onbeforeunload = function(){download();};
 
+// window.unload = function(){download();};
+
 window.store = {
   localStoreSupport: function() {
     try {
@@ -1277,6 +1279,8 @@ function populate() {
 
   $('.task').show();
   $('.taskActions').hide();
+
+  download();
 };
 
 function refresh() {
