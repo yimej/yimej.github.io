@@ -557,7 +557,7 @@ function addTask() {
     document.getElementById('datetime').value = todayDefault;
     document.getElementById('datetime').style = 'display: none';
 
-    shuffle('yes');
+    shuffle('no');
     populate();
   }
 };
@@ -918,7 +918,9 @@ function shuffle(YesNo) {
           }
         }
       }
+      doToday = doToday.filter( Boolean );
     }
+    doToday = doToday.filter( Boolean );
   }
 
   if (doTomorrow.length < numUrgentPerDay) { // fill tomorrow with min urgent tasks
@@ -936,10 +938,12 @@ function shuffle(YesNo) {
           console.log(err);
         }
       }
+      doTomorrow = doTomorrow.filter( Boolean );
     }
+    doTomorrow = doTomorrow.filter( Boolean );
   }
 
-  if ((doThisWeek.length < numUrgentPerDay*daysLeftInThisWeek)) {
+  if ((doThisWeek.length < numUrgentPerDay*daysLeftInThisWeek)) { // fill this week with min urgent tasks
     for (i=doThisWeek.length; i<numUrgentPerDay*daysLeftInThisWeek; i++) {
       try {
         doThisWeek = doThisWeek.concat(doLater[0]);
@@ -948,13 +952,16 @@ function shuffle(YesNo) {
       catch(err) {
         console.log(err);
       }
+      doThisWeek = doThisWeek.filter( Boolean );
     }
+    doThisWeek = doThisWeek.filter( Boolean );
   }
 
-  while (doToday.length < numTasksPerDay - 1) {
+  while ((doToday.length < numTasksPerDay - 1) && ((doImportant.length > 0) || (doWhenever.length > 0))) { // fill today with min tasks
     try {
       doToday = doToday.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
+      doToday = doToday.filter( Boolean );
     }
     catch(err) {
       // pass
@@ -962,11 +969,14 @@ function shuffle(YesNo) {
     try {
       doToday = doToday.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
+      doToday = doToday.filter( Boolean );
     }
     catch(err) {
       // pass
     }
+    doToday = doToday.filter( Boolean );
   }
+  doToday = doToday.filter( Boolean );
   if (doToday.length < numTasksPerDay) {
     try {
       doToday = doToday.concat(doImportant[0]);
@@ -981,12 +991,14 @@ function shuffle(YesNo) {
         // pass
       }
     }
+    doToday = doToday.filter( Boolean );
   }
 
-  while (doTomorrow.length < numTasksPerDay - 1) {
+  while ((doTomorrow.length < numTasksPerDay - 1) && ((doImportant.length > 0) || (doWhenever.length > 0))) { // fill tomorrow with min tasks
     try {
       doTomorrow = doTomorrow.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
+      doTomorrow = doTomorrow.filter( Boolean );
     }
     catch(err) {
       // pass
@@ -994,11 +1006,14 @@ function shuffle(YesNo) {
     try {
       doTomorrow = doTomorrow.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
+      doTomorrow = doTomorrow.filter( Boolean );
     }
     catch(err) {
       // pass
     }
+    doTomorrow = doTomorrow.filter( Boolean );
   }
+  doTomorrow = doTomorrow.filter( Boolean );
   if (doTomorrow.length < numTasksPerDay) {
     try {
       doTomorrow = doTomorrow.concat(doImportant[0]);
@@ -1013,12 +1028,14 @@ function shuffle(YesNo) {
         // pass
       }
     }
+    doTomorrow = doTomorrow.filter( Boolean );
   }
 
-  while (doThisWeek.length < (daysLeftInThisWeek * (numTasksPerDay - 1))) {
+  while ((doThisWeek.length < (daysLeftInThisWeek * (numTasksPerDay - 1))) && ((doImportant.length > 0) || (doWhenever.length > 0))) { // fill this week with min tasks
     try {
       doThisWeek = doThisWeek.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
+      doThisWeek = doThisWeek.filter( Boolean );
     }
     catch(err) {
       // pass
@@ -1026,10 +1043,12 @@ function shuffle(YesNo) {
     try {
       doThisWeek = doThisWeek.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
+      doThisWeek = doThisWeek.filter( Boolean );
     }
     catch(err) {
       // pass
     }
+    doThisWeek = doThisWeek.filter( Boolean );
   }
   if (doThisWeek.length < numTasksPerDay) {
     try {
@@ -1045,9 +1064,10 @@ function shuffle(YesNo) {
         // pass
       }
     }
+    doThisWeek = doThisWeek.filter( Boolean );
   }
 
-  while (doImportant.length > 0 || doWhenever.length > 0) {
+  while ((doImportant.length > 0 || doWhenever.length > 0) && ((doImportant.length > 0) || (doWhenever.length > 0))) {
     try {
       doLater = doLater.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
