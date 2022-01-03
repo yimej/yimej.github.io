@@ -47,7 +47,7 @@ var openedTaskActions;
 
 //////////////////////// action ////////////////////////
 
-window.onscroll = function() {stick();};
+// window.onscroll = function() {stick();};
 
 window.onload = function() {
   upload();
@@ -177,7 +177,7 @@ $('#cancel-edit').on('click', function() {editCancel();});
 
 $('#accept-settings').on('click', function() {
   settingsAccept();
-  shuffle('yes');
+  shuffle('no');
   populate();
 });
 
@@ -222,6 +222,7 @@ $('#reset').on('click', function(){
 
 $('#undo').on('click', function() {
   undo();
+  shuffle('no');
   populate();
 });
 
@@ -849,8 +850,6 @@ function openBookmark() {
     }
   }
 
-  console.log(toBookmark);
-
   doAll = doAll.concat(toBookmark['doAll']);
   doToday = doToday.concat(toBookmark['doToday']);
   doTomorrow = doTomorrow.concat(toBookmark['doTomorrow']);
@@ -858,9 +857,12 @@ function openBookmark() {
   doLater = doLater.concat(toBookmark['doLater']);
 
   if (toBookmark['prioritize'] == true) {
-    shuffle();
+    shuffle('yes');
   }
-  
+  else {
+    shuffle('no');
+  }
+
   populate();
 };
 
@@ -1333,7 +1335,8 @@ function download() {
   store.set("doThisWeek", JSON.stringify(doThisWeek));
   store.set("doLater", JSON.stringify(doLater));
   store.set("bookmarked", JSON.stringify(bookmarked));
-  // console.log(store);
+  store.set('numTasksPerDay', numTasksPerDay);
+  store.set('numUrgentPerDay', numUrgentPerDay)
 };
 
 function upload() {
@@ -1348,6 +1351,11 @@ function upload() {
   doThisWeek = JSON.parse(store.get('doThisWeek'));
   doLater = JSON.parse(store.get('doLater'));
   bookmarked = JSON.parse(store.get('bookmarked'));
+  numTasksPerDay = store.get('numTasksPerDay');
+  numUrgentPerDay = store.get('numUrgentPerDay');
+
+  document.getElementById('numTasks').value = numTasksPerDay;
+  document.getElementById('numUrgent').value = numUrgentPerDay;
 
   if (bookmarked !=  null) {
     for (i=0; i<bookmarked.length; i++) {
