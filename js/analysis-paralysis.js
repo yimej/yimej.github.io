@@ -1,9 +1,13 @@
 //////////////////////// variable declarations ////////////////////////
 
 var r = document.querySelector(':root');
-var urgentTasksPerDay = 2;
-var maxNumTasksPerDay = 5;
+var numTasksPerDay = 4;
+var numUrgentPerDay = 2;
+var prevNumTasksPerDay = '';
+var prevNumUrgentPerDay = '';
+var menuHeight = parseFloat($('#body').css('margin-top').slice(0, -2));
 var menu = document.getElementById('menu');
+var sticky = menu.offsetTop;
 var sticky = menu.offsetTop;
 var lastAction;
 var currentTask;
@@ -26,7 +30,6 @@ var doThisWeek = [];
 var doThisWeekSafe = [];
 var doLater = [];
 var doLaterSafe = [];
-var doNext = [];
 var doImportant = [];
 var doWhenever = [];
 var today;
@@ -129,9 +132,6 @@ window.store = {
   }
 }
 
-$('.task').show();
-$('.taskActions').hide();
-
 $(document.body).on('click', '.task' ,function(){ // toggle class actions
   toggleTaskActions();
 });
@@ -146,12 +146,8 @@ $('#deadline-edit').on('change', function() {
   showCalendarClock();
 });
 
-$('#bookmark').on('click', function() {
-  showBookmarks();
-});
-
-$('#add').on('click', function() {
-  add();
+$('#addTask').on('click', function() {
+  addTask();
   setDefaultTime();
 });
 
@@ -162,25 +158,44 @@ $('#accept-edit').on('click', function() {
 
 $('#cancel-edit').on('click', function() {editCancel();});
 
-$('#am').on('click', function() {
-  am();
+$('#accept-settings').on('click', function() {
+  settingsAccept();
+  shuffle('yes');
   populate();
 });
 
 $('#shuffle').on('click', function() {
-  shuffle();
+  shuffle('yes');
   populate();
 });
 
-$('#pm').on('click', function() {
-  pm();
-  populate();
-});
-
-$(function() {
+$(function() { // last action
   $('button').on("click", function() {
   	lastAction = $(this).attr('id');
   });
+});
+
+$(function() { // sortable
+  $('#doToday, #doTomorrow, #doThisWeek, #doLater').sortable({
+    cursor: 'move',
+    scroll: true,
+    // helper: 'clone',
+    opacity: 0.5,
+    placeholder: 'placeholder',
+    connectWith: 'ul',
+    forceHelperSize: true,
+    // items: 'li:not(.disabled)',
+    revert: true,
+    containment: 'window',
+    start: function(event, ui) {
+      openEmpty();
+    },
+    stop: function(event, ui) {
+      closeEmpty();
+    }
+  });
+
+  $('#doToday, #doTomorrow, #doThisWeek, #doLater').disableSelection();
 });
 
 $('#reset').on('click', function(){
@@ -215,25 +230,52 @@ $('#showToday').click(function() {
 $('#showTomorrow').click(function() {
   $('#doTomorrow').slideToggle();
   $(this).toggleClass('listOpened');
+
+  openedTask = $('.currentTask');
+  openedTaskActions = $('.currentTaskActions');
+
+  if (openedTask[0] != undefined) {
+    $(openedTask).removeClass('currentTask');
+    $(openedTaskActions).removeClass('currentTaskActions');
+    $(openedTaskActions).toggle('slide', {direction: 'right'});
+  }
 });
 
 $('#showThisWeek').click(function() {
   $('#doThisWeek').slideToggle();
   $(this).toggleClass('listOpened');
+
+  openedTask = $('.currentTask');
+  openedTaskActions = $('.currentTaskActions');
+
+  if (openedTask[0] != undefined) {
+    $(openedTask).removeClass('currentTask');
+    $(openedTaskActions).removeClass('currentTaskActions');
+    $(openedTaskActions).toggle('slide', {direction: 'right'});
+  }
 });
 
 $('#showLater').click(function() {
   $('#doLater').slideToggle();
   $(this).toggleClass('listOpened');
+
+  openedTask = $('.currentTask');
+  openedTaskActions = $('.currentTaskActions');
+
+  if (openedTask[0] != undefined) {
+    $(openedTask).removeClass('currentTask');
+    $(openedTaskActions).removeClass('currentTaskActions');
+    $(openedTaskActions).toggle('slide', {direction: 'right'});
+  }
 });
 
 //////////////////////// functions ////////////////////////
 
 function stick() {
   if (window.pageYOffset >= sticky) {
-    menu.classList.add("sticky")
+    menu.classList.add('sticky');
   } else {
-    menu.classList.remove("sticky");
+    menu.classList.remove('sticky');
   }
 };
 
@@ -269,6 +311,89 @@ function deleteItemsFromArray(arr, value) {
     }
   }
   return arr;
+};
+
+function openEmpty() {
+  if ($('#doToday')[0].innerHTML.length == '') {
+    $('#doToday').slideToggle();
+    $('#showToday').toggleClass('listOpened');
+  }
+  if ($('#doTomorrow')[0].innerHTML.length == '') {
+    $('#doTomorrow').slideToggle();
+    $('#showTomorrow').toggleClass('listOpened');
+  }
+  if ($('#doThisWeek')[0].innerHTML.length == '') {
+    $('#doThisWeek').slideToggle();
+    $('#showThisWeek').toggleClass('listOpened');
+  }
+  if ($('#doLater')[0].innerHTML.length == '') {
+    $('#doLater').slideToggle();
+    $('#showTomorrow').toggleClass('listOpened');
+  }
+}
+
+function closeEmpty() {
+  if ($('#doToday')[0].innerHTML.length == '') {
+    $('#doToday').slideToggle();
+    $('#showToday').toggleClass('listOpened');
+  }
+  if ($('#doTomorrow')[0].innerHTML.length == '') {
+    $('#doTomorrow').slideToggle();
+    $('#showTomorrow').toggleClass('listOpened');
+  }
+  if ($('#doThisWeek')[0].innerHTML.length == '') {
+    $('#doThisWeek').slideToggle();
+    $('#showThisWeek').toggleClass('listOpened');
+  }
+  if ($('#doLater')[0].innerHTML.length == '') {
+    $('#doLater').slideToggle();
+    $('#showTomorrow').toggleClass('listOpened');
+  }
+}
+
+function toggleMenu(id) {
+  var openedMenu = $(document.getElementsByClassName('openedMenu')[0]).attr('id');
+  var addHeight = $('#add').outerHeight();
+  var saveHeight = $('#save').outerHeight();
+  var bookmarkHeight = $('#bookmark').outerHeight();
+  var settingsHeight = $('#settings').outerHeight();
+  var currentHeight;
+
+  // close all opened menus
+  if (openedMenu != undefined) {
+    $('#' + openedMenu).slideToggle();
+    $('#' + openedMenu).toggleClass('openedMenu');
+    currentHeight = 0;
+    $('#body').animate({marginTop: menuHeight + currentHeight});
+  }
+
+  if (id != openedMenu) {
+    if (id == 'add') {
+      currentHeight = addHeight;
+    }
+    else if (id == 'save') {
+      currentHeight = saveHeight;
+    }
+    else if (id == 'bookmark') {
+      currentHeight = bookmarkHeight;
+    }
+    else if (id == 'settings') {
+      currentHeight = settingsHeight;
+    }
+
+    if (openedMenu == undefined) {
+      $('#' + id).slideToggle();
+      $('#' + id).toggleClass('openedMenu');
+      $('#body').animate({marginTop: menuHeight + currentHeight});
+    }
+    else {
+      setTimeout(function() {
+        $('#' + id).slideToggle();
+        $('#' + id).toggleClass('openedMenu');
+      $('#body').animate({marginTop: menuHeight + currentHeight});  
+      }, (400));
+    }
+  }
 };
 
 function shuffleArray(array) {
@@ -338,6 +463,27 @@ function showBookmarks() {
   }
 };
 
+function showSettings() {
+  var settingsContainer = document.getElementById('settings-container');
+  settingsContainer.style.display = "block";
+
+  prevNumTasksPerDay = parseInt(document.getElementById('numTasks').value);
+  prevNumUrgentPerDay = parseInt(document.getElementById('numUrgent').value);
+
+  if (isNaN(prevNumTasksPerDay) == true) {
+    prevNumTasksPerDay = numTasksPerDay;
+  }
+  if (isNaN(prevNumUrgentPerDay) == true) {
+    prevNumUrgentPerDay = numUrgentPerDay;
+  }
+
+  window.onclick = function(event) {
+    if (event.target == settingsContainer) {
+      settingsContainer.style.display = "none";
+    }
+  }
+};
+
 function toggleTaskActions() {
   var clickedTask = event.target;
   var clickedTaskClasses = clickedTask.classList[0];
@@ -370,7 +516,7 @@ function toggleTaskActions() {
   }
 };
 
-function add() {
+function addTask() {
   var inputText = document.getElementById('task').value.replace(/\s+$/, '');
   if (inputText != '') {
     if (document.getElementById('deadline').checked == true) {
@@ -400,7 +546,7 @@ function add() {
       var taskName = inputText + '<span></span>';
       var priority = 'd';
     }
-    var html = "<div class='task'>" + taskName + "</div>";
+    var html = "<li class='task'>" + taskName + "</li>";
 
     currentTask = {'task': taskName, 'priority': priority, 'date': dateTime, 'html': html};
     doAll = doAll.concat(currentTask);
@@ -411,7 +557,7 @@ function add() {
     document.getElementById('datetime').value = todayDefault;
     document.getElementById('datetime').style = 'display: none';
 
-    shuffle();
+    shuffle('yes');
     populate();
   }
 };
@@ -421,12 +567,8 @@ function edit(el) {
   editTaskContainer.style.display = "block";
 
   currentEditButton = el;
-  currentTaskElement = currentEditButton.closest('.task');
-  var currentTaskName = currentTaskElement.innerHTML.slice(0, -588);
-
-  if (currentTaskName.slice(-3, -1) != 'an') {
-    currentTaskName = currentTaskElement.innerHTML.slice(0, -586);
-  }
+  currentTaskElement = currentEditButton.closest('.task').innerHTML;
+  var currentTaskName = currentTaskElement.slice(0, currentTaskElement.indexOf('<div class="taskActions'));
   
   for(i=0; i<doAll.length; i++) {
     if (doAll[i]['task'] == currentTaskName) {
@@ -473,16 +615,16 @@ function edit(el) {
 
   elementLastEdited = currentTaskEdit;
 
-  var sliceHere = -14 - formatDateTime(new Date(currentTaskEdit['date'])).length;
+  var sliceHere = currentTaskEdit['task'].indexOf('<span>');
   if (currentTaskEdit['priority'] == 'a') {
-    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere - 1);
+    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere - 2);
     document.getElementById('important-edit').checked = true;
     document.getElementById('deadline-edit').checked = true;
     document.getElementById('datetime-edit').value = formatDefaultTime(new Date(elementLastEdited['date']));
     document.getElementById('datetime-edit').style = 'display: block';
   }
   else if (currentTaskEdit['priority'] == 'b') {
-    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere - 12);
+    document.getElementById('task-edit').value = currentTaskEdit['task'].slice(0, sliceHere - 13);
     document.getElementById('important-edit').checked = false;
     document.getElementById('deadline-edit').checked = true;
     document.getElementById('datetime-edit').value = formatDefaultTime(new Date(currentTaskEdit['date']));
@@ -529,7 +671,7 @@ function editAccept() {
 
   var important = document.getElementById('important-edit').checked;
   if (isNaN(dateTime) == false && (important == true)) {
-    var taskName = inputText + '&nbsp;❗️&nbsp;<span>' + formattedDateTime + '</span>';
+    var taskName = inputText + '❗️<span>' + formattedDateTime + '</span>';
     var priority = 'a';
   }
   else if (isNaN(dateTime) == false) {
@@ -573,11 +715,57 @@ function editCancel() {
   editTaskContainer.style.display = "none";
 };
 
+function settingsAccept() {
+  numTasksPerDay = parseInt(document.getElementById('numTasks').value);
+  numUrgentPerDay = parseInt(document.getElementById('numUrgent').value);
+  
+  if ((isNaN(numTasksPerDay) == true) && (isNaN(numUrgentPerDay) == true)) {
+    numTasksPerDay = 4;
+    numUrgentPerDay = 2;
+
+    document.getElementById('numTasks').value = '';
+    document.getElementById('numUrgent').value = '';
+
+    // alert('please enter only whole numbers');
+  }
+  else if ((isNaN(numTasksPerDay) == true) || (isNaN(numUrgentPerDay) == true)) {
+    numTasksPerDay = prevNumTasksPerDay;
+    numUrgentPerDay = prevNumUrgentPerDay;
+
+    document.getElementById('numTasks').value = numTasksPerDay;
+    document.getElementById('numUrgent').value = numUrgentPerDay;
+
+    alert('please enter only whole numbers');
+  }
+  else if (numTasksPerDay < numUrgentPerDay) {
+    numTasksPerDay = prevNumTasksPerDay;
+    numUrgentPerDay = prevNumUrgentPerDay;
+
+    document.getElementById('numTasks').value = numTasksPerDay;
+    document.getElementById('numUrgent').value = numUrgentPerDay;
+
+    alert('max daily tasks must be more than min daily urgent tasks');
+  }
+  // else {
+  //   var settingsContainer = document.getElementById('settings');
+  //   settingsContainer.style.display = 'none';
+  // }
+}
+
+function settingsCancel() {
+  var settingsContainer = document.getElementById('settings-container');
+  settingsContainer.style.display = "none";
+
+  document.getElementById('numTasks').value = '';
+  document.getElementById('numUrgent').value = '';
+};
+
 function remove(el) {
   currentRemoveButton = el;
   currentTaskElement = currentRemoveButton.closest('.task');
+  var elementInnerHTML = currentTaskElement.innerHTML;
+  var elementRemovedHTML = elementInnerHTML.slice(0, elementInnerHTML.indexOf('<div class="taskActions'));
   currentTaskElement.remove();
-  var elementRemovedHTML = currentTaskElement.innerHTML.slice(0, -586);
 
   lastAction = 'remove';
   doWhen = '';
@@ -642,7 +830,7 @@ function lock() {
   alert('ugh');
 };
 
-function shuffle() {
+function shuffle(YesNo) {
   doAllSafe = doAll;
   doTodaySafe = doToday;
   doTomorrowSafe = doTomorrow;
@@ -651,8 +839,8 @@ function shuffle() {
 
   doToday = [];
   doTomorrow = [];
+  doThisWeek = [];
   doLater = [];
-  doNext = [];
   doImportant = [];
   doWhenever = [];
 
@@ -662,11 +850,14 @@ function shuffle() {
     if ((new Date(currentTaskToShuffle['date']) < tomorrow) && (new Date(currentTaskToShuffle['date']) > yesterday)) {
       doToday = doToday.concat(currentTaskToShuffle);
     }
-    else if ((new Date(currentTaskToShuffle['date']) < threemorrow) & (new Date(currentTaskToShuffle['date']) > yesterday)) {
+    else if ((new Date(currentTaskToShuffle['date']) < threemorrow) && (new Date(currentTaskToShuffle['date']) > yesterday)) {
       doTomorrow = doTomorrow.concat(currentTaskToShuffle);
     }
-    else if (new Date(currentTaskToShuffle['date']) > tomorrow) {
-      doNext = doNext.concat(currentTaskToShuffle);
+    else if ((new Date(currentTaskToShuffle['date']) < nextWeek) && (new Date(currentTaskToShuffle['date']) > yesterday)) {
+      doThisWeek = doThisWeek.concat(currentTaskToShuffle);
+    }
+    else if (new Date(currentTaskToShuffle['date']) > nextWeek) {
+      doLater = doLater.concat(currentTaskToShuffle);
     }
     else if (currentTaskToShuffle['priority'] == 'c') {
       doImportant = doImportant.concat(currentTaskToShuffle);
@@ -689,33 +880,70 @@ function shuffle() {
     console.log(err);
   }
   try {
-    doNext = doNext.sort((taskA, taskB) => taskA.date - taskB.date,);
+    doThisWeek = doThisWeek.sort((taskA, taskB) => taskA.date - taskB.date,);
+  }
+  catch(err) {
+    console.log(err);
+  }
+  try {
+    doLater = doLater.sort((taskA, taskB) => taskA.date - taskB.date,);
   }
   catch(err) {
     console.log(err);
   }
 
-  shuffleArray(doImportant);
-  shuffleArray(doWhenever);
+  if (YesNo == 'yes') {
+    shuffleArray(doImportant);
+    shuffleArray(doWhenever);
+  }
 
-  if (doToday.length < urgentTasksPerDay) { // fill today wth min tasks
-    for (i=doToday.length; i<urgentTasksPerDay; i++) {
+  if (doToday.length < numUrgentPerDay) { // fill today with min urgent tasks
+    for (i=doToday.length; i<numUrgentPerDay; i++) {
       try {
         doToday = doToday.concat(doTomorrow[0]);
         deleteItemsFromArray(doTomorrow, doTomorrow[0]);
       }
       catch(err) {
-        doToday = doToday.concat(doNext[0]);
-        deleteItemsFromArray(doNext, doNext[0]);
+        try {
+          doToday = doToday.concat(doThisWeek[0]);
+          deleteItemsFromArray(doThisWeek, doThisWeek[0]);
+        }
+        catch(err) {
+          try {
+            doToday = doToday.concat(doLater[0]);
+            deleteItemsFromArray(doLater, doLater[0]);
+          }
+          catch(err) {
+            console.log(err);
+          }
+        }
       }
     }
   }
 
-  if (doTomorrow.length < urgentTasksPerDay) { // fill tomorrow with min tasks
-    for (i=doTomorrow.length; i<urgentTasksPerDay; i++) {
+  if (doTomorrow.length < numUrgentPerDay) { // fill tomorrow with min urgent tasks
+    for (i=doTomorrow.length; i<numUrgentPerDay; i++) {
       try {
-        doTomorrow = doTomorrow.concat(doNext[0]);
-        deleteItemsFromArray(doNext, doNext[0]); //
+        doTomorrow = doTomorrow.concat(doThisWeek[0]);
+        deleteItemsFromArray(doThisWeek, doThisWeek[0]);
+      }
+      catch(err) {
+        try {
+          doTomorrow = doTomorrow.concat(doLater[0]);
+          deleteItemsFromArray(doLater, doLater[0]);
+        }
+        catch(err) {
+          console.log(err);
+        }
+      }
+    }
+  }
+
+  if ((doThisWeek.length < numUrgentPerDay*daysLeftInThisWeek)) {
+    for (i=doThisWeek.length; i<numUrgentPerDay*daysLeftInThisWeek; i++) {
+      try {
+        doThisWeek = doThisWeek.concat(doLater[0]);
+        deleteItemsFromArray(doLater, doLater[0]); 
       }
       catch(err) {
         console.log(err);
@@ -723,79 +951,99 @@ function shuffle() {
     }
   }
 
-  if (doNext.length > 0) { // fill this week
-    for (i=0; i<doNext.length; i++) {
-      currentNextTask = doNext[i];
-
-      if(currentNextTask['date'] < nextWeek) {
-        doThisWeek = doThisWeek.concat(currentNextTask);
-        deleteItemsFromArray(doNext, currentNextTask);
-      }
-    }
-  }
-
-  if ((doThisWeek.length < urgentTasksPerDay*daysLeftInThisWeek)) {
-    for (i=doThisWeek.length; i<urgentTasksPerDay*daysLeftInThisWeek; i++) {
-      try {
-        doThisWeek = doThisWeek.concat(doNext[0]);
-        deleteItemsFromArray(doNext, doNext[0]); 
-      }
-      catch(err) {
-        console.log(err);
-      }
-    }
-  }
-
-  doLater = doNext.concat(doLater);
-
-  while (doToday.length < maxNumTasksPerDay) {
+  while (doToday.length < numTasksPerDay - 1) {
     try {
       doToday = doToday.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
     }
     try {
       doToday = doToday.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
+    }
+  }
+  if (doToday.length < numTasksPerDay) {
+    try {
+      doToday = doToday.concat(doImportant[0]);
+      deleteItemsFromArray(doImportant, doImportant[0]);
+    }
+    catch(err) {
+      try {
+        doToday = doToday.concat(doWhenever[0]);
+      deleteItemsFromArray(doWhenever, doWhenever[0]);
+      }
+      catch(err) {
+        // pass
+      }
     }
   }
 
-  while (doTomorrow.length < maxNumTasksPerDay) {
+  while (doTomorrow.length < numTasksPerDay - 1) {
     try {
       doTomorrow = doTomorrow.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
     }
     try {
       doTomorrow = doTomorrow.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
+    }
+  }
+  if (doTomorrow.length < numTasksPerDay) {
+    try {
+      doTomorrow = doTomorrow.concat(doImportant[0]);
+      deleteItemsFromArray(doImportant, doImportant[0]);
+    }
+    catch(err) {
+      try {
+        doTomorrow = doTomorrow.concat(doWhenever[0]);
+        deleteItemsFromArray(doWhenever, doWhenever[0]);
+      }
+      catch(err) {
+        // pass
+      }
     }
   }
 
-  while (doThisWeek.length < maxNumTasksPerDay*daysLeftInThisWeek) {
+  while (doThisWeek.length < (daysLeftInThisWeek * (numTasksPerDay - 1))) {
     try {
       doThisWeek = doThisWeek.concat(doImportant[0]);
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
     }
     try {
       doThisWeek = doThisWeek.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
+    }
+  }
+  if (doThisWeek.length < numTasksPerDay) {
+    try {
+      doThisWeek = doThisWeek.concat(doImportant[0]);
+      deleteItemsFromArray(doImportant, doImportant[0]);
+    }
+    catch(err) {
+      try {
+        doThisWeek = doThisWeek.concat(doWhenever[0]);
+      deleteItemsFromArray(doWhenever, doWhenever[0]);
+      }
+      catch(err) {
+        // pass
+      }
     }
   }
 
@@ -805,14 +1053,14 @@ function shuffle() {
       deleteItemsFromArray(doImportant, doImportant[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
     }
     try {
       doLater = doLater.concat(doWhenever[0]);
       deleteItemsFromArray(doWhenever, doWhenever[0]);
     }
     catch(err) {
-      console.log(err);
+      // pass
     }
   }
 
@@ -820,24 +1068,6 @@ function shuffle() {
   doTomorrow = doTomorrow.filter( Boolean );
   doThisWeek = doThisWeek.filter( Boolean );
   doLater = doLater.filter( Boolean );
-};
-
-function am() {
-  if (doToday == doTodaySafe) {
-    doToday = goodMorning.concat(doToday);
-  }
-  else if (doToday != doTodaySafe) {
-    doToday = doTodaySafe;
-  }
-};
-
-function pm() {
-  if (doToday == doTodaySafe) {
-    doToday = goodNight.concat(doToday);
-  }
-  else if (doToday != doTodaySafe) {
-    doToday = doTodaySafe;
-  }
 };
 
 function populate() {
@@ -912,7 +1142,7 @@ function populate() {
 
   try {
     for(i=0; i<doAll.length; i++) {
-      document.getElementsByClassName('task')[i].innerHTML += "<div class='taskActions'><button id='edit' class='btn-taskActions' onclick='edit(this); populate();'><img src='img/analysis-paralysis/edit.svg'></button><button id='complete' class='btn-taskActions' onclick='complete(this); populate();'><img src='img/analysis-paralysis/check.svg'></button><button id='lock' class='btn-taskActions' onclick='lock(this); populate();'><img src='img/analysis-paralysis/lock.svg'></button><button id='remove' class='btn-taskActions' onclick='remove(this); populate();'><img src='img/analysis-paralysis/remove.svg'></button>";
+      document.getElementsByClassName('task')[i].innerHTML += "<div class='taskActions'><button id='lock' class='btn-taskActions' onclick='lock(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/unlock.svg'></button><button id='edit' class='btn-taskActions' onclick='edit(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/edit.svg'></button><button id='complete' class='btn-taskActions' onclick='complete(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/check.svg'></button><button id='remove' class='btn-taskActions' onclick='remove(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/remove.svg'></button></div>";
     }
   }
   catch(err) {
@@ -973,11 +1203,11 @@ function download() {
   // localStorage.setItem("doTomorrow", JSON.stringify(doTomorrow));
   // localStorage.setItem("doThisWeek", JSON.stringify(doThisWeek));
   // localStorage.setItem("doLater", JSON.stringify(doLater));
-  store.set("doAll", JSON.stringify(doAll));
-  store.set("doToday", JSON.stringify(doToday));
-  store.set("doTomorrow", JSON.stringify(doTomorrow));
-  store.set("doThisWeek", JSON.stringify(doThisWeek));
-  store.set("doLater", JSON.stringify(doLater));
+  window.store.set("doAll", JSON.stringify(doAll));
+  window.store.set("doToday", JSON.stringify(doToday));
+  window.store.set("doTomorrow", JSON.stringify(doTomorrow));
+  window.store.set("doThisWeek", JSON.stringify(doThisWeek));
+  window.store.set("doLater", JSON.stringify(doLater));
 };
 
 function upload() {
@@ -986,11 +1216,11 @@ function upload() {
   // doTomorrow = JSON.parse(localStorage.getItem('doTomorrow'));
   // doThisWeek = JSON.parse(localStorage.getItem('doThisWeek'));
   // doLater = JSON.parse(localStorage.getItem('doLater'));
-  doAll = JSON.parse(store.get('doAll'));
-  doToday = JSON.parse(store.get('doToday'));
-  doTomorrow = JSON.parse(store.get('doTomorrow'));
-  doThisWeek = JSON.parse(store.get('doThisWeek'));
-  doLater = JSON.parse(store.get('doLater'));
+  doAll = JSON.parse(window.store.get('doAll'));
+  doToday = JSON.parse(window.store.get('doToday'));
+  doTomorrow = JSON.parse(window.store.get('doTomorrow'));
+  doThisWeek = JSON.parse(window.store.get('doThisWeek'));
+  doLater = JSON.parse(window.store.get('doLater'));
 
   if (doAll == null) {
     doAll = [];
