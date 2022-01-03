@@ -93,6 +93,7 @@ input.defaultCheckBoxSize  {
     height: 3.5rem;
     letter-spacing: 0.5rem;
     margin-top: 1rem;
+    font-weight: 500;
 }
 
 .listOpened:after { /*down*/

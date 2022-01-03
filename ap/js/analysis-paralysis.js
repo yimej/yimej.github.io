@@ -205,13 +205,14 @@ $(function() { // sortable
     forceHelperSize: true,
     // items: 'li:not(.disabled)',
     revert: true,
-    containment: 'window',
+    // containment: 'window',
     start: function(event, ui) {
       openEmpty();
     },
     stop: function(event, ui) {
       closeEmpty();
-    }
+    },
+    disabled: true
   });
 
   // $('#doToday, #doTomorrow, #doThisWeek, #doLater').disableSelection();
@@ -291,13 +292,13 @@ $('#showLater').click(function() {
 
 //////////////////////// functions ////////////////////////
 
-function stick() {
-  if (window.pageYOffset >= sticky) {
-    menu.classList.add('sticky');
-  } else {
-    menu.classList.remove('sticky');
-  }
-};
+// function stick() {
+//   if (window.pageYOffset >= sticky) {
+//     menu.classList.add('sticky');
+//   } else {
+//     menu.classList.remove('sticky');
+//   }
+// };
 
 function formatDateTime(elDate) {
   // var utcDate = new Date(elDate.getFullYear(), elDate.getUTCMonth(), elDate.getUTCDate(), elDate.getUTCHours(), elDate.getUTCMinutes(), elDate.getUTCSeconds(), elDate.getUTCMilliseconds());
@@ -349,7 +350,7 @@ function stripText(string) {
 }
 
 function openEmpty() {
-  $('.connectedSortable').css('min-height', '4.75rem');
+  $('.connectedSortable').css('min-height', '4.25rem');
   if ($('#doToday')[0].innerHTML.length == '') {
     $('#doToday').slideToggle();
     $('#showToday').toggleClass('listOpened');
