@@ -1344,11 +1344,6 @@ function download() {
 };
 
 function upload() {
-  // doAll = JSON.parse(localStorage.getItem('doAll'));
-  // doToday = JSON.parse(localStorage.getItem('doToday'));
-  // doTomorrow = JSON.parse(localStorage.getItem('doTomorrow'));
-  // doThisWeek = JSON.parse(localStorage.getItem('doThisWeek'));
-  // doLater = JSON.parse(localStorage.getItem('doLater'));
   doAll = JSON.parse(store.get('doAll'));
   doToday = JSON.parse(store.get('doToday'));
   doTomorrow = JSON.parse(store.get('doTomorrow'));
@@ -1358,8 +1353,10 @@ function upload() {
   numTasksPerDay = store.get('numTasksPerDay');
   numUrgentPerDay = store.get('numUrgentPerDay');
 
-  document.getElementById('numTasks').value = numTasksPerDay;
-  document.getElementById('numUrgent').value = numUrgentPerDay;
+  if (numTasksPerDay != 'null' && numUrgentPerDay != 'null') {
+    document.getElementById('numTasks').value = numTasksPerDay;
+    document.getElementById('numUrgent').value = numUrgentPerDay;
+  }
 
   if (bookmarked !=  null) {
     for (i=0; i<bookmarked.length; i++) {
