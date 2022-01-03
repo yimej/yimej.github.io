@@ -31,7 +31,7 @@
           <!-- <button id='undo' class='btn-menu'><img class='icon-menu' src='img/analysis-paralysis/undo.svg'></button> -->
           <button id='shuffle' class='btn-menu'><img class='icon-menu' src='img/analysis-paralysis/random.svg'></button>
           <button class='btn-menu' onclick='toggleMenu("save");'><img class='icon-menu' src='img/analysis-paralysis/save.svg'></button>
-          <button class='btn-menu' onclick='toggleMenu("bookmark");'><img class='icon-menu' src='img/analysis-paralysis/bookmark.svg'></button>
+          <button class='btn-menu' onclick='toggleMenu("bookmark");'><img class='icon-menu' src='img/analysis-paralysis/open.svg'></button>
           <button id='reset' class='btn-menu'><img class='icon-menu' src='img/analysis-paralysis/delete.svg'></button>
           <button class='btn-menu' onclick='toggleMenu("settings");'><img class='icon-menu' src='img/analysis-paralysis/cog.svg'></button>
         </div>
@@ -42,40 +42,46 @@
           <input type='checkbox' class='defaultCheckBoxSize' id='deadline'><label for='deadline'> deadline</label>
           <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>        
           <center class='btns'>
-            <button class='btn' id='addTask' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("add");' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
+            <button class='btn' id='addTask' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
+            <button class='btn' id='cancel-menu' onclick='toggleMenu("add");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
           </center>
         </div>
 
         <div id='save' class='frame closedMenu'> <!-- save -->
-          <input class='full-input' type='text' id='task' placeholder='save current tasks' value=''>
+          <input class='full-input' type='text' id='bookmark-name' placeholder='save current task list name' value=''>
+          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-autoDate'><label for='bookmark-autoDate'> auto update deadline</label><br>
+          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-hideDate'><label for='bookmark-hideDate'> hide date</label><br>
+          <!-- <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-lockOrder'><label for='bookmark-lockOrder'> lock task order</label><br> -->
+          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-prioritize'><label for='bookmark-prioritize'> prioritize</label><br>
+          <input type='checkbox' class='defaultCheckBoxSize' id='showEmojiInput'><label for='showEmojiInput'> custom emoji</label><div id='bookmark-chooseEmoji' style='display: none;'>:<input class='emoji-input' type='text' id='bookmark-emoji'></div>
           <center class='btns'>
-            <button class='btn' id='accept-save' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("save");' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
+            <button class='btn' id='save-bookmark' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='img/analysis-paralysis/save.svg' class='icon'></button>
+            <button class='btn' id='cancel-menu' onclick='toggleMenu("save");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
           </center>
         </div>
 
         <div id='bookmark' class='frame closedMenu'> <!-- bookmark -->
           <select class='full-input' name='selectBookmark' id='selectBookmark'>
-            <option disabled selected hidden value=''>view saved tasks</option>
-          </select>          
+            <option selected>open saved tasks</option>
+          </select>
           <center class='btns'>
-            <button class='btn' id='accept-bookmark' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("bookmark");' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
+            <button class='btn' id='open-bookmark' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/open.svg' class='icon'></button>
+            <button class='btn' id='delete-bookmark' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/remove.svg' class='icon'></button>
+            <button class='btn' id='cancel-menu' onclick='toggleMenu("bookmark");' style='padding-right: 0.75rem; margin-left: 0.5rem'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
           </center>
         </div>
 
         <div id='settings' class='frame closedMenu'> <!-- settings -->
           <div class='setting-row'>
-            <input class='number-input' type='text' id='numTasks' placeholder='4'>max daily tasks
+            <input class='number-input' type='text' id='numTasks' placeholder='4'> max daily tasks
           </div>
           <div class='settings-row'>
-            <input class='number-input' type='text' id='numUrgent' placeholder='2'>min daily urgent tasks
+            <input class='number-input' type='text' id='numUrgent' placeholder='2'> min daily urgent tasks
           </div>
 
           <center class='btns'>
-            <button class='btn' id='accept-settings' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("settings");' style='padding-right: 0.75rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
+            <button class='btn' id='accept-settings' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='img/analysis-paralysis/accept.svg' class='icon'></button>
+            <button class='btn' id='cancel-menu' onclick='toggleMenu("settings");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='img/analysis-paralysis/cancel.svg' class='icon'></button>
           </center>
         </div>
 

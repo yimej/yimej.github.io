@@ -32,6 +32,7 @@ var doLater = [];
 var doLaterSafe = [];
 var doImportant = [];
 var doWhenever = [];
+var bookmarked = [];
 var today;
 var tomorrow;
 var threemorrow;
@@ -141,6 +142,10 @@ $('#deadline').on('change', function() {
   showCalendarClock();
 });
 
+$('#showEmojiInput').on('change', function() {
+  showEmojiInput();
+});
+
 $('#deadline-edit').on('change', function() {
   // setDefaultTime();
   showCalendarClock();
@@ -150,6 +155,18 @@ $('#addTask').on('click', function() {
   addTask();
   setDefaultTime();
 });
+
+$('#save-bookmark').on('click', function() {
+  saveBookmark();
+});
+
+$('#delete-bookmark').on('click', function() {
+  deleteBookmark();
+});
+
+$('#open-bookmark').on('click', function() {
+  openBookmark();
+})
 
 $('#accept-edit').on('click', function() {
   editAccept();
@@ -313,7 +330,23 @@ function deleteItemsFromArray(arr, value) {
   return arr;
 };
 
+function isWhiteSpace(char) {
+  return " \t\n".includes(char);
+}
+
+function isPunct(char) {
+  return ";:.,?!-'\"(){}".includes(char);
+}
+
+function stripText(string) {
+  return string
+    .split("")
+    .filter(char => !isWhiteSpace(char) && !isPunct(char))
+    .join("");
+}
+
 function openEmpty() {
+  $('.connectedSortable').css('min-height', '4.75rem');
   if ($('#doToday')[0].innerHTML.length == '') {
     $('#doToday').slideToggle();
     $('#showToday').toggleClass('listOpened');
@@ -333,6 +366,7 @@ function openEmpty() {
 }
 
 function closeEmpty() {
+  $('.connectedSortable').css('min-height', '0rem');
   if ($('#doToday')[0].innerHTML.length == '') {
     $('#doToday').slideToggle();
     $('#showToday').toggleClass('listOpened');
@@ -452,16 +486,14 @@ function showCalendarClock() {
   }
 };
 
-function showBookmarks() {
-  var bookmarkContainer = document.getElementById('bookmark-container');
-  bookmarkContainer.style.display = "block";
-
-  window.onclick = function(event) {
-    if (event.target == bookmarkContainer) {
-      bookmarkContainer.style.display = "none";
-    }
+function showEmojiInput() {
+  if (document.getElementById('showEmojiInput').checked == true) {
+    document.getElementById('bookmark-chooseEmoji').style = 'display: inline-block';
   }
-};
+  else {
+    document.getElementById('bookmark-chooseEmoji').style = 'display: none'; 
+  }
+}
 
 function showSettings() {
   var settingsContainer = document.getElementById('settings-container');
@@ -686,7 +718,7 @@ function editAccept() {
     var taskName = inputText;
     var priority = 'd';
   }
-  var html = "<div class='task'>" + taskName + "</div>";
+  var html = "<li class='task'>" + taskName + "</li>";
 
   currentEditTask = {'task': taskName, 'priority': priority, 'date': dateTime, 'html': html};
   newElementEdited = currentEditTask;
@@ -758,6 +790,78 @@ function settingsCancel() {
 
   document.getElementById('numTasks').value = '';
   document.getElementById('numUrgent').value = '';
+};
+
+function saveBookmark() {
+  var bookmarkName = document.getElementById('bookmark-name').value;
+  var bookmarkVal = stripText(bookmarkName);
+  var autoDate = document.getElementById('bookmark-autoDate').checked;
+  var hideDate = document.getElementById('bookmark-hideDate').checked;
+  // var lockOrder = document.getElementById('bookmark-lockOrder').checked;
+  var prioritize = document.getElementById('bookmark-prioritize').checked;
+  var emoji = document.getElementById('bookmark-emoji').value;
+
+  var toBookmark = {'bookmarkVal': bookmarkVal, 'bookmarkName': bookmarkName, 'prioritize': prioritize, 'doAll': doAll, 'doToday': doToday, 'doTomorrow': doTomorrow, 'doThisWeek': doThisWeek, 'doLater': doLater};
+
+  for (i=0; i<toBookmark['doAll'].length; i++) {
+    if (autoDate == true) { 
+      toBookmark['doAll'][i]['date'] = today;
+    }
+    if (hideDate == true) {
+      toBookmark['doAll'][i]['task'] = toBookmark['doAll'][i]['task'].slice(0, toBookmark['doAll'][i]['task'].indexOf('<span>'));
+      toBookmark['doAll'][i]['task'] += '<span></span>'
+      toBookmark['doAll'][i]['html'] = "<li class='task'>" + toBookmark['doAll'][i]['task'] + '</li>';
+    }
+    if (emoji != '') {
+      toBookmark['doAll'][i]['task'] = toBookmark['doAll'][i]['task'].replace('❗', '&nbsp;' + emoji);
+      toBookmark['doAll'][i]['task'] = toBookmark['doAll'][i]['task'].replace('&nbsp;⏰&nbsp;', '&nbsp;' + emoji);
+      toBookmark['doAll'][i]['html'] = "<li class='task'>" + toBookmark['doAll'][i]['task'] + '</li>';
+    }
+  }
+
+  bookmarked = bookmarked.concat(toBookmark);
+  document.getElementById('selectBookmark').innerHTML += "<option value='" + bookmarkVal + "'>" + bookmarkName + "</option>";
+
+  toggleMenu('save');
+  setTimeout(function() {
+    document.getElementById('bookmark-name').value = '';
+  }, (400));
+};
+
+function deleteBookmark() {
+  var bookmarkVal = document.getElementById('selectBookmark').value;
+
+  $("#selectBookmark option[value='" + bookmarkVal + "']").remove();
+
+  for (i=0; i<bookmarked.length; i++) {
+    if (bookmarked[i]['bookmarkVal'] == bookmarkVal) {
+      deleteItemsFromArray(bookmarked, bookmarked[i]);
+    }
+  }
+};
+
+function openBookmark() {
+  var bookmarkVal = document.getElementById('selectBookmark').value;
+
+  for (i=0; i<bookmarked.length; i++) {
+    if (bookmarked[i]['bookmarkVal'] == bookmarkVal) {
+      var toBookmark = bookmarked[i];
+    }
+  }
+
+  console.log(toBookmark);
+
+  doAll = doAll.concat(toBookmark['doAll']);
+  doToday = doToday.concat(toBookmark['doToday']);
+  doTomorrow = doTomorrow.concat(toBookmark['doTomorrow']);
+  doThisWeek = doThisWeek.concat(toBookmark['doThisWeek']);
+  doLater = doLater.concat(toBookmark['doLater']);
+
+  if (toBookmark['prioritize'] == true) {
+    shuffle();
+  }
+  
+  populate();
 };
 
 function remove(el) {
@@ -1223,11 +1327,13 @@ function download() {
   // localStorage.setItem("doTomorrow", JSON.stringify(doTomorrow));
   // localStorage.setItem("doThisWeek", JSON.stringify(doThisWeek));
   // localStorage.setItem("doLater", JSON.stringify(doLater));
-  window.store.set("doAll", JSON.stringify(doAll));
-  window.store.set("doToday", JSON.stringify(doToday));
-  window.store.set("doTomorrow", JSON.stringify(doTomorrow));
-  window.store.set("doThisWeek", JSON.stringify(doThisWeek));
-  window.store.set("doLater", JSON.stringify(doLater));
+  store.set("doAll", JSON.stringify(doAll));
+  store.set("doToday", JSON.stringify(doToday));
+  store.set("doTomorrow", JSON.stringify(doTomorrow));
+  store.set("doThisWeek", JSON.stringify(doThisWeek));
+  store.set("doLater", JSON.stringify(doLater));
+  store.set("bookmarked", JSON.stringify(bookmarked));
+  // console.log(store);
 };
 
 function upload() {
@@ -1236,11 +1342,23 @@ function upload() {
   // doTomorrow = JSON.parse(localStorage.getItem('doTomorrow'));
   // doThisWeek = JSON.parse(localStorage.getItem('doThisWeek'));
   // doLater = JSON.parse(localStorage.getItem('doLater'));
-  doAll = JSON.parse(window.store.get('doAll'));
-  doToday = JSON.parse(window.store.get('doToday'));
-  doTomorrow = JSON.parse(window.store.get('doTomorrow'));
-  doThisWeek = JSON.parse(window.store.get('doThisWeek'));
-  doLater = JSON.parse(window.store.get('doLater'));
+  doAll = JSON.parse(store.get('doAll'));
+  doToday = JSON.parse(store.get('doToday'));
+  doTomorrow = JSON.parse(store.get('doTomorrow'));
+  doThisWeek = JSON.parse(store.get('doThisWeek'));
+  doLater = JSON.parse(store.get('doLater'));
+  bookmarked = JSON.parse(store.get('bookmarked'));
+
+  if (bookmarked !=  null) {
+    for (i=0; i<bookmarked.length; i++) {
+      var bookmarkVal = bookmarked[i]['bookmarkVal'];
+      var bookmarkName = bookmarked[i]['bookmarkName'];
+      document.getElementById('selectBookmark').innerHTML += "<option value='" + bookmarkVal + "'>" + bookmarkName + "</option>";
+    }
+  }
+  else {
+    bookmarked = [];
+  }
 
   if (doAll == null) {
     doAll = [];
