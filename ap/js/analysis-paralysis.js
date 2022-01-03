@@ -214,7 +214,7 @@ $(function() { // sortable
     }
   });
 
-  $('#doToday, #doTomorrow, #doThisWeek, #doLater').disableSelection();
+  // $('#doToday, #doTomorrow, #doThisWeek, #doLater').disableSelection();
 });
 
 $('#reset').on('click', function(){
@@ -1270,7 +1270,7 @@ function populate() {
 
   try {
     for(i=0; i<doAll.length; i++) {
-      document.getElementsByClassName('task')[i].innerHTML += "<div class='taskActions'><button id='lock' class='btn-taskActions' onclick='lock(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/unlock.svg'></button><button id='edit' class='btn-taskActions' onclick='edit(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/edit.svg'></button><button id='complete' class='btn-taskActions' onclick='complete(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/check.svg'></button><button id='remove' class='btn-taskActions' onclick='remove(this); populate();'><img class='icon-taskAction' src='img/analysis-paralysis/remove.svg'></button></div>";
+      document.getElementsByClassName('task')[i].innerHTML += "<div class='taskActions'><button id='lock' class='btn-taskActions' onclick='lock(this); populate();'><img class='icon-taskAction' src='ap/img/unlock.svg'></button><button id='edit' class='btn-taskActions' onclick='edit(this); populate();'><img class='icon-taskAction' src='ap/img/edit.svg'></button><button id='complete' class='btn-taskActions' onclick='complete(this); populate();'><img class='icon-taskAction' src='ap/img/check.svg'></button><button id='remove' class='btn-taskActions' onclick='remove(this); populate();'><img class='icon-taskAction' src='ap/img/remove.svg'></button></div>";
     }
   }
   catch(err) {

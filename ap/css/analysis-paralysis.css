@@ -69,7 +69,7 @@ body {
     align-content: left;
     vertical-align: middle;
     padding: 1.5rem;
-    font-size: 2rem;
+    /*font-size: 1rem;*/
     z-index: 4;
     border-bottom: 0.5rem solid var(--dark);
 }
@@ -88,7 +88,7 @@ input.defaultCheckBoxSize  {
     background-color: var(--medium);
     color: white;
     text-align: center;
-    font-size: 2rem;
+    /*font-size: 1rem;*/
     line-height: 3.25rem;
     height: 3.5rem;
     letter-spacing: 0.5rem;
@@ -97,7 +97,7 @@ input.defaultCheckBoxSize  {
 
 .listOpened:after { /*down*/
     content: '\25BC'!important;
-    font-size: 1.25rem;
+    font-size: 0.5em;
     padding-bottom: 1rem;
     position: relative;
     left: 1rem;
@@ -106,7 +106,7 @@ input.defaultCheckBoxSize  {
 
 .listClosed:after { /*up*/
     content: '\25B2';
-    font-size: 1.25rem;
+    font-size: 0.5em;
     padding-bottom: 1rem;
     position: relative;
     left: 1rem;
@@ -147,7 +147,7 @@ input.defaultCheckBoxSize  {
     align-content: left;
     vertical-align: middle;
     padding: 1.5rem;
-    font-size: 2rem;
+    /*font-size: 1rem;*/
     z-index: 10;
 }
 
@@ -156,10 +156,10 @@ input.defaultCheckBoxSize  {
     display: none;
     background-color: white;
     padding: 1rem;
-    font-size: 2rem;
-    line-height: 2.5rem;
+    /*font-size: 1rem;*/
+    /*line-height: 2.5rem;*/
     vertical-align: middle;
-    border-bottom: .25rem solid var(--light);
+    border-bottom: 0.25rem solid var(--light);
     width: 100%;
     word-wrap: break-word;
 }
@@ -169,6 +169,7 @@ input.defaultCheckBoxSize  {
     top: 0rem;
     right: 0rem;
     float: right;
+    /*height: calc(100% - 0.25rem);*/
     /*padding: 0rem 1rem 0rem     0rem;*/
     padding: 0rem 0.5rem;
     display: grid;
@@ -176,12 +177,14 @@ input.defaultCheckBoxSize  {
     /*grid-gap: 0.25rem;*/
     text-align: center;
     background-color: var(--dark);
+    /*border-bottom: 0.25rem solid var(--light);*/
     /*border-radius: 5px;*/
+    z-index: 10;
 }
 
 .btn-taskActions {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.25rem;
+    height: 4.25rem;
     background-color: var(--dark);
     color: white;
     border: 0;
