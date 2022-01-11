@@ -21,7 +21,7 @@ body {
     max-width: 700px;
     margin: auto;/*1rem auto 1rem auto;*/
     position: relative;
-    height: calc(100vh - 2rem)!important;
+    /*height: calc(100% - 2rem)!important;*/
     /*background-color: yellow;*/
 }
 
@@ -51,7 +51,7 @@ body {
     top: 1.75rem;
     margin: auto;
     background-color: transparent;  
-    z-index: 10;
+    z-index: 5;
     height: 2rem;
     width: 2rem;
     animation: fadeInAndOutAnimation ease 1.5s;
@@ -67,7 +67,7 @@ body {
 .list {
     height: calc(100vh - 6rem)!important;
     overflow: auto;
-    padding-bottom: 6rem;
+    /*padding-bottom: 6rem;*/
 }
 
 .list > :last-child {
@@ -100,7 +100,7 @@ body {
     /*display: none;*/
     position: absolute;
     /*top: 0.75rem;*/
-    bottom: 0.25rem;
+    bottom: 2rem;
     right: 2rem;
     /*margin-left: calc(100% - 5rem);*/
 }
@@ -159,7 +159,7 @@ input.defaultCheckBoxSize  {
 }
 
 .modal-content {
-    margin: 10vh auto auto auto;
+    margin: 10% auto auto auto;
     max-width: 700px;
     width: calc(100% - 4rem);
     letter-spacing: normal;
