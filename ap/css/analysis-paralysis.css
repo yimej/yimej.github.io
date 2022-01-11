@@ -13,25 +13,61 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 0rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: left;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards;
     max-width: 700px;
-    margin: 1rem auto auto auto;
+    margin: auto;/*1rem auto 1rem auto;*/
     position: relative;
-    height: calc(100vh - 1rem)!important;
+    height: calc(100vh - 2rem)!important;
+    /*background-color: yellow;*/
+}
 
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+}
+
+@keyframes fadeInAndOutAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    50% { 
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0;
+    }
+} 
+
+.swipe {
+    position: fixed;
+    top: 1.75rem;
+    margin: auto;
+    background-color: transparent;  
+    z-index: 10;
+    height: 2rem;
+    width: 2rem;
+    animation: fadeInAndOutAnimation ease 1.5s;
+    animation-iteration-count: 3; 
+    animation-fill-mode: forwards;
 }
 
 #menu {
     display: inline-block;
+    background-color: var(--dark);
 }
 
 .list {
     height: calc(100vh - 6rem)!important;
     overflow: auto;
+    padding-bottom: 6rem;
 }
 
 .list > :last-child {
@@ -61,9 +97,19 @@ body {
 }
 
 #dropup-menu {
+    /*display: none;*/
     position: absolute;
-    bottom: 0.75rem;
-    margin-left: calc(100% - 4.25rem);
+    /*top: 0.75rem;*/
+    bottom: 0.25rem;
+    right: 2rem;
+    /*margin-left: calc(100% - 5rem);*/
+}
+
+#dropup-content {
+    /*background-color: var(--dark);*/
+    /*padding-top: 0.5rem;*/
+    /*margin-top: 0.5rem;*/
+    border-radius: 0.5rem;
 }
 
 #dropup-content button:hover {
@@ -72,18 +118,19 @@ body {
 
 .btn-dropup {
     background-color: var(--dark);
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 input.defaultCheckBoxSize  {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
 }
 
 .list-name {
     background-color: var(--dark);
     color: white;
     text-align: center;
+    font-size: 1.5rem;
     line-height: 3.25rem;
     height: 3.5rem;
     letter-spacing: 0.5rem;
@@ -122,19 +169,20 @@ input.defaultCheckBoxSize  {
     vertical-align: middle;
     padding: 1.5rem;
     z-index: 10;
+    border-radius: 0.5rem;
 }
 
 .task {
     position: relative;
     background-color: var(--light);
     padding: 1rem;
-    line-height: 1.25rem;
+    line-height: 1rem;
     vertical-align: middle;
     border-radius: 0.5rem;
     width: 100%;
     word-wrap: break-word;
     margin: auto auto 0.5rem auto;
-    height: 3.5rem;
+    min-height: 3rem;
 }
 
 .taskActions {
@@ -192,9 +240,20 @@ input.defaultCheckBoxSize  {
 
 .btn {
     border: 0;
-    border-radius: 50%;
+    border-radius: 0.5rem;
     height: 3.5rem;
     width: 3.5rem;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0rem;
+    background-color: var(--dark);
+}
+
+.btn-round {
+    border: 0;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
     text-align: center;
     vertical-align: middle;
     padding: 0rem;
@@ -204,6 +263,11 @@ input.defaultCheckBoxSize  {
 .icon {
     height: 2.5rem;
     width: 2.5rem;
+}
+
+.icon-round {
+    height: 2rem;
+    width: 2rem;
 }
 
 button:hover {

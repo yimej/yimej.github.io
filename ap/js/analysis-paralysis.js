@@ -28,8 +28,9 @@ refresh();
 var splide = new Splide( '.splide', {
   type: 'loop',
   width: '100%',
-  pagination: false
-  // padding: '5rem',
+  pagination: false,
+  arrows: false,
+  // padding: '0rem',
 });
 splide.mount();
 
@@ -198,7 +199,7 @@ function showCalClock() {
 
 function addTask() {
   var inputText = document.getElementById('task').value.replace(/\s+$/, '');
-  
+
   if (inputText != '') {
     if (document.getElementById('deadline').checked == true) {
       var dateTime = new Date(document.getElementById('deadline-cal-clock').value);

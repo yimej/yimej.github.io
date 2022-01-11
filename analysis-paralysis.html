@@ -24,20 +24,23 @@
 
   </head>
   <body>
+    <!-- <img id='expand' src='ap/img/expand.svg' /> -->
+    <img class='swipe' src='ap/img/double-caret-left.svg' style='left: 2rem;'/>
+    <img class='swipe' src='ap/img/double-caret-right.svg' style='right: 2rem;'/>
     <div class="splide">
-      <div class="splide__arrows">
-        <button class="splide__arrow splide__arrow--prev" style='background-color: white; opacity: 1; top: 1.75rem; left: 0rem;'>
+      <!-- <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev" style='background-color: transparent; opacity: 1; top: 2.75rem; left: 1rem;'>
           <img src='ap/img/caret-left.svg' class='icon'>
         </button>
-        <button class="splide__arrow splide__arrow--next" style='background-color: white; opacity: 1; top: 1.75rem; right: 0rem;'>
+        <button class="splide__arrow splide__arrow--next" style='background-color: transparent; opacity: 1; top: 2.75rem; right: 1rem;'>
           <img src='ap/img/caret-right.svg' class='icon'>
         </button>
-      </div>
+      </div> -->
 
-      <div class="splide__track" style='width: calc(100% - 6rem); margin:auto;'>
+      <div class="splide__track" style='width: calc(100%); margin:auto;'>
         <div class="splide__list">
 
-          <div class='splide__slide'>
+          <div class='splide__slide' style='padding: 1rem;'>
             <div class='list-name'>TODAY</div>
             <div id='do-today' class='list'>
               <div class='task'>today / this</div>
@@ -56,12 +59,17 @@
               <div class='task'>today / sample</div>
               <div class='task'>today / sample</div>
               <div class='task'>today / sample</div>              
+              <div class='task'>today / sample</div>               
+              <div class='task'>today / sample</div>                
+              <div class='task'>today / sample</div>                
+              <div class='task'>today / sample</div>                
+              <div class='task'>today / sample</div>                
               <div class='task'>today / sample</div>              
               <div class='task'>today / last</div>
             </div>
           </div>
           
-          <div class='splide__slide'>
+          <div class='splide__slide' style='padding: 1rem;'>
             <div class='list-name'>TOMORROW</div>
             <div id='do-tomorrow' class='list'>
               <div class='task'>tomorrow / this</div>
@@ -71,7 +79,7 @@
             </div>
           </div>
 
-          <div class='splide__slide'>
+          <div class='splide__slide' style='padding: 1rem;'>
             <div class='list-name'>THIS WEEK</div>
             <div id='do-thisWeek' class='list'>
               <div class='task'>thisWeek / this</div>
@@ -81,7 +89,7 @@
             </div>
           </div>
 
-          <div class='splide__slide'>
+          <div class='splide__slide' style='padding: 1rem;'>
             <div class='list-name'>LATER</div>
             <div id='do-later' class='list'>
               <div class='task'>later / this</div>
@@ -100,10 +108,10 @@
         <input class='full-input' type='text' id='task' placeholder='enter task' value=''>
         <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
         <input type='checkbox' class='defaultCheckBoxSize' id='deadline' onchange='showCalClock();'><label for='deadline'> deadline</label><br>
-        <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 2rem; width:calc(100% - 2rem); display: none;'>
+        <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 1.2 5rem; width:calc(100% - 1.25rem); display: none;'>
         <center style='margin-top: 1.5rem;'>
-          <button class='btn' onclick='addTask();' style='margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon'></button>
-          <button class='btn' onclick='closeMenu("add");' style='margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon'></button>
+          <button class='btn-round' onclick='addTask();' style='margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon-round'></button>
+          <button class='btn-round' onclick='closeMenu("add");' style='margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon-round'></button>
         </center>
       </div>
     </div>
@@ -126,7 +134,7 @@
         <button class='btn btn-dropup' id='reset' onclick='reset();'><img class='icon' src='ap/img/delete.svg'></button><br>
         <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/bookmark.svg'></button><br>
         <button class='btn btn-dropup' id='shuffle'><img class='icon' src='ap/img/random.svg'></button><br>
-        <button class='btn btn-dropup' id='add' onclick='openMenu(this);'><img class='icon' src='ap/img/add.svg'></button>
+        <button class='btn btn-dropup' id='add' onclick='openMenu(this);'><img class='icon' src='ap/img/add.svg'></button><br>
       </div>
       <button id='menu' class='btn btn-dropup' onclick='toggleMenu(this);'>
         <div class='bar1'></div>
