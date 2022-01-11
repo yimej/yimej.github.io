@@ -18,7 +18,7 @@ body {
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards;
-    max-width: 700px;
+    max-width: 500px;
     margin: auto;/*1rem auto 1rem auto;*/
     position: relative;
     /*height: calc(100% - 2rem)!important;*/
@@ -149,8 +149,6 @@ input.defaultCheckBoxSize  {
     z-index: 9;
     left: 0;
     top: 0;
-    /*margin: auto;*/
-    /*max-width: 700px;*/
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -160,7 +158,7 @@ input.defaultCheckBoxSize  {
 
 .modal-content {
     margin: 10% auto auto auto;
-    max-width: 700px;
+    max-width: 500px;
     width: calc(100% - 4rem);
     letter-spacing: normal;
     background-color: white;
@@ -285,4 +283,13 @@ a:hover {
 
 span {
     color: var(--dark);
+}
+
+@media screen and (max-width: 800px){
+    #dropup-menu {
+        bottom: 6rem!important;
+    }
+    .list {
+        height: calc(100vh - 12rem)!important;
+    }
 }
