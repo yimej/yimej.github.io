@@ -286,9 +286,9 @@ span {
 }
 
 @media screen and (max-width: 800px){
-    #dropup-menu {
+    /*#dropup-menu {
         bottom: 6rem!important;
-    }
+    }*/
     .list {
         height: calc(100vh - 12rem)!important;
     }
