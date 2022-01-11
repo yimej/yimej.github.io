@@ -13,65 +13,66 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 0rem;
-    background-color: var(--light);
     font-size: 1.5rem;
     text-align: left;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards;
-    max-width: 600px;
-    margin: auto;
+    max-width: 700px;
+    margin: 1rem auto auto auto;
+    position: relative;
+    height: calc(100vh - 1rem)!important;
 
-}
-
-#body {
-    margin-top: 5.5rem;
 }
 
 #menu {
+    display: inline-block;
+}
+
+.list {
+    height: calc(100vh - 6rem)!important;
+    overflow: auto;
+}
+
+.list > :last-child {
+    margin-bottom: 0rem;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 2rem;
+  height: 0.3rem;
+  background-color: white;
+  margin: 0.3rem 0.75rem;
+  transition: 0.4s;
+  border-radius: 0.25rem;
+}
+
+.change .bar1 {
+  -webkit-transform: translateY(1.25rem) rotate(-45deg);
+  transform: translateY(1.25rem) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-bottom: 1.5rem;
+}
+
+#dropup-menu {
+    position: absolute;
+    bottom: 0.75rem;
+    margin-left: calc(100% - 4.25rem);
+}
+
+#dropup-content button:hover {
+    background-color: var(--medium);
+}
+
+.btn-dropup {
     background-color: var(--dark);
-    vertical-align: middle;
-    min-height: 3.5rem;
-    width: 100%;
-    max-width: 600px!important;
-    z-index: 5;
-    text-align: center;
-    padding: 0.5rem 0.5rem 0rem 0.5rem;
-    position: fixed;
-    top: 0;
-}
-
-#btns-menu {
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.closedMenu {
-    display: none;/*
-    position: fixed;
-    top: 3.5rem;
-    width: 100%;*/
-}
-
-.openedMenu {
-    display: block;/*
-    position: fixed;
-    top: 3.5rem;
-    width: 100%;*/
-}
-
-.frame {
-    letter-spacing: normal;
-    background-color: white;
-    text-align: left;
-    align-content: left;
-    vertical-align: middle;
-    padding: 1.5rem;
-    /*font-size: 1rem;*/
-    z-index: 4;
-    border-bottom: 0.5rem solid var(--dark);
+    margin-top: 0.75rem;
 }
 
 input.defaultCheckBoxSize  {
@@ -79,49 +80,21 @@ input.defaultCheckBoxSize  {
     width: 1.5rem;
 }
 
-.doList {
-    text-align: left;
-    overflow: hidden;
-}
-
-.listName {
-    background-color: var(--medium);
+.list-name {
+    background-color: var(--dark);
     color: white;
     text-align: center;
-    /*font-size: 1rem;*/
     line-height: 3.25rem;
     height: 3.5rem;
     letter-spacing: 0.5rem;
-    margin-top: 1rem;
     font-weight: 500;
+    display: inline-block;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    top: 0rem;
+    z-index: 10;
 }
-
-.listOpened:after { /*down*/
-    content: '\25BC'!important;
-    font-size: 0.5em;
-    padding-bottom: 1rem;
-    position: relative;
-    left: 1rem;
-    bottom: 0.25rem;
-}
-
-.listClosed:after { /*up*/
-    content: '\25B2';
-    font-size: 0.5em;
-    padding-bottom: 1rem;
-    position: relative;
-    left: 1rem;
-    bottom: 0.25rem;
-}
-
-@keyframes fadeInAnimation { 
-    0% { 
-        opacity: 0; 
-    } 
-    100% { 
-        opacity: 1; 
-     } 
-} 
 
 .modal-container {
     display: none;
@@ -129,6 +102,8 @@ input.defaultCheckBoxSize  {
     z-index: 9;
     left: 0;
     top: 0;
+    /*margin: auto;*/
+    /*max-width: 700px;*/
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -137,32 +112,29 @@ input.defaultCheckBoxSize  {
 }
 
 .modal-content {
-    margin: 30vh auto;
-    padding: 1rem;
-    width: 90%;
-    position: fixed;
-    left: 5%;
+    margin: 10vh auto auto auto;
+    max-width: 700px;
+    width: calc(100% - 4rem);
     letter-spacing: normal;
     background-color: white;
     text-align: left;
     align-content: left;
     vertical-align: middle;
     padding: 1.5rem;
-    /*font-size: 1rem;*/
     z-index: 10;
 }
 
 .task {
     position: relative;
-    display: none;
-    background-color: white;
+    background-color: var(--light);
     padding: 1rem;
-    /*font-size: 1rem;*/
-    /*line-height: 2.5rem;*/
+    line-height: 1.25rem;
     vertical-align: middle;
-    border-bottom: 0.25rem solid var(--light);
+    border-radius: 0.5rem;
     width: 100%;
     word-wrap: break-word;
+    margin: auto auto 0.5rem auto;
+    height: 3.5rem;
 }
 
 .taskActions {
@@ -170,16 +142,11 @@ input.defaultCheckBoxSize  {
     top: 0rem;
     right: 0rem;
     float: right;
-    /*height: calc(100% - 0.25rem);*/
-    /*padding: 0rem 1rem 0rem     0rem;*/
     padding: 0rem 0.5rem;
     display: grid;
     grid: auto / 25% 25% 25% 25%;
-    /*grid-gap: 0.25rem;*/
     text-align: center;
     background-color: var(--dark);
-    /*border-bottom: 0.25rem solid var(--light);*/
-    /*border-radius: 5px;*/
     z-index: 10;
 }
 
@@ -191,20 +158,12 @@ input.defaultCheckBoxSize  {
     border: 0;
     text-align: center;
     vertical-align: middle;
-    /*border-radius: 15px;*/
     padding: 0.5rem;
-    /*padding-bottom: 0.5rem;*/
-}
-
-#today {
-    text-align: center;
-    margin-bottom: 1rem;
 }
 
 .full-input {
     width: 100%;
     margin-bottom: 0.5rem;
-    /*margin-right: 0.5rem;*/
 }
 
 .number-input {
@@ -218,7 +177,6 @@ input.defaultCheckBoxSize  {
 .emoji-input {
     width: 1.5em;
     height: 1.25em;
-    /*margin-bottom: 0.5rem;*/
     margin-left: 0.5rem;
     text-align: center;
 }
@@ -229,47 +187,23 @@ input.defaultCheckBoxSize  {
 
 .calendar {
     max-width: 100%;
-    /*margin-bottom: 0.5rem;*/
     max-height: 3rem;
 }
 
-.btns {
-    margin-top: 1rem;
-}
-
 .btn {
-    background-color: var(--dark);
-    color: white;
     border: 0;
-    border-radius: 150px;
-    height: 3.25rem;
-    width: 3.25rem;
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
     text-align: center;
     vertical-align: middle;
-    padding: 0rem 0.75rem 0.25rem .6rem;
-}
-
-.btn-menu {
+    padding: 0rem;
     background-color: var(--dark);
-    border: 0;
-    text-align: center;
-    padding: 0.25rem;
-    margin-bottom: 0.5rem;
 }
 
 .icon {
-    height: 2rem;
-    width: 2rem;
-}
-
-.icon-menu {
-    height: 3rem;
-    width: 3rem;
-}
-
-.icon-taskAction {
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 button:hover {
@@ -288,47 +222,3 @@ a:hover {
 span {
     color: var(--dark);
 }
-
-ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.placeholder {
-    background: #dbdbdb;
-    border-bottom: .25rem solid var(--light);
-    min-height: 4.75rem;
-    /*border: 0.2rem dotted var(--medium);*/
-}
-
-/*#matrix {
-    width: 100%;
-    display: grid;
-    grid: auto / 3.5rem calc((100% - 3rem) / 2) calc((100% - 3rem) / 2);
-    grid-gap: 0.5rem;
-    padding: 0rem;
-    background-color: var(--light);
-    text-align: center;
-    height: calc(100vh - 18rem);
-}
-
-#matrix > div {
-    padding: 0.25rem;
-    background-color: white;
-}
-
-.matrix-head {
-    height: 3.5rem;
-    padding-top: 0.5rem;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-.matrix-cell {
-    height: calc((100vh - 22rem)/2);
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    align-content: start;
-}*/

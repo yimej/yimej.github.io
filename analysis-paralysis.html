@@ -14,113 +14,127 @@
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="ap/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="ap/js/splide.min.js"></script>
     <!-- <script src="js/jquery.mobile.pulltorefresh.js" type="text/javascript"></script> -->
-</head>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="ap/css/analysis-paralysis.css" rel="stylesheet">
+    <link href="ap/css/splide.min.css" rel="stylesheet">
 
   </head>
   <body>
-    <div id='body'>
-      <!-- <div id='title'>title</div> -->
-      <div id='menu'>
-        <div id='btns-menu'>
-          <button class='btn-menu' onclick='toggleMenu("add");'><img class='icon-menu' src='ap/img/add.svg'></button>
-          <!-- <button id='undo' class='btn-menu'><img class='icon-menu' src='ap/img/undo.svg'></button> -->
-          <button id='shuffle' class='btn-menu'><img class='icon-menu' src='ap/img/random.svg'></button>
-          <button class='btn-menu' onclick='toggleMenu("save");'><img class='icon-menu' src='ap/img/save.svg'></button>
-          <button class='btn-menu' onclick='toggleMenu("bookmark");'><img class='icon-menu' src='ap/img/open.svg'></button>
-          <button id='reset' class='btn-menu'><img class='icon-menu' src='ap/img/delete.svg'></button>
-          <button class='btn-menu' onclick='toggleMenu("settings");'><img class='icon-menu' src='ap/img/cog.svg'></button>
-        </div>
-
-        <div id='add' class='frame closedMenu'> <!-- add -->
-          <input class='full-input' type='text' id='task' placeholder='enter task' value=''>
-          <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
-          <input type='checkbox' class='defaultCheckBoxSize' id='deadline'><label for='deadline'> deadline</label>
-          <input class='calendar' style='display: none;' type='datetime-local' id='datetime'><br>        
-          <center class='btns'>
-            <button class='btn' id='addTask' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("add");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon'></button>
-          </center>
-        </div>
-
-        <div id='save' class='frame closedMenu'> <!-- save -->
-          <input class='full-input' type='text' id='bookmark-name' placeholder='save current task list name' value=''>
-          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-autoDate'><label for='bookmark-autoDate'> auto update deadline</label><br>
-          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-hideDate'><label for='bookmark-hideDate'> hide date</label><br>
-          <!-- <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-lockOrder'><label for='bookmark-lockOrder'> lock task order</label><br> -->
-          <input type='checkbox' class='defaultCheckBoxSize' id='bookmark-prioritize'><label for='bookmark-prioritize'> prioritize</label><br>
-          <input type='checkbox' class='defaultCheckBoxSize' id='showEmojiInput'><label for='showEmojiInput'> custom emoji</label><div id='bookmark-chooseEmoji' style='display: none;'>:<input class='emoji-input' type='text' id='bookmark-emoji'></div>
-          <center class='btns'>
-            <button class='btn' id='save-bookmark' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='ap/img/save.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("save");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon'></button>
-          </center>
-        </div>
-
-        <div id='bookmark' class='frame closedMenu'> <!-- bookmark -->
-          <select class='full-input' name='selectBookmark' id='selectBookmark'>
-            <option selected>open saved tasks</option>
-          </select>
-          <center class='btns'>
-            <button class='btn' id='open-bookmark' style='padding-right: 0.75rem; margin-right: 0.5rem;'><img src='ap/img/open.svg' class='icon'></button>
-            <button class='btn' id='delete-bookmark' style='padding-right: 0.75rem;'><img src='ap/img/remove.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("bookmark");' style='padding-right: 0.75rem; margin-left: 0.5rem'><img src='ap/img/cancel.svg' class='icon'></button>
-          </center>
-        </div>
-
-        <div id='settings' class='frame closedMenu'> <!-- settings -->
-          <div class='setting-row'>
-            <input class='number-input' type='text' id='numTasks' placeholder='4'> max daily tasks
-          </div>
-          <div class='settings-row'>
-            <input class='number-input' type='text' id='numUrgent' placeholder='2'> min daily urgent tasks
-          </div>
-
-          <center class='btns'>
-            <button class='btn' id='accept-settings' style='padding-right: 0.75rem; margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon'></button>
-            <button class='btn' id='cancel-menu' onclick='toggleMenu("settings");' style='padding-right: 0.75rem; margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon'></button>
-          </center>
-        </div>
-
-      </div>
-      
-      <div id='editTaskContainer' class='modal-container'>
-        <div id='editTask' class='modal-content'>
-          <input class='full-input' type='text' id='task-edit' placeholder='enter task' value=''>
-          <input type='checkbox' id='important-edit'><label for='important-edit'> important</label><br>
-          <input type='checkbox' id='deadline-edit'><label for='deadline-edit'> deadline</label>
-          <input class='calendar' style='display: none;' type='datetime-local' id='datetime-edit'>
-          <center>
-            <button class='btn' id='accept-edit' style='padding-right: 0.75rem; margin-top: 1rem; margin-right: 0.5rem;'><img src='ap/img/accept.svg' class='icon' title='add task'></button>
-            <button class='btn' id='cancel-edit' style='padding-right: 0.75rem; margin-top: 1rem;'><img src='ap/img/cancel.svg' class='icon' title='add task'></button>
-          </center>
-        </div>
+    <div class="splide">
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev" style='background-color: white; opacity: 1; top: 1.75rem; left: 0rem;'>
+          <img src='ap/img/caret-left.svg' class='icon'>
+        </button>
+        <button class="splide__arrow splide__arrow--next" style='background-color: white; opacity: 1; top: 1.75rem; right: 0rem;'>
+          <img src='ap/img/caret-right.svg' class='icon'>
+        </button>
       </div>
 
-      <!-- <div id='sortable'> -->
-        <div class='doList'>
-          <div id='showToday' class='listName listClosed' style='margin-top: 0.25rem;'>today</div>
-          <ul id='doToday' class='connectedSortable' style='display: none;'></ul>
+      <div class="splide__track" style='width: calc(100% - 6rem); margin:auto;'>
+        <div class="splide__list">
+
+          <div class='splide__slide'>
+            <div class='list-name'>TODAY</div>
+            <div id='do-today' class='list'>
+              <div class='task'>today / this</div>
+              <div class='task'>today / is</div>
+              <div class='task'>today / a</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>
+              <div class='task'>today / sample</div>              
+              <div class='task'>today / sample</div>              
+              <div class='task'>today / last</div>
+            </div>
+          </div>
+          
+          <div class='splide__slide'>
+            <div class='list-name'>TOMORROW</div>
+            <div id='do-tomorrow' class='list'>
+              <div class='task'>tomorrow / this</div>
+              <div class='task'>tomorrow / is</div>
+              <div class='task'>tomorrow / a</div>
+              <div class='task'>tomorrow / sample</div>
+            </div>
+          </div>
+
+          <div class='splide__slide'>
+            <div class='list-name'>THIS WEEK</div>
+            <div id='do-thisWeek' class='list'>
+              <div class='task'>thisWeek / this</div>
+              <div class='task'>thisWeek / is</div>
+              <div class='task'>thisWeek / a</div>
+              <div class='task'>thisWeek / sample</div>
+            </div>
+          </div>
+
+          <div class='splide__slide'>
+            <div class='list-name'>LATER</div>
+            <div id='do-later' class='list'>
+              <div class='task'>later / this</div>
+              <div class='task'>later / is</div>
+              <div class='task'>later / a</div>
+              <div class='task'>later / sample</div>
+            </div>
+          </div>
+
         </div>
-        <div class='doList'>
-          <div id='showTomorrow' class='listName listClosed'>tomorrow</div>
-          <ul id='doTomorrow' class='connectedSortable' style='display: none;'></ul>
-        </div>
-        <div class='doList'>
-          <div id='showThisWeek' class='listName listClosed'>this week</div>
-          <ul id='doThisWeek' class='connectedSortable' style='display: none;'></ul>
-        </div>
-        <div class='doList'>
-          <div id='showLater' class='listName listClosed'>later</div>
-          <ul id='doLater' class='connectedSortable' style='display: none;'></ul>
-        </div>
-      <!-- </div> -->
+      </div>
+    </div>
+
+    <div id='add-container' class='modal-container'>
+      <div id='add-content' class='modal-content'>
+        <input class='full-input' type='text' id='task' placeholder='enter task' value=''>
+        <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
+        <input type='checkbox' class='defaultCheckBoxSize' id='deadline' onchange='showCalClock();'><label for='deadline'> deadline</label><br>
+        <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 2rem; width:calc(100% - 2rem); display: none;'>
+        <center style='margin-top: 1.5rem;'>
+          <button class='btn' onclick='addTask();' style='margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon'></button>
+          <button class='btn' onclick='closeMenu("add");' style='margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon'></button>
+        </center>
+      </div>
+    </div>
+
+    <div id='bookmark-container' class='modal-container'>
+      <div id='bookmark-content' class='modal-content'>
+        bookmark
+      </div>
+    </div>
+
+    <div id='settings-container' class='modal-container'>
+      <div id='settings-content' class='modal-content'>
+        settings
+      </div>
+    </div>
+
+    <div id='dropup-menu'>
+      <div id='dropup-content' style='display:none;'>
+        <button class='btn btn-dropup' id='settings' onclick='openMenu(this);'><img class='icon' src='ap/img/cog.svg'></button><br>
+        <button class='btn btn-dropup' id='reset' onclick='reset();'><img class='icon' src='ap/img/delete.svg'></button><br>
+        <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/bookmark.svg'></button><br>
+        <button class='btn btn-dropup' id='shuffle'><img class='icon' src='ap/img/random.svg'></button><br>
+        <button class='btn btn-dropup' id='add' onclick='openMenu(this);'><img class='icon' src='ap/img/add.svg'></button>
+      </div>
+      <button id='menu' class='btn btn-dropup' onclick='toggleMenu(this);'>
+        <div class='bar1'></div>
+        <div class='bar2'></div>
+        <div class='bar3'></div>
+      </button>
     </div>
 
     <script src="ap/js/analysis-paralysis.js"></script>
-  
   </body>
 </html>
