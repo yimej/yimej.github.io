@@ -4,17 +4,6 @@
   --dark: rgb(0, 136, 145);
 }
 
-.my-element {
-  height: 100vh; /* This is for browsers that don't support custom properties */
-  height: calc(var(--vh, 1vh) * 100);
-  background-color: var(--light);
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*opacity: 0.5;*/
-  /*z-indez: -1;*/
-  /*width: 100%;*/
-}
-
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 80%;
@@ -32,6 +21,7 @@ body {
     max-width: 500px;
     margin: auto;/*1rem auto 1rem auto;*/
     position: relative;
+    height:  calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
     /*height: calc(100% - 2rem)!important;*/
     /*background-color: yellow;*/
 }
