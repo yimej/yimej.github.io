@@ -13,17 +13,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 0rem;
-    font-size: 1.25rem;
-    /*text-align: left;*/
+    font-size: 1.5rem;
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards;
     max-width: 500px;
-    margin: auto;/*1rem auto 1rem auto;*/
+    margin: auto;
     position: relative;
-    height:  calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-    /*height: calc(100% - 2rem)!important;*/
-    /*background-color: yellow;*/
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))!important;
 }
 
 @keyframes fadeInAnimation { 
@@ -58,7 +55,7 @@ body {
 
 .swipe {
     position: fixed;
-    top: 1.75rem;
+    top: 2.5rem;
     margin: auto;
     background-color: transparent;  
     z-index: 5;
@@ -144,17 +141,15 @@ input.defaultCheckBoxSize  {
     background-color: var(--dark);
     color: white;
     text-align: center;
-    font-size: 1.5rem;
-    line-height: 3.25rem;
-    height: 3.5rem;
-    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    padding: 1rem 0;
+    letter-spacing: 1rem;
     font-weight: 500;
     display: inline-block;
     width: 100%;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     top: 0rem;
-    z-index: 10;
 }
 
 .modal-container {
@@ -171,11 +166,11 @@ input.defaultCheckBoxSize  {
 }
 
 .open-modal {
-    animation: fadeInAnimation ease 1s;
+    animation: fadeInAnimation ease 0.5s;
 }
 
 .close-modal {
-    animation: fadeOutAnimation ease 1s;
+    animation: fadeOutAnimation ease 0.5s;
 }
 
 .modal-content {
@@ -188,7 +183,7 @@ input.defaultCheckBoxSize  {
     align-content: left;
     vertical-align: middle;
     padding: 1.5rem;
-    z-index: 10;
+    z-index: 2;
     border-radius: 0.5rem;
 }
 
@@ -207,14 +202,35 @@ input.defaultCheckBoxSize  {
     position: relative;
     background-color: var(--light);
     padding: 1rem;
-    line-height: 1rem;
     vertical-align: middle;
     border-radius: 0.5rem;
     width: 100%;
     word-wrap: break-word;
     margin: auto auto 0.5rem auto;
-    min-height: 3rem;
     text-align: left;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 0;
+}
+
+.task-deadline {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 0.5rem;
+}
+
+.task > div {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--dark);
+    text-align: center;
+    align-self: center;
+}
+
+.task > span {
+    text-align: right;
+    align-self: center;
 }
 
 .taskActions {
@@ -222,23 +238,25 @@ input.defaultCheckBoxSize  {
     top: 0rem;
     right: 0rem;
     float: right;
-    padding: 0rem 0.5rem;
+    /*padding: 0rem 0.5rem;*/
     display: grid;
     grid: auto / 25% 25% 25% 25%;
     text-align: center;
-    background-color: var(--dark);
+    background-color: var(--medium);
     z-index: 10;
+    border-radius: 0.5rem;
 }
 
 .btn-taskActions {
     width: 4.25rem;
     height: 4.25rem;
-    background-color: var(--dark);
+    background-color: var(--medium);
     color: white;
     border: 0;
     text-align: center;
     vertical-align: middle;
     padding: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .full-input {
@@ -312,10 +330,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: var(--dark);
-}
-
-span {
     color: var(--dark);
 }
 

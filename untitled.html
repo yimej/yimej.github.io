@@ -24,7 +24,6 @@
 
   </head>
   <body>
-    <!-- <img id='expand' src='ap/img/expand.svg' /> -->
     <img class='swipe' src='ap/img/double-caret-left.svg' style='left: 2rem;'/>
     <img class='swipe' src='ap/img/double-caret-right.svg' style='right: 2rem;'/>
     <div class="splide">
@@ -34,7 +33,42 @@
           <div class='splide__slide'>
             <div class='list-name'>TODAY</div>
             <div id='do-today' class='list'>
-              <div class='task'>hello</div>
+              <!-- <div class="task task-deadline">
+                sample<div>01.01</div><span>❗️</span>
+                <div class="taskActions">
+                  <button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button>
+                  <button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button>
+                  <button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button>
+                  <button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button>
+                </div>
+              </div>
+              <div class="task task-deadline">
+                sample<div>12.31<br>11:59 pm</div><span>⏰</span>
+                <div class="taskActions">
+                  <button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button>
+                  <button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button>
+                  <button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button>
+                  <button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button>
+                </div>
+              </div>
+              <div class="task">
+                sample<span>⭐</span>
+                <div class="taskActions">
+                  <button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button>
+                  <button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button>
+                  <button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button>
+                  <button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button>
+                </div>
+              </div>
+              <div class="task">
+                sample<span></span>
+                <div class="taskActions">
+                  <button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button>
+                  <button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button>
+                  <button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button>
+                  <button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button>
+                </div>
+              </div> -->
             </div>
           </div>
           
@@ -60,8 +94,6 @@
       </div>
     </div>
 
-    <!-- <div class='my-element'>test</div> -->
-
     <div id='add-container' class='modal-container'>
       <div id='add-content' class='modal-content'>
         <input class='full-input' type='text' id='task' placeholder='enter task' value=''>
@@ -77,10 +109,11 @@
         <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 1.25rem; width: calc(100% - 1.25rem); display: none;'>
         
         <center style='margin-top: 1.5rem;'>
-          <div id='tasks-to-add' style='margin-bottom:1.5rem;'><div class='task'>sample❗️<span>01.01</span></div><div class='task'>sample&nbsp;⏰&nbsp;<span>01.02</span></div><div class='task'>sample&nbsp;⭐</div><div class='task'>sample</div></div>
-          <button class='btn-round' onclick='showTasks();'><img src='ap/img/accept.svg' class='icon-round'></button>
-          <button class='btn-round' onclick='save();' style='margin: 0 0.25rem'><img src='ap/img/save.svg' class='icon-round'></button>
-          <button class='btn-round' onclick='closeMenu("add");'><img src='ap/img/cancel.svg' class='icon-round'></button>
+          <div id='tasks-to-add' style='margin-bottom:1.5rem;'><div class="task task-deadline">sample<div>01.01</div><span>❗️</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task task-deadline">sample<div>12.31<br>11:59 pm</div><span>⏰</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task">sample<span>⭐</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task">sample<span></span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div></div>
+
+          <button class='btn-round' onclick='addTasks();'><img src='ap/img/accept.svg' class='icon-round'></button>
+          <button class='btn-round' onclick='saveTasks();' style='margin: 0 0.25rem'><img src='ap/img/save.svg' class='icon-round'></button>
+          <button class='btn-round' onclick='clearAdd();'><img src='ap/img/cancel.svg' class='icon-round'></button>
         </center>
       </div>
     </div>
@@ -101,7 +134,7 @@
       <div id='dropup-content' style='display:none;'>
         <button class='btn btn-dropup' id='settings' onclick='openMenu(this);'><img class='icon' src='ap/img/cog.svg'></button><br>
         <button class='btn btn-dropup' id='reset' onclick='reset();'><img class='icon' src='ap/img/delete.svg'></button><br>
-        <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/open.svg'></button><br>
+        <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/bookmark.svg'></button><br>
         <button class='btn btn-dropup' id='shuffle'><img class='icon' src='ap/img/random.svg'></button><br>
         <button class='btn btn-dropup' id='add' onclick='openMenu(this);'><img class='icon' src='ap/img/add.svg'></button><br>
       </div>
