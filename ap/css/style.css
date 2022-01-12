@@ -220,7 +220,6 @@ input.defaultCheckBoxSize  {
 }
 
 .task > div {
-    font-family: 'Barlow', sans-serif;
     font-size: 1rem;
     line-height: 1rem;
     color: var(--dark);
