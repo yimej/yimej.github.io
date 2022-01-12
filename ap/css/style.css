@@ -1,7 +1,7 @@
 :root {
-  --light: rgb(236, 246, 247);
-  --medium: rgb(136, 203, 207);
-  --dark: rgb(0, 136, 145);
+  --light: lightyellow/*rgb(236, 246, 247)*/;
+  --medium: orange/*rgb(136, 203, 207)*/;
+  --dark: red/*rgb(0, 136, 145)*/;
 }
 
 html {
