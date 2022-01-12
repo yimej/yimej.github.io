@@ -19,99 +19,68 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700|Open+Sans:300,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="ap/css/analysis-paralysis.css" rel="stylesheet">
+    <link href="ap/css/style.css" rel="stylesheet">
     <link href="ap/css/splide.min.css" rel="stylesheet">
 
   </head>
   <body>
     <!-- <img id='expand' src='ap/img/expand.svg' /> -->
-    <img class='swipe' src='ap/img/double-caret-left.svg' style='left: 2rem;'/>
+    <!-- <img class='swipe' src='ap/img/double-caret-left.svg' style='left: 2rem;'/>
     <img class='swipe' src='ap/img/double-caret-right.svg' style='right: 2rem;'/>
     <div class="splide">
-      <!-- <div class="splide__arrows">
-        <button class="splide__arrow splide__arrow--prev" style='background-color: transparent; opacity: 1; top: 2.75rem; left: 1rem;'>
-          <img src='ap/img/caret-left.svg' class='icon'>
-        </button>
-        <button class="splide__arrow splide__arrow--next" style='background-color: transparent; opacity: 1; top: 2.75rem; right: 1rem;'>
-          <img src='ap/img/caret-right.svg' class='icon'>
-        </button>
-      </div> -->
-
       <div class="splide__track" style='width: calc(100%); margin:auto;'>
         <div class="splide__list">
 
-          <div class='splide__slide' style='padding: 1rem;'>
+          <div class='splide__slide'>
             <div class='list-name'>TODAY</div>
             <div id='do-today' class='list'>
-              <div class='task'>today / this</div>
-              <div class='task'>today / is</div>
-              <div class='task'>today / a</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>
-              <div class='task'>today / sample</div>              
-              <div class='task'>today / sample</div>               
-              <div class='task'>today / sample</div>                
-              <div class='task'>today / sample</div>                
-              <div class='task'>today / sample</div>                
-              <div class='task'>today / sample</div>                
-              <div class='task'>today / sample</div>              
-              <div class='task'>today / last</div>
+              <div class='task'>hello</div>
             </div>
           </div>
           
-          <div class='splide__slide' style='padding: 1rem;'>
+          <div class='splide__slide'>
             <div class='list-name'>TOMORROW</div>
             <div id='do-tomorrow' class='list'>
-              <div class='task'>tomorrow / this</div>
-              <div class='task'>tomorrow / is</div>
-              <div class='task'>tomorrow / a</div>
-              <div class='task'>tomorrow / sample</div>
             </div>
           </div>
 
-          <div class='splide__slide' style='padding: 1rem;'>
+          <div class='splide__slide'>
             <div class='list-name'>THIS WEEK</div>
             <div id='do-thisWeek' class='list'>
-              <div class='task'>thisWeek / this</div>
-              <div class='task'>thisWeek / is</div>
-              <div class='task'>thisWeek / a</div>
-              <div class='task'>thisWeek / sample</div>
             </div>
           </div>
 
-          <div class='splide__slide' style='padding: 1rem;'>
+          <div class='splide__slide'>
             <div class='list-name'>LATER</div>
             <div id='do-later' class='list'>
-              <div class='task'>later / this</div>
-              <div class='task'>later / is</div>
-              <div class='task'>later / a</div>
-              <div class='task'>later / sample</div>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div id='add-container' class='modal-container'>
+    <div class='my-element'>test</div>
+
+    <!-- <div id='add-container' class='modal-container'>
       <div id='add-content' class='modal-content'>
         <input class='full-input' type='text' id='task' placeholder='enter task' value=''>
-        <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
-        <input type='checkbox' class='defaultCheckBoxSize' id='deadline' onchange='showCalClock();'><label for='deadline'> deadline</label><br>
-        <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 1.2 5rem; width:calc(100% - 1.25rem); display: none;'>
+        <div class='add-grid-container'>
+          <div>
+            <input type='checkbox' class='defaultCheckBoxSize' id='important'><label for='important'> important</label><br>
+            <input type='checkbox' class='defaultCheckBoxSize' id='deadline' onchange='showCalClock();'><label for='deadline'> deadline</label>
+          </div>
+          <div style='text-align: right; padding-top: 0.25rem;'>
+            <button id='add-button' class='btn-round' onclick='addTask();'><img src='ap/img/add.svg' class='icon-round'></button>
+          </div>
+        </div>
+        <input class='calendar' type='datetime-local' id='deadline-cal-clock' style='margin-left: 1.25rem; width: calc(100% - 1.25rem); display: none;'>
+        
         <center style='margin-top: 1.5rem;'>
-          <button class='btn-round' onclick='addTask();' style='margin-right: 0.25rem;'><img src='ap/img/accept.svg' class='icon-round'></button>
-          <button class='btn-round' onclick='closeMenu("add");' style='margin-left: 0.25rem;'><img src='ap/img/cancel.svg' class='icon-round'></button>
+          <div id='tasks-to-add' style='margin-bottom:1.5rem;'><div class='task'>sample❗️<span>01.01</span></div><div class='task'>sample&nbsp;⏰&nbsp;<span>01.02</span></div><div class='task'>sample&nbsp;⭐</div><div class='task'>sample</div></div>
+          <button class='btn-round' onclick='showTasks();'><img src='ap/img/accept.svg' class='icon-round'></button>
+          <button class='btn-round' onclick='save();' style='margin: 0 0.25rem'><img src='ap/img/save.svg' class='icon-round'></button>
+          <button class='btn-round' onclick='closeMenu("add");'><img src='ap/img/cancel.svg' class='icon-round'></button>
         </center>
       </div>
     </div>
@@ -132,7 +101,7 @@
       <div id='dropup-content' style='display:none;'>
         <button class='btn btn-dropup' id='settings' onclick='openMenu(this);'><img class='icon' src='ap/img/cog.svg'></button><br>
         <button class='btn btn-dropup' id='reset' onclick='reset();'><img class='icon' src='ap/img/delete.svg'></button><br>
-        <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/bookmark.svg'></button><br>
+        <button class='btn btn-dropup' id='bookmark' onclick='openMenu(this);'><img class='icon' src='ap/img/open.svg'></button><br>
         <button class='btn btn-dropup' id='shuffle'><img class='icon' src='ap/img/random.svg'></button><br>
         <button class='btn btn-dropup' id='add' onclick='openMenu(this);'><img class='icon' src='ap/img/add.svg'></button><br>
       </div>
@@ -141,8 +110,8 @@
         <div class='bar2'></div>
         <div class='bar3'></div>
       </button>
-    </div>
+    </div> -->
 
-    <script src="ap/js/analysis-paralysis.js"></script>
+    <script src="ap/js/scripts.js"></script>
   </body>
 </html>

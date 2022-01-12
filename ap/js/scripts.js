@@ -13,6 +13,8 @@ var thisWeek;
 var nextWeek;
 var daysLeftInThisWeek;
 
+var doTodayHTML = document.getElementById('do-today').innerHTML;
+
 var doAll = [];
 var doToday = [];
 var doTomorrow = [];
@@ -20,6 +22,9 @@ var doThisWeek = [];
 var doLater = [];
 var doImportant = [];
 var doWhenever = [];
+
+var maxDailyTasks = 7;
+var minUrgentTasks = 3;
 
 //////////////////////// action ////////////////////////
 
@@ -35,6 +40,17 @@ var splide = new Splide( '.splide', {
 splide.mount();
 
 //////////////////////// functions ////////////////////////
+
+// Get the viewport height and multiply it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then set the custom --vh value to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // Update the element's size
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 function toggleMenu(x) {
   x.classList.toggle('change');
@@ -156,12 +172,18 @@ function openMenu(menuEl) {
   var container = $(containerDiv)[0];
   var content = $(contentDiv)[0];
 
+  container.classList.add('open-modal');
   container.style.display = 'block';
 
   window.onclick = function(event) {
     if (event.target == container) {
-      container.style.display = 'none';
+      container.classList.remove('open-modal');
+      container.classList.add('close-modal');
+      setTimeout(function () {
+        container.style.display = 'none';  
+      }, 1000);
       toggleMenu(menu);
+      // console.log('here');
     }
   }
 };
@@ -198,6 +220,10 @@ function showCalClock() {
 };
 
 function addTask() {
+  if (document.getElementById('tasks-to-add').innerHTML == '<div class="task">sample❗️<span>01.01</span></div><div class="task">sample&nbsp;⏰&nbsp;<span>01.02</span></div><div class="task">sample&nbsp;⭐</div><div class="task">sample</div>') {
+    document.getElementById('tasks-to-add').innerHTML = '';
+  }
+
   var inputText = document.getElementById('task').value.replace(/\s+$/, '');
 
   if (inputText != '') {
@@ -232,14 +258,16 @@ function addTask() {
     currentTask = {'task': taskName, 'priority': priority, 'date': dateTime, 'html': html};
     
     doAll = doAll.concat(currentTask);
-    if (datetime < tomorrow) {
+    document.getElementById('tasks-to-add').innerHTML += html;
+
+    if (dateTime < tomorrow) {
       doToday = doToday.concat(currentTask);
     }
-    else if (datetime < threemorrow) {
+    else if (dateTime < threemorrow) {
       doTomorrow = doTomorrow.concat(currentTask);
     }
-    else if (datetime < nextWeek) {
-      doNextWeek = doNextWeek.concat(currentTask);
+    else if (dateTime < nextWeek) {
+      doThisWeek = doThisWeek.concat(currentTask);
     }
     else if (priority == 'c') {
       doImportant = doImportant.concat(currentTask);
@@ -251,3 +279,9 @@ function addTask() {
 
   resetMenu();
 };
+
+function addTasks() {
+  document.getElementById('tasks-to-add').innerHTML = '<div class="task">sample❗️<span>01.01</span></div><div class="task">sample&nbsp;⏰&nbsp;<span>01.02</span></div><div class="task">sample&nbsp;⭐</div><div class="task">sample</div>';
+};
+
+// splide.add("<div class='splide__slide'><div class='list-name'>test</div></div>", 0);
