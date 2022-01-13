@@ -1,12 +1,13 @@
 :root {
-  --light: lightyellow/*rgb(236, 246, 247)*/;
-  --medium: orange/*rgb(136, 203, 207)*/;
-  --dark: red/*rgb(0, 136, 145)*/;
+  --light: rgb(236, 246, 247);
+  --medium: rgb(136, 203, 207);
+  --dark: rgb(0, 136, 145);
 }
 
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 80%;
+    background-color: var(--light);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
     max-width: 500px;
     margin: auto;
     position: relative;
-    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))!important;
+    background-color: white;
 }
 
 @keyframes fadeInAnimation { 
@@ -55,7 +56,7 @@ body {
 
 .swipe {
     position: fixed;
-    top: 2.5rem;
+    top: 7rem;
     margin: auto;
     background-color: transparent;  
     z-index: 5;
@@ -66,8 +67,27 @@ body {
     animation-fill-mode: forwards;
 }
 
-#menu {
+/*#menu {
     display: inline-block;
+    background-color: var(--dark);
+}*/
+#menu {
+    background-color: var(--dark);
+    vertical-align: middle;
+    /*min-height: 3.5rem;*/
+    width: 100%;
+    max-width: 500px!important;
+    /*z-index: 5;*/
+    text-align: center;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#menu > button {
     background-color: var(--dark);
 }
 
@@ -76,8 +96,10 @@ body {
 }
 
 .list {
-    height: calc(100vh - 6rem)!important;
+    height: calc(100vh - 12rem)!important;
+    /*height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 5rem)!important;*/
     overflow: auto;
+    /*background-color: lightcoral;*/
     /*padding-bottom: 6rem;*/
 }
 
@@ -138,18 +160,18 @@ input.defaultCheckBoxSize  {
 }
 
 .list-name {
-    background-color: var(--dark);
+    background-color: var(--medium);
     color: white;
     text-align: center;
     font-size: 2rem;
     padding: 1rem 0;
     letter-spacing: 1rem;
     font-weight: 500;
-    display: inline-block;
+    /*display: inline-block;*/
     width: 100%;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-    top: 0rem;
+    /*top: 5rem;*/
 }
 
 .modal-container {
@@ -298,9 +320,9 @@ input.defaultCheckBoxSize  {
     background-color: var(--dark);
 }
 
-.btn-round {
+.btn-small {
     border: 0;
-    border-radius: 50%;
+    border-radius: 0.5rem;
     height: 3rem;
     width: 3rem;
     text-align: center;
@@ -314,7 +336,7 @@ input.defaultCheckBoxSize  {
     width: 2.5rem;
 }
 
-.icon-round {
+.icon-small {
     height: 2rem;
     width: 2rem;
 }
