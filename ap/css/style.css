@@ -21,7 +21,7 @@ body {
     max-width: 500px;
     margin: auto;
     position: relative;
-    /*background-color: white;*/
+    background-color: white;
 }
 
 @keyframes fadeInAnimation { 
@@ -86,6 +86,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index: 100;
 }
 
 #menu > button {
@@ -98,6 +99,7 @@ body {
 
 #menu > .openedMenu {
     background-color: white;
+    border-bottom: white solid 1px;
 }
 
 #menu > .openedMenu > img {
