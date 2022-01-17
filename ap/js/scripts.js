@@ -2,6 +2,7 @@
 
 var r = document.querySelector(':root');
 
+var prevMenuID = '#home-h';
 var menu = document.getElementById('menu');
 
 var sample = '<div class="task task-deadline">sample<div>01.01</div><span>❗️</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task task-deadline">sample<div>12.31<br>11:59 pm</div><span>⏰</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task">sample<span>⭐</span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div><div class="task">sample<span></span><div class="taskActions" style="display: none;"><button id="lock" class="btn-taskActions" onclick="lock(this); populate();"><img class="icon" src="ap/img/unlock.svg"></button><button id="edit" class="btn-taskActions" onclick="edit(this); populate();"><img class="icon" src="ap/img/edit.svg"></button><button id="complete" class="btn-taskActions" onclick="complete(this); populate();"><img class="icon" src="ap/img/check.svg"></button><button id="remove" class="btn-taskActions" onclick="remove(this); populate();"><img class="icon" src="ap/img/remove.svg"></button></div></div>';
@@ -16,7 +17,7 @@ var thisWeek;
 var nextWeek;
 var daysLeftInThisWeek;
 
-var doTodayHTML = document.getElementById('do-today').innerHTML;
+// var doTodayHTML = document.getElementById('do-today').innerHTML;
 
 var doAllCurrent = [];
 var doAll = [];
@@ -50,11 +51,6 @@ $(document.body).on('click', '.task' ,function(){ // toggle class actions
 $('.taskActions').hide();
 
 //////////////////////// functions ////////////////////////
-
-function toggleMenu(x) {
-  x.classList.toggle('change');
-  $('#dropup-content').toggle('slide', {direction: 'down'});
-}
 
 function formatDateTime(elDate) {
   // var utcDate = new Date(elDate.getFullYear(), elDate.getUTCMonth(), elDate.getUTCDate(), elDate.getUTCHours(), elDate.getUTCMinutes(), elDate.getUTCSeconds(), elDate.getUTCMilliseconds());
@@ -162,37 +158,27 @@ function refresh() {
   // document.getElementById('today').innerHTML = 'today is <span>' + formatDateTime(today).slice(0, 5) + '</span>';
 };
 
-function openMenu(menuEl) {
+function openMenu(currentMenuID) {
   setDefaultTime();
 
-  var containerDiv = '#' + menuEl.id + '-container';
-  var contentDiv = '#' + menuEl.id + '-content';
+  var prevMenu = $(prevMenuID);
+  prevMenu.removeClass('openedMenu');
 
-  var container = $(containerDiv)[0];
-  var content = $(contentDiv)[0];
+  var currentMenu = $(currentMenuID);
+  currentMenu.addClass('openedMenu');
 
-  container.classList.remove('close-modal');
-  container.classList.add('open-modal');
-  container.style.display = 'block';
+  var prevContainerID = '#container-' + prevMenu[0].id;
+  var prevContainer = $(prevContainerID);
+  // prevContainer.addClass('container-closing');
+  prevContainer.fadeOut(500); 
 
-  window.onclick = function(event) {
-    if (event.target == container) {
-      container.classList.remove('open-modal');
-      container.classList.add('close-modal');
-      toggleMenu(menu);
-      setTimeout(function () {
-        container.style.display = 'none';  
-      }, 500);
-    }
-  }
-};
+  var currentContainerID = '#container-' + currentMenu[0].id;
+  var currentContainer = $(currentContainerID);
+  setTimeout(function() {
+    currentContainer.fadeIn(500); 
+  }, 500)
 
-function closeMenu(menuEl) {
-  var containerDiv = '#' + menuEl + '-container';
-  var container = $(containerDiv)[0];
-  container.style.display = 'none';
-  toggleMenu(menu);
-  resetMenu();
+  prevMenuID = currentMenuID;
 };
 
 function resetMenu() {
@@ -317,7 +303,6 @@ function addTasks() {
   }
 
   clearAdd();
-  closeMenu('add');
 };
 
 function clearAdd() {

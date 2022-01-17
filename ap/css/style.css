@@ -7,7 +7,7 @@
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 80%;
-    background-color: var(--light);
+    /*background-color: var(--light);*/
 }
 
 body {
@@ -21,7 +21,7 @@ body {
     max-width: 500px;
     margin: auto;
     position: relative;
-    background-color: white;
+    /*background-color: white;*/
 }
 
 @keyframes fadeInAnimation { 
@@ -54,9 +54,9 @@ body {
     }
 } 
 
-.swipe {
+/*.swipe {
     position: fixed;
-    top: 7rem;
+    top: 6.875rem;
     margin: auto;
     background-color: transparent;  
     z-index: 5;
@@ -65,7 +65,7 @@ body {
     animation: fadeInAndOutAnimation ease 1.5s;
     animation-iteration-count: 3; 
     animation-fill-mode: forwards;
-}
+}*/
 
 /*#menu {
     display: inline-block;
@@ -79,7 +79,8 @@ body {
     max-width: 500px!important;
     /*z-index: 5;*/
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0 0;
+    height: 4.5rem;
     position: fixed;
     top: 0;
     display: flex;
@@ -88,7 +89,29 @@ body {
 }
 
 #menu > button {
-    background-color: var(--dark);
+    /*background-color: var(--medium);*/
+    border-radius: 0.5rem 0.5rem 0 0;
+    height: 4rem;
+    width: 5rem;
+    padding-bottom: 0.5rem;
+}
+
+#menu > .openedMenu {
+    background-color: white;
+}
+
+#menu > .openedMenu > img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(41%) saturate(2186%) hue-rotate(151deg) brightness(104%) contrast(102%);
+}
+
+.container {
+    width: 100%;
+    padding: 5.5rem 1rem 1rem 1rem;
+}
+
+.container-splide {
+    width: 100%;
+    padding: 4.5rem 0 0 0;
 }
 
 .splide__slide {
@@ -96,62 +119,19 @@ body {
 }
 
 .list {
-    height: calc(100vh - 12rem)!important;
+    /*height: calc(100vh - 12rem)!important;*/
     /*height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 5rem)!important;*/
     overflow: auto;
     /*background-color: lightcoral;*/
     /*padding-bottom: 6rem;*/
 }
 
+.list-v {
+    margin-bottom: 1.5rem;
+}
+
 .list > :last-child {
     margin-bottom: 0rem;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 2rem;
-  height: 0.3rem;
-  background-color: white;
-  margin: 0.3rem 0.75rem;
-  transition: 0.4s;
-  border-radius: 0.25rem;
-}
-
-.change .bar1 {
-  -webkit-transform: translateY(1.25rem) rotate(-45deg);
-  transform: translateY(1.25rem) rotate(-45deg);
-}
-
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-bottom: 1.5rem;
-}
-
-#dropup-menu {
-    /*display: none;*/
-    position: absolute;
-    /*top: 0.75rem;*/
-    bottom: 2rem;
-    right: 2rem;
-    /*margin-left: calc(100% - 5rem);*/
-}
-
-#dropup-content {
-    /*background-color: var(--dark);*/
-    /*padding-top: 0.5rem;*/
-    /*margin-top: 0.5rem;*/
-    border-radius: 0.5rem;
-}
-
-#dropup-content button:hover {
-    background-color: var(--medium);
-}
-
-.btn-dropup {
-    background-color: var(--dark);
-    margin-top: 0.5rem;
 }
 
 input.defaultCheckBoxSize  {
@@ -172,41 +152,6 @@ input.defaultCheckBoxSize  {
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     /*top: 5rem;*/
-}
-
-.modal-container {
-    display: none;
-    position: fixed;
-    z-index: 9;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.open-modal {
-    animation: fadeInAnimation ease 0.5s;
-}
-
-.close-modal {
-    animation: fadeOutAnimation ease 0.5s;
-}
-
-.modal-content {
-    margin: 2rem auto auto auto;
-    max-width: 500px;
-    width: calc(100% - 4rem);
-    letter-spacing: normal;
-    background-color: white;
-    text-align: left;
-    align-content: left;
-    vertical-align: middle;
-    padding: 1.5rem;
-    z-index: 2;
-    border-radius: 0.5rem;
 }
 
 .add-grid-container {
