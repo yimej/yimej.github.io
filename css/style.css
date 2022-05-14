@@ -323,7 +323,7 @@ b {
     font-weight: 700;
 }
 
-color {
+.color {
     color: rgb(0, 136, 145);
 }
 
@@ -427,6 +427,7 @@ button:hover {
     font-family: 'Roboto', sans-serif;
     font-size: 1.23rem;
     line-height: 2.2rem;
+    letter-spacing: 0.035rem;
 }
 
 .footnoteL {
